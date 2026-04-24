@@ -128,7 +128,44 @@ export const DEFAULT_CATEGORIES: Category[] = [
   },
 ]
 
-// ─── Category colors (MC palette) ────────────────────────────────────────────
+// ─── Default groups ───────────────────────────────────────────────────────────
+
+const DEFAULT_SCROLL: Scroll = {
+  id: '__default_scroll__',
+  type: 'extended',
+  order: 0,
+  quests: [
+    { id: '__dq_1__',  categoryId: 'harvest', subCategoryId: 'harvest', amount: 3225,  objective: 'Carrot',            objectiveId: 'custom', objectiveIcon: '/mc_assets/CARROT.png',             counter: 0, completed: false, order: 0 },
+    { id: '__dq_2__',  categoryId: 'craft',   subCategoryId: 'craft',   amount: 300,   objective: 'Golden Carrot',     objectiveId: 'custom', objectiveIcon: '/mc_assets/GOLDEN_CARROT.png',      counter: 0, completed: false, order: 1 },
+    { id: '__dq_3__',  categoryId: 'kill',    subCategoryId: 'kill',    amount: 2000,  objective: 'Chicken',           objectiveId: 'custom', objectiveIcon: '/mc_assets/CHICKEN (2).png',        counter: 0, completed: false, order: 2 },
+    { id: '__dq_4__',  categoryId: 'interact',subCategoryId: 'place',   amount: 500,   objective: 'Cactus Flower',     objectiveId: 'custom', objectiveIcon: '/mc_assets/CACTUS_FLOWER.png',      counter: 0, completed: false, order: 3 },
+    { id: '__dq_5__',  categoryId: 'ride',    subCategoryId: 'ride',    amount: 3000,  objective: 'Nautilus',          objectiveId: 'custom', objectiveIcon: '/mc_assets/NAUTILUS.png',           counter: 0, completed: false, order: 4 },
+    { id: '__dq_6__',  categoryId: 'mine',    subCategoryId: 'mine',    amount: 2000,  objective: 'Lapis Ore',         objectiveId: 'custom', objectiveIcon: '/mc_assets/LAPIS_ORE.png',          counter: 0, completed: false, order: 5 },
+    { id: '__dq_7__',  categoryId: 'animals', subCategoryId: 'shear',   amount: 600,   objective: 'Yellow Sheep',      objectiveId: 'custom', objectiveIcon: '/mc_assets/YELLOW_WOOL.png',        counter: 0, completed: false, order: 6 },
+    { id: '__dq_8__',  categoryId: 'interact',subCategoryId: 'gain',    amount: 25000, objective: 'Experience Bottle', objectiveId: 'custom', objectiveIcon: '/mc_assets/EXPERIENCE_BOTTLE.png',  counter: 0, completed: false, order: 7 },
+    { id: '__dq_9__',  categoryId: 'mine',    subCategoryId: 'chop',    amount: 2260,  objective: 'Pale Oak Wood',     objectiveId: 'custom', objectiveIcon: '/mc_assets/PALE_OAK_WOOD.png',      counter: 0, completed: false, order: 8 },
+    { id: '__dq_10__', categoryId: 'craft',   subCategoryId: 'craft',   amount: 1900,  objective: 'Spectral Arrow',    objectiveId: 'custom', objectiveIcon: '/mc_assets/SPECTRAL_ARROW.png',     counter: 0, completed: false, order: 9 },
+  ],
+}
+
+export const DEFAULT_GROUPS: Group[] = [
+  {
+    id: '__default_daily__',
+    name: 'Daily Quests',
+    icon: { source: 'minecraft', value: 'CLOCK' },
+    display: 'categorized',
+    scrolls: [],
+    order: 0,
+  },
+  {
+    id: '__default_weekly__',
+    name: 'Extended',
+    icon: { source: 'minecraft', value: 'BOOK' },
+    display: 'separate',
+    scrolls: [DEFAULT_SCROLL],
+    order: 1,
+  }
+]
 
 export const CATEGORY_COLORS = [
   { label: 'Green',   fill: '#64FC65', stroke: '#193B11' },

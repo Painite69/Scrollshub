@@ -4,6 +4,66 @@
         "icon":  "/mc_assets/GRASS_BLOCK.png"
     },
     {
+        "label":  "Items",
+        "icon":  "/mc_assets/BOOK.png"
+    },
+    {
+        "label":  "Times",
+        "icon":  "/mc_assets/BARRIER.png"
+    },
+    {
+        "label":  "Players",
+        "icon":  "/mc_assets/PLAYER_HEAD.png"
+    },
+    {
+        "label":  "Bosses",
+        "icon":  "/mc_assets/ENDER_DRAGON.png"
+    },
+    {
+        "label":  "Miner",
+        "icon":  "/mc_assets/NETHERITE_PICKAXE.png"
+    },
+    {
+        "label":  "Hunter",
+        "icon":  "/mc_assets/NETHERITE_SWORD.png"
+    },
+    {
+        "label":  "Woodcutter",
+        "icon":  "/mc_assets/NETHERITE_AXE.png"
+    },
+    {
+        "label":  "Fishing",
+        "icon":  "/mc_assets/FISHING_ROD.png"
+    },
+    {
+        "label":  "Excavator",
+        "icon":  "/mc_assets/NETHERITE_SHOVEL.png"
+    },
+    {
+        "label":  "Enchanter",
+        "icon":  "/mc_assets/BOOK.png"
+    },
+    {
+        "label":  "Swords",
+        "icon":  "/mc_assets/NETHERITE_SWORD.png"
+    },
+    {
+        "label":  "Axes",
+        "icon":  "/mc_assets/NETHERITE_AXE.png"
+    },
+    {
+        "label":  "Spears",
+        "icon":  "/mc_assets/NETHERITE_SPEAR.png"
+    },
+    {
+        "label":  "Warp Fishing",
+        "icon":  "/mc_assets/FISHING_ROD.png"
+    },
+    {
+        "label":  "Tropical Market",
+        "icon":  "/mc_assets/TROPICAL_FISH.png"
+    },
+    {
         "label":  "White Sheep",
         "icon":  "/mc_assets/WHITE_WOOL.png"
     },

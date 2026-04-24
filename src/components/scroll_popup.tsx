@@ -730,8 +730,8 @@ export function LockedQuestAddPopup({ categories, lockedCategoryId, lockedSubId,
 
   const [sub, setSub] = useState({
     catId: lockedCategoryId,
-    subId: lockedSubId ? (firstSub?.id ?? '') : '',
-    label: lockedSubId ? (firstSub?.label ?? '') : '',
+    subId: lockedSubId ? (firstSub?.id ?? '') : (cat?.subCategories[0]?.id ?? ''),
+    label: lockedSubId ? (firstSub?.label ?? '') : (cat?.subCategories[0]?.label ?? ''),
   })
   const [amount, setAmount] = useState(0)
   const [objective, setObjective] = useState<{ label: string; icon: string } | null>(null)
@@ -822,7 +822,7 @@ export function LockedQuestAddPopup({ categories, lockedCategoryId, lockedSubId,
         <div className="flex gap-2 justify-end">
           <button onClick={onClose} className="cursor-pointer font-pixeloid-sans text-xs text-white/30 hover:text-white/60">Cancel</button>
           <button onClick={handleSave}
-            disabled={!objective?.label.trim() || amount < 1}
+            disabled={!objective?.label.trim() || amount < 1 || !sub.subId}
             className="cursor-pointer rounded border px-4 py-1.5 font-exe-pixel text-sm disabled:opacity-30"
             style={{ color: accentColor, borderColor: accentColor, background: accentColor + '22' }}>
             Add

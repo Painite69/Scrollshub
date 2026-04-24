@@ -46,21 +46,21 @@ function GroupCard({
     <div
       ref={setNodeRef}
       style={style}
-      className="flex flex-col gap-2 p-4 bg-white/40 hover:bg-white/50 rounded"
+      className="flex flex-col gap-2 p-4 bg-black/20 hover:bg-black/30 rounded"
     >
       {/* Group header row */}
       <div className="flex items-center gap-3 group/group">
         <button
           {...attributes}
           {...listeners}
-          className="cursor-grab touch-none text-black active:cursor-grabbing"
+          className="cursor-grab touch-none text-white active:cursor-grabbing"
           aria-label="Drag to reorder"
         >
           <DragHandle />
         </button>
 
         <div className="flex flex-1 flex-col">
-          <span className="font-exe-pixel text-2xl sm:text-4xl">{group.name}</span>
+          <span className="font-exe-pixel text-white text-2xl sm:text-4xl">{group.name}</span>
         </div>
 
 

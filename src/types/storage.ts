@@ -1,4 +1,4 @@
-import { type Group, type Category, DEFAULT_CATEGORIES } from './types'
+import { type Group, type Category, DEFAULT_CATEGORIES, DEFAULT_GROUPS } from './types'
 
 const KEYS = {
   groups: 'questhub_groups',
@@ -24,7 +24,7 @@ function save<T>(key: string, value: T): void {
 // ─── Groups ───────────────────────────────────────────────────────────────────
 
 export function loadGroups(): Group[] {
-  return load<Group[]>(KEYS.groups, [])
+  return load<Group[]>(KEYS.groups, DEFAULT_GROUPS)
 }
 
 export function saveGroups(groups: Group[]): void {

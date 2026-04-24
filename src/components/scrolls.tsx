@@ -129,7 +129,7 @@ function QuestRow({
           <input
             type="number" min={0} max={quest.amount} value={quest.counter}
             onChange={e => setCounter(parseInt(e.target.value) || 0)}
-            className="w-8 bg-transparent text-right font-pixeloid-sans text-xs border-b focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            className="w-10 bg-transparent text-right font-pixeloid-sans text-xs border-b focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             style={{ color: textColor, borderColor: textColor + '40' }}
           />
           <div className="flex flex-col ml-0.5 opacity-0 group-hover/row:opacity-80 transition-opacity">

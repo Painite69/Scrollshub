@@ -785,17 +785,17 @@ function SectionCard({ id }: { id: BPSectionId }) {
   }
 
   return (
-    <div ref={setNodeRef} style={style} className="flex flex-col gap-2 p-4  bg-white/40 hover:bg-white/50  rounded">
+    <div ref={setNodeRef} style={style} className="flex flex-col gap-2 p-4  bg-black/20 hover:bg-black/30  rounded">
       <div className="flex items-center gap-3 group/section">
         <button
           {...attributes}
           {...listeners}
-          className="cursor-grab touch-none text-black active:cursor-grabbing"
+          className="cursor-grab touch-none text-white active:cursor-grabbing"
           aria-label="Drag to reorder"
         >
           <DragHandle />
         </button>
-        <span className="font-exe-pixel text-2xl sm:text-4xl">{SECTION_LABELS[id]}</span>
+        <span className="font-exe-pixel text-white text-2xl sm:text-4xl">{SECTION_LABELS[id]}</span>
       </div>
 
       <div className="ml-7">
