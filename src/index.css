@@ -1,0 +1,67 @@
+
+@import "tailwindcss";
+
+@font-face {
+  font-family: "EXEPixelPerfect";
+  src: url("/fonts/EXEPixelPerfect.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PixeloidMono";
+  src: url("/fonts/PixeloidMono.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PixeloidSans";
+  src: url("/fonts/PixeloidSans.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "PixeloidSans";
+  src: url("/fonts/PixeloidSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Minecraft";
+  src: url("/fonts/Minecraft.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@theme {
+  --font-exe-pixel: "EXEPixelPerfect", monospace;
+  --font-pixeloid-mono: "PixeloidMono", monospace;
+  --font-pixeloid-sans: "PixeloidSans", sans-serif;
+  --font-minecraft: "Minecraft", sans-serif;
+}
+
+/* ── Custom scrollbar ─────────────────────────────────────────────────────── */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.45) rgba(0, 0, 0, 0.15);
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}

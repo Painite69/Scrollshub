@@ -1,0 +1,6867 @@
+﻿[
+    {
+        "label":  "Blocks",
+        "icon":  "/mc_assets/GRASS_BLOCK.png"
+    },
+    {
+        "label":  "White Sheep",
+        "icon":  "/mc_assets/WHITE_WOOL.png"
+    },
+    {
+        "label":  "Black Sheep",
+        "icon":  "/mc_assets/BLACK_WOOL.png"
+    },
+    {
+        "label":  "Gray Sheep",
+        "icon":  "/mc_assets/GRAY_WOOL.png"
+    },
+    {
+        "label":  "Light Gray Sheep",
+        "icon":  "/mc_assets/LIGHT_GRAY_WOOL.png"
+    },
+    {
+        "label":  "Brown Sheep",
+        "icon":  "/mc_assets/BROWN_WOOL.png"
+    },
+    {
+        "label":  "Red Sheep",
+        "icon":  "/mc_assets/RED_WOOL.png"
+    },
+    {
+        "label":  "Orange Sheep",
+        "icon":  "/mc_assets/ORANGE_WOOL.png"
+    },
+    {
+        "label":  "Yellow Sheep",
+        "icon":  "/mc_assets/YELLOW_WOOL.png"
+    },
+    {
+        "label":  "Lime Sheep",
+        "icon":  "/mc_assets/LIME_WOOL.png"
+    },
+    {
+        "label":  "Green Sheep",
+        "icon":  "/mc_assets/GREEN_WOOL.png"
+    },
+    {
+        "label":  "Cyan Sheep",
+        "icon":  "/mc_assets/CYAN_WOOL.png"
+    },
+    {
+        "label":  "Light Blue Sheep",
+        "icon":  "/mc_assets/LIGHT_BLUE_WOOL.png"
+    },
+    {
+        "label":  "Blue Sheep",
+        "icon":  "/mc_assets/BLUE_WOOL.png"
+    },
+    {
+        "label":  "Purple Sheep",
+        "icon":  "/mc_assets/PURPLE_WOOL.png"
+    },
+    {
+        "label":  "Magenta Sheep",
+        "icon":  "/mc_assets/MAGENTA_WOOL.png"
+    },
+    {
+        "label":  "Pink Sheep",
+        "icon":  "/mc_assets/PINK_WOOL.png"
+    },
+    {
+        "label":  "Acacia Boat",
+        "icon":  "/mc_assets/ACACIA_BOAT.png",
+        "icon3d":  "/mc_assets/ACACIA_BOAT (2).png"
+    },
+    {
+        "label":  "Acacia Button",
+        "icon":  "/mc_assets/ACACIA_BUTTON.png"
+    },
+    {
+        "label":  "Acacia Chest Boat",
+        "icon":  "/mc_assets/ACACIA_CHEST_BOAT.png",
+        "icon3d":  "/mc_assets/ACACIA_CHEST_BOAT (2).png"
+    },
+    {
+        "label":  "Acacia Door",
+        "icon":  "/mc_assets/ACACIA_DOOR.png"
+    },
+    {
+        "label":  "Acacia Fence",
+        "icon":  "/mc_assets/ACACIA_FENCE.png"
+    },
+    {
+        "label":  "Acacia Fence Gate",
+        "icon":  "/mc_assets/ACACIA_FENCE_GATE.png"
+    },
+    {
+        "label":  "Acacia Hanging Sign",
+        "icon":  "/mc_assets/ACACIA_HANGING_SIGN.png"
+    },
+    {
+        "label":  "Acacia Leaves",
+        "icon":  "/mc_assets/ACACIA_LEAVES.png"
+    },
+    {
+        "label":  "Acacia Log",
+        "icon":  "/mc_assets/ACACIA_LOG.png"
+    },
+    {
+        "label":  "Acacia Planks",
+        "icon":  "/mc_assets/ACACIA_PLANKS.png"
+    },
+    {
+        "label":  "Acacia Pressure Plate",
+        "icon":  "/mc_assets/ACACIA_PRESSURE_PLATE.png"
+    },
+    {
+        "label":  "Acacia Sapling",
+        "icon":  "/mc_assets/ACACIA_SAPLING.png"
+    },
+    {
+        "label":  "Acacia Shelf",
+        "icon":  "/mc_assets/ACACIA_SHELF.png"
+    },
+    {
+        "label":  "Acacia Sign",
+        "icon":  "/mc_assets/ACACIA_SIGN.png"
+    },
+    {
+        "label":  "Acacia Slab",
+        "icon":  "/mc_assets/ACACIA_SLAB.png"
+    },
+    {
+        "label":  "Acacia Stairs",
+        "icon":  "/mc_assets/ACACIA_STAIRS.png"
+    },
+    {
+        "label":  "Acacia Trapdoor",
+        "icon":  "/mc_assets/ACACIA_TRAPDOOR.png"
+    },
+    {
+        "label":  "Acacia Wood",
+        "icon":  "/mc_assets/ACACIA_WOOD.png"
+    },
+    {
+        "label":  "Activator Rail",
+        "icon":  "/mc_assets/ACTIVATOR_RAIL.png"
+    },
+    {
+        "label":  "Air",
+        "icon":  "/mc_assets/AIR.png"
+    },
+    {
+        "label":  "Allay",
+        "icon":  "/mc_assets/ALLAY.png"
+    },
+    {
+        "label":  "Allay Spawn Egg",
+        "icon":  "/mc_assets/ALLAY_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Allium",
+        "icon":  "/mc_assets/ALLIUM.png"
+    },
+    {
+        "label":  "Amethyst Block",
+        "icon":  "/mc_assets/AMETHYST_BLOCK.png"
+    },
+    {
+        "label":  "Amethyst Cluster",
+        "icon":  "/mc_assets/AMETHYST_CLUSTER.png"
+    },
+    {
+        "label":  "Amethyst Shard",
+        "icon":  "/mc_assets/AMETHYST_SHARD.png"
+    },
+    {
+        "label":  "Ancient Debris",
+        "icon":  "/mc_assets/ANCIENT_DEBRIS.png"
+    },
+    {
+        "label":  "Andesite",
+        "icon":  "/mc_assets/ANDESITE.png"
+    },
+    {
+        "label":  "Andesite Slab",
+        "icon":  "/mc_assets/ANDESITE_SLAB.png"
+    },
+    {
+        "label":  "Andesite Stairs",
+        "icon":  "/mc_assets/ANDESITE_STAIRS.png"
+    },
+    {
+        "label":  "Andesite Wall",
+        "icon":  "/mc_assets/ANDESITE_WALL.png"
+    },
+    {
+        "label":  "Angler Pottery Sherd",
+        "icon":  "/mc_assets/ANGLER_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Anvil",
+        "icon":  "/mc_assets/ANVIL.png"
+    },
+    {
+        "label":  "Apple",
+        "icon":  "/mc_assets/APPLE.png"
+    },
+    {
+        "label":  "Archer Pottery Sherd",
+        "icon":  "/mc_assets/ARCHER_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Area Effect Cloud",
+        "icon":  "/mc_assets/AREA_EFFECT_CLOUD.png"
+    },
+    {
+        "label":  "Armadillo",
+        "icon":  "/mc_assets/ARMADILLO.png"
+    },
+    {
+        "label":  "Armadillo Scute",
+        "icon":  "/mc_assets/ARMADILLO_SCUTE.png"
+    },
+    {
+        "label":  "Armadillo Spawn Egg",
+        "icon":  "/mc_assets/ARMADILLO_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Armor Stand",
+        "icon":  "/mc_assets/ARMOR_STAND.png",
+        "icon3d":  "/mc_assets/ARMOR_STAND (2).png"
+    },
+    {
+        "label":  "Arms Up Pottery Sherd",
+        "icon":  "/mc_assets/ARMS_UP_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Arrow",
+        "icon":  "/mc_assets/ARROW.png",
+        "icon3d":  "/mc_assets/ARROW (2).png"
+    },
+    {
+        "label":  "Axolotl",
+        "icon":  "/mc_assets/AXOLOTL.png"
+    },
+    {
+        "label":  "Axolotl Bucket",
+        "icon":  "/mc_assets/AXOLOTL_BUCKET.png"
+    },
+    {
+        "label":  "Axolotl Spawn Egg",
+        "icon":  "/mc_assets/AXOLOTL_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Azalea",
+        "icon":  "/mc_assets/AZALEA.png"
+    },
+    {
+        "label":  "Azalea Leaves",
+        "icon":  "/mc_assets/AZALEA_LEAVES.png"
+    },
+    {
+        "label":  "Azure Bluet",
+        "icon":  "/mc_assets/AZURE_BLUET.png"
+    },
+    {
+        "label":  "Baby Armadillo",
+        "icon":  "/mc_assets/BABY_ARMADILLO.png"
+    },
+    {
+        "label":  "Baby Axolotl",
+        "icon":  "/mc_assets/BABY_AXOLOTL.png"
+    },
+    {
+        "label":  "Baby Bee",
+        "icon":  "/mc_assets/BABY_BEE.png"
+    },
+    {
+        "label":  "Baby Camel",
+        "icon":  "/mc_assets/BABY_CAMEL.png"
+    },
+    {
+        "label":  "Baby Camel Husk",
+        "icon":  "/mc_assets/BABY_CAMEL_HUSK.png"
+    },
+    {
+        "label":  "Baby Cat",
+        "icon":  "/mc_assets/BABY_CAT.png"
+    },
+    {
+        "label":  "Baby Chicken",
+        "icon":  "/mc_assets/BABY_CHICKEN.png"
+    },
+    {
+        "label":  "Baby Cow",
+        "icon":  "/mc_assets/BABY_COW.png"
+    },
+    {
+        "label":  "Baby Dolphin",
+        "icon":  "/mc_assets/BABY_DOLPHIN.png"
+    },
+    {
+        "label":  "Baby Donkey",
+        "icon":  "/mc_assets/BABY_DONKEY.png"
+    },
+    {
+        "label":  "Baby Fox",
+        "icon":  "/mc_assets/BABY_FOX.png"
+    },
+    {
+        "label":  "Baby Frog",
+        "icon":  "/mc_assets/BABY_FROG.png"
+    },
+    {
+        "label":  "Baby Glow Squid",
+        "icon":  "/mc_assets/BABY_GLOW_SQUID.png"
+    },
+    {
+        "label":  "Baby Goat",
+        "icon":  "/mc_assets/BABY_GOAT.png"
+    },
+    {
+        "label":  "Baby Happy Ghast",
+        "icon":  "/mc_assets/BABY_HAPPY_GHAST.png"
+    },
+    {
+        "label":  "Baby Hoglin",
+        "icon":  "/mc_assets/BABY_HOGLIN.png"
+    },
+    {
+        "label":  "Baby Horse",
+        "icon":  "/mc_assets/BABY_HORSE.png"
+    },
+    {
+        "label":  "Baby Llama",
+        "icon":  "/mc_assets/BABY_LLAMA.png"
+    },
+    {
+        "label":  "Baby Magma Cube",
+        "icon":  "/mc_assets/BABY_MAGMA_CUBE.png"
+    },
+    {
+        "label":  "Baby Mooshroom",
+        "icon":  "/mc_assets/BABY_MOOSHROOM.png"
+    },
+    {
+        "label":  "Baby Mule",
+        "icon":  "/mc_assets/BABY_MULE.png"
+    },
+    {
+        "label":  "Baby Nautilus",
+        "icon":  "/mc_assets/BABY_NAUTILUS.png"
+    },
+    {
+        "label":  "Baby Ocelot",
+        "icon":  "/mc_assets/BABY_OCELOT.png"
+    },
+    {
+        "label":  "Baby Panda",
+        "icon":  "/mc_assets/BABY_PANDA.png"
+    },
+    {
+        "label":  "Baby Parrot",
+        "icon":  "/mc_assets/BABY_PARROT.png"
+    },
+    {
+        "label":  "Baby Pig",
+        "icon":  "/mc_assets/BABY_PIG.png"
+    },
+    {
+        "label":  "Baby Polar Bear",
+        "icon":  "/mc_assets/BABY_POLAR_BEAR.png"
+    },
+    {
+        "label":  "Baby Rabbit",
+        "icon":  "/mc_assets/BABY_RABBIT.png"
+    },
+    {
+        "label":  "Baby Sheep",
+        "icon":  "/mc_assets/BABY_SHEEP.png"
+    },
+    {
+        "label":  "Baby Skeleton Horse",
+        "icon":  "/mc_assets/BABY_SKELETON_HORSE.png"
+    },
+    {
+        "label":  "Baby Slime",
+        "icon":  "/mc_assets/BABY_SLIME.png"
+    },
+    {
+        "label":  "Baby Sniffer",
+        "icon":  "/mc_assets/BABY_SNIFFER.png"
+    },
+    {
+        "label":  "Baby Squid",
+        "icon":  "/mc_assets/BABY_SQUID.png"
+    },
+    {
+        "label":  "Baby Strider",
+        "icon":  "/mc_assets/BABY_STRIDER.png"
+    },
+    {
+        "label":  "Baby Sulfur Cube",
+        "icon":  "/mc_assets/BABY_SULFUR_CUBE.png"
+    },
+    {
+        "label":  "Baby Trader Llama",
+        "icon":  "/mc_assets/BABY_TRADER_LLAMA.png"
+    },
+    {
+        "label":  "Baby Turtle",
+        "icon":  "/mc_assets/BABY_TURTLE.png"
+    },
+    {
+        "label":  "Baby Villager",
+        "icon":  "/mc_assets/BABY_VILLAGER.png"
+    },
+    {
+        "label":  "Baby Wandering Trader",
+        "icon":  "/mc_assets/BABY_WANDERING_TRADER.png"
+    },
+    {
+        "label":  "Baby Wolf",
+        "icon":  "/mc_assets/BABY_WOLF.png"
+    },
+    {
+        "label":  "Baby Zombie Horse",
+        "icon":  "/mc_assets/BABY_ZOMBIE_HORSE.png"
+    },
+    {
+        "label":  "Baby Zombie Nautilus",
+        "icon":  "/mc_assets/BABY_ZOMBIE_NAUTILUS.png"
+    },
+    {
+        "label":  "Baked Potato",
+        "icon":  "/mc_assets/BAKED_POTATO.png"
+    },
+    {
+        "label":  "Bamboo",
+        "icon":  "/mc_assets/BAMBOO.png"
+    },
+    {
+        "label":  "Bamboo Block",
+        "icon":  "/mc_assets/BAMBOO_BLOCK.png"
+    },
+    {
+        "label":  "Bamboo Button",
+        "icon":  "/mc_assets/BAMBOO_BUTTON.png"
+    },
+    {
+        "label":  "Bamboo Chest Raft",
+        "icon":  "/mc_assets/BAMBOO_CHEST_RAFT.png",
+        "icon3d":  "/mc_assets/BAMBOO_CHEST_RAFT (2).png"
+    },
+    {
+        "label":  "Bamboo Door",
+        "icon":  "/mc_assets/BAMBOO_DOOR.png"
+    },
+    {
+        "label":  "Bamboo Fence",
+        "icon":  "/mc_assets/BAMBOO_FENCE.png"
+    },
+    {
+        "label":  "Bamboo Fence Gate",
+        "icon":  "/mc_assets/BAMBOO_FENCE_GATE.png"
+    },
+    {
+        "label":  "Bamboo Hanging Sign",
+        "icon":  "/mc_assets/BAMBOO_HANGING_SIGN.png"
+    },
+    {
+        "label":  "Bamboo Mosaic",
+        "icon":  "/mc_assets/BAMBOO_MOSAIC.png"
+    },
+    {
+        "label":  "Bamboo Mosaic Slab",
+        "icon":  "/mc_assets/BAMBOO_MOSAIC_SLAB.png"
+    },
+    {
+        "label":  "Bamboo Mosaic Stairs",
+        "icon":  "/mc_assets/BAMBOO_MOSAIC_STAIRS.png"
+    },
+    {
+        "label":  "Bamboo Planks",
+        "icon":  "/mc_assets/BAMBOO_PLANKS.png"
+    },
+    {
+        "label":  "Bamboo Pressure Plate",
+        "icon":  "/mc_assets/BAMBOO_PRESSURE_PLATE.png"
+    },
+    {
+        "label":  "Bamboo Raft",
+        "icon":  "/mc_assets/BAMBOO_RAFT.png",
+        "icon3d":  "/mc_assets/BAMBOO_RAFT (2).png"
+    },
+    {
+        "label":  "Bamboo Shelf",
+        "icon":  "/mc_assets/BAMBOO_SHELF.png"
+    },
+    {
+        "label":  "Bamboo Sign",
+        "icon":  "/mc_assets/BAMBOO_SIGN.png"
+    },
+    {
+        "label":  "Bamboo Slab",
+        "icon":  "/mc_assets/BAMBOO_SLAB.png"
+    },
+    {
+        "label":  "Bamboo Stairs",
+        "icon":  "/mc_assets/BAMBOO_STAIRS.png"
+    },
+    {
+        "label":  "Bamboo Trapdoor",
+        "icon":  "/mc_assets/BAMBOO_TRAPDOOR.png"
+    },
+    {
+        "label":  "Barrel",
+        "icon":  "/mc_assets/BARREL.png"
+    },
+    {
+        "label":  "Barrier",
+        "icon":  "/mc_assets/BARRIER.png"
+    },
+    {
+        "label":  "Basalt",
+        "icon":  "/mc_assets/BASALT.png"
+    },
+    {
+        "label":  "Bat",
+        "icon":  "/mc_assets/BAT.png"
+    },
+    {
+        "label":  "Bat Spawn Egg",
+        "icon":  "/mc_assets/BAT_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Beacon",
+        "icon":  "/mc_assets/BEACON.png"
+    },
+    {
+        "label":  "Bedrock",
+        "icon":  "/mc_assets/BEDROCK.png"
+    },
+    {
+        "label":  "Bee",
+        "icon":  "/mc_assets/BEE.png"
+    },
+    {
+        "label":  "Bee Nest",
+        "icon":  "/mc_assets/BEE_NEST.png"
+    },
+    {
+        "label":  "Bee Spawn Egg",
+        "icon":  "/mc_assets/BEE_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Beef",
+        "icon":  "/mc_assets/BEEF.png"
+    },
+    {
+        "label":  "Beehive",
+        "icon":  "/mc_assets/BEEHIVE.png"
+    },
+    {
+        "label":  "Beetroot",
+        "icon":  "/mc_assets/BEETROOT.png"
+    },
+    {
+        "label":  "Beetroot Seeds",
+        "icon":  "/mc_assets/BEETROOT_SEEDS.png"
+    },
+    {
+        "label":  "Beetroot Soup",
+        "icon":  "/mc_assets/BEETROOT_SOUP.png"
+    },
+    {
+        "label":  "Bell",
+        "icon":  "/mc_assets/BELL.png"
+    },
+    {
+        "label":  "Big Dripleaf",
+        "icon":  "/mc_assets/BIG_DRIPLEAF.png"
+    },
+    {
+        "label":  "Birch Boat",
+        "icon":  "/mc_assets/BIRCH_BOAT.png",
+        "icon3d":  "/mc_assets/BIRCH_BOAT (2).png"
+    },
+    {
+        "label":  "Birch Button",
+        "icon":  "/mc_assets/BIRCH_BUTTON.png"
+    },
+    {
+        "label":  "Birch Chest Boat",
+        "icon":  "/mc_assets/BIRCH_CHEST_BOAT.png",
+        "icon3d":  "/mc_assets/BIRCH_CHEST_BOAT (2).png"
+    },
+    {
+        "label":  "Birch Door",
+        "icon":  "/mc_assets/BIRCH_DOOR.png"
+    },
+    {
+        "label":  "Birch Fence",
+        "icon":  "/mc_assets/BIRCH_FENCE.png"
+    },
+    {
+        "label":  "Birch Fence Gate",
+        "icon":  "/mc_assets/BIRCH_FENCE_GATE.png"
+    },
+    {
+        "label":  "Birch Hanging Sign",
+        "icon":  "/mc_assets/BIRCH_HANGING_SIGN.png"
+    },
+    {
+        "label":  "Birch Leaves",
+        "icon":  "/mc_assets/BIRCH_LEAVES.png"
+    },
+    {
+        "label":  "Birch Log",
+        "icon":  "/mc_assets/BIRCH_LOG.png"
+    },
+    {
+        "label":  "Birch Planks",
+        "icon":  "/mc_assets/BIRCH_PLANKS.png"
+    },
+    {
+        "label":  "Birch Pressure Plate",
+        "icon":  "/mc_assets/BIRCH_PRESSURE_PLATE.png"
+    },
+    {
+        "label":  "Birch Sapling",
+        "icon":  "/mc_assets/BIRCH_SAPLING.png"
+    },
+    {
+        "label":  "Birch Shelf",
+        "icon":  "/mc_assets/BIRCH_SHELF.png"
+    },
+    {
+        "label":  "Birch Sign",
+        "icon":  "/mc_assets/BIRCH_SIGN.png"
+    },
+    {
+        "label":  "Birch Slab",
+        "icon":  "/mc_assets/BIRCH_SLAB.png"
+    },
+    {
+        "label":  "Birch Stairs",
+        "icon":  "/mc_assets/BIRCH_STAIRS.png"
+    },
+    {
+        "label":  "Birch Trapdoor",
+        "icon":  "/mc_assets/BIRCH_TRAPDOOR.png"
+    },
+    {
+        "label":  "Birch Wood",
+        "icon":  "/mc_assets/BIRCH_WOOD.png"
+    },
+    {
+        "label":  "Black Banner",
+        "icon":  "/mc_assets/BLACK_BANNER.png"
+    },
+    {
+        "label":  "Black Bed",
+        "icon":  "/mc_assets/BLACK_BED.png"
+    },
+    {
+        "label":  "Black Bundle",
+        "icon":  "/mc_assets/BLACK_BUNDLE.png"
+    },
+    {
+        "label":  "Black Candle",
+        "icon":  "/mc_assets/BLACK_CANDLE.png"
+    },
+    {
+        "label":  "Black Carpet",
+        "icon":  "/mc_assets/BLACK_CARPET.png"
+    },
+    {
+        "label":  "Black Concrete",
+        "icon":  "/mc_assets/BLACK_CONCRETE.png"
+    },
+    {
+        "label":  "Black Concrete Powder",
+        "icon":  "/mc_assets/BLACK_CONCRETE_POWDER.png"
+    },
+    {
+        "label":  "Black Dye",
+        "icon":  "/mc_assets/BLACK_DYE.png"
+    },
+    {
+        "label":  "Black Glazed Terracotta",
+        "icon":  "/mc_assets/BLACK_GLAZED_TERRACOTTA.png"
+    },
+    {
+        "label":  "Black Harness",
+        "icon":  "/mc_assets/BLACK_HARNESS.png"
+    },
+    {
+        "label":  "Black Shulker Box",
+        "icon":  "/mc_assets/BLACK_SHULKER_BOX.png"
+    },
+    {
+        "label":  "Black Stained Glass",
+        "icon":  "/mc_assets/BLACK_STAINED_GLASS.png"
+    },
+    {
+        "label":  "Black Stained Glass Pane",
+        "icon":  "/mc_assets/BLACK_STAINED_GLASS_PANE.png"
+    },
+    {
+        "label":  "Black Terracotta",
+        "icon":  "/mc_assets/BLACK_TERRACOTTA.png"
+    },
+    {
+        "label":  "Black Wool",
+        "icon":  "/mc_assets/BLACK_WOOL.png"
+    },
+    {
+        "label":  "Blackstone",
+        "icon":  "/mc_assets/BLACKSTONE.png"
+    },
+    {
+        "label":  "Blackstone Slab",
+        "icon":  "/mc_assets/BLACKSTONE_SLAB.png"
+    },
+    {
+        "label":  "Blackstone Stairs",
+        "icon":  "/mc_assets/BLACKSTONE_STAIRS.png"
+    },
+    {
+        "label":  "Blackstone Wall",
+        "icon":  "/mc_assets/BLACKSTONE_WALL.png"
+    },
+    {
+        "label":  "Blade Pottery Sherd",
+        "icon":  "/mc_assets/BLADE_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Blast Furnace",
+        "icon":  "/mc_assets/BLAST_FURNACE.png"
+    },
+    {
+        "label":  "Blaze",
+        "icon":  "/mc_assets/BLAZE.png"
+    },
+    {
+        "label":  "Blaze Powder",
+        "icon":  "/mc_assets/BLAZE_POWDER.png"
+    },
+    {
+        "label":  "Blaze Rod",
+        "icon":  "/mc_assets/BLAZE_ROD.png"
+    },
+    {
+        "label":  "Blaze Spawn Egg",
+        "icon":  "/mc_assets/BLAZE_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Block Display",
+        "icon":  "/mc_assets/BLOCK_DISPLAY.png"
+    },
+    {
+        "label":  "Blue Banner",
+        "icon":  "/mc_assets/BLUE_BANNER.png"
+    },
+    {
+        "label":  "Blue Bed",
+        "icon":  "/mc_assets/BLUE_BED.png"
+    },
+    {
+        "label":  "Blue Bundle",
+        "icon":  "/mc_assets/BLUE_BUNDLE.png"
+    },
+    {
+        "label":  "Blue Candle",
+        "icon":  "/mc_assets/BLUE_CANDLE.png"
+    },
+    {
+        "label":  "Blue Carpet",
+        "icon":  "/mc_assets/BLUE_CARPET.png"
+    },
+    {
+        "label":  "Blue Concrete",
+        "icon":  "/mc_assets/BLUE_CONCRETE.png"
+    },
+    {
+        "label":  "Blue Concrete Powder",
+        "icon":  "/mc_assets/BLUE_CONCRETE_POWDER.png"
+    },
+    {
+        "label":  "Blue Dye",
+        "icon":  "/mc_assets/BLUE_DYE.png"
+    },
+    {
+        "label":  "Blue Egg",
+        "icon":  "/mc_assets/BLUE_EGG.png"
+    },
+    {
+        "label":  "Blue Glazed Terracotta",
+        "icon":  "/mc_assets/BLUE_GLAZED_TERRACOTTA.png"
+    },
+    {
+        "label":  "Blue Harness",
+        "icon":  "/mc_assets/BLUE_HARNESS.png"
+    },
+    {
+        "label":  "Blue Ice",
+        "icon":  "/mc_assets/BLUE_ICE.png"
+    },
+    {
+        "label":  "Blue Orchid",
+        "icon":  "/mc_assets/BLUE_ORCHID.png"
+    },
+    {
+        "label":  "Blue Shulker Box",
+        "icon":  "/mc_assets/BLUE_SHULKER_BOX.png"
+    },
+    {
+        "label":  "Blue Stained Glass",
+        "icon":  "/mc_assets/BLUE_STAINED_GLASS.png"
+    },
+    {
+        "label":  "Blue Stained Glass Pane",
+        "icon":  "/mc_assets/BLUE_STAINED_GLASS_PANE.png"
+    },
+    {
+        "label":  "Blue Terracotta",
+        "icon":  "/mc_assets/BLUE_TERRACOTTA.png"
+    },
+    {
+        "label":  "Blue Wool",
+        "icon":  "/mc_assets/BLUE_WOOL.png"
+    },
+    {
+        "label":  "Bogged",
+        "icon":  "/mc_assets/BOGGED.png"
+    },
+    {
+        "label":  "Bogged Spawn Egg",
+        "icon":  "/mc_assets/BOGGED_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Bolt Armor Trim Smithing Template",
+        "icon":  "/mc_assets/BOLT_ARMOR_TRIM_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Bone",
+        "icon":  "/mc_assets/BONE.png"
+    },
+    {
+        "label":  "Bone Block",
+        "icon":  "/mc_assets/BONE_BLOCK.png"
+    },
+    {
+        "label":  "Bone Meal",
+        "icon":  "/mc_assets/BONE_MEAL.png"
+    },
+    {
+        "label":  "Book",
+        "icon":  "/mc_assets/BOOK.png"
+    },
+    {
+        "label":  "Bookshelf",
+        "icon":  "/mc_assets/BOOKSHELF.png"
+    },
+    {
+        "label":  "Bordure Indented Banner Pattern",
+        "icon":  "/mc_assets/BORDURE_INDENTED_BANNER_PATTERN.png"
+    },
+    {
+        "label":  "Bow",
+        "icon":  "/mc_assets/BOW.png"
+    },
+    {
+        "label":  "Bowl",
+        "icon":  "/mc_assets/BOWL.png"
+    },
+    {
+        "label":  "Brain Coral",
+        "icon":  "/mc_assets/BRAIN_CORAL.png"
+    },
+    {
+        "label":  "Brain Coral Block",
+        "icon":  "/mc_assets/BRAIN_CORAL_BLOCK.png"
+    },
+    {
+        "label":  "Brain Coral Fan",
+        "icon":  "/mc_assets/BRAIN_CORAL_FAN.png"
+    },
+    {
+        "label":  "Bread",
+        "icon":  "/mc_assets/BREAD.png"
+    },
+    {
+        "label":  "Breeze",
+        "icon":  "/mc_assets/BREEZE.png"
+    },
+    {
+        "label":  "Breeze Rod",
+        "icon":  "/mc_assets/BREEZE_ROD.png"
+    },
+    {
+        "label":  "Breeze Spawn Egg",
+        "icon":  "/mc_assets/BREEZE_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Breeze Wind Charge",
+        "icon":  "/mc_assets/BREEZE_WIND_CHARGE.png"
+    },
+    {
+        "label":  "Brewer Pottery Sherd",
+        "icon":  "/mc_assets/BREWER_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Brewing Stand",
+        "icon":  "/mc_assets/BREWING_STAND.png"
+    },
+    {
+        "label":  "Brick",
+        "icon":  "/mc_assets/BRICK.png"
+    },
+    {
+        "label":  "Brick Slab",
+        "icon":  "/mc_assets/BRICK_SLAB.png"
+    },
+    {
+        "label":  "Brick Stairs",
+        "icon":  "/mc_assets/BRICK_STAIRS.png"
+    },
+    {
+        "label":  "Brick Wall",
+        "icon":  "/mc_assets/BRICK_WALL.png"
+    },
+    {
+        "label":  "Bricks",
+        "icon":  "/mc_assets/BRICKS.png"
+    },
+    {
+        "label":  "Brown Banner",
+        "icon":  "/mc_assets/BROWN_BANNER.png"
+    },
+    {
+        "label":  "Brown Bed",
+        "icon":  "/mc_assets/BROWN_BED.png"
+    },
+    {
+        "label":  "Brown Bundle",
+        "icon":  "/mc_assets/BROWN_BUNDLE.png"
+    },
+    {
+        "label":  "Brown Candle",
+        "icon":  "/mc_assets/BROWN_CANDLE.png"
+    },
+    {
+        "label":  "Brown Carpet",
+        "icon":  "/mc_assets/BROWN_CARPET.png"
+    },
+    {
+        "label":  "Brown Concrete",
+        "icon":  "/mc_assets/BROWN_CONCRETE.png"
+    },
+    {
+        "label":  "Brown Concrete Powder",
+        "icon":  "/mc_assets/BROWN_CONCRETE_POWDER.png"
+    },
+    {
+        "label":  "Brown Dye",
+        "icon":  "/mc_assets/BROWN_DYE.png"
+    },
+    {
+        "label":  "Brown Egg",
+        "icon":  "/mc_assets/BROWN_EGG.png"
+    },
+    {
+        "label":  "Brown Glazed Terracotta",
+        "icon":  "/mc_assets/BROWN_GLAZED_TERRACOTTA.png"
+    },
+    {
+        "label":  "Brown Harness",
+        "icon":  "/mc_assets/BROWN_HARNESS.png"
+    },
+    {
+        "label":  "Brown Mushroom",
+        "icon":  "/mc_assets/BROWN_MUSHROOM.png"
+    },
+    {
+        "label":  "Brown Mushroom Block",
+        "icon":  "/mc_assets/BROWN_MUSHROOM_BLOCK.png"
+    },
+    {
+        "label":  "Brown Shulker Box",
+        "icon":  "/mc_assets/BROWN_SHULKER_BOX.png"
+    },
+    {
+        "label":  "Brown Stained Glass",
+        "icon":  "/mc_assets/BROWN_STAINED_GLASS.png"
+    },
+    {
+        "label":  "Brown Stained Glass Pane",
+        "icon":  "/mc_assets/BROWN_STAINED_GLASS_PANE.png"
+    },
+    {
+        "label":  "Brown Terracotta",
+        "icon":  "/mc_assets/BROWN_TERRACOTTA.png"
+    },
+    {
+        "label":  "Brown Wool",
+        "icon":  "/mc_assets/BROWN_WOOL.png"
+    },
+    {
+        "label":  "Brush",
+        "icon":  "/mc_assets/BRUSH.png"
+    },
+    {
+        "label":  "Bubble Coral",
+        "icon":  "/mc_assets/BUBBLE_CORAL.png"
+    },
+    {
+        "label":  "Bubble Coral Block",
+        "icon":  "/mc_assets/BUBBLE_CORAL_BLOCK.png"
+    },
+    {
+        "label":  "Bubble Coral Fan",
+        "icon":  "/mc_assets/BUBBLE_CORAL_FAN.png"
+    },
+    {
+        "label":  "Bucket",
+        "icon":  "/mc_assets/BUCKET.png"
+    },
+    {
+        "label":  "Budding Amethyst",
+        "icon":  "/mc_assets/BUDDING_AMETHYST.png"
+    },
+    {
+        "label":  "Bundle",
+        "icon":  "/mc_assets/BUNDLE.png"
+    },
+    {
+        "label":  "Burn Pottery Sherd",
+        "icon":  "/mc_assets/BURN_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Bush",
+        "icon":  "/mc_assets/BUSH.png"
+    },
+    {
+        "label":  "Cactus",
+        "icon":  "/mc_assets/CACTUS.png"
+    },
+    {
+        "label":  "Cactus Flower",
+        "icon":  "/mc_assets/CACTUS_FLOWER.png"
+    },
+    {
+        "label":  "Cake",
+        "icon":  "/mc_assets/CAKE.png"
+    },
+    {
+        "label":  "Calcite",
+        "icon":  "/mc_assets/CALCITE.png"
+    },
+    {
+        "label":  "Calibrated Sculk Sensor",
+        "icon":  "/mc_assets/CALIBRATED_SCULK_SENSOR.png"
+    },
+    {
+        "label":  "Camel",
+        "icon":  "/mc_assets/CAMEL.png"
+    },
+    {
+        "label":  "Camel Husk",
+        "icon":  "/mc_assets/CAMEL_HUSK.png"
+    },
+    {
+        "label":  "Camel Husk Spawn Egg",
+        "icon":  "/mc_assets/CAMEL_HUSK_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Camel Spawn Egg",
+        "icon":  "/mc_assets/CAMEL_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Campfire",
+        "icon":  "/mc_assets/CAMPFIRE.png"
+    },
+    {
+        "label":  "Candle",
+        "icon":  "/mc_assets/CANDLE.png"
+    },
+    {
+        "label":  "Carrot",
+        "icon":  "/mc_assets/CARROT.png"
+    },
+    {
+        "label":  "Carrot On A Stick",
+        "icon":  "/mc_assets/CARROT_ON_A_STICK.png"
+    },
+    {
+        "label":  "Cartography Table",
+        "icon":  "/mc_assets/CARTOGRAPHY_TABLE.png"
+    },
+    {
+        "label":  "Carved Pumpkin",
+        "icon":  "/mc_assets/CARVED_PUMPKIN.png"
+    },
+    {
+        "label":  "Cat",
+        "icon":  "/mc_assets/CAT.png"
+    },
+    {
+        "label":  "Cat Spawn Egg",
+        "icon":  "/mc_assets/CAT_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Cauldron",
+        "icon":  "/mc_assets/CAULDRON.png"
+    },
+    {
+        "label":  "Cave Spider",
+        "icon":  "/mc_assets/CAVE_SPIDER.png"
+    },
+    {
+        "label":  "Cave Spider Spawn Egg",
+        "icon":  "/mc_assets/CAVE_SPIDER_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Chain Command Block",
+        "icon":  "/mc_assets/CHAIN_COMMAND_BLOCK.png"
+    },
+    {
+        "label":  "Chainmail Boots",
+        "icon":  "/mc_assets/CHAINMAIL_BOOTS.png"
+    },
+    {
+        "label":  "Chainmail Chestplate",
+        "icon":  "/mc_assets/CHAINMAIL_CHESTPLATE.png"
+    },
+    {
+        "label":  "Chainmail Helmet",
+        "icon":  "/mc_assets/CHAINMAIL_HELMET.png"
+    },
+    {
+        "label":  "Chainmail Leggings",
+        "icon":  "/mc_assets/CHAINMAIL_LEGGINGS.png"
+    },
+    {
+        "label":  "Charcoal",
+        "icon":  "/mc_assets/CHARCOAL.png"
+    },
+    {
+        "label":  "Cherry Boat",
+        "icon":  "/mc_assets/CHERRY_BOAT.png",
+        "icon3d":  "/mc_assets/CHERRY_BOAT (2).png"
+    },
+    {
+        "label":  "Cherry Button",
+        "icon":  "/mc_assets/CHERRY_BUTTON.png"
+    },
+    {
+        "label":  "Cherry Chest Boat",
+        "icon":  "/mc_assets/CHERRY_CHEST_BOAT.png",
+        "icon3d":  "/mc_assets/CHERRY_CHEST_BOAT (2).png"
+    },
+    {
+        "label":  "Cherry Door",
+        "icon":  "/mc_assets/CHERRY_DOOR.png"
+    },
+    {
+        "label":  "Cherry Fence",
+        "icon":  "/mc_assets/CHERRY_FENCE.png"
+    },
+    {
+        "label":  "Cherry Fence Gate",
+        "icon":  "/mc_assets/CHERRY_FENCE_GATE.png"
+    },
+    {
+        "label":  "Cherry Hanging Sign",
+        "icon":  "/mc_assets/CHERRY_HANGING_SIGN.png"
+    },
+    {
+        "label":  "Cherry Leaves",
+        "icon":  "/mc_assets/CHERRY_LEAVES.png"
+    },
+    {
+        "label":  "Cherry Log",
+        "icon":  "/mc_assets/CHERRY_LOG.png"
+    },
+    {
+        "label":  "Cherry Planks",
+        "icon":  "/mc_assets/CHERRY_PLANKS.png"
+    },
+    {
+        "label":  "Cherry Pressure Plate",
+        "icon":  "/mc_assets/CHERRY_PRESSURE_PLATE.png"
+    },
+    {
+        "label":  "Cherry Sapling",
+        "icon":  "/mc_assets/CHERRY_SAPLING.png"
+    },
+    {
+        "label":  "Cherry Shelf",
+        "icon":  "/mc_assets/CHERRY_SHELF.png"
+    },
+    {
+        "label":  "Cherry Sign",
+        "icon":  "/mc_assets/CHERRY_SIGN.png"
+    },
+    {
+        "label":  "Cherry Slab",
+        "icon":  "/mc_assets/CHERRY_SLAB.png"
+    },
+    {
+        "label":  "Cherry Stairs",
+        "icon":  "/mc_assets/CHERRY_STAIRS.png"
+    },
+    {
+        "label":  "Cherry Trapdoor",
+        "icon":  "/mc_assets/CHERRY_TRAPDOOR.png"
+    },
+    {
+        "label":  "Cherry Wood",
+        "icon":  "/mc_assets/CHERRY_WOOD.png"
+    },
+    {
+        "label":  "Chest",
+        "icon":  "/mc_assets/CHEST.png"
+    },
+    {
+        "label":  "Chest Minecart",
+        "icon":  "/mc_assets/CHEST_MINECART.png",
+        "icon3d":  "/mc_assets/CHEST_MINECART (2).png"
+    },
+    {
+        "label":  "Chicken",
+        "icon":  "/mc_assets/CHICKEN.png",
+        "icon3d":  "/mc_assets/CHICKEN (2).png"
+    },
+    {
+        "label":  "Chicken Spawn Egg",
+        "icon":  "/mc_assets/CHICKEN_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Chipped Anvil",
+        "icon":  "/mc_assets/CHIPPED_ANVIL.png"
+    },
+    {
+        "label":  "Chiseled Bookshelf",
+        "icon":  "/mc_assets/CHISELED_BOOKSHELF.png"
+    },
+    {
+        "label":  "Chiseled Cinnabar",
+        "icon":  "/mc_assets/CHISELED_CINNABAR.png"
+    },
+    {
+        "label":  "Chiseled Copper",
+        "icon":  "/mc_assets/CHISELED_COPPER.png"
+    },
+    {
+        "label":  "Chiseled Deepslate",
+        "icon":  "/mc_assets/CHISELED_DEEPSLATE.png"
+    },
+    {
+        "label":  "Chiseled Nether Bricks",
+        "icon":  "/mc_assets/CHISELED_NETHER_BRICKS.png"
+    },
+    {
+        "label":  "Chiseled Polished Blackstone",
+        "icon":  "/mc_assets/CHISELED_POLISHED_BLACKSTONE.png"
+    },
+    {
+        "label":  "Chiseled Quartz Block",
+        "icon":  "/mc_assets/CHISELED_QUARTZ_BLOCK.png"
+    },
+    {
+        "label":  "Chiseled Red Sandstone",
+        "icon":  "/mc_assets/CHISELED_RED_SANDSTONE.png"
+    },
+    {
+        "label":  "Chiseled Resin Bricks",
+        "icon":  "/mc_assets/CHISELED_RESIN_BRICKS.png"
+    },
+    {
+        "label":  "Chiseled Sandstone",
+        "icon":  "/mc_assets/CHISELED_SANDSTONE.png"
+    },
+    {
+        "label":  "Chiseled Stone Bricks",
+        "icon":  "/mc_assets/CHISELED_STONE_BRICKS.png"
+    },
+    {
+        "label":  "Chiseled Sulfur",
+        "icon":  "/mc_assets/CHISELED_SULFUR.png"
+    },
+    {
+        "label":  "Chiseled Tuff",
+        "icon":  "/mc_assets/CHISELED_TUFF.png"
+    },
+    {
+        "label":  "Chiseled Tuff Bricks",
+        "icon":  "/mc_assets/CHISELED_TUFF_BRICKS.png"
+    },
+    {
+        "label":  "Chorus Flower",
+        "icon":  "/mc_assets/CHORUS_FLOWER.png"
+    },
+    {
+        "label":  "Chorus Fruit",
+        "icon":  "/mc_assets/CHORUS_FRUIT.png"
+    },
+    {
+        "label":  "Chorus Plant",
+        "icon":  "/mc_assets/CHORUS_PLANT.png"
+    },
+    {
+        "label":  "Cinnabar",
+        "icon":  "/mc_assets/CINNABAR.png"
+    },
+    {
+        "label":  "Cinnabar Brick Slab",
+        "icon":  "/mc_assets/CINNABAR_BRICK_SLAB.png"
+    },
+    {
+        "label":  "Cinnabar Brick Stairs",
+        "icon":  "/mc_assets/CINNABAR_BRICK_STAIRS.png"
+    },
+    {
+        "label":  "Cinnabar Brick Wall",
+        "icon":  "/mc_assets/CINNABAR_BRICK_WALL.png"
+    },
+    {
+        "label":  "Cinnabar Bricks",
+        "icon":  "/mc_assets/CINNABAR_BRICKS.png"
+    },
+    {
+        "label":  "Cinnabar Slab",
+        "icon":  "/mc_assets/CINNABAR_SLAB.png"
+    },
+    {
+        "label":  "Cinnabar Stairs",
+        "icon":  "/mc_assets/CINNABAR_STAIRS.png"
+    },
+    {
+        "label":  "Cinnabar Wall",
+        "icon":  "/mc_assets/CINNABAR_WALL.png"
+    },
+    {
+        "label":  "Clay",
+        "icon":  "/mc_assets/CLAY.png"
+    },
+    {
+        "label":  "Clay Ball",
+        "icon":  "/mc_assets/CLAY_BALL.png"
+    },
+    {
+        "label":  "Clock",
+        "icon":  "/mc_assets/CLOCK.png"
+    },
+    {
+        "label":  "Closed Eyeblossom",
+        "icon":  "/mc_assets/CLOSED_EYEBLOSSOM.png"
+    },
+    {
+        "label":  "Coal",
+        "icon":  "/mc_assets/COAL.png"
+    },
+    {
+        "label":  "Coal Block",
+        "icon":  "/mc_assets/COAL_BLOCK.png"
+    },
+    {
+        "label":  "Coal Ore",
+        "icon":  "/mc_assets/COAL_ORE.png"
+    },
+    {
+        "label":  "Coarse Dirt",
+        "icon":  "/mc_assets/COARSE_DIRT.png"
+    },
+    {
+        "label":  "Coast Armor Trim Smithing Template",
+        "icon":  "/mc_assets/COAST_ARMOR_TRIM_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Cobbled Deepslate",
+        "icon":  "/mc_assets/COBBLED_DEEPSLATE.png"
+    },
+    {
+        "label":  "Cobbled Deepslate Slab",
+        "icon":  "/mc_assets/COBBLED_DEEPSLATE_SLAB.png"
+    },
+    {
+        "label":  "Cobbled Deepslate Stairs",
+        "icon":  "/mc_assets/COBBLED_DEEPSLATE_STAIRS.png"
+    },
+    {
+        "label":  "Cobbled Deepslate Wall",
+        "icon":  "/mc_assets/COBBLED_DEEPSLATE_WALL.png"
+    },
+    {
+        "label":  "Cobblestone",
+        "icon":  "/mc_assets/COBBLESTONE.png"
+    },
+    {
+        "label":  "Cobblestone Slab",
+        "icon":  "/mc_assets/COBBLESTONE_SLAB.png"
+    },
+    {
+        "label":  "Cobblestone Stairs",
+        "icon":  "/mc_assets/COBBLESTONE_STAIRS.png"
+    },
+    {
+        "label":  "Cobblestone Wall",
+        "icon":  "/mc_assets/COBBLESTONE_WALL.png"
+    },
+    {
+        "label":  "Cobweb",
+        "icon":  "/mc_assets/COBWEB.png"
+    },
+    {
+        "label":  "Cocoa Beans",
+        "icon":  "/mc_assets/COCOA_BEANS.png"
+    },
+    {
+        "label":  "Cod",
+        "icon":  "/mc_assets/COD.png",
+        "icon3d":  "/mc_assets/COD (2).png"
+    },
+    {
+        "label":  "Cod Bucket",
+        "icon":  "/mc_assets/COD_BUCKET.png"
+    },
+    {
+        "label":  "Cod Spawn Egg",
+        "icon":  "/mc_assets/COD_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Command Block",
+        "icon":  "/mc_assets/COMMAND_BLOCK.png"
+    },
+    {
+        "label":  "Command Block Minecart",
+        "icon":  "/mc_assets/COMMAND_BLOCK_MINECART.png",
+        "icon3d":  "/mc_assets/COMMAND_BLOCK_MINECART (2).png"
+    },
+    {
+        "label":  "Comparator",
+        "icon":  "/mc_assets/COMPARATOR.png"
+    },
+    {
+        "label":  "Compass",
+        "icon":  "/mc_assets/COMPASS.png"
+    },
+    {
+        "label":  "Composter",
+        "icon":  "/mc_assets/COMPOSTER.png"
+    },
+    {
+        "label":  "Conduit",
+        "icon":  "/mc_assets/CONDUIT.png"
+    },
+    {
+        "label":  "Cooked Beef",
+        "icon":  "/mc_assets/COOKED_BEEF.png"
+    },
+    {
+        "label":  "Steak",
+        "icon":  "/mc_assets/COOKED_BEEF.png"
+    },
+    {
+        "label":  "Cooked Chicken",
+        "icon":  "/mc_assets/COOKED_CHICKEN.png"
+    },
+    {
+        "label":  "Cooked Cod",
+        "icon":  "/mc_assets/COOKED_COD.png"
+    },
+    {
+        "label":  "Cooked Mutton",
+        "icon":  "/mc_assets/COOKED_MUTTON.png"
+    },
+    {
+        "label":  "Cooked Porkchop",
+        "icon":  "/mc_assets/COOKED_PORKCHOP.png"
+    },
+    {
+        "label":  "Cooked Rabbit",
+        "icon":  "/mc_assets/COOKED_RABBIT.png"
+    },
+    {
+        "label":  "Cooked Salmon",
+        "icon":  "/mc_assets/COOKED_SALMON.png"
+    },
+    {
+        "label":  "Cookie",
+        "icon":  "/mc_assets/COOKIE.png"
+    },
+    {
+        "label":  "Copper Axe",
+        "icon":  "/mc_assets/COPPER_AXE.png"
+    },
+    {
+        "label":  "Copper Bars",
+        "icon":  "/mc_assets/COPPER_BARS.png"
+    },
+    {
+        "label":  "Copper Block",
+        "icon":  "/mc_assets/COPPER_BLOCK.png"
+    },
+    {
+        "label":  "Copper Boots",
+        "icon":  "/mc_assets/COPPER_BOOTS.png"
+    },
+    {
+        "label":  "Copper Bulb",
+        "icon":  "/mc_assets/COPPER_BULB.png"
+    },
+    {
+        "label":  "Copper Chain",
+        "icon":  "/mc_assets/COPPER_CHAIN.png"
+    },
+    {
+        "label":  "Copper Chest",
+        "icon":  "/mc_assets/COPPER_CHEST.png"
+    },
+    {
+        "label":  "Copper Chestplate",
+        "icon":  "/mc_assets/COPPER_CHESTPLATE.png"
+    },
+    {
+        "label":  "Copper Door",
+        "icon":  "/mc_assets/COPPER_DOOR.png"
+    },
+    {
+        "label":  "Copper Golem",
+        "icon":  "/mc_assets/COPPER_GOLEM.png"
+    },
+    {
+        "label":  "Copper Golem Spawn Egg",
+        "icon":  "/mc_assets/COPPER_GOLEM_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Copper Golem Statue",
+        "icon":  "/mc_assets/COPPER_GOLEM_STATUE.png"
+    },
+    {
+        "label":  "Copper Grate",
+        "icon":  "/mc_assets/COPPER_GRATE.png"
+    },
+    {
+        "label":  "Copper Helmet",
+        "icon":  "/mc_assets/COPPER_HELMET.png"
+    },
+    {
+        "label":  "Copper Hoe",
+        "icon":  "/mc_assets/COPPER_HOE.png"
+    },
+    {
+        "label":  "Copper Horse Armor",
+        "icon":  "/mc_assets/COPPER_HORSE_ARMOR.png"
+    },
+    {
+        "label":  "Copper Ingot",
+        "icon":  "/mc_assets/COPPER_INGOT.png"
+    },
+    {
+        "label":  "Copper Lantern",
+        "icon":  "/mc_assets/COPPER_LANTERN.png"
+    },
+    {
+        "label":  "Copper Leggings",
+        "icon":  "/mc_assets/COPPER_LEGGINGS.png"
+    },
+    {
+        "label":  "Copper Nautilus Armor",
+        "icon":  "/mc_assets/COPPER_NAUTILUS_ARMOR.png"
+    },
+    {
+        "label":  "Copper Nugget",
+        "icon":  "/mc_assets/COPPER_NUGGET.png"
+    },
+    {
+        "label":  "Copper Ore",
+        "icon":  "/mc_assets/COPPER_ORE.png"
+    },
+    {
+        "label":  "Copper Pickaxe",
+        "icon":  "/mc_assets/COPPER_PICKAXE.png"
+    },
+    {
+        "label":  "Copper Shovel",
+        "icon":  "/mc_assets/COPPER_SHOVEL.png"
+    },
+    {
+        "label":  "Copper Spear",
+        "icon":  "/mc_assets/COPPER_SPEAR.png"
+    },
+    {
+        "label":  "Copper Sword",
+        "icon":  "/mc_assets/COPPER_SWORD.png"
+    },
+    {
+        "label":  "Copper Torch",
+        "icon":  "/mc_assets/COPPER_TORCH.png"
+    },
+    {
+        "label":  "Copper Trapdoor",
+        "icon":  "/mc_assets/COPPER_TRAPDOOR.png"
+    },
+    {
+        "label":  "Cornflower",
+        "icon":  "/mc_assets/CORNFLOWER.png"
+    },
+    {
+        "label":  "Cow",
+        "icon":  "/mc_assets/COW.png"
+    },
+    {
+        "label":  "Cow Spawn Egg",
+        "icon":  "/mc_assets/COW_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Cracked Deepslate Bricks",
+        "icon":  "/mc_assets/CRACKED_DEEPSLATE_BRICKS.png"
+    },
+    {
+        "label":  "Cracked Deepslate Tiles",
+        "icon":  "/mc_assets/CRACKED_DEEPSLATE_TILES.png"
+    },
+    {
+        "label":  "Cracked Nether Bricks",
+        "icon":  "/mc_assets/CRACKED_NETHER_BRICKS.png"
+    },
+    {
+        "label":  "Cracked Polished Blackstone Bricks",
+        "icon":  "/mc_assets/CRACKED_POLISHED_BLACKSTONE_BRICKS.png"
+    },
+    {
+        "label":  "Cracked Stone Bricks",
+        "icon":  "/mc_assets/CRACKED_STONE_BRICKS.png"
+    },
+    {
+        "label":  "Crafter",
+        "icon":  "/mc_assets/CRAFTER.png"
+    },
+    {
+        "label":  "Crafting Table",
+        "icon":  "/mc_assets/CRAFTING_TABLE.png"
+    },
+    {
+        "label":  "Creaking",
+        "icon":  "/mc_assets/CREAKING.png"
+    },
+    {
+        "label":  "Creaking Heart",
+        "icon":  "/mc_assets/CREAKING_HEART.png"
+    },
+    {
+        "label":  "Creaking Spawn Egg",
+        "icon":  "/mc_assets/CREAKING_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Creeper",
+        "icon":  "/mc_assets/CREEPER.png"
+    },
+    {
+        "label":  "Creeper Banner Pattern",
+        "icon":  "/mc_assets/CREEPER_BANNER_PATTERN.png"
+    },
+    {
+        "label":  "Creeper Head",
+        "icon":  "/mc_assets/CREEPER_HEAD.png"
+    },
+    {
+        "label":  "Creeper Spawn Egg",
+        "icon":  "/mc_assets/CREEPER_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Crimson Button",
+        "icon":  "/mc_assets/CRIMSON_BUTTON.png"
+    },
+    {
+        "label":  "Crimson Door",
+        "icon":  "/mc_assets/CRIMSON_DOOR.png"
+    },
+    {
+        "label":  "Crimson Fence",
+        "icon":  "/mc_assets/CRIMSON_FENCE.png"
+    },
+    {
+        "label":  "Crimson Fence Gate",
+        "icon":  "/mc_assets/CRIMSON_FENCE_GATE.png"
+    },
+    {
+        "label":  "Crimson Fungus",
+        "icon":  "/mc_assets/CRIMSON_FUNGUS.png"
+    },
+    {
+        "label":  "Crimson Hanging Sign",
+        "icon":  "/mc_assets/CRIMSON_HANGING_SIGN.png"
+    },
+    {
+        "label":  "Crimson Hyphae",
+        "icon":  "/mc_assets/CRIMSON_HYPHAE.png"
+    },
+    {
+        "label":  "Crimson Nylium",
+        "icon":  "/mc_assets/CRIMSON_NYLIUM.png"
+    },
+    {
+        "label":  "Crimson Planks",
+        "icon":  "/mc_assets/CRIMSON_PLANKS.png"
+    },
+    {
+        "label":  "Crimson Pressure Plate",
+        "icon":  "/mc_assets/CRIMSON_PRESSURE_PLATE.png"
+    },
+    {
+        "label":  "Crimson Roots",
+        "icon":  "/mc_assets/CRIMSON_ROOTS.png"
+    },
+    {
+        "label":  "Crimson Shelf",
+        "icon":  "/mc_assets/CRIMSON_SHELF.png"
+    },
+    {
+        "label":  "Crimson Sign",
+        "icon":  "/mc_assets/CRIMSON_SIGN.png"
+    },
+    {
+        "label":  "Crimson Slab",
+        "icon":  "/mc_assets/CRIMSON_SLAB.png"
+    },
+    {
+        "label":  "Crimson Stairs",
+        "icon":  "/mc_assets/CRIMSON_STAIRS.png"
+    },
+    {
+        "label":  "Crimson Stem",
+        "icon":  "/mc_assets/CRIMSON_STEM.png"
+    },
+    {
+        "label":  "Crimson Trapdoor",
+        "icon":  "/mc_assets/CRIMSON_TRAPDOOR.png"
+    },
+    {
+        "label":  "Crossbow",
+        "icon":  "/mc_assets/CROSSBOW.png"
+    },
+    {
+        "label":  "Crying Obsidian",
+        "icon":  "/mc_assets/CRYING_OBSIDIAN.png"
+    },
+    {
+        "label":  "Cut Copper",
+        "icon":  "/mc_assets/CUT_COPPER.png"
+    },
+    {
+        "label":  "Cut Copper Slab",
+        "icon":  "/mc_assets/CUT_COPPER_SLAB.png"
+    },
+    {
+        "label":  "Cut Copper Stairs",
+        "icon":  "/mc_assets/CUT_COPPER_STAIRS.png"
+    },
+    {
+        "label":  "Cut Red Sandstone",
+        "icon":  "/mc_assets/CUT_RED_SANDSTONE.png"
+    },
+    {
+        "label":  "Cut Red Sandstone Slab",
+        "icon":  "/mc_assets/CUT_RED_SANDSTONE_SLAB.png"
+    },
+    {
+        "label":  "Cut Sandstone",
+        "icon":  "/mc_assets/CUT_SANDSTONE.png"
+    },
+    {
+        "label":  "Cut Sandstone Slab",
+        "icon":  "/mc_assets/CUT_SANDSTONE_SLAB.png"
+    },
+    {
+        "label":  "Cyan Banner",
+        "icon":  "/mc_assets/CYAN_BANNER.png"
+    },
+    {
+        "label":  "Cyan Bed",
+        "icon":  "/mc_assets/CYAN_BED.png"
+    },
+    {
+        "label":  "Cyan Bundle",
+        "icon":  "/mc_assets/CYAN_BUNDLE.png"
+    },
+    {
+        "label":  "Cyan Candle",
+        "icon":  "/mc_assets/CYAN_CANDLE.png"
+    },
+    {
+        "label":  "Cyan Carpet",
+        "icon":  "/mc_assets/CYAN_CARPET.png"
+    },
+    {
+        "label":  "Cyan Concrete",
+        "icon":  "/mc_assets/CYAN_CONCRETE.png"
+    },
+    {
+        "label":  "Cyan Concrete Powder",
+        "icon":  "/mc_assets/CYAN_CONCRETE_POWDER.png"
+    },
+    {
+        "label":  "Cyan Dye",
+        "icon":  "/mc_assets/CYAN_DYE.png"
+    },
+    {
+        "label":  "Cyan Glazed Terracotta",
+        "icon":  "/mc_assets/CYAN_GLAZED_TERRACOTTA.png"
+    },
+    {
+        "label":  "Cyan Harness",
+        "icon":  "/mc_assets/CYAN_HARNESS.png"
+    },
+    {
+        "label":  "Cyan Shulker Box",
+        "icon":  "/mc_assets/CYAN_SHULKER_BOX.png"
+    },
+    {
+        "label":  "Cyan Stained Glass",
+        "icon":  "/mc_assets/CYAN_STAINED_GLASS.png"
+    },
+    {
+        "label":  "Cyan Stained Glass Pane",
+        "icon":  "/mc_assets/CYAN_STAINED_GLASS_PANE.png"
+    },
+    {
+        "label":  "Cyan Terracotta",
+        "icon":  "/mc_assets/CYAN_TERRACOTTA.png"
+    },
+    {
+        "label":  "Cyan Wool",
+        "icon":  "/mc_assets/CYAN_WOOL.png"
+    },
+    {
+        "label":  "Damaged Anvil",
+        "icon":  "/mc_assets/DAMAGED_ANVIL.png"
+    },
+    {
+        "label":  "Dandelion",
+        "icon":  "/mc_assets/DANDELION.png"
+    },
+    {
+        "label":  "Danger Pottery Sherd",
+        "icon":  "/mc_assets/DANGER_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Dark Oak Boat",
+        "icon":  "/mc_assets/DARK_OAK_BOAT.png",
+        "icon3d":  "/mc_assets/DARK_OAK_BOAT (2).png"
+    },
+    {
+        "label":  "Dark Oak Button",
+        "icon":  "/mc_assets/DARK_OAK_BUTTON.png"
+    },
+    {
+        "label":  "Dark Oak Chest Boat",
+        "icon":  "/mc_assets/DARK_OAK_CHEST_BOAT.png",
+        "icon3d":  "/mc_assets/DARK_OAK_CHEST_BOAT (2).png"
+    },
+    {
+        "label":  "Dark Oak Door",
+        "icon":  "/mc_assets/DARK_OAK_DOOR.png"
+    },
+    {
+        "label":  "Dark Oak Fence",
+        "icon":  "/mc_assets/DARK_OAK_FENCE.png"
+    },
+    {
+        "label":  "Dark Oak Fence Gate",
+        "icon":  "/mc_assets/DARK_OAK_FENCE_GATE.png"
+    },
+    {
+        "label":  "Dark Oak Hanging Sign",
+        "icon":  "/mc_assets/DARK_OAK_HANGING_SIGN.png"
+    },
+    {
+        "label":  "Dark Oak Leaves",
+        "icon":  "/mc_assets/DARK_OAK_LEAVES.png"
+    },
+    {
+        "label":  "Dark Oak Log",
+        "icon":  "/mc_assets/DARK_OAK_LOG.png"
+    },
+    {
+        "label":  "Dark Oak Planks",
+        "icon":  "/mc_assets/DARK_OAK_PLANKS.png"
+    },
+    {
+        "label":  "Dark Oak Pressure Plate",
+        "icon":  "/mc_assets/DARK_OAK_PRESSURE_PLATE.png"
+    },
+    {
+        "label":  "Dark Oak Sapling",
+        "icon":  "/mc_assets/DARK_OAK_SAPLING.png"
+    },
+    {
+        "label":  "Dark Oak Shelf",
+        "icon":  "/mc_assets/DARK_OAK_SHELF.png"
+    },
+    {
+        "label":  "Dark Oak Sign",
+        "icon":  "/mc_assets/DARK_OAK_SIGN.png"
+    },
+    {
+        "label":  "Dark Oak Slab",
+        "icon":  "/mc_assets/DARK_OAK_SLAB.png"
+    },
+    {
+        "label":  "Dark Oak Stairs",
+        "icon":  "/mc_assets/DARK_OAK_STAIRS.png"
+    },
+    {
+        "label":  "Dark Oak Trapdoor",
+        "icon":  "/mc_assets/DARK_OAK_TRAPDOOR.png"
+    },
+    {
+        "label":  "Dark Oak Wood",
+        "icon":  "/mc_assets/DARK_OAK_WOOD.png"
+    },
+    {
+        "label":  "Dark Prismarine",
+        "icon":  "/mc_assets/DARK_PRISMARINE.png"
+    },
+    {
+        "label":  "Dark Prismarine Slab",
+        "icon":  "/mc_assets/DARK_PRISMARINE_SLAB.png"
+    },
+    {
+        "label":  "Dark Prismarine Stairs",
+        "icon":  "/mc_assets/DARK_PRISMARINE_STAIRS.png"
+    },
+    {
+        "label":  "Daylight Detector",
+        "icon":  "/mc_assets/DAYLIGHT_DETECTOR.png"
+    },
+    {
+        "label":  "Dead Brain Coral",
+        "icon":  "/mc_assets/DEAD_BRAIN_CORAL.png"
+    },
+    {
+        "label":  "Dead Brain Coral Block",
+        "icon":  "/mc_assets/DEAD_BRAIN_CORAL_BLOCK.png"
+    },
+    {
+        "label":  "Dead Brain Coral Fan",
+        "icon":  "/mc_assets/DEAD_BRAIN_CORAL_FAN.png"
+    },
+    {
+        "label":  "Dead Bubble Coral",
+        "icon":  "/mc_assets/DEAD_BUBBLE_CORAL.png"
+    },
+    {
+        "label":  "Dead Bubble Coral Block",
+        "icon":  "/mc_assets/DEAD_BUBBLE_CORAL_BLOCK.png"
+    },
+    {
+        "label":  "Dead Bubble Coral Fan",
+        "icon":  "/mc_assets/DEAD_BUBBLE_CORAL_FAN.png"
+    },
+    {
+        "label":  "Dead Bush",
+        "icon":  "/mc_assets/DEAD_BUSH.png"
+    },
+    {
+        "label":  "Dead Fire Coral",
+        "icon":  "/mc_assets/DEAD_FIRE_CORAL.png"
+    },
+    {
+        "label":  "Dead Fire Coral Block",
+        "icon":  "/mc_assets/DEAD_FIRE_CORAL_BLOCK.png"
+    },
+    {
+        "label":  "Dead Fire Coral Fan",
+        "icon":  "/mc_assets/DEAD_FIRE_CORAL_FAN.png"
+    },
+    {
+        "label":  "Dead Horn Coral",
+        "icon":  "/mc_assets/DEAD_HORN_CORAL.png"
+    },
+    {
+        "label":  "Dead Horn Coral Block",
+        "icon":  "/mc_assets/DEAD_HORN_CORAL_BLOCK.png"
+    },
+    {
+        "label":  "Dead Horn Coral Fan",
+        "icon":  "/mc_assets/DEAD_HORN_CORAL_FAN.png"
+    },
+    {
+        "label":  "Dead Tube Coral",
+        "icon":  "/mc_assets/DEAD_TUBE_CORAL.png"
+    },
+    {
+        "label":  "Dead Tube Coral Block",
+        "icon":  "/mc_assets/DEAD_TUBE_CORAL_BLOCK.png"
+    },
+    {
+        "label":  "Dead Tube Coral Fan",
+        "icon":  "/mc_assets/DEAD_TUBE_CORAL_FAN.png"
+    },
+    {
+        "label":  "Debug Stick",
+        "icon":  "/mc_assets/DEBUG_STICK.png"
+    },
+    {
+        "label":  "Decorated Pot",
+        "icon":  "/mc_assets/DECORATED_POT.png"
+    },
+    {
+        "label":  "Deepslate",
+        "icon":  "/mc_assets/DEEPSLATE.png"
+    },
+    {
+        "label":  "Deepslate Brick Slab",
+        "icon":  "/mc_assets/DEEPSLATE_BRICK_SLAB.png"
+    },
+    {
+        "label":  "Deepslate Brick Stairs",
+        "icon":  "/mc_assets/DEEPSLATE_BRICK_STAIRS.png"
+    },
+    {
+        "label":  "Deepslate Brick Wall",
+        "icon":  "/mc_assets/DEEPSLATE_BRICK_WALL.png"
+    },
+    {
+        "label":  "Deepslate Bricks",
+        "icon":  "/mc_assets/DEEPSLATE_BRICKS.png"
+    },
+    {
+        "label":  "Deepslate Coal Ore",
+        "icon":  "/mc_assets/DEEPSLATE_COAL_ORE.png"
+    },
+    {
+        "label":  "Deepslate Copper Ore",
+        "icon":  "/mc_assets/DEEPSLATE_COPPER_ORE.png"
+    },
+    {
+        "label":  "Deepslate Diamond Ore",
+        "icon":  "/mc_assets/DEEPSLATE_DIAMOND_ORE.png"
+    },
+    {
+        "label":  "Deepslate Emerald Ore",
+        "icon":  "/mc_assets/DEEPSLATE_EMERALD_ORE.png"
+    },
+    {
+        "label":  "Deepslate Gold Ore",
+        "icon":  "/mc_assets/DEEPSLATE_GOLD_ORE.png"
+    },
+    {
+        "label":  "Deepslate Iron Ore",
+        "icon":  "/mc_assets/DEEPSLATE_IRON_ORE.png"
+    },
+    {
+        "label":  "Deepslate Lapis Ore",
+        "icon":  "/mc_assets/DEEPSLATE_LAPIS_ORE.png"
+    },
+    {
+        "label":  "Deepslate Redstone Ore",
+        "icon":  "/mc_assets/DEEPSLATE_REDSTONE_ORE.png"
+    },
+    {
+        "label":  "Deepslate Tile Slab",
+        "icon":  "/mc_assets/DEEPSLATE_TILE_SLAB.png"
+    },
+    {
+        "label":  "Deepslate Tile Stairs",
+        "icon":  "/mc_assets/DEEPSLATE_TILE_STAIRS.png"
+    },
+    {
+        "label":  "Deepslate Tile Wall",
+        "icon":  "/mc_assets/DEEPSLATE_TILE_WALL.png"
+    },
+    {
+        "label":  "Deepslate Tiles",
+        "icon":  "/mc_assets/DEEPSLATE_TILES.png"
+    },
+    {
+        "label":  "Detector Rail",
+        "icon":  "/mc_assets/DETECTOR_RAIL.png"
+    },
+    {
+        "label":  "Diamond",
+        "icon":  "/mc_assets/DIAMOND.png"
+    },
+    {
+        "label":  "Diamond Axe",
+        "icon":  "/mc_assets/DIAMOND_AXE.png"
+    },
+    {
+        "label":  "Diamond Block",
+        "icon":  "/mc_assets/DIAMOND_BLOCK.png"
+    },
+    {
+        "label":  "Diamond Boots",
+        "icon":  "/mc_assets/DIAMOND_BOOTS.png"
+    },
+    {
+        "label":  "Diamond Chestplate",
+        "icon":  "/mc_assets/DIAMOND_CHESTPLATE.png"
+    },
+    {
+        "label":  "Diamond Helmet",
+        "icon":  "/mc_assets/DIAMOND_HELMET.png"
+    },
+    {
+        "label":  "Diamond Hoe",
+        "icon":  "/mc_assets/DIAMOND_HOE.png"
+    },
+    {
+        "label":  "Diamond Horse Armor",
+        "icon":  "/mc_assets/DIAMOND_HORSE_ARMOR.png"
+    },
+    {
+        "label":  "Diamond Leggings",
+        "icon":  "/mc_assets/DIAMOND_LEGGINGS.png"
+    },
+    {
+        "label":  "Diamond Nautilus Armor",
+        "icon":  "/mc_assets/DIAMOND_NAUTILUS_ARMOR.png"
+    },
+    {
+        "label":  "Diamond Ore",
+        "icon":  "/mc_assets/DIAMOND_ORE.png"
+    },
+    {
+        "label":  "Diamond Pickaxe",
+        "icon":  "/mc_assets/DIAMOND_PICKAXE.png"
+    },
+    {
+        "label":  "Diamond Shovel",
+        "icon":  "/mc_assets/DIAMOND_SHOVEL.png"
+    },
+    {
+        "label":  "Diamond Spear",
+        "icon":  "/mc_assets/DIAMOND_SPEAR.png"
+    },
+    {
+        "label":  "Diamond Sword",
+        "icon":  "/mc_assets/DIAMOND_SWORD.png"
+    },
+    {
+        "label":  "Diorite",
+        "icon":  "/mc_assets/DIORITE.png"
+    },
+    {
+        "label":  "Diorite Slab",
+        "icon":  "/mc_assets/DIORITE_SLAB.png"
+    },
+    {
+        "label":  "Diorite Stairs",
+        "icon":  "/mc_assets/DIORITE_STAIRS.png"
+    },
+    {
+        "label":  "Diorite Wall",
+        "icon":  "/mc_assets/DIORITE_WALL.png"
+    },
+    {
+        "label":  "Dirt",
+        "icon":  "/mc_assets/DIRT.png"
+    },
+    {
+        "label":  "Dirt Path",
+        "icon":  "/mc_assets/DIRT_PATH.png"
+    },
+    {
+        "label":  "Disc Fragment 5",
+        "icon":  "/mc_assets/DISC_FRAGMENT_5.png"
+    },
+    {
+        "label":  "Dispenser",
+        "icon":  "/mc_assets/DISPENSER.png"
+    },
+    {
+        "label":  "Dolphin",
+        "icon":  "/mc_assets/DOLPHIN.png"
+    },
+    {
+        "label":  "Dolphin Spawn Egg",
+        "icon":  "/mc_assets/DOLPHIN_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Donkey",
+        "icon":  "/mc_assets/DONKEY.png"
+    },
+    {
+        "label":  "Donkey Spawn Egg",
+        "icon":  "/mc_assets/DONKEY_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Dragon Breath",
+        "icon":  "/mc_assets/DRAGON_BREATH.png"
+    },
+    {
+        "label":  "Dragon Egg",
+        "icon":  "/mc_assets/DRAGON_EGG.png"
+    },
+    {
+        "label":  "Dragon Fireball",
+        "icon":  "/mc_assets/DRAGON_FIREBALL.png"
+    },
+    {
+        "label":  "Dragon Head",
+        "icon":  "/mc_assets/DRAGON_HEAD.png"
+    },
+    {
+        "label":  "Dried Ghast",
+        "icon":  "/mc_assets/DRIED_GHAST.png"
+    },
+    {
+        "label":  "Dried Kelp",
+        "icon":  "/mc_assets/DRIED_KELP.png"
+    },
+    {
+        "label":  "Dried Kelp Block",
+        "icon":  "/mc_assets/DRIED_KELP_BLOCK.png"
+    },
+    {
+        "label":  "Dripstone Block",
+        "icon":  "/mc_assets/DRIPSTONE_BLOCK.png"
+    },
+    {
+        "label":  "Dropper",
+        "icon":  "/mc_assets/DROPPER.png"
+    },
+    {
+        "label":  "Drowned",
+        "icon":  "/mc_assets/DROWNED.png"
+    },
+    {
+        "label":  "Drowned Spawn Egg",
+        "icon":  "/mc_assets/DROWNED_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Dune Armor Trim Smithing Template",
+        "icon":  "/mc_assets/DUNE_ARMOR_TRIM_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Echo Shard",
+        "icon":  "/mc_assets/ECHO_SHARD.png"
+    },
+    {
+        "label":  "Egg",
+        "icon":  "/mc_assets/EGG.png",
+        "icon3d":  "/mc_assets/EGG (2).png"
+    },
+    {
+        "label":  "Elder Guardian",
+        "icon":  "/mc_assets/ELDER_GUARDIAN.png"
+    },
+    {
+        "label":  "Elder Guardian Spawn Egg",
+        "icon":  "/mc_assets/ELDER_GUARDIAN_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Elytra",
+        "icon":  "/mc_assets/ELYTRA.png"
+    },
+    {
+        "label":  "Emerald",
+        "icon":  "/mc_assets/EMERALD.png"
+    },
+    {
+        "label":  "Emerald Block",
+        "icon":  "/mc_assets/EMERALD_BLOCK.png"
+    },
+    {
+        "label":  "Emerald Ore",
+        "icon":  "/mc_assets/EMERALD_ORE.png"
+    },
+    {
+        "label":  "Enchanted Book",
+        "icon":  "/mc_assets/ENCHANTED_BOOK.png"
+    },
+    {
+        "label":  "Enchanted Golden Apple",
+        "icon":  "/mc_assets/ENCHANTED_GOLDEN_APPLE.png"
+    },
+    {
+        "label":  "Enchanting Table",
+        "icon":  "/mc_assets/ENCHANTING_TABLE.png"
+    },
+    {
+        "label":  "End Crystal",
+        "icon":  "/mc_assets/END_CRYSTAL.png",
+        "icon3d":  "/mc_assets/END_CRYSTAL (2).png"
+    },
+    {
+        "label":  "End Portal Frame",
+        "icon":  "/mc_assets/END_PORTAL_FRAME.png"
+    },
+    {
+        "label":  "End Rod",
+        "icon":  "/mc_assets/END_ROD.png"
+    },
+    {
+        "label":  "End Stone",
+        "icon":  "/mc_assets/END_STONE.png"
+    },
+    {
+        "label":  "End Stone Brick Slab",
+        "icon":  "/mc_assets/END_STONE_BRICK_SLAB.png"
+    },
+    {
+        "label":  "End Stone Brick Stairs",
+        "icon":  "/mc_assets/END_STONE_BRICK_STAIRS.png"
+    },
+    {
+        "label":  "End Stone Brick Wall",
+        "icon":  "/mc_assets/END_STONE_BRICK_WALL.png"
+    },
+    {
+        "label":  "End Stone Bricks",
+        "icon":  "/mc_assets/END_STONE_BRICKS.png"
+    },
+    {
+        "label":  "Ender Chest",
+        "icon":  "/mc_assets/ENDER_CHEST.png"
+    },
+    {
+        "label":  "Ender Dragon",
+        "icon":  "/mc_assets/ENDER_DRAGON.png"
+    },
+    {
+        "label":  "Ender Dragon Spawn Egg",
+        "icon":  "/mc_assets/ENDER_DRAGON_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Ender Eye",
+        "icon":  "/mc_assets/ENDER_EYE.png"
+    },
+    {
+        "label":  "Ender Pearl",
+        "icon":  "/mc_assets/ENDER_PEARL.png",
+        "icon3d":  "/mc_assets/ENDER_PEARL (2).png"
+    },
+    {
+        "label":  "Enderman",
+        "icon":  "/mc_assets/ENDERMAN.png"
+    },
+    {
+        "label":  "Enderman Spawn Egg",
+        "icon":  "/mc_assets/ENDERMAN_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Endermite",
+        "icon":  "/mc_assets/ENDERMITE.png"
+    },
+    {
+        "label":  "Endermite Spawn Egg",
+        "icon":  "/mc_assets/ENDERMITE_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Evoker",
+        "icon":  "/mc_assets/EVOKER.png"
+    },
+    {
+        "label":  "Evoker Fangs",
+        "icon":  "/mc_assets/EVOKER_FANGS.png"
+    },
+    {
+        "label":  "Evoker Spawn Egg",
+        "icon":  "/mc_assets/EVOKER_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Experience Bottle",
+        "icon":  "/mc_assets/EXPERIENCE_BOTTLE.png",
+        "icon3d":  "/mc_assets/EXPERIENCE_BOTTLE (2).png"
+    },
+    {
+        "label":  "Experience Orb",
+        "icon":  "/mc_assets/EXPERIENCE_ORB.png"
+    },
+    {
+        "label":  "Explorer Pottery Sherd",
+        "icon":  "/mc_assets/EXPLORER_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Exposed Chiseled Copper",
+        "icon":  "/mc_assets/EXPOSED_CHISELED_COPPER.png"
+    },
+    {
+        "label":  "Exposed Copper",
+        "icon":  "/mc_assets/EXPOSED_COPPER.png"
+    },
+    {
+        "label":  "Exposed Copper Bars",
+        "icon":  "/mc_assets/EXPOSED_COPPER_BARS.png"
+    },
+    {
+        "label":  "Exposed Copper Bulb",
+        "icon":  "/mc_assets/EXPOSED_COPPER_BULB.png"
+    },
+    {
+        "label":  "Exposed Copper Chain",
+        "icon":  "/mc_assets/EXPOSED_COPPER_CHAIN.png"
+    },
+    {
+        "label":  "Exposed Copper Chest",
+        "icon":  "/mc_assets/EXPOSED_COPPER_CHEST.png"
+    },
+    {
+        "label":  "Exposed Copper Door",
+        "icon":  "/mc_assets/EXPOSED_COPPER_DOOR.png"
+    },
+    {
+        "label":  "Exposed Copper Golem Statue",
+        "icon":  "/mc_assets/EXPOSED_COPPER_GOLEM_STATUE.png"
+    },
+    {
+        "label":  "Exposed Copper Grate",
+        "icon":  "/mc_assets/EXPOSED_COPPER_GRATE.png"
+    },
+    {
+        "label":  "Exposed Copper Lantern",
+        "icon":  "/mc_assets/EXPOSED_COPPER_LANTERN.png"
+    },
+    {
+        "label":  "Exposed Copper Trapdoor",
+        "icon":  "/mc_assets/EXPOSED_COPPER_TRAPDOOR.png"
+    },
+    {
+        "label":  "Exposed Cut Copper",
+        "icon":  "/mc_assets/EXPOSED_CUT_COPPER.png"
+    },
+    {
+        "label":  "Exposed Cut Copper Slab",
+        "icon":  "/mc_assets/EXPOSED_CUT_COPPER_SLAB.png"
+    },
+    {
+        "label":  "Exposed Cut Copper Stairs",
+        "icon":  "/mc_assets/EXPOSED_CUT_COPPER_STAIRS.png"
+    },
+    {
+        "label":  "Exposed Lightning Rod",
+        "icon":  "/mc_assets/EXPOSED_LIGHTNING_ROD.png"
+    },
+    {
+        "label":  "Eye Armor Trim Smithing Template",
+        "icon":  "/mc_assets/EYE_ARMOR_TRIM_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Eye Of Ender",
+        "icon":  "/mc_assets/EYE_OF_ENDER.png"
+    },
+    {
+        "label":  "Falling Block",
+        "icon":  "/mc_assets/FALLING_BLOCK.png"
+    },
+    {
+        "label":  "Farmland",
+        "icon":  "/mc_assets/FARMLAND.png"
+    },
+    {
+        "label":  "Feather",
+        "icon":  "/mc_assets/FEATHER.png"
+    },
+    {
+        "label":  "Fermented Spider Eye",
+        "icon":  "/mc_assets/FERMENTED_SPIDER_EYE.png"
+    },
+    {
+        "label":  "Fern",
+        "icon":  "/mc_assets/FERN.png"
+    },
+    {
+        "label":  "Field Masoned Banner Pattern",
+        "icon":  "/mc_assets/FIELD_MASONED_BANNER_PATTERN.png"
+    },
+    {
+        "label":  "Filled Map",
+        "icon":  "/mc_assets/FILLED_MAP.png"
+    },
+    {
+        "label":  "Fire Charge",
+        "icon":  "/mc_assets/FIRE_CHARGE.png"
+    },
+    {
+        "label":  "Fire Coral",
+        "icon":  "/mc_assets/FIRE_CORAL.png"
+    },
+    {
+        "label":  "Fire Coral Block",
+        "icon":  "/mc_assets/FIRE_CORAL_BLOCK.png"
+    },
+    {
+        "label":  "Fire Coral Fan",
+        "icon":  "/mc_assets/FIRE_CORAL_FAN.png"
+    },
+    {
+        "label":  "Fireball",
+        "icon":  "/mc_assets/FIREBALL.png"
+    },
+    {
+        "label":  "Firefly Bush",
+        "icon":  "/mc_assets/FIREFLY_BUSH.png"
+    },
+    {
+        "label":  "Firework Rocket",
+        "icon":  "/mc_assets/FIREWORK_ROCKET.png",
+        "icon3d":  "/mc_assets/FIREWORK_ROCKET (2).png"
+    },
+    {
+        "label":  "Firework Star",
+        "icon":  "/mc_assets/FIREWORK_STAR.png"
+    },
+    {
+        "label":  "Fishing Bobber",
+        "icon":  "/mc_assets/FISHING_BOBBER.png"
+    },
+    {
+        "label":  "Fishing Rod",
+        "icon":  "/mc_assets/FISHING_ROD.png"
+    },
+    {
+        "label":  "Fletching Table",
+        "icon":  "/mc_assets/FLETCHING_TABLE.png"
+    },
+    {
+        "label":  "Flint",
+        "icon":  "/mc_assets/FLINT.png"
+    },
+    {
+        "label":  "Flint And Steel",
+        "icon":  "/mc_assets/FLINT_AND_STEEL.png"
+    },
+    {
+        "label":  "Flow Armor Trim Smithing Template",
+        "icon":  "/mc_assets/FLOW_ARMOR_TRIM_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Flow Banner Pattern",
+        "icon":  "/mc_assets/FLOW_BANNER_PATTERN.png"
+    },
+    {
+        "label":  "Flow Pottery Sherd",
+        "icon":  "/mc_assets/FLOW_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Flower Banner Pattern",
+        "icon":  "/mc_assets/FLOWER_BANNER_PATTERN.png"
+    },
+    {
+        "label":  "Flower Pot",
+        "icon":  "/mc_assets/FLOWER_POT.png"
+    },
+    {
+        "label":  "Flowering Azalea",
+        "icon":  "/mc_assets/FLOWERING_AZALEA.png"
+    },
+    {
+        "label":  "Flowering Azalea Leaves",
+        "icon":  "/mc_assets/FLOWERING_AZALEA_LEAVES.png"
+    },
+    {
+        "label":  "Fox",
+        "icon":  "/mc_assets/FOX.png"
+    },
+    {
+        "label":  "Fox Spawn Egg",
+        "icon":  "/mc_assets/FOX_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Friend Pottery Sherd",
+        "icon":  "/mc_assets/FRIEND_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Frog",
+        "icon":  "/mc_assets/FROG.png"
+    },
+    {
+        "label":  "Frog Spawn Egg",
+        "icon":  "/mc_assets/FROG_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Frogspawn",
+        "icon":  "/mc_assets/FROGSPAWN.png"
+    },
+    {
+        "label":  "Furnace",
+        "icon":  "/mc_assets/FURNACE.png"
+    },
+    {
+        "label":  "Furnace Minecart",
+        "icon":  "/mc_assets/FURNACE_MINECART.png",
+        "icon3d":  "/mc_assets/FURNACE_MINECART (2).png"
+    },
+    {
+        "label":  "Ghast",
+        "icon":  "/mc_assets/GHAST.png"
+    },
+    {
+        "label":  "Ghast Spawn Egg",
+        "icon":  "/mc_assets/GHAST_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Ghast Tear",
+        "icon":  "/mc_assets/GHAST_TEAR.png"
+    },
+    {
+        "label":  "Giant",
+        "icon":  "/mc_assets/GIANT.png"
+    },
+    {
+        "label":  "Gilded Blackstone",
+        "icon":  "/mc_assets/GILDED_BLACKSTONE.png"
+    },
+    {
+        "label":  "Glass",
+        "icon":  "/mc_assets/GLASS.png"
+    },
+    {
+        "label":  "Glass Bottle",
+        "icon":  "/mc_assets/GLASS_BOTTLE.png"
+    },
+    {
+        "label":  "Glass Pane",
+        "icon":  "/mc_assets/GLASS_PANE.png"
+    },
+    {
+        "label":  "Glistering Melon Slice",
+        "icon":  "/mc_assets/GLISTERING_MELON_SLICE.png"
+    },
+    {
+        "label":  "Globe Banner Pattern",
+        "icon":  "/mc_assets/GLOBE_BANNER_PATTERN.png"
+    },
+    {
+        "label":  "Glow Berries",
+        "icon":  "/mc_assets/GLOW_BERRIES.png"
+    },
+    {
+        "label":  "Glow Ink Sac",
+        "icon":  "/mc_assets/GLOW_INK_SAC.png"
+    },
+    {
+        "label":  "Glow Item Frame",
+        "icon":  "/mc_assets/GLOW_ITEM_FRAME.png",
+        "icon3d":  "/mc_assets/GLOW_ITEM_FRAME (2).png"
+    },
+    {
+        "label":  "Glow Lichen",
+        "icon":  "/mc_assets/GLOW_LICHEN.png"
+    },
+    {
+        "label":  "Glow Squid",
+        "icon":  "/mc_assets/GLOW_SQUID.png"
+    },
+    {
+        "label":  "Glow Squid Spawn Egg",
+        "icon":  "/mc_assets/GLOW_SQUID_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Glowstone",
+        "icon":  "/mc_assets/GLOWSTONE.png"
+    },
+    {
+        "label":  "Glowstone Dust",
+        "icon":  "/mc_assets/GLOWSTONE_DUST.png"
+    },
+    {
+        "label":  "Goat",
+        "icon":  "/mc_assets/GOAT.png"
+    },
+    {
+        "label":  "Goat Horn",
+        "icon":  "/mc_assets/GOAT_HORN.png"
+    },
+    {
+        "label":  "Goat Spawn Egg",
+        "icon":  "/mc_assets/GOAT_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Gold Block",
+        "icon":  "/mc_assets/GOLD_BLOCK.png"
+    },
+    {
+        "label":  "Gold Ingot",
+        "icon":  "/mc_assets/GOLD_INGOT.png"
+    },
+    {
+        "label":  "Gold Nugget",
+        "icon":  "/mc_assets/GOLD_NUGGET.png"
+    },
+    {
+        "label":  "Gold Ore",
+        "icon":  "/mc_assets/GOLD_ORE.png"
+    },
+    {
+        "label":  "Golden Apple",
+        "icon":  "/mc_assets/GOLDEN_APPLE.png"
+    },
+    {
+        "label":  "Golden Axe",
+        "icon":  "/mc_assets/GOLDEN_AXE.png"
+    },
+    {
+        "label":  "Golden Boots",
+        "icon":  "/mc_assets/GOLDEN_BOOTS.png"
+    },
+    {
+        "label":  "Golden Carrot",
+        "icon":  "/mc_assets/GOLDEN_CARROT.png"
+    },
+    {
+        "label":  "Golden Chestplate",
+        "icon":  "/mc_assets/GOLDEN_CHESTPLATE.png"
+    },
+    {
+        "label":  "Golden Dandelion",
+        "icon":  "/mc_assets/GOLDEN_DANDELION.png"
+    },
+    {
+        "label":  "Golden Helmet",
+        "icon":  "/mc_assets/GOLDEN_HELMET.png"
+    },
+    {
+        "label":  "Golden Hoe",
+        "icon":  "/mc_assets/GOLDEN_HOE.png"
+    },
+    {
+        "label":  "Golden Horse Armor",
+        "icon":  "/mc_assets/GOLDEN_HORSE_ARMOR.png"
+    },
+    {
+        "label":  "Golden Leggings",
+        "icon":  "/mc_assets/GOLDEN_LEGGINGS.png"
+    },
+    {
+        "label":  "Golden Nautilus Armor",
+        "icon":  "/mc_assets/GOLDEN_NAUTILUS_ARMOR.png"
+    },
+    {
+        "label":  "Golden Pickaxe",
+        "icon":  "/mc_assets/GOLDEN_PICKAXE.png"
+    },
+    {
+        "label":  "Golden Shovel",
+        "icon":  "/mc_assets/GOLDEN_SHOVEL.png"
+    },
+    {
+        "label":  "Golden Spear",
+        "icon":  "/mc_assets/GOLDEN_SPEAR.png"
+    },
+    {
+        "label":  "Golden Sword",
+        "icon":  "/mc_assets/GOLDEN_SWORD.png"
+    },
+    {
+        "label":  "Granite",
+        "icon":  "/mc_assets/GRANITE.png"
+    },
+    {
+        "label":  "Granite Slab",
+        "icon":  "/mc_assets/GRANITE_SLAB.png"
+    },
+    {
+        "label":  "Granite Stairs",
+        "icon":  "/mc_assets/GRANITE_STAIRS.png"
+    },
+    {
+        "label":  "Granite Wall",
+        "icon":  "/mc_assets/GRANITE_WALL.png"
+    },
+    {
+        "label":  "Grass Block",
+        "icon":  "/mc_assets/GRASS_BLOCK.png"
+    },
+    {
+        "label":  "Gravel",
+        "icon":  "/mc_assets/GRAVEL.png"
+    },
+    {
+        "label":  "Gray Banner",
+        "icon":  "/mc_assets/GRAY_BANNER.png"
+    },
+    {
+        "label":  "Gray Bed",
+        "icon":  "/mc_assets/GRAY_BED.png"
+    },
+    {
+        "label":  "Gray Bundle",
+        "icon":  "/mc_assets/GRAY_BUNDLE.png"
+    },
+    {
+        "label":  "Gray Candle",
+        "icon":  "/mc_assets/GRAY_CANDLE.png"
+    },
+    {
+        "label":  "Gray Carpet",
+        "icon":  "/mc_assets/GRAY_CARPET.png"
+    },
+    {
+        "label":  "Gray Concrete",
+        "icon":  "/mc_assets/GRAY_CONCRETE.png"
+    },
+    {
+        "label":  "Gray Concrete Powder",
+        "icon":  "/mc_assets/GRAY_CONCRETE_POWDER.png"
+    },
+    {
+        "label":  "Gray Dye",
+        "icon":  "/mc_assets/GRAY_DYE.png"
+    },
+    {
+        "label":  "Gray Glazed Terracotta",
+        "icon":  "/mc_assets/GRAY_GLAZED_TERRACOTTA.png"
+    },
+    {
+        "label":  "Gray Harness",
+        "icon":  "/mc_assets/GRAY_HARNESS.png"
+    },
+    {
+        "label":  "Gray Shulker Box",
+        "icon":  "/mc_assets/GRAY_SHULKER_BOX.png"
+    },
+    {
+        "label":  "Gray Stained Glass",
+        "icon":  "/mc_assets/GRAY_STAINED_GLASS.png"
+    },
+    {
+        "label":  "Gray Stained Glass Pane",
+        "icon":  "/mc_assets/GRAY_STAINED_GLASS_PANE.png"
+    },
+    {
+        "label":  "Gray Terracotta",
+        "icon":  "/mc_assets/GRAY_TERRACOTTA.png"
+    },
+    {
+        "label":  "Gray Wool",
+        "icon":  "/mc_assets/GRAY_WOOL.png"
+    },
+    {
+        "label":  "Green Banner",
+        "icon":  "/mc_assets/GREEN_BANNER.png"
+    },
+    {
+        "label":  "Green Bed",
+        "icon":  "/mc_assets/GREEN_BED.png"
+    },
+    {
+        "label":  "Green Bundle",
+        "icon":  "/mc_assets/GREEN_BUNDLE.png"
+    },
+    {
+        "label":  "Green Candle",
+        "icon":  "/mc_assets/GREEN_CANDLE.png"
+    },
+    {
+        "label":  "Green Carpet",
+        "icon":  "/mc_assets/GREEN_CARPET.png"
+    },
+    {
+        "label":  "Green Concrete",
+        "icon":  "/mc_assets/GREEN_CONCRETE.png"
+    },
+    {
+        "label":  "Green Concrete Powder",
+        "icon":  "/mc_assets/GREEN_CONCRETE_POWDER.png"
+    },
+    {
+        "label":  "Green Dye",
+        "icon":  "/mc_assets/GREEN_DYE.png"
+    },
+    {
+        "label":  "Green Glazed Terracotta",
+        "icon":  "/mc_assets/GREEN_GLAZED_TERRACOTTA.png"
+    },
+    {
+        "label":  "Green Harness",
+        "icon":  "/mc_assets/GREEN_HARNESS.png"
+    },
+    {
+        "label":  "Green Shulker Box",
+        "icon":  "/mc_assets/GREEN_SHULKER_BOX.png"
+    },
+    {
+        "label":  "Green Stained Glass",
+        "icon":  "/mc_assets/GREEN_STAINED_GLASS.png"
+    },
+    {
+        "label":  "Green Stained Glass Pane",
+        "icon":  "/mc_assets/GREEN_STAINED_GLASS_PANE.png"
+    },
+    {
+        "label":  "Green Terracotta",
+        "icon":  "/mc_assets/GREEN_TERRACOTTA.png"
+    },
+    {
+        "label":  "Green Wool",
+        "icon":  "/mc_assets/GREEN_WOOL.png"
+    },
+    {
+        "label":  "Grindstone",
+        "icon":  "/mc_assets/GRINDSTONE.png"
+    },
+    {
+        "label":  "Guardian",
+        "icon":  "/mc_assets/GUARDIAN.png"
+    },
+    {
+        "label":  "Guardian Spawn Egg",
+        "icon":  "/mc_assets/GUARDIAN_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Gunpowder",
+        "icon":  "/mc_assets/GUNPOWDER.png"
+    },
+    {
+        "label":  "Guster Banner Pattern",
+        "icon":  "/mc_assets/GUSTER_BANNER_PATTERN.png"
+    },
+    {
+        "label":  "Guster Pottery Sherd",
+        "icon":  "/mc_assets/GUSTER_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Hanging Roots",
+        "icon":  "/mc_assets/HANGING_ROOTS.png"
+    },
+    {
+        "label":  "Happy Ghast",
+        "icon":  "/mc_assets/HAPPY_GHAST.png"
+    },
+    {
+        "label":  "Happy Ghast Spawn Egg",
+        "icon":  "/mc_assets/HAPPY_GHAST_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Hay Block",
+        "icon":  "/mc_assets/HAY_BLOCK.png"
+    },
+    {
+        "label":  "Heart Of The Sea",
+        "icon":  "/mc_assets/HEART_OF_THE_SEA.png"
+    },
+    {
+        "label":  "Heart Pottery Sherd",
+        "icon":  "/mc_assets/HEART_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Heartbreak Pottery Sherd",
+        "icon":  "/mc_assets/HEARTBREAK_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Heavy Core",
+        "icon":  "/mc_assets/HEAVY_CORE.png"
+    },
+    {
+        "label":  "Heavy Weighted Pressure Plate",
+        "icon":  "/mc_assets/HEAVY_WEIGHTED_PRESSURE_PLATE.png"
+    },
+    {
+        "label":  "Hoglin",
+        "icon":  "/mc_assets/HOGLIN.png"
+    },
+    {
+        "label":  "Hoglin Spawn Egg",
+        "icon":  "/mc_assets/HOGLIN_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Honey Block",
+        "icon":  "/mc_assets/HONEY_BLOCK.png"
+    },
+    {
+        "label":  "Honey Bottle",
+        "icon":  "/mc_assets/HONEY_BOTTLE.png"
+    },
+    {
+        "label":  "Honeycomb",
+        "icon":  "/mc_assets/HONEYCOMB.png"
+    },
+    {
+        "label":  "Honeycomb Block",
+        "icon":  "/mc_assets/HONEYCOMB_BLOCK.png"
+    },
+    {
+        "label":  "Hopper",
+        "icon":  "/mc_assets/HOPPER.png"
+    },
+    {
+        "label":  "Hopper Minecart",
+        "icon":  "/mc_assets/HOPPER_MINECART.png",
+        "icon3d":  "/mc_assets/HOPPER_MINECART (2).png"
+    },
+    {
+        "label":  "Horn Coral",
+        "icon":  "/mc_assets/HORN_CORAL.png"
+    },
+    {
+        "label":  "Horn Coral Block",
+        "icon":  "/mc_assets/HORN_CORAL_BLOCK.png"
+    },
+    {
+        "label":  "Horn Coral Fan",
+        "icon":  "/mc_assets/HORN_CORAL_FAN.png"
+    },
+    {
+        "label":  "Horse",
+        "icon":  "/mc_assets/HORSE.png"
+    },
+    {
+        "label":  "Horse Spawn Egg",
+        "icon":  "/mc_assets/HORSE_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Host Armor Trim Smithing Template",
+        "icon":  "/mc_assets/HOST_ARMOR_TRIM_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Howl Pottery Sherd",
+        "icon":  "/mc_assets/HOWL_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Husk",
+        "icon":  "/mc_assets/HUSK.png"
+    },
+    {
+        "label":  "Husk Spawn Egg",
+        "icon":  "/mc_assets/HUSK_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Ice",
+        "icon":  "/mc_assets/ICE.png"
+    },
+    {
+        "label":  "Illusioner",
+        "icon":  "/mc_assets/ILLUSIONER.png"
+    },
+    {
+        "label":  "Infested Chiseled Stone Bricks",
+        "icon":  "/mc_assets/INFESTED_CHISELED_STONE_BRICKS.png"
+    },
+    {
+        "label":  "Infested Cobblestone",
+        "icon":  "/mc_assets/INFESTED_COBBLESTONE.png"
+    },
+    {
+        "label":  "Infested Cracked Stone Bricks",
+        "icon":  "/mc_assets/INFESTED_CRACKED_STONE_BRICKS.png"
+    },
+    {
+        "label":  "Infested Deepslate",
+        "icon":  "/mc_assets/INFESTED_DEEPSLATE.png"
+    },
+    {
+        "label":  "Infested Mossy Stone Bricks",
+        "icon":  "/mc_assets/INFESTED_MOSSY_STONE_BRICKS.png"
+    },
+    {
+        "label":  "Infested Stone",
+        "icon":  "/mc_assets/INFESTED_STONE.png"
+    },
+    {
+        "label":  "Infested Stone Bricks",
+        "icon":  "/mc_assets/INFESTED_STONE_BRICKS.png"
+    },
+    {
+        "label":  "Ink Sac",
+        "icon":  "/mc_assets/INK_SAC.png"
+    },
+    {
+        "label":  "Interaction",
+        "icon":  "/mc_assets/INTERACTION.png"
+    },
+    {
+        "label":  "Iron Axe",
+        "icon":  "/mc_assets/IRON_AXE.png"
+    },
+    {
+        "label":  "Iron Bars",
+        "icon":  "/mc_assets/IRON_BARS.png"
+    },
+    {
+        "label":  "Iron Block",
+        "icon":  "/mc_assets/IRON_BLOCK.png"
+    },
+    {
+        "label":  "Iron Boots",
+        "icon":  "/mc_assets/IRON_BOOTS.png"
+    },
+    {
+        "label":  "Iron Chain",
+        "icon":  "/mc_assets/IRON_CHAIN.png"
+    },
+    {
+        "label":  "Iron Chestplate",
+        "icon":  "/mc_assets/IRON_CHESTPLATE.png"
+    },
+    {
+        "label":  "Iron Door",
+        "icon":  "/mc_assets/IRON_DOOR.png"
+    },
+    {
+        "label":  "Iron Golem",
+        "icon":  "/mc_assets/IRON_GOLEM.png"
+    },
+    {
+        "label":  "Iron Golem Spawn Egg",
+        "icon":  "/mc_assets/IRON_GOLEM_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Iron Helmet",
+        "icon":  "/mc_assets/IRON_HELMET.png"
+    },
+    {
+        "label":  "Iron Hoe",
+        "icon":  "/mc_assets/IRON_HOE.png"
+    },
+    {
+        "label":  "Iron Horse Armor",
+        "icon":  "/mc_assets/IRON_HORSE_ARMOR.png"
+    },
+    {
+        "label":  "Iron Ingot",
+        "icon":  "/mc_assets/IRON_INGOT.png"
+    },
+    {
+        "label":  "Iron Leggings",
+        "icon":  "/mc_assets/IRON_LEGGINGS.png"
+    },
+    {
+        "label":  "Iron Nautilus Armor",
+        "icon":  "/mc_assets/IRON_NAUTILUS_ARMOR.png"
+    },
+    {
+        "label":  "Iron Nugget",
+        "icon":  "/mc_assets/IRON_NUGGET.png"
+    },
+    {
+        "label":  "Iron Ore",
+        "icon":  "/mc_assets/IRON_ORE.png"
+    },
+    {
+        "label":  "Iron Pickaxe",
+        "icon":  "/mc_assets/IRON_PICKAXE.png"
+    },
+    {
+        "label":  "Iron Shovel",
+        "icon":  "/mc_assets/IRON_SHOVEL.png"
+    },
+    {
+        "label":  "Iron Spear",
+        "icon":  "/mc_assets/IRON_SPEAR.png"
+    },
+    {
+        "label":  "Iron Sword",
+        "icon":  "/mc_assets/IRON_SWORD.png"
+    },
+    {
+        "label":  "Iron Trapdoor",
+        "icon":  "/mc_assets/IRON_TRAPDOOR.png"
+    },
+    {
+        "label":  "Item",
+        "icon":  "/mc_assets/ITEM.png"
+    },
+    {
+        "label":  "Item Display",
+        "icon":  "/mc_assets/ITEM_DISPLAY.png"
+    },
+    {
+        "label":  "Item Frame",
+        "icon":  "/mc_assets/ITEM_FRAME.png",
+        "icon3d":  "/mc_assets/ITEM_FRAME (2).png"
+    },
+    {
+        "label":  "Jack O Lantern",
+        "icon":  "/mc_assets/JACK_O_LANTERN.png"
+    },
+    {
+        "label":  "Jigsaw",
+        "icon":  "/mc_assets/JIGSAW.png"
+    },
+    {
+        "label":  "Jukebox",
+        "icon":  "/mc_assets/JUKEBOX.png"
+    },
+    {
+        "label":  "Jungle Boat",
+        "icon":  "/mc_assets/JUNGLE_BOAT.png",
+        "icon3d":  "/mc_assets/JUNGLE_BOAT (2).png"
+    },
+    {
+        "label":  "Jungle Button",
+        "icon":  "/mc_assets/JUNGLE_BUTTON.png"
+    },
+    {
+        "label":  "Jungle Chest Boat",
+        "icon":  "/mc_assets/JUNGLE_CHEST_BOAT.png",
+        "icon3d":  "/mc_assets/JUNGLE_CHEST_BOAT (2).png"
+    },
+    {
+        "label":  "Jungle Door",
+        "icon":  "/mc_assets/JUNGLE_DOOR.png"
+    },
+    {
+        "label":  "Jungle Fence",
+        "icon":  "/mc_assets/JUNGLE_FENCE.png"
+    },
+    {
+        "label":  "Jungle Fence Gate",
+        "icon":  "/mc_assets/JUNGLE_FENCE_GATE.png"
+    },
+    {
+        "label":  "Jungle Hanging Sign",
+        "icon":  "/mc_assets/JUNGLE_HANGING_SIGN.png"
+    },
+    {
+        "label":  "Jungle Leaves",
+        "icon":  "/mc_assets/JUNGLE_LEAVES.png"
+    },
+    {
+        "label":  "Jungle Log",
+        "icon":  "/mc_assets/JUNGLE_LOG.png"
+    },
+    {
+        "label":  "Jungle Planks",
+        "icon":  "/mc_assets/JUNGLE_PLANKS.png"
+    },
+    {
+        "label":  "Jungle Pressure Plate",
+        "icon":  "/mc_assets/JUNGLE_PRESSURE_PLATE.png"
+    },
+    {
+        "label":  "Jungle Sapling",
+        "icon":  "/mc_assets/JUNGLE_SAPLING.png"
+    },
+    {
+        "label":  "Jungle Shelf",
+        "icon":  "/mc_assets/JUNGLE_SHELF.png"
+    },
+    {
+        "label":  "Jungle Sign",
+        "icon":  "/mc_assets/JUNGLE_SIGN.png"
+    },
+    {
+        "label":  "Jungle Slab",
+        "icon":  "/mc_assets/JUNGLE_SLAB.png"
+    },
+    {
+        "label":  "Jungle Stairs",
+        "icon":  "/mc_assets/JUNGLE_STAIRS.png"
+    },
+    {
+        "label":  "Jungle Trapdoor",
+        "icon":  "/mc_assets/JUNGLE_TRAPDOOR.png"
+    },
+    {
+        "label":  "Jungle Wood",
+        "icon":  "/mc_assets/JUNGLE_WOOD.png"
+    },
+    {
+        "label":  "Kelp",
+        "icon":  "/mc_assets/KELP.png"
+    },
+    {
+        "label":  "Knowledge Book",
+        "icon":  "/mc_assets/KNOWLEDGE_BOOK.png"
+    },
+    {
+        "label":  "Ladder",
+        "icon":  "/mc_assets/LADDER.png"
+    },
+    {
+        "label":  "Lantern",
+        "icon":  "/mc_assets/LANTERN.png"
+    },
+    {
+        "label":  "Lapis Block",
+        "icon":  "/mc_assets/LAPIS_BLOCK.png"
+    },
+    {
+        "label":  "Lapis Lazuli",
+        "icon":  "/mc_assets/LAPIS_LAZULI.png"
+    },
+    {
+        "label":  "Lapis Ore",
+        "icon":  "/mc_assets/LAPIS_ORE.png"
+    },
+    {
+        "label":  "Large Amethyst Bud",
+        "icon":  "/mc_assets/LARGE_AMETHYST_BUD.png"
+    },
+    {
+        "label":  "Large Fern",
+        "icon":  "/mc_assets/LARGE_FERN.png"
+    },
+    {
+        "label":  "Lava Bucket",
+        "icon":  "/mc_assets/LAVA_BUCKET.png"
+    },
+    {
+        "label":  "Lead",
+        "icon":  "/mc_assets/LEAD.png"
+    },
+    {
+        "label":  "Leaf Litter",
+        "icon":  "/mc_assets/LEAF_LITTER.png"
+    },
+    {
+        "label":  "Leash Knot",
+        "icon":  "/mc_assets/LEASH_KNOT.png"
+    },
+    {
+        "label":  "Leather",
+        "icon":  "/mc_assets/LEATHER.png"
+    },
+    {
+        "label":  "Leather Boots",
+        "icon":  "/mc_assets/LEATHER_BOOTS.png"
+    },
+    {
+        "label":  "Leather Chestplate",
+        "icon":  "/mc_assets/LEATHER_CHESTPLATE.png"
+    },
+    {
+        "label":  "Leather Helmet",
+        "icon":  "/mc_assets/LEATHER_HELMET.png"
+    },
+    {
+        "label":  "Leather Horse Armor",
+        "icon":  "/mc_assets/LEATHER_HORSE_ARMOR.png"
+    },
+    {
+        "label":  "Leather Leggings",
+        "icon":  "/mc_assets/LEATHER_LEGGINGS.png"
+    },
+    {
+        "label":  "Lectern",
+        "icon":  "/mc_assets/LECTERN.png"
+    },
+    {
+        "label":  "Lever",
+        "icon":  "/mc_assets/LEVER.png"
+    },
+    {
+        "label":  "Light",
+        "icon":  "/mc_assets/LIGHT.png"
+    },
+    {
+        "label":  "Light Blue Banner",
+        "icon":  "/mc_assets/LIGHT_BLUE_BANNER.png"
+    },
+    {
+        "label":  "Light Blue Bed",
+        "icon":  "/mc_assets/LIGHT_BLUE_BED.png"
+    },
+    {
+        "label":  "Light Blue Bundle",
+        "icon":  "/mc_assets/LIGHT_BLUE_BUNDLE.png"
+    },
+    {
+        "label":  "Light Blue Candle",
+        "icon":  "/mc_assets/LIGHT_BLUE_CANDLE.png"
+    },
+    {
+        "label":  "Light Blue Carpet",
+        "icon":  "/mc_assets/LIGHT_BLUE_CARPET.png"
+    },
+    {
+        "label":  "Light Blue Concrete",
+        "icon":  "/mc_assets/LIGHT_BLUE_CONCRETE.png"
+    },
+    {
+        "label":  "Light Blue Concrete Powder",
+        "icon":  "/mc_assets/LIGHT_BLUE_CONCRETE_POWDER.png"
+    },
+    {
+        "label":  "Light Blue Dye",
+        "icon":  "/mc_assets/LIGHT_BLUE_DYE.png"
+    },
+    {
+        "label":  "Light Blue Glazed Terracotta",
+        "icon":  "/mc_assets/LIGHT_BLUE_GLAZED_TERRACOTTA.png"
+    },
+    {
+        "label":  "Light Blue Harness",
+        "icon":  "/mc_assets/LIGHT_BLUE_HARNESS.png"
+    },
+    {
+        "label":  "Light Blue Shulker Box",
+        "icon":  "/mc_assets/LIGHT_BLUE_SHULKER_BOX.png"
+    },
+    {
+        "label":  "Light Blue Stained Glass",
+        "icon":  "/mc_assets/LIGHT_BLUE_STAINED_GLASS.png"
+    },
+    {
+        "label":  "Light Blue Stained Glass Pane",
+        "icon":  "/mc_assets/LIGHT_BLUE_STAINED_GLASS_PANE.png"
+    },
+    {
+        "label":  "Light Blue Terracotta",
+        "icon":  "/mc_assets/LIGHT_BLUE_TERRACOTTA.png"
+    },
+    {
+        "label":  "Light Blue Wool",
+        "icon":  "/mc_assets/LIGHT_BLUE_WOOL.png"
+    },
+    {
+        "label":  "Light Gray Banner",
+        "icon":  "/mc_assets/LIGHT_GRAY_BANNER.png"
+    },
+    {
+        "label":  "Light Gray Bed",
+        "icon":  "/mc_assets/LIGHT_GRAY_BED.png"
+    },
+    {
+        "label":  "Light Gray Bundle",
+        "icon":  "/mc_assets/LIGHT_GRAY_BUNDLE.png"
+    },
+    {
+        "label":  "Light Gray Candle",
+        "icon":  "/mc_assets/LIGHT_GRAY_CANDLE.png"
+    },
+    {
+        "label":  "Light Gray Carpet",
+        "icon":  "/mc_assets/LIGHT_GRAY_CARPET.png"
+    },
+    {
+        "label":  "Light Gray Concrete",
+        "icon":  "/mc_assets/LIGHT_GRAY_CONCRETE.png"
+    },
+    {
+        "label":  "Light Gray Concrete Powder",
+        "icon":  "/mc_assets/LIGHT_GRAY_CONCRETE_POWDER.png"
+    },
+    {
+        "label":  "Light Gray Dye",
+        "icon":  "/mc_assets/LIGHT_GRAY_DYE.png"
+    },
+    {
+        "label":  "Light Gray Glazed Terracotta",
+        "icon":  "/mc_assets/LIGHT_GRAY_GLAZED_TERRACOTTA.png"
+    },
+    {
+        "label":  "Light Gray Harness",
+        "icon":  "/mc_assets/LIGHT_GRAY_HARNESS.png"
+    },
+    {
+        "label":  "Light Gray Shulker Box",
+        "icon":  "/mc_assets/LIGHT_GRAY_SHULKER_BOX.png"
+    },
+    {
+        "label":  "Light Gray Stained Glass",
+        "icon":  "/mc_assets/LIGHT_GRAY_STAINED_GLASS.png"
+    },
+    {
+        "label":  "Light Gray Stained Glass Pane",
+        "icon":  "/mc_assets/LIGHT_GRAY_STAINED_GLASS_PANE.png"
+    },
+    {
+        "label":  "Light Gray Terracotta",
+        "icon":  "/mc_assets/LIGHT_GRAY_TERRACOTTA.png"
+    },
+    {
+        "label":  "Light Gray Wool",
+        "icon":  "/mc_assets/LIGHT_GRAY_WOOL.png"
+    },
+    {
+        "label":  "Light Weighted Pressure Plate",
+        "icon":  "/mc_assets/LIGHT_WEIGHTED_PRESSURE_PLATE.png"
+    },
+    {
+        "label":  "Lightning Bolt",
+        "icon":  "/mc_assets/LIGHTNING_BOLT.png"
+    },
+    {
+        "label":  "Lightning Rod",
+        "icon":  "/mc_assets/LIGHTNING_ROD.png"
+    },
+    {
+        "label":  "Lilac",
+        "icon":  "/mc_assets/LILAC.png"
+    },
+    {
+        "label":  "Lily Of The Valley",
+        "icon":  "/mc_assets/LILY_OF_THE_VALLEY.png"
+    },
+    {
+        "label":  "Lily Pad",
+        "icon":  "/mc_assets/LILY_PAD.png"
+    },
+    {
+        "label":  "Lime Banner",
+        "icon":  "/mc_assets/LIME_BANNER.png"
+    },
+    {
+        "label":  "Lime Bed",
+        "icon":  "/mc_assets/LIME_BED.png"
+    },
+    {
+        "label":  "Lime Bundle",
+        "icon":  "/mc_assets/LIME_BUNDLE.png"
+    },
+    {
+        "label":  "Lime Candle",
+        "icon":  "/mc_assets/LIME_CANDLE.png"
+    },
+    {
+        "label":  "Lime Carpet",
+        "icon":  "/mc_assets/LIME_CARPET.png"
+    },
+    {
+        "label":  "Lime Concrete",
+        "icon":  "/mc_assets/LIME_CONCRETE.png"
+    },
+    {
+        "label":  "Lime Concrete Powder",
+        "icon":  "/mc_assets/LIME_CONCRETE_POWDER.png"
+    },
+    {
+        "label":  "Lime Dye",
+        "icon":  "/mc_assets/LIME_DYE.png"
+    },
+    {
+        "label":  "Lime Glazed Terracotta",
+        "icon":  "/mc_assets/LIME_GLAZED_TERRACOTTA.png"
+    },
+    {
+        "label":  "Lime Harness",
+        "icon":  "/mc_assets/LIME_HARNESS.png"
+    },
+    {
+        "label":  "Lime Shulker Box",
+        "icon":  "/mc_assets/LIME_SHULKER_BOX.png"
+    },
+    {
+        "label":  "Lime Stained Glass",
+        "icon":  "/mc_assets/LIME_STAINED_GLASS.png"
+    },
+    {
+        "label":  "Lime Stained Glass Pane",
+        "icon":  "/mc_assets/LIME_STAINED_GLASS_PANE.png"
+    },
+    {
+        "label":  "Lime Terracotta",
+        "icon":  "/mc_assets/LIME_TERRACOTTA.png"
+    },
+    {
+        "label":  "Lime Wool",
+        "icon":  "/mc_assets/LIME_WOOL.png"
+    },
+    {
+        "label":  "Lingering Potion",
+        "icon":  "/mc_assets/LINGERING_POTION.png",
+        "icon3d":  "/mc_assets/LINGERING_POTION (2).png"
+    },
+    {
+        "label":  "Llama",
+        "icon":  "/mc_assets/LLAMA.png"
+    },
+    {
+        "label":  "Llama Spawn Egg",
+        "icon":  "/mc_assets/LLAMA_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Llama Spit",
+        "icon":  "/mc_assets/LLAMA_SPIT.png"
+    },
+    {
+        "label":  "Lodestone",
+        "icon":  "/mc_assets/LODESTONE.png"
+    },
+    {
+        "label":  "Loom",
+        "icon":  "/mc_assets/LOOM.png"
+    },
+    {
+        "label":  "Mace",
+        "icon":  "/mc_assets/MACE.png"
+    },
+    {
+        "label":  "Magenta Banner",
+        "icon":  "/mc_assets/MAGENTA_BANNER.png"
+    },
+    {
+        "label":  "Magenta Bed",
+        "icon":  "/mc_assets/MAGENTA_BED.png"
+    },
+    {
+        "label":  "Magenta Bundle",
+        "icon":  "/mc_assets/MAGENTA_BUNDLE.png"
+    },
+    {
+        "label":  "Magenta Candle",
+        "icon":  "/mc_assets/MAGENTA_CANDLE.png"
+    },
+    {
+        "label":  "Magenta Carpet",
+        "icon":  "/mc_assets/MAGENTA_CARPET.png"
+    },
+    {
+        "label":  "Magenta Concrete",
+        "icon":  "/mc_assets/MAGENTA_CONCRETE.png"
+    },
+    {
+        "label":  "Magenta Concrete Powder",
+        "icon":  "/mc_assets/MAGENTA_CONCRETE_POWDER.png"
+    },
+    {
+        "label":  "Magenta Dye",
+        "icon":  "/mc_assets/MAGENTA_DYE.png"
+    },
+    {
+        "label":  "Magenta Glazed Terracotta",
+        "icon":  "/mc_assets/MAGENTA_GLAZED_TERRACOTTA.png"
+    },
+    {
+        "label":  "Magenta Harness",
+        "icon":  "/mc_assets/MAGENTA_HARNESS.png"
+    },
+    {
+        "label":  "Magenta Shulker Box",
+        "icon":  "/mc_assets/MAGENTA_SHULKER_BOX.png"
+    },
+    {
+        "label":  "Magenta Stained Glass",
+        "icon":  "/mc_assets/MAGENTA_STAINED_GLASS.png"
+    },
+    {
+        "label":  "Magenta Stained Glass Pane",
+        "icon":  "/mc_assets/MAGENTA_STAINED_GLASS_PANE.png"
+    },
+    {
+        "label":  "Magenta Terracotta",
+        "icon":  "/mc_assets/MAGENTA_TERRACOTTA.png"
+    },
+    {
+        "label":  "Magenta Wool",
+        "icon":  "/mc_assets/MAGENTA_WOOL.png"
+    },
+    {
+        "label":  "Magma Block",
+        "icon":  "/mc_assets/MAGMA_BLOCK.png"
+    },
+    {
+        "label":  "Magma Cream",
+        "icon":  "/mc_assets/MAGMA_CREAM.png"
+    },
+    {
+        "label":  "Magma Cube",
+        "icon":  "/mc_assets/MAGMA_CUBE.png"
+    },
+    {
+        "label":  "Magma Cube Spawn Egg",
+        "icon":  "/mc_assets/MAGMA_CUBE_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Mangrove Boat",
+        "icon":  "/mc_assets/MANGROVE_BOAT.png",
+        "icon3d":  "/mc_assets/MANGROVE_BOAT (2).png"
+    },
+    {
+        "label":  "Mangrove Button",
+        "icon":  "/mc_assets/MANGROVE_BUTTON.png"
+    },
+    {
+        "label":  "Mangrove Chest Boat",
+        "icon":  "/mc_assets/MANGROVE_CHEST_BOAT.png",
+        "icon3d":  "/mc_assets/MANGROVE_CHEST_BOAT (2).png"
+    },
+    {
+        "label":  "Mangrove Door",
+        "icon":  "/mc_assets/MANGROVE_DOOR.png"
+    },
+    {
+        "label":  "Mangrove Fence",
+        "icon":  "/mc_assets/MANGROVE_FENCE.png"
+    },
+    {
+        "label":  "Mangrove Fence Gate",
+        "icon":  "/mc_assets/MANGROVE_FENCE_GATE.png"
+    },
+    {
+        "label":  "Mangrove Hanging Sign",
+        "icon":  "/mc_assets/MANGROVE_HANGING_SIGN.png"
+    },
+    {
+        "label":  "Mangrove Leaves",
+        "icon":  "/mc_assets/MANGROVE_LEAVES.png"
+    },
+    {
+        "label":  "Mangrove Log",
+        "icon":  "/mc_assets/MANGROVE_LOG.png"
+    },
+    {
+        "label":  "Mangrove Planks",
+        "icon":  "/mc_assets/MANGROVE_PLANKS.png"
+    },
+    {
+        "label":  "Mangrove Pressure Plate",
+        "icon":  "/mc_assets/MANGROVE_PRESSURE_PLATE.png"
+    },
+    {
+        "label":  "Mangrove Propagule",
+        "icon":  "/mc_assets/MANGROVE_PROPAGULE.png"
+    },
+    {
+        "label":  "Mangrove Roots",
+        "icon":  "/mc_assets/MANGROVE_ROOTS.png"
+    },
+    {
+        "label":  "Mangrove Shelf",
+        "icon":  "/mc_assets/MANGROVE_SHELF.png"
+    },
+    {
+        "label":  "Mangrove Sign",
+        "icon":  "/mc_assets/MANGROVE_SIGN.png"
+    },
+    {
+        "label":  "Mangrove Slab",
+        "icon":  "/mc_assets/MANGROVE_SLAB.png"
+    },
+    {
+        "label":  "Mangrove Stairs",
+        "icon":  "/mc_assets/MANGROVE_STAIRS.png"
+    },
+    {
+        "label":  "Mangrove Trapdoor",
+        "icon":  "/mc_assets/MANGROVE_TRAPDOOR.png"
+    },
+    {
+        "label":  "Mangrove Wood",
+        "icon":  "/mc_assets/MANGROVE_WOOD.png"
+    },
+    {
+        "label":  "Mannequin",
+        "icon":  "/mc_assets/MANNEQUIN.png"
+    },
+    {
+        "label":  "Map",
+        "icon":  "/mc_assets/MAP.png"
+    },
+    {
+        "label":  "Marker",
+        "icon":  "/mc_assets/MARKER.png"
+    },
+    {
+        "label":  "Medium Amethyst Bud",
+        "icon":  "/mc_assets/MEDIUM_AMETHYST_BUD.png"
+    },
+    {
+        "label":  "Melon",
+        "icon":  "/mc_assets/MELON.png"
+    },
+    {
+        "label":  "Melon Seeds",
+        "icon":  "/mc_assets/MELON_SEEDS.png"
+    },
+    {
+        "label":  "Melon Slice",
+        "icon":  "/mc_assets/MELON_SLICE.png"
+    },
+    {
+        "label":  "Milk Bucket",
+        "icon":  "/mc_assets/MILK_BUCKET.png"
+    },
+    {
+        "label":  "Minecart",
+        "icon":  "/mc_assets/MINECART.png",
+        "icon3d":  "/mc_assets/MINECART (2).png"
+    },
+    {
+        "label":  "Miner Pottery Sherd",
+        "icon":  "/mc_assets/MINER_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Mojang Banner Pattern",
+        "icon":  "/mc_assets/MOJANG_BANNER_PATTERN.png"
+    },
+    {
+        "label":  "Mooshroom",
+        "icon":  "/mc_assets/MOOSHROOM.png"
+    },
+    {
+        "label":  "Mooshroom Spawn Egg",
+        "icon":  "/mc_assets/MOOSHROOM_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Moss Block",
+        "icon":  "/mc_assets/MOSS_BLOCK.png"
+    },
+    {
+        "label":  "Moss Carpet",
+        "icon":  "/mc_assets/MOSS_CARPET.png"
+    },
+    {
+        "label":  "Mossy Cobblestone",
+        "icon":  "/mc_assets/MOSSY_COBBLESTONE.png"
+    },
+    {
+        "label":  "Mossy Cobblestone Slab",
+        "icon":  "/mc_assets/MOSSY_COBBLESTONE_SLAB.png"
+    },
+    {
+        "label":  "Mossy Cobblestone Stairs",
+        "icon":  "/mc_assets/MOSSY_COBBLESTONE_STAIRS.png"
+    },
+    {
+        "label":  "Mossy Cobblestone Wall",
+        "icon":  "/mc_assets/MOSSY_COBBLESTONE_WALL.png"
+    },
+    {
+        "label":  "Mossy Stone Brick Slab",
+        "icon":  "/mc_assets/MOSSY_STONE_BRICK_SLAB.png"
+    },
+    {
+        "label":  "Mossy Stone Brick Stairs",
+        "icon":  "/mc_assets/MOSSY_STONE_BRICK_STAIRS.png"
+    },
+    {
+        "label":  "Mossy Stone Brick Wall",
+        "icon":  "/mc_assets/MOSSY_STONE_BRICK_WALL.png"
+    },
+    {
+        "label":  "Mossy Stone Bricks",
+        "icon":  "/mc_assets/MOSSY_STONE_BRICKS.png"
+    },
+    {
+        "label":  "Mourner Pottery Sherd",
+        "icon":  "/mc_assets/MOURNER_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Mud",
+        "icon":  "/mc_assets/MUD.png"
+    },
+    {
+        "label":  "Mud Brick Slab",
+        "icon":  "/mc_assets/MUD_BRICK_SLAB.png"
+    },
+    {
+        "label":  "Mud Brick Stairs",
+        "icon":  "/mc_assets/MUD_BRICK_STAIRS.png"
+    },
+    {
+        "label":  "Mud Brick Wall",
+        "icon":  "/mc_assets/MUD_BRICK_WALL.png"
+    },
+    {
+        "label":  "Mud Bricks",
+        "icon":  "/mc_assets/MUD_BRICKS.png"
+    },
+    {
+        "label":  "Muddy Mangrove Roots",
+        "icon":  "/mc_assets/MUDDY_MANGROVE_ROOTS.png"
+    },
+    {
+        "label":  "Mule",
+        "icon":  "/mc_assets/MULE.png"
+    },
+    {
+        "label":  "Mule Spawn Egg",
+        "icon":  "/mc_assets/MULE_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Mushroom Stem",
+        "icon":  "/mc_assets/MUSHROOM_STEM.png"
+    },
+    {
+        "label":  "Mushroom Stew",
+        "icon":  "/mc_assets/MUSHROOM_STEW.png"
+    },
+    {
+        "label":  "Music Disc 11",
+        "icon":  "/mc_assets/MUSIC_DISC_11.png"
+    },
+    {
+        "label":  "Music Disc 13",
+        "icon":  "/mc_assets/MUSIC_DISC_13.png"
+    },
+    {
+        "label":  "Music Disc 5",
+        "icon":  "/mc_assets/MUSIC_DISC_5.png"
+    },
+    {
+        "label":  "Music Disc Blocks",
+        "icon":  "/mc_assets/MUSIC_DISC_BLOCKS.png"
+    },
+    {
+        "label":  "Music Disc Cat",
+        "icon":  "/mc_assets/MUSIC_DISC_CAT.png"
+    },
+    {
+        "label":  "Music Disc Chirp",
+        "icon":  "/mc_assets/MUSIC_DISC_CHIRP.png"
+    },
+    {
+        "label":  "Music Disc Creator",
+        "icon":  "/mc_assets/MUSIC_DISC_CREATOR.png"
+    },
+    {
+        "label":  "Music Disc Creator Music Box",
+        "icon":  "/mc_assets/MUSIC_DISC_CREATOR_MUSIC_BOX.png"
+    },
+    {
+        "label":  "Music Disc Far",
+        "icon":  "/mc_assets/MUSIC_DISC_FAR.png"
+    },
+    {
+        "label":  "Music Disc Lava Chicken",
+        "icon":  "/mc_assets/MUSIC_DISC_LAVA_CHICKEN.png"
+    },
+    {
+        "label":  "Music Disc Mall",
+        "icon":  "/mc_assets/MUSIC_DISC_MALL.png"
+    },
+    {
+        "label":  "Music Disc Mellohi",
+        "icon":  "/mc_assets/MUSIC_DISC_MELLOHI.png"
+    },
+    {
+        "label":  "Music Disc Otherside",
+        "icon":  "/mc_assets/MUSIC_DISC_OTHERSIDE.png"
+    },
+    {
+        "label":  "Music Disc Pigstep",
+        "icon":  "/mc_assets/MUSIC_DISC_PIGSTEP.png"
+    },
+    {
+        "label":  "Music Disc Precipice",
+        "icon":  "/mc_assets/MUSIC_DISC_PRECIPICE.png"
+    },
+    {
+        "label":  "Music Disc Relic",
+        "icon":  "/mc_assets/MUSIC_DISC_RELIC.png"
+    },
+    {
+        "label":  "Music Disc Stal",
+        "icon":  "/mc_assets/MUSIC_DISC_STAL.png"
+    },
+    {
+        "label":  "Music Disc Strad",
+        "icon":  "/mc_assets/MUSIC_DISC_STRAD.png"
+    },
+    {
+        "label":  "Music Disc Tears",
+        "icon":  "/mc_assets/MUSIC_DISC_TEARS.png"
+    },
+    {
+        "label":  "Music Disc Wait",
+        "icon":  "/mc_assets/MUSIC_DISC_WAIT.png"
+    },
+    {
+        "label":  "Music Disc Ward",
+        "icon":  "/mc_assets/MUSIC_DISC_WARD.png"
+    },
+    {
+        "label":  "Mutton",
+        "icon":  "/mc_assets/MUTTON.png"
+    },
+    {
+        "label":  "Mycelium",
+        "icon":  "/mc_assets/MYCELIUM.png"
+    },
+    {
+        "label":  "Name Tag",
+        "icon":  "/mc_assets/NAME_TAG.png"
+    },
+    {
+        "label":  "Nautilus",
+        "icon":  "/mc_assets/NAUTILUS.png"
+    },
+    {
+        "label":  "Nautilus Shell",
+        "icon":  "/mc_assets/NAUTILUS_SHELL.png"
+    },
+    {
+        "label":  "Nautilus Spawn Egg",
+        "icon":  "/mc_assets/NAUTILUS_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Nether Brick",
+        "icon":  "/mc_assets/NETHER_BRICK.png"
+    },
+    {
+        "label":  "Nether Brick Fence",
+        "icon":  "/mc_assets/NETHER_BRICK_FENCE.png"
+    },
+    {
+        "label":  "Nether Brick Slab",
+        "icon":  "/mc_assets/NETHER_BRICK_SLAB.png"
+    },
+    {
+        "label":  "Nether Brick Stairs",
+        "icon":  "/mc_assets/NETHER_BRICK_STAIRS.png"
+    },
+    {
+        "label":  "Nether Brick Wall",
+        "icon":  "/mc_assets/NETHER_BRICK_WALL.png"
+    },
+    {
+        "label":  "Nether Bricks",
+        "icon":  "/mc_assets/NETHER_BRICKS.png"
+    },
+    {
+        "label":  "Nether Gold Ore",
+        "icon":  "/mc_assets/NETHER_GOLD_ORE.png"
+    },
+    {
+        "label":  "Nether Quartz Ore",
+        "icon":  "/mc_assets/NETHER_QUARTZ_ORE.png"
+    },
+    {
+        "label":  "Nether Sprouts",
+        "icon":  "/mc_assets/NETHER_SPROUTS.png"
+    },
+    {
+        "label":  "Nether Star",
+        "icon":  "/mc_assets/NETHER_STAR.png"
+    },
+    {
+        "label":  "Nether Wart",
+        "icon":  "/mc_assets/NETHER_WART.png"
+    },
+    {
+        "label":  "Nether Wart Block",
+        "icon":  "/mc_assets/NETHER_WART_BLOCK.png"
+    },
+    {
+        "label":  "Netherite Axe",
+        "icon":  "/mc_assets/NETHERITE_AXE.png"
+    },
+    {
+        "label":  "Netherite Block",
+        "icon":  "/mc_assets/NETHERITE_BLOCK.png"
+    },
+    {
+        "label":  "Netherite Boots",
+        "icon":  "/mc_assets/NETHERITE_BOOTS.png"
+    },
+    {
+        "label":  "Netherite Chestplate",
+        "icon":  "/mc_assets/NETHERITE_CHESTPLATE.png"
+    },
+    {
+        "label":  "Netherite Helmet",
+        "icon":  "/mc_assets/NETHERITE_HELMET.png"
+    },
+    {
+        "label":  "Netherite Hoe",
+        "icon":  "/mc_assets/NETHERITE_HOE.png"
+    },
+    {
+        "label":  "Netherite Horse Armor",
+        "icon":  "/mc_assets/NETHERITE_HORSE_ARMOR.png"
+    },
+    {
+        "label":  "Netherite Ingot",
+        "icon":  "/mc_assets/NETHERITE_INGOT.png"
+    },
+    {
+        "label":  "Netherite Leggings",
+        "icon":  "/mc_assets/NETHERITE_LEGGINGS.png"
+    },
+    {
+        "label":  "Netherite Nautilus Armor",
+        "icon":  "/mc_assets/NETHERITE_NAUTILUS_ARMOR.png"
+    },
+    {
+        "label":  "Netherite Pickaxe",
+        "icon":  "/mc_assets/NETHERITE_PICKAXE.png"
+    },
+    {
+        "label":  "Netherite Scrap",
+        "icon":  "/mc_assets/NETHERITE_SCRAP.png"
+    },
+    {
+        "label":  "Netherite Shovel",
+        "icon":  "/mc_assets/NETHERITE_SHOVEL.png"
+    },
+    {
+        "label":  "Netherite Spear",
+        "icon":  "/mc_assets/NETHERITE_SPEAR.png"
+    },
+    {
+        "label":  "Netherite Sword",
+        "icon":  "/mc_assets/NETHERITE_SWORD.png"
+    },
+    {
+        "label":  "Netherite Upgrade Smithing Template",
+        "icon":  "/mc_assets/NETHERITE_UPGRADE_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Netherrack",
+        "icon":  "/mc_assets/NETHERRACK.png"
+    },
+    {
+        "label":  "Note Block",
+        "icon":  "/mc_assets/NOTE_BLOCK.png"
+    },
+    {
+        "label":  "Oak Boat",
+        "icon":  "/mc_assets/OAK_BOAT.png",
+        "icon3d":  "/mc_assets/OAK_BOAT (2).png"
+    },
+    {
+        "label":  "Oak Button",
+        "icon":  "/mc_assets/OAK_BUTTON.png"
+    },
+    {
+        "label":  "Oak Chest Boat",
+        "icon":  "/mc_assets/OAK_CHEST_BOAT.png",
+        "icon3d":  "/mc_assets/OAK_CHEST_BOAT (2).png"
+    },
+    {
+        "label":  "Oak Door",
+        "icon":  "/mc_assets/OAK_DOOR.png"
+    },
+    {
+        "label":  "Oak Fence",
+        "icon":  "/mc_assets/OAK_FENCE.png"
+    },
+    {
+        "label":  "Oak Fence Gate",
+        "icon":  "/mc_assets/OAK_FENCE_GATE.png"
+    },
+    {
+        "label":  "Oak Hanging Sign",
+        "icon":  "/mc_assets/OAK_HANGING_SIGN.png"
+    },
+    {
+        "label":  "Oak Leaves",
+        "icon":  "/mc_assets/OAK_LEAVES.png"
+    },
+    {
+        "label":  "Oak Log",
+        "icon":  "/mc_assets/OAK_LOG.png"
+    },
+    {
+        "label":  "Oak Planks",
+        "icon":  "/mc_assets/OAK_PLANKS.png"
+    },
+    {
+        "label":  "Oak Pressure Plate",
+        "icon":  "/mc_assets/OAK_PRESSURE_PLATE.png"
+    },
+    {
+        "label":  "Oak Sapling",
+        "icon":  "/mc_assets/OAK_SAPLING.png"
+    },
+    {
+        "label":  "Oak Shelf",
+        "icon":  "/mc_assets/OAK_SHELF.png"
+    },
+    {
+        "label":  "Oak Sign",
+        "icon":  "/mc_assets/OAK_SIGN.png"
+    },
+    {
+        "label":  "Oak Slab",
+        "icon":  "/mc_assets/OAK_SLAB.png"
+    },
+    {
+        "label":  "Oak Stairs",
+        "icon":  "/mc_assets/OAK_STAIRS.png"
+    },
+    {
+        "label":  "Oak Trapdoor",
+        "icon":  "/mc_assets/OAK_TRAPDOOR.png"
+    },
+    {
+        "label":  "Oak Wood",
+        "icon":  "/mc_assets/OAK_WOOD.png"
+    },
+    {
+        "label":  "Observer",
+        "icon":  "/mc_assets/OBSERVER.png"
+    },
+    {
+        "label":  "Obsidian",
+        "icon":  "/mc_assets/OBSIDIAN.png"
+    },
+    {
+        "label":  "Ocelot",
+        "icon":  "/mc_assets/OCELOT.png"
+    },
+    {
+        "label":  "Ocelot Spawn Egg",
+        "icon":  "/mc_assets/OCELOT_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Ochre Froglight",
+        "icon":  "/mc_assets/OCHRE_FROGLIGHT.png"
+    },
+    {
+        "label":  "Ominous Bottle",
+        "icon":  "/mc_assets/OMINOUS_BOTTLE.png"
+    },
+    {
+        "label":  "Ominous Item Spawner",
+        "icon":  "/mc_assets/OMINOUS_ITEM_SPAWNER.png"
+    },
+    {
+        "label":  "Ominous Trial Key",
+        "icon":  "/mc_assets/OMINOUS_TRIAL_KEY.png"
+    },
+    {
+        "label":  "Open Eyeblossom",
+        "icon":  "/mc_assets/OPEN_EYEBLOSSOM.png"
+    },
+    {
+        "label":  "Orange Banner",
+        "icon":  "/mc_assets/ORANGE_BANNER.png"
+    },
+    {
+        "label":  "Orange Bed",
+        "icon":  "/mc_assets/ORANGE_BED.png"
+    },
+    {
+        "label":  "Orange Bundle",
+        "icon":  "/mc_assets/ORANGE_BUNDLE.png"
+    },
+    {
+        "label":  "Orange Candle",
+        "icon":  "/mc_assets/ORANGE_CANDLE.png"
+    },
+    {
+        "label":  "Orange Carpet",
+        "icon":  "/mc_assets/ORANGE_CARPET.png"
+    },
+    {
+        "label":  "Orange Concrete",
+        "icon":  "/mc_assets/ORANGE_CONCRETE.png"
+    },
+    {
+        "label":  "Orange Concrete Powder",
+        "icon":  "/mc_assets/ORANGE_CONCRETE_POWDER.png"
+    },
+    {
+        "label":  "Orange Dye",
+        "icon":  "/mc_assets/ORANGE_DYE.png"
+    },
+    {
+        "label":  "Orange Glazed Terracotta",
+        "icon":  "/mc_assets/ORANGE_GLAZED_TERRACOTTA.png"
+    },
+    {
+        "label":  "Orange Harness",
+        "icon":  "/mc_assets/ORANGE_HARNESS.png"
+    },
+    {
+        "label":  "Orange Shulker Box",
+        "icon":  "/mc_assets/ORANGE_SHULKER_BOX.png"
+    },
+    {
+        "label":  "Orange Stained Glass",
+        "icon":  "/mc_assets/ORANGE_STAINED_GLASS.png"
+    },
+    {
+        "label":  "Orange Stained Glass Pane",
+        "icon":  "/mc_assets/ORANGE_STAINED_GLASS_PANE.png"
+    },
+    {
+        "label":  "Orange Terracotta",
+        "icon":  "/mc_assets/ORANGE_TERRACOTTA.png"
+    },
+    {
+        "label":  "Orange Tulip",
+        "icon":  "/mc_assets/ORANGE_TULIP.png"
+    },
+    {
+        "label":  "Orange Wool",
+        "icon":  "/mc_assets/ORANGE_WOOL.png"
+    },
+    {
+        "label":  "Oxeye Daisy",
+        "icon":  "/mc_assets/OXEYE_DAISY.png"
+    },
+    {
+        "label":  "Oxidized Chiseled Copper",
+        "icon":  "/mc_assets/OXIDIZED_CHISELED_COPPER.png"
+    },
+    {
+        "label":  "Oxidized Copper",
+        "icon":  "/mc_assets/OXIDIZED_COPPER.png"
+    },
+    {
+        "label":  "Oxidized Copper Bars",
+        "icon":  "/mc_assets/OXIDIZED_COPPER_BARS.png"
+    },
+    {
+        "label":  "Oxidized Copper Bulb",
+        "icon":  "/mc_assets/OXIDIZED_COPPER_BULB.png"
+    },
+    {
+        "label":  "Oxidized Copper Chain",
+        "icon":  "/mc_assets/OXIDIZED_COPPER_CHAIN.png"
+    },
+    {
+        "label":  "Oxidized Copper Chest",
+        "icon":  "/mc_assets/OXIDIZED_COPPER_CHEST.png"
+    },
+    {
+        "label":  "Oxidized Copper Door",
+        "icon":  "/mc_assets/OXIDIZED_COPPER_DOOR.png"
+    },
+    {
+        "label":  "Oxidized Copper Golem Statue",
+        "icon":  "/mc_assets/OXIDIZED_COPPER_GOLEM_STATUE.png"
+    },
+    {
+        "label":  "Oxidized Copper Grate",
+        "icon":  "/mc_assets/OXIDIZED_COPPER_GRATE.png"
+    },
+    {
+        "label":  "Oxidized Copper Lantern",
+        "icon":  "/mc_assets/OXIDIZED_COPPER_LANTERN.png"
+    },
+    {
+        "label":  "Oxidized Copper Trapdoor",
+        "icon":  "/mc_assets/OXIDIZED_COPPER_TRAPDOOR.png"
+    },
+    {
+        "label":  "Oxidized Cut Copper",
+        "icon":  "/mc_assets/OXIDIZED_CUT_COPPER.png"
+    },
+    {
+        "label":  "Oxidized Cut Copper Slab",
+        "icon":  "/mc_assets/OXIDIZED_CUT_COPPER_SLAB.png"
+    },
+    {
+        "label":  "Oxidized Cut Copper Stairs",
+        "icon":  "/mc_assets/OXIDIZED_CUT_COPPER_STAIRS.png"
+    },
+    {
+        "label":  "Oxidized Lightning Rod",
+        "icon":  "/mc_assets/OXIDIZED_LIGHTNING_ROD.png"
+    },
+    {
+        "label":  "Packed Ice",
+        "icon":  "/mc_assets/PACKED_ICE.png"
+    },
+    {
+        "label":  "Packed Mud",
+        "icon":  "/mc_assets/PACKED_MUD.png"
+    },
+    {
+        "label":  "Painting",
+        "icon":  "/mc_assets/PAINTING.png",
+        "icon3d":  "/mc_assets/PAINTING (2).png"
+    },
+    {
+        "label":  "Pale Hanging Moss",
+        "icon":  "/mc_assets/PALE_HANGING_MOSS.png"
+    },
+    {
+        "label":  "Pale Moss Block",
+        "icon":  "/mc_assets/PALE_MOSS_BLOCK.png"
+    },
+    {
+        "label":  "Pale Moss Carpet",
+        "icon":  "/mc_assets/PALE_MOSS_CARPET.png"
+    },
+    {
+        "label":  "Pale Oak Boat",
+        "icon":  "/mc_assets/PALE_OAK_BOAT.png",
+        "icon3d":  "/mc_assets/PALE_OAK_BOAT (2).png"
+    },
+    {
+        "label":  "Pale Oak Button",
+        "icon":  "/mc_assets/PALE_OAK_BUTTON.png"
+    },
+    {
+        "label":  "Pale Oak Chest Boat",
+        "icon":  "/mc_assets/PALE_OAK_CHEST_BOAT.png",
+        "icon3d":  "/mc_assets/PALE_OAK_CHEST_BOAT (2).png"
+    },
+    {
+        "label":  "Pale Oak Door",
+        "icon":  "/mc_assets/PALE_OAK_DOOR.png"
+    },
+    {
+        "label":  "Pale Oak Fence",
+        "icon":  "/mc_assets/PALE_OAK_FENCE.png"
+    },
+    {
+        "label":  "Pale Oak Fence Gate",
+        "icon":  "/mc_assets/PALE_OAK_FENCE_GATE.png"
+    },
+    {
+        "label":  "Pale Oak Hanging Sign",
+        "icon":  "/mc_assets/PALE_OAK_HANGING_SIGN.png"
+    },
+    {
+        "label":  "Pale Oak Leaves",
+        "icon":  "/mc_assets/PALE_OAK_LEAVES.png"
+    },
+    {
+        "label":  "Pale Oak Log",
+        "icon":  "/mc_assets/PALE_OAK_LOG.png"
+    },
+    {
+        "label":  "Pale Oak Planks",
+        "icon":  "/mc_assets/PALE_OAK_PLANKS.png"
+    },
+    {
+        "label":  "Pale Oak Pressure Plate",
+        "icon":  "/mc_assets/PALE_OAK_PRESSURE_PLATE.png"
+    },
+    {
+        "label":  "Pale Oak Sapling",
+        "icon":  "/mc_assets/PALE_OAK_SAPLING.png"
+    },
+    {
+        "label":  "Pale Oak Shelf",
+        "icon":  "/mc_assets/PALE_OAK_SHELF.png"
+    },
+    {
+        "label":  "Pale Oak Sign",
+        "icon":  "/mc_assets/PALE_OAK_SIGN.png"
+    },
+    {
+        "label":  "Pale Oak Slab",
+        "icon":  "/mc_assets/PALE_OAK_SLAB.png"
+    },
+    {
+        "label":  "Pale Oak Stairs",
+        "icon":  "/mc_assets/PALE_OAK_STAIRS.png"
+    },
+    {
+        "label":  "Pale Oak Trapdoor",
+        "icon":  "/mc_assets/PALE_OAK_TRAPDOOR.png"
+    },
+    {
+        "label":  "Pale Oak Wood",
+        "icon":  "/mc_assets/PALE_OAK_WOOD.png"
+    },
+    {
+        "label":  "Panda",
+        "icon":  "/mc_assets/PANDA.png"
+    },
+    {
+        "label":  "Panda Spawn Egg",
+        "icon":  "/mc_assets/PANDA_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Paper",
+        "icon":  "/mc_assets/PAPER.png"
+    },
+    {
+        "label":  "Parched",
+        "icon":  "/mc_assets/PARCHED.png"
+    },
+    {
+        "label":  "Parched Spawn Egg",
+        "icon":  "/mc_assets/PARCHED_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Parrot",
+        "icon":  "/mc_assets/PARROT.png"
+    },
+    {
+        "label":  "Parrot Spawn Egg",
+        "icon":  "/mc_assets/PARROT_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Pearlescent Froglight",
+        "icon":  "/mc_assets/PEARLESCENT_FROGLIGHT.png"
+    },
+    {
+        "label":  "Peony",
+        "icon":  "/mc_assets/PEONY.png"
+    },
+    {
+        "label":  "Petrified Oak Slab",
+        "icon":  "/mc_assets/PETRIFIED_OAK_SLAB.png"
+    },
+    {
+        "label":  "Phantom",
+        "icon":  "/mc_assets/PHANTOM.png"
+    },
+    {
+        "label":  "Phantom Membrane",
+        "icon":  "/mc_assets/PHANTOM_MEMBRANE.png"
+    },
+    {
+        "label":  "Phantom Spawn Egg",
+        "icon":  "/mc_assets/PHANTOM_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Pig",
+        "icon":  "/mc_assets/PIG.png"
+    },
+    {
+        "label":  "Pig Spawn Egg",
+        "icon":  "/mc_assets/PIG_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Piglin",
+        "icon":  "/mc_assets/PIGLIN.png"
+    },
+    {
+        "label":  "Piglin Banner Pattern",
+        "icon":  "/mc_assets/PIGLIN_BANNER_PATTERN.png"
+    },
+    {
+        "label":  "Piglin Brute",
+        "icon":  "/mc_assets/PIGLIN_BRUTE.png"
+    },
+    {
+        "label":  "Piglin Brute Spawn Egg",
+        "icon":  "/mc_assets/PIGLIN_BRUTE_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Piglin Head",
+        "icon":  "/mc_assets/PIGLIN_HEAD.png"
+    },
+    {
+        "label":  "Piglin Spawn Egg",
+        "icon":  "/mc_assets/PIGLIN_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Pillager",
+        "icon":  "/mc_assets/PILLAGER.png"
+    },
+    {
+        "label":  "Pillager Spawn Egg",
+        "icon":  "/mc_assets/PILLAGER_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Pink Banner",
+        "icon":  "/mc_assets/PINK_BANNER.png"
+    },
+    {
+        "label":  "Pink Bed",
+        "icon":  "/mc_assets/PINK_BED.png"
+    },
+    {
+        "label":  "Pink Bundle",
+        "icon":  "/mc_assets/PINK_BUNDLE.png"
+    },
+    {
+        "label":  "Pink Candle",
+        "icon":  "/mc_assets/PINK_CANDLE.png"
+    },
+    {
+        "label":  "Pink Carpet",
+        "icon":  "/mc_assets/PINK_CARPET.png"
+    },
+    {
+        "label":  "Pink Concrete",
+        "icon":  "/mc_assets/PINK_CONCRETE.png"
+    },
+    {
+        "label":  "Pink Concrete Powder",
+        "icon":  "/mc_assets/PINK_CONCRETE_POWDER.png"
+    },
+    {
+        "label":  "Pink Dye",
+        "icon":  "/mc_assets/PINK_DYE.png"
+    },
+    {
+        "label":  "Pink Glazed Terracotta",
+        "icon":  "/mc_assets/PINK_GLAZED_TERRACOTTA.png"
+    },
+    {
+        "label":  "Pink Harness",
+        "icon":  "/mc_assets/PINK_HARNESS.png"
+    },
+    {
+        "label":  "Pink Petals",
+        "icon":  "/mc_assets/PINK_PETALS.png"
+    },
+    {
+        "label":  "Pink Shulker Box",
+        "icon":  "/mc_assets/PINK_SHULKER_BOX.png"
+    },
+    {
+        "label":  "Pink Stained Glass",
+        "icon":  "/mc_assets/PINK_STAINED_GLASS.png"
+    },
+    {
+        "label":  "Pink Stained Glass Pane",
+        "icon":  "/mc_assets/PINK_STAINED_GLASS_PANE.png"
+    },
+    {
+        "label":  "Pink Terracotta",
+        "icon":  "/mc_assets/PINK_TERRACOTTA.png"
+    },
+    {
+        "label":  "Pink Tulip",
+        "icon":  "/mc_assets/PINK_TULIP.png"
+    },
+    {
+        "label":  "Pink Wool",
+        "icon":  "/mc_assets/PINK_WOOL.png"
+    },
+    {
+        "label":  "Piston",
+        "icon":  "/mc_assets/PISTON.png"
+    },
+    {
+        "label":  "Pitcher Plant",
+        "icon":  "/mc_assets/PITCHER_PLANT.png"
+    },
+    {
+        "label":  "Pitcher Pod",
+        "icon":  "/mc_assets/PITCHER_POD.png"
+    },
+    {
+        "label":  "Player Head",
+        "icon":  "/mc_assets/PLAYER_HEAD.png"
+    },
+    {
+        "label":  "Plenty Pottery Sherd",
+        "icon":  "/mc_assets/PLENTY_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Podzol",
+        "icon":  "/mc_assets/PODZOL.png"
+    },
+    {
+        "label":  "Pointed Dripstone",
+        "icon":  "/mc_assets/POINTED_DRIPSTONE.png"
+    },
+    {
+        "label":  "Poisonous Potato",
+        "icon":  "/mc_assets/POISONOUS_POTATO.png"
+    },
+    {
+        "label":  "Polar Bear",
+        "icon":  "/mc_assets/POLAR_BEAR.png"
+    },
+    {
+        "label":  "Polar Bear Spawn Egg",
+        "icon":  "/mc_assets/POLAR_BEAR_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Polished Andesite",
+        "icon":  "/mc_assets/POLISHED_ANDESITE.png"
+    },
+    {
+        "label":  "Polished Andesite Slab",
+        "icon":  "/mc_assets/POLISHED_ANDESITE_SLAB.png"
+    },
+    {
+        "label":  "Polished Andesite Stairs",
+        "icon":  "/mc_assets/POLISHED_ANDESITE_STAIRS.png"
+    },
+    {
+        "label":  "Polished Basalt",
+        "icon":  "/mc_assets/POLISHED_BASALT.png"
+    },
+    {
+        "label":  "Polished Blackstone",
+        "icon":  "/mc_assets/POLISHED_BLACKSTONE.png"
+    },
+    {
+        "label":  "Polished Blackstone Brick Slab",
+        "icon":  "/mc_assets/POLISHED_BLACKSTONE_BRICK_SLAB.png"
+    },
+    {
+        "label":  "Polished Blackstone Brick Stairs",
+        "icon":  "/mc_assets/POLISHED_BLACKSTONE_BRICK_STAIRS.png"
+    },
+    {
+        "label":  "Polished Blackstone Brick Wall",
+        "icon":  "/mc_assets/POLISHED_BLACKSTONE_BRICK_WALL.png"
+    },
+    {
+        "label":  "Polished Blackstone Bricks",
+        "icon":  "/mc_assets/POLISHED_BLACKSTONE_BRICKS.png"
+    },
+    {
+        "label":  "Polished Blackstone Button",
+        "icon":  "/mc_assets/POLISHED_BLACKSTONE_BUTTON.png"
+    },
+    {
+        "label":  "Polished Blackstone Pressure Plate",
+        "icon":  "/mc_assets/POLISHED_BLACKSTONE_PRESSURE_PLATE.png"
+    },
+    {
+        "label":  "Polished Blackstone Slab",
+        "icon":  "/mc_assets/POLISHED_BLACKSTONE_SLAB.png"
+    },
+    {
+        "label":  "Polished Blackstone Stairs",
+        "icon":  "/mc_assets/POLISHED_BLACKSTONE_STAIRS.png"
+    },
+    {
+        "label":  "Polished Blackstone Wall",
+        "icon":  "/mc_assets/POLISHED_BLACKSTONE_WALL.png"
+    },
+    {
+        "label":  "Polished Cinnabar",
+        "icon":  "/mc_assets/POLISHED_CINNABAR.png"
+    },
+    {
+        "label":  "Polished Cinnabar Slab",
+        "icon":  "/mc_assets/POLISHED_CINNABAR_SLAB.png"
+    },
+    {
+        "label":  "Polished Cinnabar Stairs",
+        "icon":  "/mc_assets/POLISHED_CINNABAR_STAIRS.png"
+    },
+    {
+        "label":  "Polished Cinnabar Wall",
+        "icon":  "/mc_assets/POLISHED_CINNABAR_WALL.png"
+    },
+    {
+        "label":  "Polished Deepslate",
+        "icon":  "/mc_assets/POLISHED_DEEPSLATE.png"
+    },
+    {
+        "label":  "Polished Deepslate Slab",
+        "icon":  "/mc_assets/POLISHED_DEEPSLATE_SLAB.png"
+    },
+    {
+        "label":  "Polished Deepslate Stairs",
+        "icon":  "/mc_assets/POLISHED_DEEPSLATE_STAIRS.png"
+    },
+    {
+        "label":  "Polished Deepslate Wall",
+        "icon":  "/mc_assets/POLISHED_DEEPSLATE_WALL.png"
+    },
+    {
+        "label":  "Polished Diorite",
+        "icon":  "/mc_assets/POLISHED_DIORITE.png"
+    },
+    {
+        "label":  "Polished Diorite Slab",
+        "icon":  "/mc_assets/POLISHED_DIORITE_SLAB.png"
+    },
+    {
+        "label":  "Polished Diorite Stairs",
+        "icon":  "/mc_assets/POLISHED_DIORITE_STAIRS.png"
+    },
+    {
+        "label":  "Polished Granite",
+        "icon":  "/mc_assets/POLISHED_GRANITE.png"
+    },
+    {
+        "label":  "Polished Granite Slab",
+        "icon":  "/mc_assets/POLISHED_GRANITE_SLAB.png"
+    },
+    {
+        "label":  "Polished Granite Stairs",
+        "icon":  "/mc_assets/POLISHED_GRANITE_STAIRS.png"
+    },
+    {
+        "label":  "Polished Sulfur",
+        "icon":  "/mc_assets/POLISHED_SULFUR.png"
+    },
+    {
+        "label":  "Polished Sulfur Slab",
+        "icon":  "/mc_assets/POLISHED_SULFUR_SLAB.png"
+    },
+    {
+        "label":  "Polished Sulfur Stairs",
+        "icon":  "/mc_assets/POLISHED_SULFUR_STAIRS.png"
+    },
+    {
+        "label":  "Polished Sulfur Wall",
+        "icon":  "/mc_assets/POLISHED_SULFUR_WALL.png"
+    },
+    {
+        "label":  "Polished Tuff",
+        "icon":  "/mc_assets/POLISHED_TUFF.png"
+    },
+    {
+        "label":  "Polished Tuff Slab",
+        "icon":  "/mc_assets/POLISHED_TUFF_SLAB.png"
+    },
+    {
+        "label":  "Polished Tuff Stairs",
+        "icon":  "/mc_assets/POLISHED_TUFF_STAIRS.png"
+    },
+    {
+        "label":  "Polished Tuff Wall",
+        "icon":  "/mc_assets/POLISHED_TUFF_WALL.png"
+    },
+    {
+        "label":  "Popped Chorus Fruit",
+        "icon":  "/mc_assets/POPPED_CHORUS_FRUIT.png"
+    },
+    {
+        "label":  "Poppy",
+        "icon":  "/mc_assets/POPPY.png"
+    },
+    {
+        "label":  "Porkchop",
+        "icon":  "/mc_assets/PORKCHOP.png"
+    },
+    {
+        "label":  "Potato",
+        "icon":  "/mc_assets/POTATO.png"
+    },
+    {
+        "label":  "Potent Sulfur",
+        "icon":  "/mc_assets/POTENT_SULFUR.png"
+    },
+    {
+        "label":  "Potion",
+        "icon":  "/mc_assets/POTION.png"
+    },
+    {
+        "label":  "Powder Snow Bucket",
+        "icon":  "/mc_assets/POWDER_SNOW_BUCKET.png"
+    },
+    {
+        "label":  "Powered Rail",
+        "icon":  "/mc_assets/POWERED_RAIL.png"
+    },
+    {
+        "label":  "Prismarine",
+        "icon":  "/mc_assets/PRISMARINE.png"
+    },
+    {
+        "label":  "Prismarine Brick Slab",
+        "icon":  "/mc_assets/PRISMARINE_BRICK_SLAB.png"
+    },
+    {
+        "label":  "Prismarine Brick Stairs",
+        "icon":  "/mc_assets/PRISMARINE_BRICK_STAIRS.png"
+    },
+    {
+        "label":  "Prismarine Bricks",
+        "icon":  "/mc_assets/PRISMARINE_BRICKS.png"
+    },
+    {
+        "label":  "Prismarine Crystals",
+        "icon":  "/mc_assets/PRISMARINE_CRYSTALS.png"
+    },
+    {
+        "label":  "Prismarine Shard",
+        "icon":  "/mc_assets/PRISMARINE_SHARD.png"
+    },
+    {
+        "label":  "Prismarine Slab",
+        "icon":  "/mc_assets/PRISMARINE_SLAB.png"
+    },
+    {
+        "label":  "Prismarine Stairs",
+        "icon":  "/mc_assets/PRISMARINE_STAIRS.png"
+    },
+    {
+        "label":  "Prismarine Wall",
+        "icon":  "/mc_assets/PRISMARINE_WALL.png"
+    },
+    {
+        "label":  "Prize Pottery Sherd",
+        "icon":  "/mc_assets/PRIZE_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Pufferfish",
+        "icon":  "/mc_assets/PUFFERFISH.png",
+        "icon3d":  "/mc_assets/PUFFERFISH (2).png"
+    },
+    {
+        "label":  "Pufferfish Bucket",
+        "icon":  "/mc_assets/PUFFERFISH_BUCKET.png"
+    },
+    {
+        "label":  "Pufferfish Spawn Egg",
+        "icon":  "/mc_assets/PUFFERFISH_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Pumpkin",
+        "icon":  "/mc_assets/PUMPKIN.png"
+    },
+    {
+        "label":  "Pumpkin Pie",
+        "icon":  "/mc_assets/PUMPKIN_PIE.png"
+    },
+    {
+        "label":  "Pumpkin Seeds",
+        "icon":  "/mc_assets/PUMPKIN_SEEDS.png"
+    },
+    {
+        "label":  "Purple Banner",
+        "icon":  "/mc_assets/PURPLE_BANNER.png"
+    },
+    {
+        "label":  "Purple Bed",
+        "icon":  "/mc_assets/PURPLE_BED.png"
+    },
+    {
+        "label":  "Purple Bundle",
+        "icon":  "/mc_assets/PURPLE_BUNDLE.png"
+    },
+    {
+        "label":  "Purple Candle",
+        "icon":  "/mc_assets/PURPLE_CANDLE.png"
+    },
+    {
+        "label":  "Purple Carpet",
+        "icon":  "/mc_assets/PURPLE_CARPET.png"
+    },
+    {
+        "label":  "Purple Concrete",
+        "icon":  "/mc_assets/PURPLE_CONCRETE.png"
+    },
+    {
+        "label":  "Purple Concrete Powder",
+        "icon":  "/mc_assets/PURPLE_CONCRETE_POWDER.png"
+    },
+    {
+        "label":  "Purple Dye",
+        "icon":  "/mc_assets/PURPLE_DYE.png"
+    },
+    {
+        "label":  "Purple Glazed Terracotta",
+        "icon":  "/mc_assets/PURPLE_GLAZED_TERRACOTTA.png"
+    },
+    {
+        "label":  "Purple Harness",
+        "icon":  "/mc_assets/PURPLE_HARNESS.png"
+    },
+    {
+        "label":  "Purple Shulker Box",
+        "icon":  "/mc_assets/PURPLE_SHULKER_BOX.png"
+    },
+    {
+        "label":  "Purple Stained Glass",
+        "icon":  "/mc_assets/PURPLE_STAINED_GLASS.png"
+    },
+    {
+        "label":  "Purple Stained Glass Pane",
+        "icon":  "/mc_assets/PURPLE_STAINED_GLASS_PANE.png"
+    },
+    {
+        "label":  "Purple Terracotta",
+        "icon":  "/mc_assets/PURPLE_TERRACOTTA.png"
+    },
+    {
+        "label":  "Purple Wool",
+        "icon":  "/mc_assets/PURPLE_WOOL.png"
+    },
+    {
+        "label":  "Purpur Block",
+        "icon":  "/mc_assets/PURPUR_BLOCK.png"
+    },
+    {
+        "label":  "Purpur Pillar",
+        "icon":  "/mc_assets/PURPUR_PILLAR.png"
+    },
+    {
+        "label":  "Purpur Slab",
+        "icon":  "/mc_assets/PURPUR_SLAB.png"
+    },
+    {
+        "label":  "Purpur Stairs",
+        "icon":  "/mc_assets/PURPUR_STAIRS.png"
+    },
+    {
+        "label":  "Quartz",
+        "icon":  "/mc_assets/QUARTZ.png"
+    },
+    {
+        "label":  "Quartz Block",
+        "icon":  "/mc_assets/QUARTZ_BLOCK.png"
+    },
+    {
+        "label":  "Quartz Bricks",
+        "icon":  "/mc_assets/QUARTZ_BRICKS.png"
+    },
+    {
+        "label":  "Quartz Pillar",
+        "icon":  "/mc_assets/QUARTZ_PILLAR.png"
+    },
+    {
+        "label":  "Quartz Slab",
+        "icon":  "/mc_assets/QUARTZ_SLAB.png"
+    },
+    {
+        "label":  "Quartz Stairs",
+        "icon":  "/mc_assets/QUARTZ_STAIRS.png"
+    },
+    {
+        "label":  "Rabbit",
+        "icon":  "/mc_assets/RABBIT.png",
+        "icon3d":  "/mc_assets/RABBIT (2).png"
+    },
+    {
+        "label":  "Rabbit Foot",
+        "icon":  "/mc_assets/RABBIT_FOOT.png"
+    },
+    {
+        "label":  "Rabbit Hide",
+        "icon":  "/mc_assets/RABBIT_HIDE.png"
+    },
+    {
+        "label":  "Rabbit Spawn Egg",
+        "icon":  "/mc_assets/RABBIT_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Rabbit Stew",
+        "icon":  "/mc_assets/RABBIT_STEW.png"
+    },
+    {
+        "label":  "Rail",
+        "icon":  "/mc_assets/RAIL.png"
+    },
+    {
+        "label":  "Raiser Armor Trim Smithing Template",
+        "icon":  "/mc_assets/RAISER_ARMOR_TRIM_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Ravager",
+        "icon":  "/mc_assets/RAVAGER.png"
+    },
+    {
+        "label":  "Ravager Spawn Egg",
+        "icon":  "/mc_assets/RAVAGER_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Raw Copper",
+        "icon":  "/mc_assets/RAW_COPPER.png"
+    },
+    {
+        "label":  "Raw Copper Block",
+        "icon":  "/mc_assets/RAW_COPPER_BLOCK.png"
+    },
+    {
+        "label":  "Raw Gold",
+        "icon":  "/mc_assets/RAW_GOLD.png"
+    },
+    {
+        "label":  "Raw Gold Block",
+        "icon":  "/mc_assets/RAW_GOLD_BLOCK.png"
+    },
+    {
+        "label":  "Raw Iron",
+        "icon":  "/mc_assets/RAW_IRON.png"
+    },
+    {
+        "label":  "Raw Iron Block",
+        "icon":  "/mc_assets/RAW_IRON_BLOCK.png"
+    },
+    {
+        "label":  "Recovery Compass",
+        "icon":  "/mc_assets/RECOVERY_COMPASS.png"
+    },
+    {
+        "label":  "Red Banner",
+        "icon":  "/mc_assets/RED_BANNER.png"
+    },
+    {
+        "label":  "Red Bed",
+        "icon":  "/mc_assets/RED_BED.png"
+    },
+    {
+        "label":  "Red Bundle",
+        "icon":  "/mc_assets/RED_BUNDLE.png"
+    },
+    {
+        "label":  "Red Candle",
+        "icon":  "/mc_assets/RED_CANDLE.png"
+    },
+    {
+        "label":  "Red Carpet",
+        "icon":  "/mc_assets/RED_CARPET.png"
+    },
+    {
+        "label":  "Red Concrete",
+        "icon":  "/mc_assets/RED_CONCRETE.png"
+    },
+    {
+        "label":  "Red Concrete Powder",
+        "icon":  "/mc_assets/RED_CONCRETE_POWDER.png"
+    },
+    {
+        "label":  "Red Dye",
+        "icon":  "/mc_assets/RED_DYE.png"
+    },
+    {
+        "label":  "Red Glazed Terracotta",
+        "icon":  "/mc_assets/RED_GLAZED_TERRACOTTA.png"
+    },
+    {
+        "label":  "Red Harness",
+        "icon":  "/mc_assets/RED_HARNESS.png"
+    },
+    {
+        "label":  "Red Mushroom",
+        "icon":  "/mc_assets/RED_MUSHROOM.png"
+    },
+    {
+        "label":  "Red Mushroom Block",
+        "icon":  "/mc_assets/RED_MUSHROOM_BLOCK.png"
+    },
+    {
+        "label":  "Red Nether Brick Slab",
+        "icon":  "/mc_assets/RED_NETHER_BRICK_SLAB.png"
+    },
+    {
+        "label":  "Red Nether Brick Stairs",
+        "icon":  "/mc_assets/RED_NETHER_BRICK_STAIRS.png"
+    },
+    {
+        "label":  "Red Nether Brick Wall",
+        "icon":  "/mc_assets/RED_NETHER_BRICK_WALL.png"
+    },
+    {
+        "label":  "Red Nether Bricks",
+        "icon":  "/mc_assets/RED_NETHER_BRICKS.png"
+    },
+    {
+        "label":  "Red Sand",
+        "icon":  "/mc_assets/RED_SAND.png"
+    },
+    {
+        "label":  "Red Sandstone",
+        "icon":  "/mc_assets/RED_SANDSTONE.png"
+    },
+    {
+        "label":  "Red Sandstone Slab",
+        "icon":  "/mc_assets/RED_SANDSTONE_SLAB.png"
+    },
+    {
+        "label":  "Red Sandstone Stairs",
+        "icon":  "/mc_assets/RED_SANDSTONE_STAIRS.png"
+    },
+    {
+        "label":  "Red Sandstone Wall",
+        "icon":  "/mc_assets/RED_SANDSTONE_WALL.png"
+    },
+    {
+        "label":  "Red Shulker Box",
+        "icon":  "/mc_assets/RED_SHULKER_BOX.png"
+    },
+    {
+        "label":  "Red Stained Glass",
+        "icon":  "/mc_assets/RED_STAINED_GLASS.png"
+    },
+    {
+        "label":  "Red Stained Glass Pane",
+        "icon":  "/mc_assets/RED_STAINED_GLASS_PANE.png"
+    },
+    {
+        "label":  "Red Terracotta",
+        "icon":  "/mc_assets/RED_TERRACOTTA.png"
+    },
+    {
+        "label":  "Red Tulip",
+        "icon":  "/mc_assets/RED_TULIP.png"
+    },
+    {
+        "label":  "Red Wool",
+        "icon":  "/mc_assets/RED_WOOL.png"
+    },
+    {
+        "label":  "Redstone",
+        "icon":  "/mc_assets/REDSTONE.png"
+    },
+    {
+        "label":  "Redstone Block",
+        "icon":  "/mc_assets/REDSTONE_BLOCK.png"
+    },
+    {
+        "label":  "Redstone Lamp",
+        "icon":  "/mc_assets/REDSTONE_LAMP.png"
+    },
+    {
+        "label":  "Redstone Ore",
+        "icon":  "/mc_assets/REDSTONE_ORE.png"
+    },
+    {
+        "label":  "Redstone Torch",
+        "icon":  "/mc_assets/REDSTONE_TORCH.png"
+    },
+    {
+        "label":  "Reinforced Deepslate",
+        "icon":  "/mc_assets/REINFORCED_DEEPSLATE.png"
+    },
+    {
+        "label":  "Repeater",
+        "icon":  "/mc_assets/REPEATER.png"
+    },
+    {
+        "label":  "Repeating Command Block",
+        "icon":  "/mc_assets/REPEATING_COMMAND_BLOCK.png"
+    },
+    {
+        "label":  "Resin Block",
+        "icon":  "/mc_assets/RESIN_BLOCK.png"
+    },
+    {
+        "label":  "Resin Brick",
+        "icon":  "/mc_assets/RESIN_BRICK.png"
+    },
+    {
+        "label":  "Resin Brick Slab",
+        "icon":  "/mc_assets/RESIN_BRICK_SLAB.png"
+    },
+    {
+        "label":  "Resin Brick Stairs",
+        "icon":  "/mc_assets/RESIN_BRICK_STAIRS.png"
+    },
+    {
+        "label":  "Resin Brick Wall",
+        "icon":  "/mc_assets/RESIN_BRICK_WALL.png"
+    },
+    {
+        "label":  "Resin Bricks",
+        "icon":  "/mc_assets/RESIN_BRICKS.png"
+    },
+    {
+        "label":  "Resin Clump",
+        "icon":  "/mc_assets/RESIN_CLUMP.png"
+    },
+    {
+        "label":  "Respawn Anchor",
+        "icon":  "/mc_assets/RESPAWN_ANCHOR.png"
+    },
+    {
+        "label":  "Rib Armor Trim Smithing Template",
+        "icon":  "/mc_assets/RIB_ARMOR_TRIM_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Rooted Dirt",
+        "icon":  "/mc_assets/ROOTED_DIRT.png"
+    },
+    {
+        "label":  "Rose Bush",
+        "icon":  "/mc_assets/ROSE_BUSH.png"
+    },
+    {
+        "label":  "Rotten Flesh",
+        "icon":  "/mc_assets/ROTTEN_FLESH.png"
+    },
+    {
+        "label":  "Saddle",
+        "icon":  "/mc_assets/SADDLE.png"
+    },
+    {
+        "label":  "Salmon",
+        "icon":  "/mc_assets/SALMON.png",
+        "icon3d":  "/mc_assets/SALMON (2).png"
+    },
+    {
+        "label":  "Salmon Bucket",
+        "icon":  "/mc_assets/SALMON_BUCKET.png"
+    },
+    {
+        "label":  "Salmon Spawn Egg",
+        "icon":  "/mc_assets/SALMON_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Sand",
+        "icon":  "/mc_assets/SAND.png"
+    },
+    {
+        "label":  "Sandstone",
+        "icon":  "/mc_assets/SANDSTONE.png"
+    },
+    {
+        "label":  "Sandstone Slab",
+        "icon":  "/mc_assets/SANDSTONE_SLAB.png"
+    },
+    {
+        "label":  "Sandstone Stairs",
+        "icon":  "/mc_assets/SANDSTONE_STAIRS.png"
+    },
+    {
+        "label":  "Sandstone Wall",
+        "icon":  "/mc_assets/SANDSTONE_WALL.png"
+    },
+    {
+        "label":  "Scaffolding",
+        "icon":  "/mc_assets/SCAFFOLDING.png"
+    },
+    {
+        "label":  "Scrape Pottery Sherd",
+        "icon":  "/mc_assets/SCRAPE_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Sculk",
+        "icon":  "/mc_assets/SCULK.png"
+    },
+    {
+        "label":  "Sculk Catalyst",
+        "icon":  "/mc_assets/SCULK_CATALYST.png"
+    },
+    {
+        "label":  "Sculk Sensor",
+        "icon":  "/mc_assets/SCULK_SENSOR.png"
+    },
+    {
+        "label":  "Sculk Shrieker",
+        "icon":  "/mc_assets/SCULK_SHRIEKER.png"
+    },
+    {
+        "label":  "Sculk Vein",
+        "icon":  "/mc_assets/SCULK_VEIN.png"
+    },
+    {
+        "label":  "Sea Lantern",
+        "icon":  "/mc_assets/SEA_LANTERN.png"
+    },
+    {
+        "label":  "Sea Pickle",
+        "icon":  "/mc_assets/SEA_PICKLE.png"
+    },
+    {
+        "label":  "Seagrass",
+        "icon":  "/mc_assets/SEAGRASS.png"
+    },
+    {
+        "label":  "Sentry Armor Trim Smithing Template",
+        "icon":  "/mc_assets/SENTRY_ARMOR_TRIM_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Shaper Armor Trim Smithing Template",
+        "icon":  "/mc_assets/SHAPER_ARMOR_TRIM_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Sheaf Pottery Sherd",
+        "icon":  "/mc_assets/SHEAF_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Shears",
+        "icon":  "/mc_assets/SHEARS.png"
+    },
+    {
+        "label":  "Sheep",
+        "icon":  "/mc_assets/SHEEP.png"
+    },
+    {
+        "label":  "Sheep Spawn Egg",
+        "icon":  "/mc_assets/SHEEP_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Shelter Pottery Sherd",
+        "icon":  "/mc_assets/SHELTER_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Shield",
+        "icon":  "/mc_assets/SHIELD.png"
+    },
+    {
+        "label":  "Short Dry Grass",
+        "icon":  "/mc_assets/SHORT_DRY_GRASS.png"
+    },
+    {
+        "label":  "Short Grass",
+        "icon":  "/mc_assets/SHORT_GRASS.png"
+    },
+    {
+        "label":  "Shroomlight",
+        "icon":  "/mc_assets/SHROOMLIGHT.png"
+    },
+    {
+        "label":  "Shulker",
+        "icon":  "/mc_assets/SHULKER.png"
+    },
+    {
+        "label":  "Shulker Box",
+        "icon":  "/mc_assets/SHULKER_BOX.png"
+    },
+    {
+        "label":  "Shulker Bullet",
+        "icon":  "/mc_assets/SHULKER_BULLET.png"
+    },
+    {
+        "label":  "Shulker Shell",
+        "icon":  "/mc_assets/SHULKER_SHELL.png"
+    },
+    {
+        "label":  "Shulker Spawn Egg",
+        "icon":  "/mc_assets/SHULKER_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Silence Armor Trim Smithing Template",
+        "icon":  "/mc_assets/SILENCE_ARMOR_TRIM_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Silverfish",
+        "icon":  "/mc_assets/SILVERFISH.png"
+    },
+    {
+        "label":  "Silverfish Spawn Egg",
+        "icon":  "/mc_assets/SILVERFISH_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Skeleton",
+        "icon":  "/mc_assets/SKELETON.png"
+    },
+    {
+        "label":  "Skeleton Horse",
+        "icon":  "/mc_assets/SKELETON_HORSE.png"
+    },
+    {
+        "label":  "Skeleton Horse Spawn Egg",
+        "icon":  "/mc_assets/SKELETON_HORSE_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Skeleton Skull",
+        "icon":  "/mc_assets/SKELETON_SKULL.png"
+    },
+    {
+        "label":  "Skeleton Spawn Egg",
+        "icon":  "/mc_assets/SKELETON_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Skull Banner Pattern",
+        "icon":  "/mc_assets/SKULL_BANNER_PATTERN.png"
+    },
+    {
+        "label":  "Skull Pottery Sherd",
+        "icon":  "/mc_assets/SKULL_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Slime",
+        "icon":  "/mc_assets/SLIME.png"
+    },
+    {
+        "label":  "Slime Ball",
+        "icon":  "/mc_assets/SLIME_BALL.png"
+    },
+    {
+        "label":  "Slime Block",
+        "icon":  "/mc_assets/SLIME_BLOCK.png"
+    },
+    {
+        "label":  "Slime Spawn Egg",
+        "icon":  "/mc_assets/SLIME_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Small Amethyst Bud",
+        "icon":  "/mc_assets/SMALL_AMETHYST_BUD.png"
+    },
+    {
+        "label":  "Small Dripleaf",
+        "icon":  "/mc_assets/SMALL_DRIPLEAF.png"
+    },
+    {
+        "label":  "Small Fireball",
+        "icon":  "/mc_assets/SMALL_FIREBALL.png"
+    },
+    {
+        "label":  "Smithing Table",
+        "icon":  "/mc_assets/SMITHING_TABLE.png"
+    },
+    {
+        "label":  "Smoker",
+        "icon":  "/mc_assets/SMOKER.png"
+    },
+    {
+        "label":  "Smooth Basalt",
+        "icon":  "/mc_assets/SMOOTH_BASALT.png"
+    },
+    {
+        "label":  "Smooth Quartz",
+        "icon":  "/mc_assets/SMOOTH_QUARTZ.png"
+    },
+    {
+        "label":  "Smooth Quartz Slab",
+        "icon":  "/mc_assets/SMOOTH_QUARTZ_SLAB.png"
+    },
+    {
+        "label":  "Smooth Quartz Stairs",
+        "icon":  "/mc_assets/SMOOTH_QUARTZ_STAIRS.png"
+    },
+    {
+        "label":  "Smooth Red Sandstone",
+        "icon":  "/mc_assets/SMOOTH_RED_SANDSTONE.png"
+    },
+    {
+        "label":  "Smooth Red Sandstone Slab",
+        "icon":  "/mc_assets/SMOOTH_RED_SANDSTONE_SLAB.png"
+    },
+    {
+        "label":  "Smooth Red Sandstone Stairs",
+        "icon":  "/mc_assets/SMOOTH_RED_SANDSTONE_STAIRS.png"
+    },
+    {
+        "label":  "Smooth Sandstone",
+        "icon":  "/mc_assets/SMOOTH_SANDSTONE.png"
+    },
+    {
+        "label":  "Smooth Sandstone Slab",
+        "icon":  "/mc_assets/SMOOTH_SANDSTONE_SLAB.png"
+    },
+    {
+        "label":  "Smooth Sandstone Stairs",
+        "icon":  "/mc_assets/SMOOTH_SANDSTONE_STAIRS.png"
+    },
+    {
+        "label":  "Smooth Stone",
+        "icon":  "/mc_assets/SMOOTH_STONE.png"
+    },
+    {
+        "label":  "Smooth Stone Slab",
+        "icon":  "/mc_assets/SMOOTH_STONE_SLAB.png"
+    },
+    {
+        "label":  "Sniffer",
+        "icon":  "/mc_assets/SNIFFER.png"
+    },
+    {
+        "label":  "Sniffer Egg",
+        "icon":  "/mc_assets/SNIFFER_EGG.png"
+    },
+    {
+        "label":  "Sniffer Spawn Egg",
+        "icon":  "/mc_assets/SNIFFER_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Snort Pottery Sherd",
+        "icon":  "/mc_assets/SNORT_POTTERY_SHERD.png"
+    },
+    {
+        "label":  "Snout Armor Trim Smithing Template",
+        "icon":  "/mc_assets/SNOUT_ARMOR_TRIM_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Snow",
+        "icon":  "/mc_assets/SNOW.png"
+    },
+    {
+        "label":  "Snow Block",
+        "icon":  "/mc_assets/SNOW_BLOCK.png"
+    },
+    {
+        "label":  "Snow Golem",
+        "icon":  "/mc_assets/SNOW_GOLEM.png"
+    },
+    {
+        "label":  "Snow Golem Spawn Egg",
+        "icon":  "/mc_assets/SNOW_GOLEM_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Snowball",
+        "icon":  "/mc_assets/SNOWBALL.png",
+        "icon3d":  "/mc_assets/SNOWBALL (2).png"
+    },
+    {
+        "label":  "Soul Campfire",
+        "icon":  "/mc_assets/SOUL_CAMPFIRE.png"
+    },
+    {
+        "label":  "Soul Lantern",
+        "icon":  "/mc_assets/SOUL_LANTERN.png"
+    },
+    {
+        "label":  "Soul Sand",
+        "icon":  "/mc_assets/SOUL_SAND.png"
+    },
+    {
+        "label":  "Soul Soil",
+        "icon":  "/mc_assets/SOUL_SOIL.png"
+    },
+    {
+        "label":  "Soul Torch",
+        "icon":  "/mc_assets/SOUL_TORCH.png"
+    },
+    {
+        "label":  "Spawner",
+        "icon":  "/mc_assets/SPAWNER.png"
+    },
+    {
+        "label":  "Spawner Minecart",
+        "icon":  "/mc_assets/SPAWNER_MINECART.png"
+    },
+    {
+        "label":  "Spectral Arrow",
+        "icon":  "/mc_assets/SPECTRAL_ARROW.png",
+        "icon3d":  "/mc_assets/SPECTRAL_ARROW (2).png"
+    },
+    {
+        "label":  "Spider",
+        "icon":  "/mc_assets/SPIDER.png"
+    },
+    {
+        "label":  "Spider Eye",
+        "icon":  "/mc_assets/SPIDER_EYE.png"
+    },
+    {
+        "label":  "Spider Spawn Egg",
+        "icon":  "/mc_assets/SPIDER_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Spire Armor Trim Smithing Template",
+        "icon":  "/mc_assets/SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Splash Potion",
+        "icon":  "/mc_assets/SPLASH_POTION.png",
+        "icon3d":  "/mc_assets/SPLASH_POTION (2).png"
+    },
+    {
+        "label":  "Sponge",
+        "icon":  "/mc_assets/SPONGE.png"
+    },
+    {
+        "label":  "Spore Blossom",
+        "icon":  "/mc_assets/SPORE_BLOSSOM.png"
+    },
+    {
+        "label":  "Spruce Boat",
+        "icon":  "/mc_assets/SPRUCE_BOAT.png",
+        "icon3d":  "/mc_assets/SPRUCE_BOAT (2).png"
+    },
+    {
+        "label":  "Spruce Button",
+        "icon":  "/mc_assets/SPRUCE_BUTTON.png"
+    },
+    {
+        "label":  "Spruce Chest Boat",
+        "icon":  "/mc_assets/SPRUCE_CHEST_BOAT.png",
+        "icon3d":  "/mc_assets/SPRUCE_CHEST_BOAT (2).png"
+    },
+    {
+        "label":  "Spruce Door",
+        "icon":  "/mc_assets/SPRUCE_DOOR.png"
+    },
+    {
+        "label":  "Spruce Fence",
+        "icon":  "/mc_assets/SPRUCE_FENCE.png"
+    },
+    {
+        "label":  "Spruce Fence Gate",
+        "icon":  "/mc_assets/SPRUCE_FENCE_GATE.png"
+    },
+    {
+        "label":  "Spruce Hanging Sign",
+        "icon":  "/mc_assets/SPRUCE_HANGING_SIGN.png"
+    },
+    {
+        "label":  "Spruce Leaves",
+        "icon":  "/mc_assets/SPRUCE_LEAVES.png"
+    },
+    {
+        "label":  "Spruce Log",
+        "icon":  "/mc_assets/SPRUCE_LOG.png"
+    },
+    {
+        "label":  "Spruce Planks",
+        "icon":  "/mc_assets/SPRUCE_PLANKS.png"
+    },
+    {
+        "label":  "Spruce Pressure Plate",
+        "icon":  "/mc_assets/SPRUCE_PRESSURE_PLATE.png"
+    },
+    {
+        "label":  "Spruce Sapling",
+        "icon":  "/mc_assets/SPRUCE_SAPLING.png"
+    },
+    {
+        "label":  "Spruce Shelf",
+        "icon":  "/mc_assets/SPRUCE_SHELF.png"
+    },
+    {
+        "label":  "Spruce Sign",
+        "icon":  "/mc_assets/SPRUCE_SIGN.png"
+    },
+    {
+        "label":  "Spruce Slab",
+        "icon":  "/mc_assets/SPRUCE_SLAB.png"
+    },
+    {
+        "label":  "Spruce Stairs",
+        "icon":  "/mc_assets/SPRUCE_STAIRS.png"
+    },
+    {
+        "label":  "Spruce Trapdoor",
+        "icon":  "/mc_assets/SPRUCE_TRAPDOOR.png"
+    },
+    {
+        "label":  "Spruce Wood",
+        "icon":  "/mc_assets/SPRUCE_WOOD.png"
+    },
+    {
+        "label":  "Spyglass",
+        "icon":  "/mc_assets/SPYGLASS.png"
+    },
+    {
+        "label":  "Squid",
+        "icon":  "/mc_assets/SQUID.png"
+    },
+    {
+        "label":  "Squid Spawn Egg",
+        "icon":  "/mc_assets/SQUID_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Stick",
+        "icon":  "/mc_assets/STICK.png"
+    },
+    {
+        "label":  "Sticky Piston",
+        "icon":  "/mc_assets/STICKY_PISTON.png"
+    },
+    {
+        "label":  "Stone",
+        "icon":  "/mc_assets/STONE.png"
+    },
+    {
+        "label":  "Stone Axe",
+        "icon":  "/mc_assets/STONE_AXE.png"
+    },
+    {
+        "label":  "Stone Brick Slab",
+        "icon":  "/mc_assets/STONE_BRICK_SLAB.png"
+    },
+    {
+        "label":  "Stone Brick Stairs",
+        "icon":  "/mc_assets/STONE_BRICK_STAIRS.png"
+    },
+    {
+        "label":  "Stone Brick Wall",
+        "icon":  "/mc_assets/STONE_BRICK_WALL.png"
+    },
+    {
+        "label":  "Stone Bricks",
+        "icon":  "/mc_assets/STONE_BRICKS.png"
+    },
+    {
+        "label":  "Stone Button",
+        "icon":  "/mc_assets/STONE_BUTTON.png"
+    },
+    {
+        "label":  "Stone Hoe",
+        "icon":  "/mc_assets/STONE_HOE.png"
+    },
+    {
+        "label":  "Stone Pickaxe",
+        "icon":  "/mc_assets/STONE_PICKAXE.png"
+    },
+    {
+        "label":  "Stone Pressure Plate",
+        "icon":  "/mc_assets/STONE_PRESSURE_PLATE.png"
+    },
+    {
+        "label":  "Stone Shovel",
+        "icon":  "/mc_assets/STONE_SHOVEL.png"
+    },
+    {
+        "label":  "Stone Slab",
+        "icon":  "/mc_assets/STONE_SLAB.png"
+    },
+    {
+        "label":  "Stone Spear",
+        "icon":  "/mc_assets/STONE_SPEAR.png"
+    },
+    {
+        "label":  "Stone Stairs",
+        "icon":  "/mc_assets/STONE_STAIRS.png"
+    },
+    {
+        "label":  "Stone Sword",
+        "icon":  "/mc_assets/STONE_SWORD.png"
+    },
+    {
+        "label":  "Stonecutter",
+        "icon":  "/mc_assets/STONECUTTER.png"
+    },
+    {
+        "label":  "Stray",
+        "icon":  "/mc_assets/STRAY.png"
+    },
+    {
+        "label":  "Stray Spawn Egg",
+        "icon":  "/mc_assets/STRAY_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Strider",
+        "icon":  "/mc_assets/STRIDER.png"
+    },
+    {
+        "label":  "Strider Spawn Egg",
+        "icon":  "/mc_assets/STRIDER_SPAWN_EGG.png"
+    },
+    {
+        "label":  "String",
+        "icon":  "/mc_assets/STRING.png"
+    },
+    {
+        "label":  "Stripped Acacia Log",
+        "icon":  "/mc_assets/STRIPPED_ACACIA_LOG.png"
+    },
+    {
+        "label":  "Stripped Acacia Wood",
+        "icon":  "/mc_assets/STRIPPED_ACACIA_WOOD.png"
+    },
+    {
+        "label":  "Stripped Bamboo Block",
+        "icon":  "/mc_assets/STRIPPED_BAMBOO_BLOCK.png"
+    },
+    {
+        "label":  "Stripped Birch Log",
+        "icon":  "/mc_assets/STRIPPED_BIRCH_LOG.png"
+    },
+    {
+        "label":  "Stripped Birch Wood",
+        "icon":  "/mc_assets/STRIPPED_BIRCH_WOOD.png"
+    },
+    {
+        "label":  "Stripped Cherry Log",
+        "icon":  "/mc_assets/STRIPPED_CHERRY_LOG.png"
+    },
+    {
+        "label":  "Stripped Cherry Wood",
+        "icon":  "/mc_assets/STRIPPED_CHERRY_WOOD.png"
+    },
+    {
+        "label":  "Stripped Crimson Hyphae",
+        "icon":  "/mc_assets/STRIPPED_CRIMSON_HYPHAE.png"
+    },
+    {
+        "label":  "Stripped Crimson Stem",
+        "icon":  "/mc_assets/STRIPPED_CRIMSON_STEM.png"
+    },
+    {
+        "label":  "Stripped Dark Oak Log",
+        "icon":  "/mc_assets/STRIPPED_DARK_OAK_LOG.png"
+    },
+    {
+        "label":  "Stripped Dark Oak Wood",
+        "icon":  "/mc_assets/STRIPPED_DARK_OAK_WOOD.png"
+    },
+    {
+        "label":  "Stripped Jungle Log",
+        "icon":  "/mc_assets/STRIPPED_JUNGLE_LOG.png"
+    },
+    {
+        "label":  "Stripped Jungle Wood",
+        "icon":  "/mc_assets/STRIPPED_JUNGLE_WOOD.png"
+    },
+    {
+        "label":  "Stripped Mangrove Log",
+        "icon":  "/mc_assets/STRIPPED_MANGROVE_LOG.png"
+    },
+    {
+        "label":  "Stripped Mangrove Wood",
+        "icon":  "/mc_assets/STRIPPED_MANGROVE_WOOD.png"
+    },
+    {
+        "label":  "Stripped Oak Log",
+        "icon":  "/mc_assets/STRIPPED_OAK_LOG.png"
+    },
+    {
+        "label":  "Stripped Oak Wood",
+        "icon":  "/mc_assets/STRIPPED_OAK_WOOD.png"
+    },
+    {
+        "label":  "Stripped Pale Oak Log",
+        "icon":  "/mc_assets/STRIPPED_PALE_OAK_LOG.png"
+    },
+    {
+        "label":  "Stripped Pale Oak Wood",
+        "icon":  "/mc_assets/STRIPPED_PALE_OAK_WOOD.png"
+    },
+    {
+        "label":  "Stripped Spruce Log",
+        "icon":  "/mc_assets/STRIPPED_SPRUCE_LOG.png"
+    },
+    {
+        "label":  "Stripped Spruce Wood",
+        "icon":  "/mc_assets/STRIPPED_SPRUCE_WOOD.png"
+    },
+    {
+        "label":  "Stripped Warped Hyphae",
+        "icon":  "/mc_assets/STRIPPED_WARPED_HYPHAE.png"
+    },
+    {
+        "label":  "Stripped Warped Stem",
+        "icon":  "/mc_assets/STRIPPED_WARPED_STEM.png"
+    },
+    {
+        "label":  "Structure Block",
+        "icon":  "/mc_assets/STRUCTURE_BLOCK.png"
+    },
+    {
+        "label":  "Structure Void",
+        "icon":  "/mc_assets/STRUCTURE_VOID.png"
+    },
+    {
+        "label":  "Sugar",
+        "icon":  "/mc_assets/SUGAR.png"
+    },
+    {
+        "label":  "Sugar Cane",
+        "icon":  "/mc_assets/SUGAR_CANE.png"
+    },
+    {
+        "label":  "Sulfur",
+        "icon":  "/mc_assets/SULFUR.png"
+    },
+    {
+        "label":  "Sulfur Brick Slab",
+        "icon":  "/mc_assets/SULFUR_BRICK_SLAB.png"
+    },
+    {
+        "label":  "Sulfur Brick Stairs",
+        "icon":  "/mc_assets/SULFUR_BRICK_STAIRS.png"
+    },
+    {
+        "label":  "Sulfur Brick Wall",
+        "icon":  "/mc_assets/SULFUR_BRICK_WALL.png"
+    },
+    {
+        "label":  "Sulfur Bricks",
+        "icon":  "/mc_assets/SULFUR_BRICKS.png"
+    },
+    {
+        "label":  "Sulfur Cube",
+        "icon":  "/mc_assets/SULFUR_CUBE.png"
+    },
+    {
+        "label":  "Sulfur Cube Bucket",
+        "icon":  "/mc_assets/SULFUR_CUBE_BUCKET.png"
+    },
+    {
+        "label":  "Sulfur Cube Spawn Egg",
+        "icon":  "/mc_assets/SULFUR_CUBE_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Sulfur Slab",
+        "icon":  "/mc_assets/SULFUR_SLAB.png"
+    },
+    {
+        "label":  "Sulfur Spike",
+        "icon":  "/mc_assets/SULFUR_SPIKE.png"
+    },
+    {
+        "label":  "Sulfur Stairs",
+        "icon":  "/mc_assets/SULFUR_STAIRS.png"
+    },
+    {
+        "label":  "Sulfur Wall",
+        "icon":  "/mc_assets/SULFUR_WALL.png"
+    },
+    {
+        "label":  "Sunflower",
+        "icon":  "/mc_assets/SUNFLOWER.png"
+    },
+    {
+        "label":  "Suspicious Gravel",
+        "icon":  "/mc_assets/SUSPICIOUS_GRAVEL.png"
+    },
+    {
+        "label":  "Suspicious Sand",
+        "icon":  "/mc_assets/SUSPICIOUS_SAND.png"
+    },
+    {
+        "label":  "Suspicious Stew",
+        "icon":  "/mc_assets/SUSPICIOUS_STEW.png"
+    },
+    {
+        "label":  "Sweet Berries",
+        "icon":  "/mc_assets/SWEET_BERRIES.png"
+    },
+    {
+        "label":  "Tadpole",
+        "icon":  "/mc_assets/TADPOLE.png"
+    },
+    {
+        "label":  "Tadpole Bucket",
+        "icon":  "/mc_assets/TADPOLE_BUCKET.png"
+    },
+    {
+        "label":  "Tadpole Spawn Egg",
+        "icon":  "/mc_assets/TADPOLE_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Tall Dry Grass",
+        "icon":  "/mc_assets/TALL_DRY_GRASS.png"
+    },
+    {
+        "label":  "Tall Grass",
+        "icon":  "/mc_assets/TALL_GRASS.png"
+    },
+    {
+        "label":  "Target",
+        "icon":  "/mc_assets/TARGET.png"
+    },
+    {
+        "label":  "Terracotta",
+        "icon":  "/mc_assets/TERRACOTTA.png"
+    },
+    {
+        "label":  "Test Block",
+        "icon":  "/mc_assets/TEST_BLOCK.png"
+    },
+    {
+        "label":  "Test Instance Block",
+        "icon":  "/mc_assets/TEST_INSTANCE_BLOCK.png"
+    },
+    {
+        "label":  "Text Display",
+        "icon":  "/mc_assets/TEXT_DISPLAY.png"
+    },
+    {
+        "label":  "Tide Armor Trim Smithing Template",
+        "icon":  "/mc_assets/TIDE_ARMOR_TRIM_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Tinted Glass",
+        "icon":  "/mc_assets/TINTED_GLASS.png"
+    },
+    {
+        "label":  "Tipped Arrow",
+        "icon":  "/mc_assets/TIPPED_ARROW.png"
+    },
+    {
+        "label":  "Tnt",
+        "icon":  "/mc_assets/TNT.png",
+        "icon3d":  "/mc_assets/TNT (2).png"
+    },
+    {
+        "label":  "Tnt Minecart",
+        "icon":  "/mc_assets/TNT_MINECART.png",
+        "icon3d":  "/mc_assets/TNT_MINECART (2).png"
+    },
+    {
+        "label":  "Torch",
+        "icon":  "/mc_assets/TORCH.png"
+    },
+    {
+        "label":  "Torchflower",
+        "icon":  "/mc_assets/TORCHFLOWER.png"
+    },
+    {
+        "label":  "Torchflower Seeds",
+        "icon":  "/mc_assets/TORCHFLOWER_SEEDS.png"
+    },
+    {
+        "label":  "Totem Of Undying",
+        "icon":  "/mc_assets/TOTEM_OF_UNDYING.png"
+    },
+    {
+        "label":  "Trader Llama",
+        "icon":  "/mc_assets/TRADER_LLAMA.png"
+    },
+    {
+        "label":  "Trader Llama Spawn Egg",
+        "icon":  "/mc_assets/TRADER_LLAMA_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Trapped Chest",
+        "icon":  "/mc_assets/TRAPPED_CHEST.png"
+    },
+    {
+        "label":  "Trial Key",
+        "icon":  "/mc_assets/TRIAL_KEY.png"
+    },
+    {
+        "label":  "Trial Spawner",
+        "icon":  "/mc_assets/TRIAL_SPAWNER.png"
+    },
+    {
+        "label":  "Trident",
+        "icon":  "/mc_assets/TRIDENT.png",
+        "icon3d":  "/mc_assets/TRIDENT (2).png"
+    },
+    {
+        "label":  "Tripwire Hook",
+        "icon":  "/mc_assets/TRIPWIRE_HOOK.png"
+    },
+    {
+        "label":  "Tropical Fish",
+        "icon":  "/mc_assets/TROPICAL_FISH.png",
+        "icon3d":  "/mc_assets/TROPICAL_FISH (2).png"
+    },
+    {
+        "label":  "Tropical Fish Bucket",
+        "icon":  "/mc_assets/TROPICAL_FISH_BUCKET.png"
+    },
+    {
+        "label":  "Tropical Fish Spawn Egg",
+        "icon":  "/mc_assets/TROPICAL_FISH_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Tube Coral",
+        "icon":  "/mc_assets/TUBE_CORAL.png"
+    },
+    {
+        "label":  "Tube Coral Block",
+        "icon":  "/mc_assets/TUBE_CORAL_BLOCK.png"
+    },
+    {
+        "label":  "Tube Coral Fan",
+        "icon":  "/mc_assets/TUBE_CORAL_FAN.png"
+    },
+    {
+        "label":  "Tuff",
+        "icon":  "/mc_assets/TUFF.png"
+    },
+    {
+        "label":  "Tuff Brick Slab",
+        "icon":  "/mc_assets/TUFF_BRICK_SLAB.png"
+    },
+    {
+        "label":  "Tuff Brick Stairs",
+        "icon":  "/mc_assets/TUFF_BRICK_STAIRS.png"
+    },
+    {
+        "label":  "Tuff Brick Wall",
+        "icon":  "/mc_assets/TUFF_BRICK_WALL.png"
+    },
+    {
+        "label":  "Tuff Bricks",
+        "icon":  "/mc_assets/TUFF_BRICKS.png"
+    },
+    {
+        "label":  "Tuff Slab",
+        "icon":  "/mc_assets/TUFF_SLAB.png"
+    },
+    {
+        "label":  "Tuff Stairs",
+        "icon":  "/mc_assets/TUFF_STAIRS.png"
+    },
+    {
+        "label":  "Tuff Wall",
+        "icon":  "/mc_assets/TUFF_WALL.png"
+    },
+    {
+        "label":  "Turtle",
+        "icon":  "/mc_assets/TURTLE.png"
+    },
+    {
+        "label":  "Turtle Egg",
+        "icon":  "/mc_assets/TURTLE_EGG.png"
+    },
+    {
+        "label":  "Turtle Helmet",
+        "icon":  "/mc_assets/TURTLE_HELMET.png"
+    },
+    {
+        "label":  "Turtle Scute",
+        "icon":  "/mc_assets/TURTLE_SCUTE.png"
+    },
+    {
+        "label":  "Turtle Spawn Egg",
+        "icon":  "/mc_assets/TURTLE_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Twisting Vines",
+        "icon":  "/mc_assets/TWISTING_VINES.png"
+    },
+    {
+        "label":  "Vault",
+        "icon":  "/mc_assets/VAULT.png"
+    },
+    {
+        "label":  "Verdant Froglight",
+        "icon":  "/mc_assets/VERDANT_FROGLIGHT.png"
+    },
+    {
+        "label":  "Vex",
+        "icon":  "/mc_assets/VEX.png"
+    },
+    {
+        "label":  "Vex Armor Trim Smithing Template",
+        "icon":  "/mc_assets/VEX_ARMOR_TRIM_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Vex Spawn Egg",
+        "icon":  "/mc_assets/VEX_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Villager",
+        "icon":  "/mc_assets/VILLAGER.png"
+    },
+    {
+        "label":  "Villager Spawn Egg",
+        "icon":  "/mc_assets/VILLAGER_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Vindicator",
+        "icon":  "/mc_assets/VINDICATOR.png"
+    },
+    {
+        "label":  "Vindicator Spawn Egg",
+        "icon":  "/mc_assets/VINDICATOR_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Vine",
+        "icon":  "/mc_assets/VINE.png"
+    },
+    {
+        "label":  "Wandering Trader",
+        "icon":  "/mc_assets/WANDERING_TRADER.png"
+    },
+    {
+        "label":  "Wandering Trader Spawn Egg",
+        "icon":  "/mc_assets/WANDERING_TRADER_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Ward Armor Trim Smithing Template",
+        "icon":  "/mc_assets/WARD_ARMOR_TRIM_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Warden",
+        "icon":  "/mc_assets/WARDEN.png"
+    },
+    {
+        "label":  "Warden Spawn Egg",
+        "icon":  "/mc_assets/WARDEN_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Warped Button",
+        "icon":  "/mc_assets/WARPED_BUTTON.png"
+    },
+    {
+        "label":  "Warped Door",
+        "icon":  "/mc_assets/WARPED_DOOR.png"
+    },
+    {
+        "label":  "Warped Fence",
+        "icon":  "/mc_assets/WARPED_FENCE.png"
+    },
+    {
+        "label":  "Warped Fence Gate",
+        "icon":  "/mc_assets/WARPED_FENCE_GATE.png"
+    },
+    {
+        "label":  "Warped Fungus",
+        "icon":  "/mc_assets/WARPED_FUNGUS.png"
+    },
+    {
+        "label":  "Warped Fungus On A Stick",
+        "icon":  "/mc_assets/WARPED_FUNGUS_ON_A_STICK.png"
+    },
+    {
+        "label":  "Warped Hanging Sign",
+        "icon":  "/mc_assets/WARPED_HANGING_SIGN.png"
+    },
+    {
+        "label":  "Warped Hyphae",
+        "icon":  "/mc_assets/WARPED_HYPHAE.png"
+    },
+    {
+        "label":  "Warped Nylium",
+        "icon":  "/mc_assets/WARPED_NYLIUM.png"
+    },
+    {
+        "label":  "Warped Planks",
+        "icon":  "/mc_assets/WARPED_PLANKS.png"
+    },
+    {
+        "label":  "Warped Pressure Plate",
+        "icon":  "/mc_assets/WARPED_PRESSURE_PLATE.png"
+    },
+    {
+        "label":  "Warped Roots",
+        "icon":  "/mc_assets/WARPED_ROOTS.png"
+    },
+    {
+        "label":  "Warped Shelf",
+        "icon":  "/mc_assets/WARPED_SHELF.png"
+    },
+    {
+        "label":  "Warped Sign",
+        "icon":  "/mc_assets/WARPED_SIGN.png"
+    },
+    {
+        "label":  "Warped Slab",
+        "icon":  "/mc_assets/WARPED_SLAB.png"
+    },
+    {
+        "label":  "Warped Stairs",
+        "icon":  "/mc_assets/WARPED_STAIRS.png"
+    },
+    {
+        "label":  "Warped Stem",
+        "icon":  "/mc_assets/WARPED_STEM.png"
+    },
+    {
+        "label":  "Warped Trapdoor",
+        "icon":  "/mc_assets/WARPED_TRAPDOOR.png"
+    },
+    {
+        "label":  "Warped Wart Block",
+        "icon":  "/mc_assets/WARPED_WART_BLOCK.png"
+    },
+    {
+        "label":  "Water Bucket",
+        "icon":  "/mc_assets/WATER_BUCKET.png"
+    },
+    {
+        "label":  "Waxed Chiseled Copper",
+        "icon":  "/mc_assets/WAXED_CHISELED_COPPER.png"
+    },
+    {
+        "label":  "Waxed Copper Bars",
+        "icon":  "/mc_assets/WAXED_COPPER_BARS.png"
+    },
+    {
+        "label":  "Waxed Copper Block",
+        "icon":  "/mc_assets/WAXED_COPPER_BLOCK.png"
+    },
+    {
+        "label":  "Waxed Copper Bulb",
+        "icon":  "/mc_assets/WAXED_COPPER_BULB.png"
+    },
+    {
+        "label":  "Waxed Copper Chain",
+        "icon":  "/mc_assets/WAXED_COPPER_CHAIN.png"
+    },
+    {
+        "label":  "Waxed Copper Chest",
+        "icon":  "/mc_assets/WAXED_COPPER_CHEST.png"
+    },
+    {
+        "label":  "Waxed Copper Door",
+        "icon":  "/mc_assets/WAXED_COPPER_DOOR.png"
+    },
+    {
+        "label":  "Waxed Copper Golem Statue",
+        "icon":  "/mc_assets/WAXED_COPPER_GOLEM_STATUE.png"
+    },
+    {
+        "label":  "Waxed Copper Grate",
+        "icon":  "/mc_assets/WAXED_COPPER_GRATE.png"
+    },
+    {
+        "label":  "Waxed Copper Lantern",
+        "icon":  "/mc_assets/WAXED_COPPER_LANTERN.png"
+    },
+    {
+        "label":  "Waxed Copper Trapdoor",
+        "icon":  "/mc_assets/WAXED_COPPER_TRAPDOOR.png"
+    },
+    {
+        "label":  "Waxed Cut Copper",
+        "icon":  "/mc_assets/WAXED_CUT_COPPER.png"
+    },
+    {
+        "label":  "Waxed Cut Copper Slab",
+        "icon":  "/mc_assets/WAXED_CUT_COPPER_SLAB.png"
+    },
+    {
+        "label":  "Waxed Cut Copper Stairs",
+        "icon":  "/mc_assets/WAXED_CUT_COPPER_STAIRS.png"
+    },
+    {
+        "label":  "Waxed Exposed Chiseled Copper",
+        "icon":  "/mc_assets/WAXED_EXPOSED_CHISELED_COPPER.png"
+    },
+    {
+        "label":  "Waxed Exposed Copper",
+        "icon":  "/mc_assets/WAXED_EXPOSED_COPPER.png"
+    },
+    {
+        "label":  "Waxed Exposed Copper Bars",
+        "icon":  "/mc_assets/WAXED_EXPOSED_COPPER_BARS.png"
+    },
+    {
+        "label":  "Waxed Exposed Copper Bulb",
+        "icon":  "/mc_assets/WAXED_EXPOSED_COPPER_BULB.png"
+    },
+    {
+        "label":  "Waxed Exposed Copper Chain",
+        "icon":  "/mc_assets/WAXED_EXPOSED_COPPER_CHAIN.png"
+    },
+    {
+        "label":  "Waxed Exposed Copper Chest",
+        "icon":  "/mc_assets/WAXED_EXPOSED_COPPER_CHEST.png"
+    },
+    {
+        "label":  "Waxed Exposed Copper Door",
+        "icon":  "/mc_assets/WAXED_EXPOSED_COPPER_DOOR.png"
+    },
+    {
+        "label":  "Waxed Exposed Copper Golem Statue",
+        "icon":  "/mc_assets/WAXED_EXPOSED_COPPER_GOLEM_STATUE.png"
+    },
+    {
+        "label":  "Waxed Exposed Copper Grate",
+        "icon":  "/mc_assets/WAXED_EXPOSED_COPPER_GRATE.png"
+    },
+    {
+        "label":  "Waxed Exposed Copper Lantern",
+        "icon":  "/mc_assets/WAXED_EXPOSED_COPPER_LANTERN.png"
+    },
+    {
+        "label":  "Waxed Exposed Copper Trapdoor",
+        "icon":  "/mc_assets/WAXED_EXPOSED_COPPER_TRAPDOOR.png"
+    },
+    {
+        "label":  "Waxed Exposed Cut Copper",
+        "icon":  "/mc_assets/WAXED_EXPOSED_CUT_COPPER.png"
+    },
+    {
+        "label":  "Waxed Exposed Cut Copper Slab",
+        "icon":  "/mc_assets/WAXED_EXPOSED_CUT_COPPER_SLAB.png"
+    },
+    {
+        "label":  "Waxed Exposed Cut Copper Stairs",
+        "icon":  "/mc_assets/WAXED_EXPOSED_CUT_COPPER_STAIRS.png"
+    },
+    {
+        "label":  "Waxed Exposed Lightning Rod",
+        "icon":  "/mc_assets/WAXED_EXPOSED_LIGHTNING_ROD.png"
+    },
+    {
+        "label":  "Waxed Lightning Rod",
+        "icon":  "/mc_assets/WAXED_LIGHTNING_ROD.png"
+    },
+    {
+        "label":  "Waxed Oxidized Chiseled Copper",
+        "icon":  "/mc_assets/WAXED_OXIDIZED_CHISELED_COPPER.png"
+    },
+    {
+        "label":  "Waxed Oxidized Copper",
+        "icon":  "/mc_assets/WAXED_OXIDIZED_COPPER.png"
+    },
+    {
+        "label":  "Waxed Oxidized Copper Bars",
+        "icon":  "/mc_assets/WAXED_OXIDIZED_COPPER_BARS.png"
+    },
+    {
+        "label":  "Waxed Oxidized Copper Bulb",
+        "icon":  "/mc_assets/WAXED_OXIDIZED_COPPER_BULB.png"
+    },
+    {
+        "label":  "Waxed Oxidized Copper Chain",
+        "icon":  "/mc_assets/WAXED_OXIDIZED_COPPER_CHAIN.png"
+    },
+    {
+        "label":  "Waxed Oxidized Copper Chest",
+        "icon":  "/mc_assets/WAXED_OXIDIZED_COPPER_CHEST.png"
+    },
+    {
+        "label":  "Waxed Oxidized Copper Door",
+        "icon":  "/mc_assets/WAXED_OXIDIZED_COPPER_DOOR.png"
+    },
+    {
+        "label":  "Waxed Oxidized Copper Golem Statue",
+        "icon":  "/mc_assets/WAXED_OXIDIZED_COPPER_GOLEM_STATUE.png"
+    },
+    {
+        "label":  "Waxed Oxidized Copper Grate",
+        "icon":  "/mc_assets/WAXED_OXIDIZED_COPPER_GRATE.png"
+    },
+    {
+        "label":  "Waxed Oxidized Copper Lantern",
+        "icon":  "/mc_assets/WAXED_OXIDIZED_COPPER_LANTERN.png"
+    },
+    {
+        "label":  "Waxed Oxidized Copper Trapdoor",
+        "icon":  "/mc_assets/WAXED_OXIDIZED_COPPER_TRAPDOOR.png"
+    },
+    {
+        "label":  "Waxed Oxidized Cut Copper",
+        "icon":  "/mc_assets/WAXED_OXIDIZED_CUT_COPPER.png"
+    },
+    {
+        "label":  "Waxed Oxidized Cut Copper Slab",
+        "icon":  "/mc_assets/WAXED_OXIDIZED_CUT_COPPER_SLAB.png"
+    },
+    {
+        "label":  "Waxed Oxidized Cut Copper Stairs",
+        "icon":  "/mc_assets/WAXED_OXIDIZED_CUT_COPPER_STAIRS.png"
+    },
+    {
+        "label":  "Waxed Oxidized Lightning Rod",
+        "icon":  "/mc_assets/WAXED_OXIDIZED_LIGHTNING_ROD.png"
+    },
+    {
+        "label":  "Waxed Weathered Chiseled Copper",
+        "icon":  "/mc_assets/WAXED_WEATHERED_CHISELED_COPPER.png"
+    },
+    {
+        "label":  "Waxed Weathered Copper",
+        "icon":  "/mc_assets/WAXED_WEATHERED_COPPER.png"
+    },
+    {
+        "label":  "Waxed Weathered Copper Bars",
+        "icon":  "/mc_assets/WAXED_WEATHERED_COPPER_BARS.png"
+    },
+    {
+        "label":  "Waxed Weathered Copper Bulb",
+        "icon":  "/mc_assets/WAXED_WEATHERED_COPPER_BULB.png"
+    },
+    {
+        "label":  "Waxed Weathered Copper Chain",
+        "icon":  "/mc_assets/WAXED_WEATHERED_COPPER_CHAIN.png"
+    },
+    {
+        "label":  "Waxed Weathered Copper Chest",
+        "icon":  "/mc_assets/WAXED_WEATHERED_COPPER_CHEST.png"
+    },
+    {
+        "label":  "Waxed Weathered Copper Door",
+        "icon":  "/mc_assets/WAXED_WEATHERED_COPPER_DOOR.png"
+    },
+    {
+        "label":  "Waxed Weathered Copper Golem Statue",
+        "icon":  "/mc_assets/WAXED_WEATHERED_COPPER_GOLEM_STATUE.png"
+    },
+    {
+        "label":  "Waxed Weathered Copper Grate",
+        "icon":  "/mc_assets/WAXED_WEATHERED_COPPER_GRATE.png"
+    },
+    {
+        "label":  "Waxed Weathered Copper Lantern",
+        "icon":  "/mc_assets/WAXED_WEATHERED_COPPER_LANTERN.png"
+    },
+    {
+        "label":  "Waxed Weathered Copper Trapdoor",
+        "icon":  "/mc_assets/WAXED_WEATHERED_COPPER_TRAPDOOR.png"
+    },
+    {
+        "label":  "Waxed Weathered Cut Copper",
+        "icon":  "/mc_assets/WAXED_WEATHERED_CUT_COPPER.png"
+    },
+    {
+        "label":  "Waxed Weathered Cut Copper Slab",
+        "icon":  "/mc_assets/WAXED_WEATHERED_CUT_COPPER_SLAB.png"
+    },
+    {
+        "label":  "Waxed Weathered Cut Copper Stairs",
+        "icon":  "/mc_assets/WAXED_WEATHERED_CUT_COPPER_STAIRS.png"
+    },
+    {
+        "label":  "Waxed Weathered Lightning Rod",
+        "icon":  "/mc_assets/WAXED_WEATHERED_LIGHTNING_ROD.png"
+    },
+    {
+        "label":  "Wayfinder Armor Trim Smithing Template",
+        "icon":  "/mc_assets/WAYFINDER_ARMOR_TRIM_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Weathered Chiseled Copper",
+        "icon":  "/mc_assets/WEATHERED_CHISELED_COPPER.png"
+    },
+    {
+        "label":  "Weathered Copper",
+        "icon":  "/mc_assets/WEATHERED_COPPER.png"
+    },
+    {
+        "label":  "Weathered Copper Bars",
+        "icon":  "/mc_assets/WEATHERED_COPPER_BARS.png"
+    },
+    {
+        "label":  "Weathered Copper Bulb",
+        "icon":  "/mc_assets/WEATHERED_COPPER_BULB.png"
+    },
+    {
+        "label":  "Weathered Copper Chain",
+        "icon":  "/mc_assets/WEATHERED_COPPER_CHAIN.png"
+    },
+    {
+        "label":  "Weathered Copper Chest",
+        "icon":  "/mc_assets/WEATHERED_COPPER_CHEST.png"
+    },
+    {
+        "label":  "Weathered Copper Door",
+        "icon":  "/mc_assets/WEATHERED_COPPER_DOOR.png"
+    },
+    {
+        "label":  "Weathered Copper Golem Statue",
+        "icon":  "/mc_assets/WEATHERED_COPPER_GOLEM_STATUE.png"
+    },
+    {
+        "label":  "Weathered Copper Grate",
+        "icon":  "/mc_assets/WEATHERED_COPPER_GRATE.png"
+    },
+    {
+        "label":  "Weathered Copper Lantern",
+        "icon":  "/mc_assets/WEATHERED_COPPER_LANTERN.png"
+    },
+    {
+        "label":  "Weathered Copper Trapdoor",
+        "icon":  "/mc_assets/WEATHERED_COPPER_TRAPDOOR.png"
+    },
+    {
+        "label":  "Weathered Cut Copper",
+        "icon":  "/mc_assets/WEATHERED_CUT_COPPER.png"
+    },
+    {
+        "label":  "Weathered Cut Copper Slab",
+        "icon":  "/mc_assets/WEATHERED_CUT_COPPER_SLAB.png"
+    },
+    {
+        "label":  "Weathered Cut Copper Stairs",
+        "icon":  "/mc_assets/WEATHERED_CUT_COPPER_STAIRS.png"
+    },
+    {
+        "label":  "Weathered Lightning Rod",
+        "icon":  "/mc_assets/WEATHERED_LIGHTNING_ROD.png"
+    },
+    {
+        "label":  "Weeping Vines",
+        "icon":  "/mc_assets/WEEPING_VINES.png"
+    },
+    {
+        "label":  "Wet Sponge",
+        "icon":  "/mc_assets/WET_SPONGE.png"
+    },
+    {
+        "label":  "Wheat",
+        "icon":  "/mc_assets/WHEAT.png"
+    },
+    {
+        "label":  "Wheat Seeds",
+        "icon":  "/mc_assets/WHEAT_SEEDS.png"
+    },
+    {
+        "label":  "White Banner",
+        "icon":  "/mc_assets/WHITE_BANNER.png"
+    },
+    {
+        "label":  "White Bed",
+        "icon":  "/mc_assets/WHITE_BED.png"
+    },
+    {
+        "label":  "White Bundle",
+        "icon":  "/mc_assets/WHITE_BUNDLE.png"
+    },
+    {
+        "label":  "White Candle",
+        "icon":  "/mc_assets/WHITE_CANDLE.png"
+    },
+    {
+        "label":  "White Carpet",
+        "icon":  "/mc_assets/WHITE_CARPET.png"
+    },
+    {
+        "label":  "White Concrete",
+        "icon":  "/mc_assets/WHITE_CONCRETE.png"
+    },
+    {
+        "label":  "White Concrete Powder",
+        "icon":  "/mc_assets/WHITE_CONCRETE_POWDER.png"
+    },
+    {
+        "label":  "White Dye",
+        "icon":  "/mc_assets/WHITE_DYE.png"
+    },
+    {
+        "label":  "White Glazed Terracotta",
+        "icon":  "/mc_assets/WHITE_GLAZED_TERRACOTTA.png"
+    },
+    {
+        "label":  "White Harness",
+        "icon":  "/mc_assets/WHITE_HARNESS.png"
+    },
+    {
+        "label":  "White Shulker Box",
+        "icon":  "/mc_assets/WHITE_SHULKER_BOX.png"
+    },
+    {
+        "label":  "White Stained Glass",
+        "icon":  "/mc_assets/WHITE_STAINED_GLASS.png"
+    },
+    {
+        "label":  "White Stained Glass Pane",
+        "icon":  "/mc_assets/WHITE_STAINED_GLASS_PANE.png"
+    },
+    {
+        "label":  "White Terracotta",
+        "icon":  "/mc_assets/WHITE_TERRACOTTA.png"
+    },
+    {
+        "label":  "White Tulip",
+        "icon":  "/mc_assets/WHITE_TULIP.png"
+    },
+    {
+        "label":  "White Wool",
+        "icon":  "/mc_assets/WHITE_WOOL.png"
+    },
+    {
+        "label":  "Wild Armor Trim Smithing Template",
+        "icon":  "/mc_assets/WILD_ARMOR_TRIM_SMITHING_TEMPLATE.png"
+    },
+    {
+        "label":  "Wildflowers",
+        "icon":  "/mc_assets/WILDFLOWERS.png"
+    },
+    {
+        "label":  "Wind Charge",
+        "icon":  "/mc_assets/WIND_CHARGE.png",
+        "icon3d":  "/mc_assets/WIND_CHARGE (2).png"
+    },
+    {
+        "label":  "Witch",
+        "icon":  "/mc_assets/WITCH.png"
+    },
+    {
+        "label":  "Witch Spawn Egg",
+        "icon":  "/mc_assets/WITCH_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Wither",
+        "icon":  "/mc_assets/WITHER.png"
+    },
+    {
+        "label":  "Wither Rose",
+        "icon":  "/mc_assets/WITHER_ROSE.png"
+    },
+    {
+        "label":  "Wither Skeleton",
+        "icon":  "/mc_assets/WITHER_SKELETON.png"
+    },
+    {
+        "label":  "Wither Skeleton Skull",
+        "icon":  "/mc_assets/WITHER_SKELETON_SKULL.png"
+    },
+    {
+        "label":  "Wither Skeleton Spawn Egg",
+        "icon":  "/mc_assets/WITHER_SKELETON_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Wither Skull",
+        "icon":  "/mc_assets/WITHER_SKULL.png"
+    },
+    {
+        "label":  "Wither Spawn Egg",
+        "icon":  "/mc_assets/WITHER_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Wolf",
+        "icon":  "/mc_assets/WOLF.png"
+    },
+    {
+        "label":  "Wolf Armor",
+        "icon":  "/mc_assets/WOLF_ARMOR.png"
+    },
+    {
+        "label":  "Wolf Spawn Egg",
+        "icon":  "/mc_assets/WOLF_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Wooden Axe",
+        "icon":  "/mc_assets/WOODEN_AXE.png"
+    },
+    {
+        "label":  "Wooden Hoe",
+        "icon":  "/mc_assets/WOODEN_HOE.png"
+    },
+    {
+        "label":  "Wooden Pickaxe",
+        "icon":  "/mc_assets/WOODEN_PICKAXE.png"
+    },
+    {
+        "label":  "Wooden Shovel",
+        "icon":  "/mc_assets/WOODEN_SHOVEL.png"
+    },
+    {
+        "label":  "Wooden Spear",
+        "icon":  "/mc_assets/WOODEN_SPEAR.png"
+    },
+    {
+        "label":  "Wooden Sword",
+        "icon":  "/mc_assets/WOODEN_SWORD.png"
+    },
+    {
+        "label":  "Writable Book",
+        "icon":  "/mc_assets/WRITABLE_BOOK.png"
+    },
+    {
+        "label":  "Written Book",
+        "icon":  "/mc_assets/WRITTEN_BOOK.png"
+    },
+    {
+        "label":  "Yellow Banner",
+        "icon":  "/mc_assets/YELLOW_BANNER.png"
+    },
+    {
+        "label":  "Yellow Bed",
+        "icon":  "/mc_assets/YELLOW_BED.png"
+    },
+    {
+        "label":  "Yellow Bundle",
+        "icon":  "/mc_assets/YELLOW_BUNDLE.png"
+    },
+    {
+        "label":  "Yellow Candle",
+        "icon":  "/mc_assets/YELLOW_CANDLE.png"
+    },
+    {
+        "label":  "Yellow Carpet",
+        "icon":  "/mc_assets/YELLOW_CARPET.png"
+    },
+    {
+        "label":  "Yellow Concrete",
+        "icon":  "/mc_assets/YELLOW_CONCRETE.png"
+    },
+    {
+        "label":  "Yellow Concrete Powder",
+        "icon":  "/mc_assets/YELLOW_CONCRETE_POWDER.png"
+    },
+    {
+        "label":  "Yellow Dye",
+        "icon":  "/mc_assets/YELLOW_DYE.png"
+    },
+    {
+        "label":  "Yellow Glazed Terracotta",
+        "icon":  "/mc_assets/YELLOW_GLAZED_TERRACOTTA.png"
+    },
+    {
+        "label":  "Yellow Harness",
+        "icon":  "/mc_assets/YELLOW_HARNESS.png"
+    },
+    {
+        "label":  "Yellow Shulker Box",
+        "icon":  "/mc_assets/YELLOW_SHULKER_BOX.png"
+    },
+    {
+        "label":  "Yellow Stained Glass",
+        "icon":  "/mc_assets/YELLOW_STAINED_GLASS.png"
+    },
+    {
+        "label":  "Yellow Stained Glass Pane",
+        "icon":  "/mc_assets/YELLOW_STAINED_GLASS_PANE.png"
+    },
+    {
+        "label":  "Yellow Terracotta",
+        "icon":  "/mc_assets/YELLOW_TERRACOTTA.png"
+    },
+    {
+        "label":  "Yellow Wool",
+        "icon":  "/mc_assets/YELLOW_WOOL.png"
+    },
+    {
+        "label":  "Zoglin",
+        "icon":  "/mc_assets/ZOGLIN.png"
+    },
+    {
+        "label":  "Zoglin Spawn Egg",
+        "icon":  "/mc_assets/ZOGLIN_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Zombie",
+        "icon":  "/mc_assets/ZOMBIE.png"
+    },
+    {
+        "label":  "Zombie Head",
+        "icon":  "/mc_assets/ZOMBIE_HEAD.png"
+    },
+    {
+        "label":  "Zombie Horse",
+        "icon":  "/mc_assets/ZOMBIE_HORSE.png"
+    },
+    {
+        "label":  "Zombie Horse Spawn Egg",
+        "icon":  "/mc_assets/ZOMBIE_HORSE_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Zombie Nautilus",
+        "icon":  "/mc_assets/ZOMBIE_NAUTILUS.png"
+    },
+    {
+        "label":  "Zombie Nautilus Spawn Egg",
+        "icon":  "/mc_assets/ZOMBIE_NAUTILUS_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Zombie Spawn Egg",
+        "icon":  "/mc_assets/ZOMBIE_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Zombie Villager",
+        "icon":  "/mc_assets/ZOMBIE_VILLAGER.png"
+    },
+    {
+        "label":  "Zombie Villager Spawn Egg",
+        "icon":  "/mc_assets/ZOMBIE_VILLAGER_SPAWN_EGG.png"
+    },
+    {
+        "label":  "Zombified Piglin",
+        "icon":  "/mc_assets/ZOMBIFIED_PIGLIN.png"
+    },
+    {
+        "label":  "Zombified Piglin Spawn Egg",
+        "icon":  "/mc_assets/ZOMBIFIED_PIGLIN_SPAWN_EGG.png"
+    }
+]
