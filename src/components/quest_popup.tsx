@@ -37,6 +37,7 @@ function QuestPopup({ existing, categories, onSave, onClose }: Props) {
           objective: objective.trim(),
           counter: 0,
           completed: false,
+          objectiveId: 'custom',
           order: Date.now(),
         }
     onSave(quest)
