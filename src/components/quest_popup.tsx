@@ -40,7 +40,7 @@ function QuestPopup({ existing, categories, onSave, onClose }: Props) {
           objectiveId: 'custom',
           order: Date.now(),
         }
-    onSave(quest)
+    onSave(quest) 
     onClose()
   }
 
