@@ -1,6 +1,6 @@
 function PrivacyPolicy() {
   return (
-    <div className="mt-6 flex flex-col bg-black/30 gap-8 px-4 py-8 sm:px-8 max-w-3xl mx-auto">
+    <div className="mt-6 flex flex-col bg-black/30 rounded gap-8 px-4 py-8 sm:px-8 max-w-3xl mx-auto">
 
       <div className="flex flex-col gap-2">
         <h1 className="font-exe-pixel text-3xl sm:text-5xl text-[#FCFC40]">Privacy Policy</h1>

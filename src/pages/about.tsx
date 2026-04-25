@@ -3,7 +3,7 @@ function About() {
     <div className="flex flex-col gap-10 px-4 py-8 sm:px-8 mx-auto">
 
       {/* ── Hero ── */}
-      <div className="flex flex-col bg-black/30 p-4 sm:flex-row items-center gap-6">
+      <div className="flex flex-col bg-black/30 rounded p-4 sm:flex-row items-center gap-6">
         <img
           src="https://mc-heads.net/body/_Painite_/"
           alt="_Painite_"
@@ -22,7 +22,7 @@ function About() {
       <div className="border-t  border-white/10" />
 
       {/* ── About the app ── */}
-      <section className="flex flex-col bg-black/30 p-4 gap-3">
+      <section className="flex flex-col bg-black/30 rounded p-4 gap-3">
         <h2 className="font-exe-pixel text-xl text-[#F755ED]">What is ScrollsHub?</h2>
         <p className="font-pixeloid-sans text-sm text-white leading-relaxed">
           {/* ← describe the app here */}
@@ -31,7 +31,7 @@ function About() {
       </section>
 
       {/* ── Features ── */}
-      <section className="flex flex-col bg-black/30 p-4 gap-3">
+      <section className="flex flex-col bg-black/30 rounded p-4 gap-3">
         <h2 className="font-exe-pixel text-xl text-[#64FC65]">Features</h2>
         <ul className="flex flex-col gap-2">
           {[
@@ -51,7 +51,7 @@ function About() {
       <div className="border-t border-white/10" />
 
       {/* ── Links ── */}
-      <section className="flex flex-col bg-black/30 p-4 gap-3">
+      <section className="flex flex-col bg-black/30 rounded p-4 gap-3">
         <h2 className="font-exe-pixel text-xl text-[#FCA900]">Links</h2>
         <div className="flex flex-col gap-3">
           <p className="font-pixeloid-sans text-sm text-white">feel free to join the discord and give me feedback on what to improve, or come hangout.</p>
