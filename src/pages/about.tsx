@@ -26,7 +26,7 @@ function About() {
         <h2 className="font-exe-pixel text-xl text-[#F755ED]">What is ScrollsHub?</h2>
         <p className="font-pixeloid-sans text-sm text-white leading-relaxed">
           {/* ← describe the app here */}
-          QuestHub is a Vulengate scrolls and battlepass tracker, to help you organize your scrolls and track your progress.
+          ScrollsHub is a Vulengate scrolls and battlepass tracker, to help you organize your scrolls and track your progress.
         </p>
       </section>
 
