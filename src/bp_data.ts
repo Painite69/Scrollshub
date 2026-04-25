@@ -16,9 +16,9 @@ export const BP_WEEKS: BPWeek[] = [
       { id: 'w1_q6', title: 'Master Angler', text: 'Participate in 50 Fishing Contests.', icon: '/mc_assets/FISHING_ROD.png', isPremium: false, stages: null, amount: 50, counter: 0, completed: false },
       { id: 'w1_q7', title: 'Frstive Threads', text: 'Complete all 3 Steps:', icon: '/mc_assets/WHITE_CARPET.png', isPremium: false, 
         stages: [
-          { id: 'w1_q7_s1', title: '', text: 'Craft 576 White Carpet.', icon: '/mc_assets/WHITE_CARPET.png', amount: 576, counter: 0, completed: false },
-          { id: 'w1_q7_s2', title: '', text: 'Craft 576 Green Carpet.', icon: '/mc_assets/GREEN_CARPET.png', amount: 576, counter: 0, completed: false },
-          { id: 'w1_q7_s3', title: '', text: 'Craft 576 Red Carpet.', icon: '/mc_assets/RED_CARPET.png', amount: 576, counter: 0, completed: false },
+          { id: 'w1_q7_s1', title: '', text: 'Craft 1728 Red Carpet.', icon: '/mc_assets/RED_CARPET.png', amount: 1728, counter: 0, completed: false },
+          { id: 'w1_q7_s2', title: '', text: 'Craft 1728 Green Carpet.', icon: '/mc_assets/GREEN_CARPET.png', amount: 1728, counter: 0, completed: false },
+          { id: 'w1_q7_s3', title: '', text: 'Craft 1728 White Carpet.', icon: '/mc_assets/WHITE_CARPET.png', amount: 1728, counter: 0, completed: false },
         ],
         amount: 0, counter: 0, completed: false },
       // Premium quests
@@ -58,9 +58,9 @@ export const BP_WEEKS: BPWeek[] = [
       { id: 'w3_q5', title: 'Winter Compass', text: 'Craft 600 lodestone.', icon: '/mc_assets/LODESTONE.png', isPremium: false, stages: null, amount: 600, counter: 0, completed: false },
       { id: 'w1_q7', title: 'Campfire Starter Pack', text: 'Complete all 3 Steps:', icon: '/mc_assets/CAMPFIRE.png', isPremium: false, 
         stages: [
-          { id: 'w1_q7_s1', title: '', text: 'Mine 500 Coal Ore.', icon: '/mc_assets/COAL_ORE.png', amount: 500, counter: 0, completed: false },
-          { id: 'w1_q7_s2', title: '', text: 'Craft 576 Green Carpet.', icon: '/mc_assets/GREEN_CARPET.png', amount: 576, counter: 0, completed: false },
-          { id: 'w1_q7_s3', title: '', text: 'Craft 576 Red Carpet.', icon: '/mc_assets/RED_CARPET.png', amount: 576, counter: 0, completed: false },
+          { id: 'w3_q7_s1', title: '', text: 'Mine 500 Coal Ore.', icon: '/mc_assets/COAL_ORE.png', amount: 500, counter: 0, completed: false },
+          { id: 'w3_q7_s2', title: '', text: 'Craft 250 Bricks (Blocks).', icon: '/mc_assets/BRICKS.png', amount: 250, counter: 0, completed: false },
+          { id: 'w3_q7_s3', title: '', text: 'Craft 250 Campfires.', icon: '/mc_assets/CAMPFIRE.png', amount: 250, counter: 0, completed: false },
         ],
         amount: 0, counter: 0, completed: false },
       // Premium quests
@@ -100,9 +100,9 @@ export const BP_WEEKS: BPWeek[] = [
       { id: 'w5_q6', title: 'Slippn and Slidin', text: 'Sprint on Ice for 10,000 Blocks.', icon: '/mc_assets/ICE.png', isPremium: false, stages: null, amount: 10000, counter: 0, completed: false },
       { id: 'w5_q7', title: 'The Ultimate Hot Chocolate', text: 'Complete all 3 steps:', icon: '/mc_assets/COCOA_BEANS.png', isPremium: false, 
         stages: [
-          { id: 'w1_q7_s1', title: '', text: 'Fill 250 Buckets of Milk', icon: '/mc_assets/MILK_BUCKET.png', amount: 250, counter: 0, completed: false },
-          { id: 'w1_q7_s2', title: '', text: 'Harvest 250 Cocoa Beans.', icon: '/mc_assets/COCOA_BEANS.png', amount: 250, counter: 0, completed: false },
-          { id: 'w1_q7_s3', title: '', text: 'Craft 576 Red Carpet.', icon: '/mc_assets/RED_CARPET.png', amount: 576, counter: 0, completed: false },
+          { id: 'w5_q7_s1', title: '', text: 'Fill 250 Buckets of Milk', icon: '/mc_assets/MILK_BUCKET.png', amount: 250, counter: 0, completed: false },
+          { id: 'w5_q7_s2', title: '', text: 'Harvest 250 Cocoa Beans.', icon: '/mc_assets/COCOA_BEANS.png', amount: 250, counter: 0, completed: false },
+          { id: 'w5_q7_s3', title: '', text: 'Craft 250 Sugar.', icon: '/mc_assets/SUGAR.png', amount: 250, counter: 0, completed: false },
         ],
         amount: 0, counter: 0, completed: false },
       // Premium quests
@@ -144,7 +144,7 @@ export const BP_WEEKS: BPWeek[] = [
         stages: [
           { id: 'w7_q7_s1', title: '', text: 'Craft 1750 White Glass Pane.', icon: '/mc_assets/WHITE_STAINED_GLASS_PANE.png', amount: 1750, counter: 0, completed: false },
           { id: 'w7_q7_s2', title: '', text: 'Craft 1750 Light Blue Glass Pane.', icon: '/mc_assets/LIGHT_BLUE_STAINED_GLASS_PANE.png', amount: 1750, counter: 0, completed: false },
-          { id: 'w7_q7_s3', title: '', text: 'Craft 1750 Pink Glass Pane', icon: '/mc_assets/PINK_STAINED_GLASS_PANE.png', amount: 1750, counter: 0, completed: false },
+          { id: 'w7_q7_s3', title: '', text: 'Craft 1750 Purple Glass Pane', icon: '/mc_assets/PURPLE_STAINED_GLASS_PANE.png', amount: 1750, counter: 0, completed: false },
         ],
         amount: 0, counter: 0, completed: false },
       // Premium quests
@@ -161,7 +161,7 @@ export const BP_WEEKS: BPWeek[] = [
 
 export const BP_GOALS: BPGoal[] = [
   { id: 'goal_1', title: 'Halfway Point', text: 'Reach tier 90.', icon: '/mc_assets/EXPERIENCE_BOTTLE.png', stages: null, amount: 90, counter: 0, completed: false },
-  { id: 'goal_2', title: 'Season 8 Legacy', text: 'Mine 25000 snow blocks.', icon: '/mc_assets/SNOW_BLOCK.png', stages: null, amount: 25000, counter: 0, completed: false },
+  { id: 'goal_2', title: 'Season 8 Legacy', text: 'Mine 25000 Snow Blocks w/Beach or Pharao Shovels.', icon: '/mc_assets/SNOW_BLOCK.png', stages: null, amount: 25000, counter: 0, completed: false },
   { id: 'goal_3', title: 'Stocking Up', text: 'Harvest 50,000 fully grown crops.', icon: '/mc_assets/NETHERITE_HOE.png', stages: null, amount: 50000, counter: 0, completed: false },
   { id: 'goal_4', title: 'The Extra Mile', text: 'Reach tire 180.', icon: '/mc_assets/EXPERIENCE_BOTTLE.png', stages: null, amount: 180, counter: 0, completed: false },
   { id: 'goal_5', title: 'Forged in The Frost', text: 'Use 30,000 Iron Ingots in crafting recipes.', icon: '/mc_assets/IRON_INGOT.png', stages: null, amount: 30000, counter: 0, completed: false },
@@ -172,7 +172,7 @@ export const BP_GOALS: BPGoal[] = [
     text: 'Eat all food from each step.',
     icon: '/mc_assets/APPLE.png',
     stages: [
-      { id: 'goal_6_s1', title: '', text: 'Eat 5 Beetroot Soup', icon: '/mc_assets/BEETROOT_SOUP.png', amount: 5, counter: 0, completed: false },
+      { id: 'goal_6_s1', title: '', text: 'Eat 250 Beetroot Soup', icon: '/mc_assets/BEETROOT_SOUP.png', amount: 250, counter: 0, completed: false },
       { id: 'goal_6_s2', title: '', text: 'Eat 5 Mushroom Stew', icon: '/mc_assets/MUSHROOM_STEW.png', amount: 5, counter: 0, completed: false },
       { id: 'goal_6_s3', title: '', text: 'Eat 5 Rabbit Stew', icon: '/mc_assets/RABBIT_STEW.png', amount: 5, counter: 0, completed: false },
       { id: 'goal_6_s4', title: '', text: 'Eat 5 Suspicious Stew', icon: '/mc_assets/SUSPICIOUS_STEW.png', amount: 50, counter: 0, completed: false },

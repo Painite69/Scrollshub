@@ -9,6 +9,7 @@ import {
 } from '@dnd-kit/core'
 import {
   SortableContext,
+  rectSortingStrategy,
   useSortable,
   verticalListSortingStrategy,
   arrayMove,
@@ -702,7 +703,7 @@ function BPDailiesSection() {
   return (
     <div className="flex flex-col gap-2">
       <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-        <SortableContext items={dailies.map(d => d.id)} strategy={verticalListSortingStrategy}>
+        <SortableContext items={dailies.map(d => d.id)} strategy={rectSortingStrategy}>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {dailies.map(daily => (
               <DailyRow

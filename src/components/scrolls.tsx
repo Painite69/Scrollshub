@@ -4,7 +4,7 @@ import {
   DndContext, closestCenter, PointerSensor, useSensor, useSensors, type DragEndEvent,
 } from '@dnd-kit/core'
 import {
-  SortableContext, useSortable, verticalListSortingStrategy, arrayMove,
+  SortableContext, useSortable, verticalListSortingStrategy, rectSortingStrategy, arrayMove,
 } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import type { Scroll, Quest, Group, Category } from '../types/types'
@@ -517,9 +517,12 @@ function CategorizedView({ group, categories, onGroupUpdate }: {
   const [addPopup, setAddPopup] = useState<{ categoryId: string } | null>(null)
   const [editingQuest, setEditingQuest] = useState<Quest | null>(null)
   const defaultOrder = categories.map(c => c.id)
-  const [catOrder, setCatOrder] = useState<string[]>(() =>
-    loadCatOrder(group.id, defaultOrder)
-  )
+  const [catOrder, setCatOrder] = useState<string[]>(() => {
+    const saved = loadCatOrder(group.id, defaultOrder)
+    // Append any categories added after the order was saved
+    const missing = defaultOrder.filter(id => !saved.includes(id))
+    return [...saved.filter(id => defaultOrder.includes(id)), ...missing]
+  })
   const { allQuests, updateQuest, batchUpdateQuests, deleteQuest, saveQuest } = useCategorizedQuests(group, onGroupUpdate)
   const sensors = useSensors(useSensor(PointerSensor))
 
@@ -542,7 +545,7 @@ function CategorizedView({ group, categories, onGroupUpdate }: {
   return (
     <div className="flex flex-col gap-3 mt-3">
       <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleCatDragEnd}>
-        <SortableContext items={catOrder} strategy={verticalListSortingStrategy}>
+        <SortableContext items={catOrder} strategy={rectSortingStrategy}>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {orderedCats.map((cat, i) => (
               <SortableCategoryBlock
@@ -599,9 +602,11 @@ function CategorizedDetailView({ group, categories, onGroupUpdate }: {
     cat.subCategories.map((sub, si) => ({ cat, sub, colorIndex: ci * 10 + si, id: sub.id }))
   )
   const defaultSubOrder = allSubs.map(s => s.id)
-  const [subOrder, setSubOrder] = useState<string[]>(() =>
-    loadSubOrder(group.id, defaultSubOrder)
-  )
+  const [subOrder, setSubOrder] = useState<string[]>(() => {
+    const saved = loadSubOrder(group.id, defaultSubOrder)
+    const missing = defaultSubOrder.filter(id => !saved.includes(id))
+    return [...saved.filter(id => defaultSubOrder.includes(id)), ...missing]
+  })
   const sensors = useSensors(useSensor(PointerSensor))
 
   const orderedSubs = subOrder
@@ -623,7 +628,7 @@ function CategorizedDetailView({ group, categories, onGroupUpdate }: {
   return (
     <div className="flex flex-col gap-3 mt-3">
       <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleSubDragEnd}>
-        <SortableContext items={subOrder} strategy={verticalListSortingStrategy}>
+        <SortableContext items={subOrder} strategy={rectSortingStrategy}>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {orderedSubs.map(({ cat, sub, colorIndex }) => (
               <SortableCategoryBlock
@@ -785,7 +790,7 @@ function Scrolls({ group, onGroupUpdate }: {
   return (
     <div className="mt-3">
       <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleScrollDragEnd}>
-        <SortableContext items={sorted.map(s => s.id)} strategy={verticalListSortingStrategy}>
+        <SortableContext items={sorted.map(s => s.id)} strategy={rectSortingStrategy}>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {sorted.map(scroll => (
               <ScrollCard
