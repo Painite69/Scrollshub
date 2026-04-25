@@ -17,8 +17,8 @@ export const BP_WEEKS: BPWeek[] = [
       { id: 'w1_q7', title: 'Frstive Threads', text: 'Complete all 3 Steps:', icon: '/mc_assets/WHITE_CARPET.png', isPremium: false, 
         stages: [
           { id: 'w1_q7_s1', title: '', text: 'Craft 1728 Red Carpet.', icon: '/mc_assets/RED_CARPET.png', amount: 1728, counter: 0, completed: false },
-          { id: 'w1_q7_s2', title: '', text: 'Craft 1728 Green Carpet.', icon: '/mc_assets/GREEN_CARPET.png', amount: 1728, counter: 0, completed: false },
-          { id: 'w1_q7_s3', title: '', text: 'Craft 1728 White Carpet.', icon: '/mc_assets/WHITE_CARPET.png', amount: 1728, counter: 0, completed: false },
+          { id: 'w1_q7_s2', title: '', text: 'Craft 1728 White Carpet.', icon: '/mc_assets/WHITE_CARPET.png', amount: 1728, counter: 0, completed: false },
+          { id: 'w1_q7_s3', title: '', text: 'Craft 1728 Green Carpet.', icon: '/mc_assets/GREEN_CARPET.png', amount: 1728, counter: 0, completed: false },
         ],
         amount: 0, counter: 0, completed: false },
       // Premium quests
