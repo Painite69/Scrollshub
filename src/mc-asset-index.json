@@ -1,23 +1,23 @@
 ﻿[
     {
+        "label":  "Players",
+        "icon":  "/mc_assets/PLAYER_HEAD.png"
+    },
+    {
+        "label":  "Times",
+        "icon":  "/mc_assets/CLOCK.png"
+    },
+    {
+        "label":  "Bosses",
+        "icon":  "/mc_assets/ENDER_DRAGON.png"
+    },
+    {
         "label":  "Blocks",
         "icon":  "/mc_assets/GRASS_BLOCK.png"
     },
     {
         "label":  "Items",
-        "icon":  "/mc_assets/BOOK.png"
-    },
-    {
-        "label":  "Times",
-        "icon":  "/mc_assets/BARRIER.png"
-    },
-    {
-        "label":  "Players",
-        "icon":  "/mc_assets/PLAYER_HEAD.png"
-    },
-    {
-        "label":  "Bosses",
-        "icon":  "/mc_assets/ENDER_DRAGON.png"
+        "icon":  "/mc_assets/CHEST.png"
     },
     {
         "label":  "Miner",
@@ -32,16 +32,12 @@
         "icon":  "/mc_assets/NETHERITE_AXE.png"
     },
     {
-        "label":  "Fishing",
-        "icon":  "/mc_assets/FISHING_ROD.png"
-    },
-    {
         "label":  "Excavator",
         "icon":  "/mc_assets/NETHERITE_SHOVEL.png"
     },
     {
         "label":  "Enchanter",
-        "icon":  "/mc_assets/BOOK.png"
+        "icon":  "/mc_assets/ENCHANTING_TABLE.png"
     },
     {
         "label":  "Swords",
@@ -53,7 +49,11 @@
     },
     {
         "label":  "Spears",
-        "icon":  "/mc_assets/NETHERITE_SPEAR.png"
+        "icon":  "/mc_assets/TRIDENT.png"
+    },
+    {
+        "label":  "Fishing",
+        "icon":  "/mc_assets/FISHING_ROD.png"
     },
     {
         "label":  "Warp Fishing",

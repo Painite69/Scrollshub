@@ -116,10 +116,15 @@ function ObjectivePicker({ value, onChange, onOpenIconSelector }: {
 }) {
   const [search, setSearch] = useState(value?.label ?? '')
   const [open, setOpen] = useState(false)
+  const [highlightedIndex, setHighlightedIndex] = useState(-1)
   const ref = useRef<HTMLDivElement>(null)
+  const listRef = useRef<HTMLDivElement>(null)
 
   // Sync label if parent resets value (e.g. after add)
   useEffect(() => { setSearch(value?.label ?? '') }, [value?.label])
+
+  // Reset highlight when suggestions change
+  useEffect(() => { setHighlightedIndex(-1) }, [search])
 
   useEffect(() => {
     if (!open) return
@@ -130,20 +135,47 @@ function ObjectivePicker({ value, onChange, onOpenIconSelector }: {
     return () => document.removeEventListener('mousedown', handler)
   }, [open])
 
+  // Scroll highlighted item into view
+  useEffect(() => {
+    if (highlightedIndex < 0 || !listRef.current) return
+    const item = listRef.current.children[highlightedIndex] as HTMLElement
+    item?.scrollIntoView({ block: 'nearest' })
+  }, [highlightedIndex])
+
   const suggestions = search.trim().length === 0
     ? []
-    : MC_ASSETS.filter(a => a.label.toLowerCase().includes(search.toLowerCase())).slice(0, 12)
+    : MC_ASSETS
+        .filter(a => {
+          const q = search.toLowerCase()
+          const label = a.label.toLowerCase()
+          // For short queries (1 char), only match from the start of the label or a word
+          if (q.length === 1) return label.startsWith(q) || label.includes(' ' + q)
+          return label.includes(q)
+        })
+        .sort((a, b) => {
+          const q = search.toLowerCase()
+          const aLabel = a.label.toLowerCase()
+          const bLabel = b.label.toLowerCase()
+          const aExact = aLabel === q
+          const bExact = bLabel === q
+          const aStart = aLabel.startsWith(q)
+          const bStart = bLabel.startsWith(q)
+          if (aExact !== bExact) return aExact ? -1 : 1
+          if (aStart !== bStart) return aStart ? -1 : 1
+          return aLabel.localeCompare(bLabel)
+        })
+        .slice(0, 12)
 
   function select(a: McAsset) {
     setSearch(a.label)
     onChange({ label: a.label, icon: a.icon })
     setOpen(false)
+    setHighlightedIndex(-1)
   }
 
   function handleChange(raw: string) {
     setSearch(raw)
     setOpen(true)
-    // Keep whatever icon is already set; user can change via icon button
     onChange({ label: raw, icon: value?.icon ?? '' })
   }
 
@@ -156,12 +188,30 @@ function ObjectivePicker({ value, onChange, onOpenIconSelector }: {
           value={search}
           onChange={e => handleChange(e.target.value)}
           onFocus={() => { if (search.trim()) setOpen(true) }}
+          onKeyDown={e => {
+            if (e.key === 'ArrowDown') {
+              e.preventDefault()
+              setOpen(true)
+              setHighlightedIndex(i => Math.min(i + 1, suggestions.length - 1))
+            } else if (e.key === 'ArrowUp') {
+              e.preventDefault()
+              setHighlightedIndex(i => Math.max(i - 1, -1))
+            } else if (e.key === 'Enter' || e.key === 'Tab') {
+              e.preventDefault()
+              const target = highlightedIndex >= 0 ? suggestions[highlightedIndex] : suggestions[0]
+              if (target) select(target)
+            } else if (e.key === 'Escape') {
+              setOpen(false)
+              setHighlightedIndex(-1)
+            }
+          }}
         />
         {open && suggestions.length > 0 && (
-          <div className="absolute left-0 right-0 top-full z-30 mt-0.5 rounded border border-white/20 bg-[#1e0a2e] shadow-lg max-h-48 overflow-y-auto">
-            {suggestions.map(a => (
+          <div ref={listRef} className="absolute left-0 right-0 top-full z-30 mt-0.5 rounded border border-white/20 bg-[#1e0a2e] shadow-lg max-h-48 overflow-y-auto">
+            {suggestions.map((a, i) => (
               <button key={a.icon} onMouseDown={() => select(a)}
-                className="w-full flex items-center gap-2 cursor-pointer px-3 py-1.5 text-left font-pixeloid-sans text-xs text-white hover:bg-white/10"
+                onMouseEnter={() => setHighlightedIndex(i)}
+                className={`w-full flex items-center gap-2 cursor-pointer px-3 py-1.5 text-left font-pixeloid-sans text-xs text-white ${i === highlightedIndex ? 'bg-white/20' : 'hover:bg-white/10'}`}
               >
                 <img src={a.icon} alt="" className="w-5 h-5 object-contain shrink-0 pixelated"
                   onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
