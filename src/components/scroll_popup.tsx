@@ -148,8 +148,8 @@ function ObjectivePicker({ value, onChange, onOpenIconSelector }: {
         .filter(a => {
           const q = search.toLowerCase()
           const label = a.label.toLowerCase()
-          // For short queries (1 char), only match from the start of the label or a word
-          if (q.length === 1) return label.startsWith(q) || label.includes(' ' + q)
+          // For short queries (≤3 chars), only match from the start of the label or a word
+          if (q.length <= 3) return label.startsWith(q) || label.split(' ').some(word => word.startsWith(q))
           return label.includes(q)
         })
         .sort((a, b) => {
@@ -209,7 +209,7 @@ function ObjectivePicker({ value, onChange, onOpenIconSelector }: {
         {open && suggestions.length > 0 && (
           <div ref={listRef} className="absolute left-0 right-0 top-full z-30 mt-0.5 rounded border border-white/20 bg-[#1e0a2e] shadow-lg max-h-48 overflow-y-auto">
             {suggestions.map((a, i) => (
-              <button key={a.icon} onMouseDown={() => select(a)}
+              <button key={a.label} onMouseDown={() => select(a)}
                 onMouseEnter={() => setHighlightedIndex(i)}
                 className={`w-full flex items-center gap-2 cursor-pointer px-3 py-1.5 text-left font-pixeloid-sans text-xs text-white ${i === highlightedIndex ? 'bg-white/20' : 'hover:bg-white/10'}`}
               >

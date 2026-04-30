@@ -54,25 +54,34 @@ function About() {
       <section className="flex flex-col bg-black/30 rounded p-4 gap-3">
         <h2 className="font-exe-pixel text-xl text-[#FCA900]">Links</h2>
         <div className="flex flex-col gap-3">
-          <p className="font-pixeloid-sans text-sm text-white">feel free to join the discord and give me feedback on what to improve, or come hangout.</p>
+          <p className="font-pixeloid-sans text-sm text-white">Would love to have you on stream and feel free to join the discord and give me feedback on what to improve.</p>
           <div className="flex gap-2">
             <a
-              href="https://ko-fi.com/painitedevelopment"
+              href="https://www.twitch.tv/thecolorofboom"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 rounded border-2 border-[#835034] bg-[#120413] px-4 py-2 font-exe-pixel text-sm text-[#FCA900] hover:border-[#FCA900] transition-colors"
+              className="flex items-center gap-2 rounded border-2 border-[#8652f6] bg-[#120413] px-4 py-2 font-exe-pixel text-sm text-[#8652f6] hover:border-[#c68ff3] hover:text-[#c68ff3] transition-colors"
             >
-              <img src="/custom_assets/kofi.webp" alt="Ko-fi" className="w-5 h-5" />
-              Ko-fi
+              <img src="/custom_assets/stream.webp" alt="Twitch" className="w-5 h-5" />
+              Twitch
             </a>
             <a
               href="https://discord.gg/WZwFjte2qE"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 rounded border-2 border-[#003380] bg-[#120413] px-4 py-2 font-exe-pixel text-sm text-[#3399FF] hover:border-[#3399FF] transition-colors"
+              className="flex items-center gap-2 rounded border-2 border-[#6665d2] bg-[#120413] px-4 py-2 font-exe-pixel text-sm text-[#6665d2] hover:border-[#aeadfe] hover:text-[#aeadfe] transition-colors"
             >
               <img src="/custom_assets/discord.webp" alt="Discord" className="w-5 h-5" />
               Discord
+            </a>
+            <a
+              href="https://ko-fi.com/painitedevelopment"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 rounded border-2 border-[#00b9fe] bg-[#120413] px-4 py-2 font-exe-pixel text-sm text-[#00b9fe] hover:border-[#6bd7ff] hover:text-[#6bd7ff] transition-colors"
+            >
+              <img src="/custom_assets/kofi.webp" alt="Ko-fi" className="w-5 h-5" />
+              Ko-fi
             </a>
           </div>
             
