@@ -24,7 +24,7 @@ interface Props {
   existing?: Scroll // edit mode
 }
 
-const TYPES: ScrollType[] = ['easy', 'normal', 'hard', 'extended']
+const TYPES: ScrollType[] = ['easy', 'normal', 'hard','weekly', 'extended' ]
 
 // ── Step 1 ────────────────────────────────────────────────────────────────────
 
@@ -144,27 +144,72 @@ function ObjectivePicker({ value, onChange, onOpenIconSelector }: {
 
   const suggestions = search.trim().length === 0
     ? []
-    : MC_ASSETS
-        .filter(a => {
-          const q = search.toLowerCase()
-          const label = a.label.toLowerCase()
-          // For short queries (≤3 chars), only match from the start of the label or a word
-          if (q.length <= 3) return label.startsWith(q) || label.split(' ').some(word => word.startsWith(q))
-          return label.includes(q)
-        })
-        .sort((a, b) => {
-          const q = search.toLowerCase()
-          const aLabel = a.label.toLowerCase()
-          const bLabel = b.label.toLowerCase()
-          const aExact = aLabel === q
-          const bExact = bLabel === q
-          const aStart = aLabel.startsWith(q)
-          const bStart = bLabel.startsWith(q)
-          if (aExact !== bExact) return aExact ? -1 : 1
-          if (aStart !== bStart) return aStart ? -1 : 1
-          return aLabel.localeCompare(bLabel)
-        })
-        .slice(0, 12)
+    : (() => {
+        const q = search.toLowerCase().trim()
+
+        // Strip the /variant suffix to get the base word, and also extract the plural form
+        function parsedLabel(label: string): { base: string; plural: string } {
+          const lower = label.toLowerCase()
+          const slashIdx = lower.indexOf('/')
+          if (slashIdx === -1) return { base: lower, plural: lower }
+          const base = lower.slice(0, slashIdx).trim()
+          const suffix = lower.slice(slashIdx + 1).trim()
+          // suffix is either "s", "es", "ies", or a full word like "wolves", "shelves"
+          const plural = suffix.length > 2 ? suffix : base + suffix
+          return { base, plural }
+        }
+
+        // Generate candidate query stems — handles typed plurals like "cows"→"cow",
+        // "wolves"→"wolf", "zombies"→"zombie", "torches"→"torch"
+        function queryStems(query: string): string[] {
+          const stems = [query]
+          if (query.endsWith('ves')) {
+            stems.push(query.slice(0, -3) + 'f')   // wolves→wolf, shelves→shelf
+            stems.push(query.slice(0, -3) + 'fe')  // knives→knife (not in MC but safe)
+          }
+          if (query.endsWith('ies')) stems.push(query.slice(0, -3) + 'y')  // zombies→zombie... actually zombie→y wrong, but zombie ends in -ie not -y
+          if (query.endsWith('es') && query.length > 3) {
+            stems.push(query.slice(0, -2))  // torches→torch, boxes→box
+            stems.push(query.slice(0, -1))  // torche→torch partial
+          }
+          if (query.endsWith('s') && query.length > 2) stems.push(query.slice(0, -1))  // cows→cow
+          return [...new Set(stems)]
+        }
+
+        const stems = queryStems(q)
+
+        function matches(label: string): boolean {
+          const { base, plural } = parsedLabel(label)
+          return stems.some(stem => {
+            const isShort = stem.length <= 3
+            // Match against base form
+            const baseMatch = isShort
+              ? base.startsWith(stem) || base.split(' ').some(w => w.startsWith(stem))
+              : base.includes(stem)
+            if (baseMatch) return true
+            // Match against plural form (handles "wolve", "shelv", "bookshelv" etc.)
+            const pluralMatch = isShort
+              ? plural.startsWith(stem) || plural.split(' ').some(w => w.startsWith(stem))
+              : plural.includes(stem)
+            return pluralMatch
+          })
+        }
+
+        return MC_ASSETS
+          .filter(a => matches(a.label))
+          .sort((a, b) => {
+            const aBase = parsedLabel(a.label).base
+            const bBase = parsedLabel(b.label).base
+            const aExact = stems.some(s => aBase === s)
+            const bExact = stems.some(s => bBase === s)
+            const aStart = stems.some(s => aBase.startsWith(s))
+            const bStart = stems.some(s => bBase.startsWith(s))
+            if (aExact !== bExact) return aExact ? -1 : 1
+            if (aStart !== bStart) return aStart ? -1 : 1
+            return aBase.localeCompare(bBase)
+          })
+          .slice(0, 12)
+      })()
 
   function select(a: McAsset) {
     setSearch(a.label)
@@ -761,7 +806,33 @@ function ScrollPopup({ categories, onSave, onClose, allowExtended = true, existi
 
 export default ScrollPopup
 
-// ── Locked quest add popup (for categorized views) ────────────────────────────
+// ── Daily quest popup (for Battle Pass dailies) ───────────────────────────────
+// Opens a scroll-like multi-quest editor for the daily quests backend.
+
+export function DailyQuestPopup({ categories, existingQuests, onSave, onClose }: {
+  categories: Category[]
+  existingQuests: Quest[]
+  onSave: (quests: Quest[]) => void
+  onClose: () => void
+}) {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+      <div className="flex flex-col gap-4 rounded border-2 border-[#3E3E11] bg-[#120413] p-6 w-[420px] max-h-[90vh] overflow-y-auto">
+        <StepQuests
+          scrollType="extended"
+          categories={categories}
+          onBack={onClose}
+          onDone={quests => { onSave(quests); onClose() }}
+          existingQuests={existingQuests}
+          isEdit={existingQuests.length > 0}
+        />
+        <button onClick={onClose} className="cursor-pointer self-end font-pixeloid-sans text-xs text-white/30 hover:text-white/60">
+          Cancel
+        </button>
+      </div>
+    </div>
+  )
+}
 // Sub-category is pre-set; in categorized mode shows all subs for that category.
 // In categorized-detail mode the sub is fully locked.
 

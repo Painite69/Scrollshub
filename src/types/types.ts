@@ -124,6 +124,7 @@ export const DEFAULT_CATEGORIES: Category[] = [
       { id: 'vote', label: 'Vote' },
       { id: 'levelup', label: 'Level Up' },
       { id: 'visit', label: 'Visit' },
+      { id: 'travel', label: 'Travel To' },
     ],
   },
 ]
@@ -202,13 +203,14 @@ export interface Quest {
 
 // ─── Scrolls ──────────────────────────────────────────────────────────────────
 
-export type ScrollType = 'easy' | 'normal' | 'hard' | 'extended'
+export type ScrollType = 'easy' | 'normal' | 'hard' | 'extended' | 'weekly'
 
 export const SCROLL_STYLES: Record<ScrollType, { fill: string; stroke: string; label: string; textFill: string; textStroke: string }> = {
   easy:     { fill: '#64FC65', stroke: '#193B11', label: 'Easy Quest Scroll',     textFill: '#A9A1A8', textStroke: '#2F2734' },
   normal:   { fill: '#F755ED', stroke: '#570A54', label: 'Normal Quest Scroll',   textFill: '#A9A1A8', textStroke: '#2F2734' },
   hard:     { fill: '#FCA900', stroke: '#835034', label: 'Hard Quest Scroll',     textFill: '#A9A1A8', textStroke: '#2F2734' },
   extended: { fill: '#FCFC40', stroke: '#3E3E11', label: 'Extended Quest Scroll', textFill: '#A9A1A8', textStroke: '#2F2734' },
+  weekly:   { fill: '#5454FC', stroke: '#0A1A4A', label: 'Weekly Quest Scroll',   textFill: '#A9A1A8', textStroke: '#2F2734' },
 }
 
 export interface Scroll {

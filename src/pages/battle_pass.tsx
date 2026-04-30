@@ -25,7 +25,7 @@ import {
 } from '../types/storage'
 import { BP_WEEKS, BP_GOALS } from '../bp_data'
 import { DragHandle, DeleteIcon, EditIcon } from '../components/icons'
-import { QuestEditPopup } from '../components/scroll_popup'
+import { QuestEditPopup, DailyQuestPopup } from '../components/scroll_popup'
 import { loadCategories } from '../types/storage'
 
 // ── Progress hydration ────────────────────────────────────────────────────────
@@ -672,8 +672,8 @@ function BPDailiesSection() {
     persist(arrayMove(dailies, oldIdx, newIdx).map((d, i) => ({ ...d, order: i })))
   }
 
-  function handleAdd(quest: BPDaily) {
-    persist([...dailies, { ...quest, order: dailies.length }])
+  function handleAdd(quests: BPDaily[]) {
+    persist(quests.map((q, i) => ({ ...q, order: i })))
     setAddOpen(false)
   }
 
@@ -723,29 +723,17 @@ function BPDailiesSection() {
               onClick={() => setAddOpen(true)}
               className="cursor-pointer flex items-center justify-center rounded bg-[#120413] font-pixeloid-sans text-xs text-white/30 hover:text-white/60 hover:border-white/20 transition-colors py-1.5"
             >
-              + Add Daily Quests
+              {dailies.length === 0 ? '+ Add Daily Quests' : '✎ Edit Daily Quests'}
             </button>
           </div>
         </SortableContext>
       </DndContext>
 
-      {/* Add popup — reuse QuestEditPopup with a blank quest */}
+      {/* Add/edit dailies popup — scroll-like multi-quest editor */}
       {addOpen && (
-        <QuestEditPopup
-          quest={{
-            id: crypto.randomUUID(),
-            categoryId: '',
-            subCategoryId: '',
-            amount: 0,
-            objective: '',
-            objectiveId: 'custom',
-            objectiveIcon: '',
-            counter: 0,
-            completed: false,
-            order: dailies.length,
-          }}
+        <DailyQuestPopup
           categories={categories}
-          accentColor={accentColor}
+          existingQuests={dailies}
           onSave={handleAdd}
           onClose={() => setAddOpen(false)}
         />

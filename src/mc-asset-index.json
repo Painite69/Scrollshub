@@ -4,6 +4,14 @@
         "icon": "/mc_assets/PLAYER_HEAD.png"
     },
     {
+        "label": "Fish",
+        "icon": "/mc_assets/TROPICAL_FISH.png"
+    },
+    {
+        "label": "Warp Market",
+        "icon": "/mc_assets/OAK_SAPLING.png"
+    },
+    {
         "label": "Time/s",
         "icon": "/mc_assets/CLOCK.png"
     },
@@ -32,7 +40,7 @@
         "icon": "/mc_assets/NETHERITE_AXE.png"
     },
     {
-        "label": "Excavator",
+        "label": "Excavation Skill",
         "icon": "/mc_assets/NETHERITE_SHOVEL.png"
     },
     {
@@ -133,8 +141,8 @@
     },
     {
         "label": "Acacia Boat/s",
-        "icon": "/mc_assets/ACACIA_BOAT.png",
-        "icon3d": "/mc_assets/ACACIA_BOAT (2).png"
+        "icon": "/mc_assets/ACACIA_BOAT (2).png",
+        "icon3d:": "/mc_assets/ACACIA_BOAT.png"
     },
     {
         "label": "Acacia Button/s",
@@ -142,8 +150,8 @@
     },
     {
         "label": "Acacia Chest Boat/s",
-        "icon": "/mc_assets/ACACIA_CHEST_BOAT.png",
-        "icon3d": "/mc_assets/ACACIA_CHEST_BOAT (2).png"
+        "icon": "/mc_assets/ACACIA_CHEST_BOAT (2).png",
+        "icon3d:": "/mc_assets/ACACIA_CHEST_BOAT.png"
     },
     {
         "label": "Acacia Door/s",
@@ -291,8 +299,7 @@
     },
     {
         "label": "Armor Stand/s",
-        "icon": "/mc_assets/ARMOR_STAND.png",
-        "icon3d": "/mc_assets/ARMOR_STAND (2).png"
+        "icon": "/mc_assets/ARMOR_STAND (2).png"
     },
     {
         "label": "Arms Up Pottery Sherd/s",
@@ -354,6 +361,7 @@
     {
         "label": "Baby Chicken/s",
         "icon": "/mc_assets/BABY_CHICKEN.png"
+        
     },
     {
         "label": "Baby Cow/s",
@@ -513,8 +521,7 @@
     },
     {
         "label": "Bamboo Chest Raft/s",
-        "icon": "/mc_assets/BAMBOO_CHEST_RAFT.png",
-        "icon3d": "/mc_assets/BAMBOO_CHEST_RAFT (2).png"
+        "icon": "/mc_assets/BAMBOO_CHEST_RAFT (2).png"
     },
     {
         "label": "Bamboo Door/s",
@@ -554,8 +561,7 @@
     },
     {
         "label": "Bamboo Raft/s",
-        "icon": "/mc_assets/BAMBOO_RAFT.png",
-        "icon3d": "/mc_assets/BAMBOO_RAFT (2).png"
+        "icon": "/mc_assets/BAMBOO_RAFT (2).png"
     },
     {
         "label": "Bamboo Shelf/Shelves",
@@ -647,8 +653,8 @@
     },
     {
         "label": "Birch Boat/s",
-        "icon": "/mc_assets/BIRCH_BOAT.png",
-        "icon3d": "/mc_assets/BIRCH_BOAT (2).png"
+        "icon": "/mc_assets/BIRCH_BOAT (2).png",
+        "icon3d:": "/mc_assets/BIRCH_BOAT.png"
     },
     {
         "label": "Birch Button/s",
@@ -656,8 +662,8 @@
     },
     {
         "label": "Birch Chest Boat/s",
-        "icon": "/mc_assets/BIRCH_CHEST_BOAT.png",
-        "icon3d": "/mc_assets/BIRCH_CHEST_BOAT (2).png"
+        "icon": "/mc_assets/BIRCH_CHEST_BOAT (2).png",
+        "icon3d:": "/mc_assets/BIRCH_CHEST_BOAT.png"
     },
     {
         "label": "Birch Door/s",
@@ -1076,15 +1082,15 @@
         "icon": "/mc_assets/BRUSH.png"
     },
     {
-        "label": "Bubble Coral",
+        "label": "Bubble Coral/s",
         "icon": "/mc_assets/BUBBLE_CORAL.png"
     },
     {
-        "label": "Bubble Coral Block",
+        "label": "Bubble Coral Block/s",
         "icon": "/mc_assets/BUBBLE_CORAL_BLOCK.png"
     },
     {
-        "label": "Bubble Coral Fan",
+        "label": "Bubble Coral Fan/s",
         "icon": "/mc_assets/BUBBLE_CORAL_FAN.png"
     },
     {
@@ -1108,7 +1114,7 @@
         "icon": "/mc_assets/BUSH.png"
     },
     {
-        "label": "Cactus/es",
+        "label": "Cactus/Cacti",
         "icon": "/mc_assets/CACTUS.png"
     },
     {
@@ -1196,11 +1202,11 @@
         "icon": "/mc_assets/CHAINMAIL_BOOTS.png"
     },
     {
-        "label": "Chainmail Chestplate",
+        "label": "Chainmail Chestplate/s",
         "icon": "/mc_assets/CHAINMAIL_CHESTPLATE.png"
     },
     {
-        "label": "Chainmail Helmet",
+        "label": "Chainmail Helmet/s",
         "icon": "/mc_assets/CHAINMAIL_HELMET.png"
     },
     {
@@ -1213,8 +1219,8 @@
     },
     {
         "label": "Cherry Boat/s",
-        "icon": "/mc_assets/CHERRY_BOAT.png",
-        "icon3d": "/mc_assets/CHERRY_BOAT (2).png"
+        "icon": "/mc_assets/CHERRY_BOAT (2).png",
+        "icon3d:": "/mc_assets/CHERRY_BOAT.png"
     },
     {
         "label": "Cherry Button/s",
@@ -1222,8 +1228,8 @@
     },
     {
         "label": "Cherry Chest Boat/s",
-        "icon": "/mc_assets/CHERRY_CHEST_BOAT.png",
-        "icon3d": "/mc_assets/CHERRY_CHEST_BOAT (2).png"
+        "icon": "/mc_assets/CHERRY_CHEST_BOAT (2).png",
+        "icon3d:": "/mc_assets/CHERRY_CHEST_BOAT.png"
     },
     {
         "label": "Cherry Door/s",
@@ -1291,13 +1297,12 @@
     },
     {
         "label": "Chest Minecart/s",
-        "icon": "/mc_assets/CHEST_MINECART.png",
-        "icon3d": "/mc_assets/CHEST_MINECART (2).png"
+        "icon": "/mc_assets/CHEST_MINECART (2).png"
     },
     {
         "label": "Chicken/s",
-        "icon": "/mc_assets/CHICKEN.png",
-        "icon3d": "/mc_assets/CHICKEN (2).png"
+        "icon3d": "/mc_assets/CHICKEN.png",
+        "icon": "/mc_assets/CHICKEN (2).png"
     },
     {
         "label": "Chicken Spawn Egg/s",
@@ -1502,8 +1507,7 @@
     },
     {
         "label": "Command Block Minecart/s",
-        "icon": "/mc_assets/COMMAND_BLOCK_MINECART.png",
-        "icon3d": "/mc_assets/COMMAND_BLOCK_MINECART (2).png"
+        "icon": "/mc_assets/COMMAND_BLOCK_MINECART (2).png"
     },
     {
         "label": "Comparator/s",
@@ -1915,8 +1919,8 @@
     },
     {
         "label": "Dark Oak Boat/s",
-        "icon": "/mc_assets/DARK_OAK_BOAT.png",
-        "icon3d": "/mc_assets/DARK_OAK_BOAT (2).png"
+        "icon": "/mc_assets/DARK_OAK_BOAT (2).png",
+        "icon3d:": "/mc_assets/DARK_OAK_BOAT.png"
     },
     {
         "label": "Dark Oak Button/s",
@@ -1924,8 +1928,8 @@
     },
     {
         "label": "Dark Oak Chest Boat/s",
-        "icon": "/mc_assets/DARK_OAK_CHEST_BOAT.png",
-        "icon3d": "/mc_assets/DARK_OAK_CHEST_BOAT (2).png"
+        "icon": "/mc_assets/DARK_OAK_CHEST_BOAT (2).png",
+        "icon3d:": "/mc_assets/DARK_OAK_CHEST_BOAT.png"
     },
     {
         "label": "Dark Oak Door/s",
@@ -2650,8 +2654,7 @@
     },
     {
         "label": "Furnace Minecart/s",
-        "icon": "/mc_assets/FURNACE_MINECART.png",
-        "icon3d": "/mc_assets/FURNACE_MINECART (2).png"
+        "icon": "/mc_assets/FURNACE_MINECART (2).png"
     },
     {
         "label": "Ghast/s",
@@ -3048,8 +3051,7 @@
     },
     {
         "label": "Hopper Minecart/s",
-        "icon": "/mc_assets/HOPPER_MINECART.png",
-        "icon3d": "/mc_assets/HOPPER_MINECART (2).png"
+        "icon": "/mc_assets/HOPPER_MINECART (2).png"
     },
     {
         "label": "Horn Coral/s",
@@ -3246,8 +3248,8 @@
     },
     {
         "label": "Jungle Boat/s",
-        "icon": "/mc_assets/JUNGLE_BOAT.png",
-        "icon3d": "/mc_assets/JUNGLE_BOAT (2).png"
+        "icon": "/mc_assets/JUNGLE_BOAT (2).png",
+        "icon3d:": "/mc_assets/JUNGLE_BOAT.png"
     },
     {
         "label": "Jungle Button/s",
@@ -3255,8 +3257,8 @@
     },
     {
         "label": "Jungle Chest Boat/s",
-        "icon": "/mc_assets/JUNGLE_CHEST_BOAT.png",
-        "icon3d": "/mc_assets/JUNGLE_CHEST_BOAT (2).png"
+        "icon": "/mc_assets/JUNGLE_CHEST_BOAT (2).png",
+        "icon3d:": "/mc_assets/JUNGLE_CHEST_BOAT.png"
     },
     {
         "label": "Jungle Door/s",
@@ -3717,8 +3719,8 @@
     },
     {
         "label": "Mangrove Boat/s",
-        "icon": "/mc_assets/MANGROVE_BOAT.png",
-        "icon3d": "/mc_assets/MANGROVE_BOAT (2).png"
+        "icon": "/mc_assets/MANGROVE_BOAT (2).png",
+        "icon3d:": "/mc_assets/MANGROVE_BOAT.png"
     },
     {
         "label": "Mangrove Button/s",
@@ -3726,8 +3728,8 @@
     },
     {
         "label": "Mangrove Chest Boat/s",
-        "icon": "/mc_assets/MANGROVE_CHEST_BOAT.png",
-        "icon3d": "/mc_assets/MANGROVE_CHEST_BOAT (2).png"
+        "icon": "/mc_assets/MANGROVE_CHEST_BOAT (2).png",
+        "icon3d:": "/mc_assets/MANGROVE_CHEST_BOAT.png"
     },
     {
         "label": "Mangrove Door/s",
@@ -3826,9 +3828,8 @@
         "icon": "/mc_assets/MILK_BUCKET.png"
     },
     {
-        "label": "Minecart/s",
-        "icon": "/mc_assets/MINECART.png",
-        "icon3d": "/mc_assets/MINECART (2).png"
+        "label": "Minecart",
+        "icon": "/mc_assets/MINECART (2).png"
     },
     {
         "label": "Miner Pottery Sherd/s",
@@ -4160,8 +4161,8 @@
     },
     {
         "label": "Oak Boat/s",
-        "icon": "/mc_assets/OAK_BOAT.png",
-        "icon3d": "/mc_assets/OAK_BOAT (2).png"
+        "icon": "/mc_assets/OAK_BOAT (2).png",
+        "icon3d:": "/mc_assets/OAK_BOAT.png"
     },
     {
         "label": "Oak Button/s",
@@ -4169,8 +4170,8 @@
     },
     {
         "label": "Oak Chest Boat/s",
-        "icon": "/mc_assets/OAK_CHEST_BOAT.png",
-        "icon3d": "/mc_assets/OAK_CHEST_BOAT (2).png"
+        "icon": "/mc_assets/OAK_CHEST_BOAT (2).png",
+        "icon3d:": "/mc_assets/OAK_CHEST_BOAT.png"
     },
     {
         "label": "Oak Door/s",
@@ -4423,8 +4424,8 @@
     },
     {
         "label": "Pale Oak Boat/s",
-        "icon": "/mc_assets/PALE_OAK_BOAT.png",
-        "icon3d": "/mc_assets/PALE_OAK_BOAT (2).png"
+        "icon": "/mc_assets/PALE_OAK_BOAT (2).png",
+        "icon3d:": "/mc_assets/PALE_OAK_BOAT.png"
     },
     {
         "label": "Pale Oak Button/s",
@@ -4432,8 +4433,8 @@
     },
     {
         "label": "Pale Oak Chest Boat/s",
-        "icon": "/mc_assets/PALE_OAK_CHEST_BOAT.png",
-        "icon3d": "/mc_assets/PALE_OAK_CHEST_BOAT (2).png"
+        "icon": "/mc_assets/PALE_OAK_CHEST_BOAT (2).png",
+        "icon3d:": "/mc_assets/PALE_OAK_CHEST_BOAT.png"
     },
     {
         "label": "Pale Oak Door/s",
@@ -5038,8 +5039,8 @@
     },
     {
         "label": "Rabbit/s",
-        "icon": "/mc_assets/RABBIT.png",
-        "icon3d": "/mc_assets/RABBIT (2).png"
+        "icon": "/mc_assets/RABBIT (2).png",
+        "icon3d": "/mc_assets/RABBIT.png"
     },
     {
         "label": "Rabbit Foot/s",
@@ -5659,8 +5660,8 @@
     },
     {
         "label": "Spruce Boat/s",
-        "icon": "/mc_assets/SPRUCE_BOAT.png",
-        "icon3d": "/mc_assets/SPRUCE_BOAT (2).png"
+        "icon": "/mc_assets/SPRUCE_BOAT (2).png",
+        "icon3d": "/mc_assets/SPRUCE_BOAT.png"
     },
     {
         "label": "Spruce Button/s",
@@ -5668,8 +5669,8 @@
     },
     {
         "label": "Spruce Chest Boat/s",
-        "icon": "/mc_assets/SPRUCE_CHEST_BOAT.png",
-        "icon3d": "/mc_assets/SPRUCE_CHEST_BOAT (2).png"
+        "icon": "/mc_assets/SPRUCE_CHEST_BOAT (2).png",
+        "icon3d": "/mc_assets/SPRUCE_CHEST_BOAT.png"
     },
     {
         "label": "Spruce Door/s",
@@ -6065,13 +6066,11 @@
     },
     {
         "label": "TNT",
-        "icon": "/mc_assets/TNT.png",
-        "icon3d": "/mc_assets/TNT (2).png"
+        "icon": "/mc_assets/TNT.png"
     },
     {
         "label": "TNT Minecart/s",
-        "icon": "/mc_assets/TNT_MINECART.png",
-        "icon3d": "/mc_assets/TNT_MINECART (2).png"
+        "icon": "/mc_assets/TNT_MINECART (2).png"
     },
     {
         "label": "Torch/es",
