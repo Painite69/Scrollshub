@@ -1,6 +1,6 @@
 function PrivacyPolicy() {
   return (
-    <div className="mt-6 flex flex-col bg-black/30 rounded gap-8 px-4 py-8 sm:px-8 max-w-3xl mx-auto">
+    <div className="mt-6 flex flex-col bg-black/30 rounded gap-8 px-4 py-8 sm:px-8 max-w-3xl mx-auto fade-in">
 
       <div className="flex flex-col gap-2">
         <h1 className="font-exe-pixel text-3xl sm:text-5xl text-[#FCFC40]">Privacy Policy</h1>
@@ -88,7 +88,46 @@ function PrivacyPolicy() {
       </section>
 
       <section className="flex flex-col gap-3">
-        <h2 className="font-exe-pixel text-4xl text-[#FF3333]">7. Contact</h2>
+        <h2 className="font-exe-pixel text-4xl text-[#AAFF00]">7. Asset Attribution</h2>
+        <p className="font-pixeloid-sans text-sm text-white leading-relaxed">
+          All Minecraft item, block, and mob icons used in ScrollsHub are property of{' '}
+          <span className="text-[#AAFF00]">Mojang Studios / Microsoft</span>.
+          Minecraft® is a registered trademark of Mojang Studios.
+          ScrollsHub is not affiliated with or endorsed by Mojang or Microsoft.
+          This site is a free, non-commercial fan project and is not monetised in any way —
+          no ads, no paid features, no revenue.
+        </p>
+        <p className="font-pixeloid-sans text-sm text-white leading-relaxed">
+          The 3D renders and asset images used in this app were sourced from the open-source repository{' '}
+          <a
+            href="https://github.com/Owen1212055/mc-assets"
+            target="_blank"
+            rel="noreferrer"
+            className="text-[#AAFF00] hover:underline"
+          >
+            Owen1212055/mc-assets
+          </a>{' '}
+          by <span className="text-[#AAFF00]">Owen1212055</span> — "A bunch of Minecraft related renders, all rendered natively."
+          Credit and thanks to Owen for making these assets publicly available.
+        </p>
+        <p className="font-pixeloid-sans text-sm text-white leading-relaxed">
+          The ScrollsHub logo is derived from assets used in{' '}
+          <a
+            href="https://modrinth.com/mod/vg-cluescrollhud"
+            target="_blank"
+            rel="noreferrer"
+            className="text-[#AAFF00] hover:underline"
+          >
+            Clue Scroll HUD for Vulengate
+          </a>
+          , a client-side Minecraft mod for the Vulengate server, licensed under the{' '}
+          <span className="text-[#AAFF00]">MIT License</span>.
+          Credit to the mod's author for the original asset.
+        </p>
+      </section>
+
+      <section className="flex flex-col gap-3">
+        <h2 className="font-exe-pixel text-4xl text-[#FF3333]">8. Contact</h2>
         <p className="font-pixeloid-sans text-sm text-white leading-relaxed">
           If you have any questions about this privacy policy, reach out on{' '}
           <a

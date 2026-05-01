@@ -9,7 +9,7 @@ import PrivacyPolicy from './pages/privacy_policy'
 function Router() {
   return (
     <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<Homepage />} /> 
         <Route path="/battle-pass" element={<BattlePass />} />
         <Route path="/about" element={<About />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

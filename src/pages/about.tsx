@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div className="flex flex-col gap-10 px-4 py-8 sm:px-8 mx-auto">
+    <div className="flex flex-col gap-10 px-4 py-8 sm:px-8 mx-auto fade-in">
 
       {/* ── Hero ── */}
       <div className="flex flex-col bg-black/30 rounded p-4 sm:flex-row items-center gap-6">

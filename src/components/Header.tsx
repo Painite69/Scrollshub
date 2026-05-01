@@ -11,8 +11,7 @@ function Header() {
         <a href="/battle-pass" className="cursor-pointer text-white hover:text-black/30 hover:scale-110">BattlePass</a>
         <a href="/about" className="cursor-pointer text-white hover:text-black/30 hover:scale-110">About</a>
         <a href="/privacy-policy" className="cursor-pointer text-white hover:text-black/30 hover:scale-110">Privacy</a>
-      {/* </div>
-      <div className="flex flex-wrap items-center gap-2 sm:gap-4 font-exe-pixel text-xl sm:text-4xl"> */}
+
         <a className="cursor-pointer hover:scale-110" href="https://www.twitch.tv/thecolorofboom" target="blank">
           <img src="/custom_assets/stream.webp" alt="" className="w-8 sm:w-[50px]"/>
         </a>
@@ -22,6 +21,7 @@ function Header() {
         <a className="cursor-pointer hover:scale-110" href="https://ko-fi.com/painitedevelopment" target="blank">
           <img src="/custom_assets/kofi.webp" alt="" className="w-8 sm:w-[50px]"/>
         </a>
+        
       </div>
     </div>
   );

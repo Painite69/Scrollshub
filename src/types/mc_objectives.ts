@@ -235,7 +235,6 @@ export const MC_OBJECTIVES: MCObjective[] = [
 
   // ── Custom / Other ────────────────────────────────────────────────────────
   { id: 'custom', label: 'Other', categoryHints: [], icon: I('BARRIER') },
-  { id: 'die', label: 'Times', categoryHints: [], icon: I('BARRIER') },
-  { id: 'items', label: 'Items', categoryHints: [], icon: I('BOOK') },
-  
+  { id: 'die', label: 'Times', categoryHints: ['die'], icon: I('BARRIER') },
+  { id: 'items', label: 'Items', categoryHints: ['workbench'], icon: I('BOOK') },
 ]

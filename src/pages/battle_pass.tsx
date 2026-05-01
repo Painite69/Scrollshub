@@ -816,7 +816,7 @@ function BattlePass() {
   }
 
   return (
-    <div className="flex flex-col gap-4 p-3 sm:p-6">
+    <div className="flex flex-col gap-4 p-3 sm:p-6 fade-in">
       <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
         <SortableContext items={sectionOrder} strategy={verticalListSortingStrategy}>
           {sectionOrder.map(id => (
