@@ -579,13 +579,15 @@ function DraftEditModal({ draft, categories, accentColor, onSave, onClose }: {
 
 // ── Step 2 ────────────────────────────────────────────────────────────────────
 
-function StepQuests({ scrollType, categories, onBack, onDone, existingQuests = [], isEdit = false }: {
+function StepQuests({ scrollType, categories, onBack, onDone, existingQuests = [], isEdit = false, title, doneLabel }: {
   scrollType: ScrollType
   categories: Category[]
   onBack: () => void
   onDone: (quests: Quest[]) => void
   existingQuests?: Quest[]
   isEdit?: boolean
+  title?: string
+  doneLabel?: (count: number, isEdit: boolean) => string
 }) {
   const [drafts, setDrafts] = useState<QuestDraft[]>(() =>
     existingQuests.map(q => ({
@@ -627,7 +629,7 @@ function StepQuests({ scrollType, categories, onBack, onDone, existingQuests = [
       {/* Header */}
       <div className="flex items-center gap-3">
         <button onClick={onBack} className="cursor-pointer font-pixeloid-sans text-xs text-white/40 hover:text-white">← back</button>
-        <span className="font-exe-pixel text-base" style={{ color: s.fill }}>{s.label}</span>
+        <span className="font-exe-pixel text-base" style={{ color: s.fill }}>{title ?? s.label}</span>
       </div>
 
       {/* Draft list */}
@@ -667,7 +669,7 @@ function StepQuests({ scrollType, categories, onBack, onDone, existingQuests = [
         className="cursor-pointer rounded border px-4 py-2 font-exe-pixel text-sm"
         style={{ color: s.fill, borderColor: s.stroke, background: s.stroke + '44' }}
       >
-      {isEdit ? 'Edit Scroll' : drafts.length === 0 ? 'Add Empty Scroll' : `Add Scroll (${drafts.length} quest${drafts.length !== 1 ? 's' : ''})`}
+      {isEdit ? (doneLabel ? doneLabel(drafts.length, true) : 'Edit Scroll') : drafts.length === 0 ? (doneLabel ? doneLabel(0, false) : 'Add Empty Scroll') : (doneLabel ? doneLabel(drafts.length, false) : `Add Scroll (${drafts.length} quest${drafts.length !== 1 ? 's' : ''})`)}
       </button>
 
       {/* Inline draft edit */}
@@ -825,6 +827,11 @@ export function DailyQuestPopup({ categories, existingQuests, onSave, onClose }:
           onDone={quests => { onSave(quests); onClose() }}
           existingQuests={existingQuests}
           isEdit={existingQuests.length > 0}
+          title="Battle Pass Dailies"
+          doneLabel={(count, edit) => edit
+            ? `Save Quests (${count})`
+            : count === 0 ? 'Save (no quests)' : `Add Quest${count !== 1 ? 's' : ''} (${count})`
+          }
         />
         <button onClick={onClose} className="cursor-pointer self-end font-pixeloid-sans text-xs text-white/30 hover:text-white/60">
           Cancel

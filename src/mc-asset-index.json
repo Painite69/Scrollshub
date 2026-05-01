@@ -448,7 +448,7 @@
         "icon": "/mc_assets/BABY_RABBIT.png"
     },
     {
-        "label": "Baby Sheep/s",
+        "label": "Baby Sheep",
         "icon": "/mc_assets/BABY_SHEEP.png"
     },
     {
@@ -5384,7 +5384,7 @@
         "icon": "/mc_assets/SHEARS.png"
     },
     {
-        "label": "Sheep/s",
+        "label": "Sheep",
         "icon": "/mc_assets/SHEEP.png"
     },
     {
