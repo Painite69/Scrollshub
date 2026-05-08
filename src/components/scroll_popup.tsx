@@ -62,8 +62,21 @@ function IconSelectorModal({ current, onSelect, onClose }: {
 
   useEffect(() => { inputRef.current?.focus() }, [])
 
+  const DEFAULT_ICONS = [
+    'DIAMOND_SWORD', 'NETHERITE_SWORD', 'BOW', 'CROSSBOW', 'TRIDENT',
+    'DIAMOND_PICKAXE', 'NETHERITE_PICKAXE', 'DIAMOND_AXE', 'NETHERITE_AXE',
+    'DIAMOND_SHOVEL', 'NETHERITE_SHOVEL', 'FISHING_ROD', 'SHEARS',
+    'COAL_ORE', 'IRON_ORE', 'GOLD_ORE', 'DIAMOND_ORE', 'EMERALD_ORE',
+    'LAPIS_ORE', 'REDSTONE_ORE', 'ANCIENT_DEBRIS',
+    'COBBLESTONE', 'OAK_LOG', 'SPRUCE_LOG', 'WHEAT', 'CARROT', 'POTATO',
+    'BEEF', 'CHICKEN', 'PORKCHOP', 'SALMON', 'COD',
+    'ZOMBIE', 'SKELETON', 'CREEPER', 'SPIDER', 'ENDERMAN',
+    'PLAYER_HEAD', 'ENDER_DRAGON', 'WITHER',
+    'EXPERIENCE_BOTTLE', 'ENCHANTING_TABLE', 'BREWING_STAND',
+  ].map(key => ALL_ICONS.find(a => a.icon.includes(`/${key}.png`))).filter(Boolean) as typeof ALL_ICONS
+
   const filtered = search.trim().length === 0
-    ? ALL_ICONS
+    ? DEFAULT_ICONS
     : ALL_ICONS.filter(a => a.label.toLowerCase().includes(search.toLowerCase()))
 
   return (
@@ -89,7 +102,7 @@ function IconSelectorModal({ current, onSelect, onClose }: {
           <div className="grid grid-cols-8 gap-1 p-1">
             {filtered.map(a => (
               <button
-                key={a.icon}
+                key={a.label}
                 onMouseDown={() => { onSelect(a.icon); onClose() }}
                 title={a.label}
                 className={`cursor-pointer rounded p-1 flex items-center justify-center hover:bg-white/10 transition-colors ${current === a.icon ? 'bg-white/20 ring-1 ring-[#FCFC40]' : ''}`}
@@ -300,11 +313,21 @@ function SubCategoryPicker({ categories, value, onChange, accentColor }: {
   const [search, setSearch] = useState('')
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
+  const searchRef = useRef(search)
+  const filteredRef = useRef<typeof withCustom>([])
+
+  useEffect(() => { searchRef.current = search }, [search])
 
   useEffect(() => {
     if (!open) return
     const handler = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        if (searchRef.current.trim().length > 0 && filteredRef.current.length > 0) {
+          select(filteredRef.current[0])
+        } else {
+          setOpen(false)
+        }
+      }
     }
     document.addEventListener('mousedown', handler)
     return () => document.removeEventListener('mousedown', handler)
@@ -317,6 +340,7 @@ function SubCategoryPicker({ categories, value, onChange, accentColor }: {
   const filtered = withCustom.filter(s =>
     search.length === 0 || s.label.toLowerCase().includes(search.toLowerCase())
   )
+  filteredRef.current = filtered
 
   function select(s: typeof withCustom[0]) {
     setSearch('')
