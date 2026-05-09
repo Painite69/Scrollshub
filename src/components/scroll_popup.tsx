@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import type { ScrollType, Scroll, Quest, Category } from '../types/types'
-import { SCROLL_STYLES } from '../types/types'
+import { SCROLL_STYLES, DEFAULT_SCROLL } from '../types/types'
 import { MC_OBJECTIVES } from '../types/mc_objectives'
 import { DeleteIcon } from './icons'
 import mcAssetIndex from '../mc-asset-index.json'
@@ -797,6 +797,15 @@ export function QuestEditPopup({ quest, categories, accentColor = '#FCFC40', onS
 function ScrollPopup({ categories, onSave, onClose, allowExtended = true, existing }: Props) {
   const [step, setStep] = useState<'type' | 'quests'>(() => existing ? 'quests' : 'type')
   const [scrollType, setScrollType] = useState<ScrollType>(existing?.type ?? 'easy')
+  const [prefillQuests, setPrefillQuests] = useState<Quest[]>(existing?.quests ?? [])
+
+  function handleSelectType(t: ScrollType) {
+    if (!allowExtended && t === 'extended') return
+    setScrollType(t)
+    // Pre-fill with DEFAULT_SCROLL quests when picking extended (new scroll only)
+    setPrefillQuests(t === 'extended' ? DEFAULT_SCROLL.quests : [])
+    setStep('quests')
+  }
 
   function handleDone(quests: Quest[]) {
     onSave({
@@ -812,13 +821,13 @@ function ScrollPopup({ categories, onSave, onClose, allowExtended = true, existi
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
       <div className="flex flex-col gap-4 rounded border-2 border-[#190A21] bg-[#120413] p-6 w-[420px] max-h-[90vh] overflow-y-auto">
         {step === 'type'
-          ? <StepType onSelect={t => { if (allowExtended || t !== 'extended') { setScrollType(t); setStep('quests') } }} />
+          ? <StepType onSelect={handleSelectType} />
           : <StepQuests
               scrollType={scrollType}
               categories={categories}
               onBack={existing ? onClose : () => setStep('type')}
               onDone={handleDone}
-              existingQuests={existing?.quests}
+              existingQuests={prefillQuests}
               isEdit={!!existing}
             />
         }
@@ -843,7 +852,7 @@ export function DailyQuestPopup({ categories, existingQuests, onSave, onClose }:
 }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
-      <div className="flex flex-col gap-4 rounded border-2 border-[#3E3E11] bg-[#120413] p-6 w-[420px] max-h-[90vh] overflow-y-auto">
+      <div className="flex flex-col gap-4 rounded border-2 border-[#007A7A] bg-[#120413] p-6 w-[420px] max-h-[90vh] overflow-y-auto">
         <StepQuests
           scrollType="extended"
           categories={categories}
