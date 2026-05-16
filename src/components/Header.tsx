@@ -9,6 +9,7 @@ function Header() {
       <div className="flex flex-wrap items-center gap-2 sm:gap-4 font-exe-pixel text-xl sm:text-4xl">
         <a href="/" className="cursor-pointer text-white hover:text-black/30 hover:scale-110">Scrolls</a>
         <a href="/battle-pass" className="cursor-pointer text-white hover:text-black/30 hover:scale-110">BattlePass</a>
+        <a href="https://vulengate.com/vote" className="cursor-pointer text-white hover:text-black/30 hover:scale-110" target="blank">Vote</a>
         <a href="/about" className="cursor-pointer text-white hover:text-black/30 hover:scale-110">About</a>
         <a href="/privacy-policy" className="cursor-pointer text-white hover:text-black/30 hover:scale-110">Privacy</a>
 
