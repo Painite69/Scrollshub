@@ -62,7 +62,7 @@ function About() {
               rel="noreferrer"
               className="flex items-center gap-2 rounded border-2 border-[#8652f6] bg-[#120413] px-4 py-2 font-exe-pixel text-sm text-[#8652f6] hover:border-[#c68ff3] hover:text-[#c68ff3] transition-colors"
             >
-              <img src="/custom_assets/stream.webp" alt="Twitch" className="w-5 h-5" />
+              <img src={`${import.meta.env.BASE_URL}custom_assets/stream.webp`} alt="Twitch" className="w-5 h-5" />
               Twitch
             </a>
             <a
@@ -71,7 +71,7 @@ function About() {
               rel="noreferrer"
               className="flex items-center gap-2 rounded border-2 border-[#6665d2] bg-[#120413] px-4 py-2 font-exe-pixel text-sm text-[#6665d2] hover:border-[#aeadfe] hover:text-[#aeadfe] transition-colors"
             >
-              <img src="/custom_assets/discord.webp" alt="Discord" className="w-5 h-5" />
+              <img src={`${import.meta.env.BASE_URL}custom_assets/discord.webp`} alt="Discord" className="w-5 h-5" />
               Discord
             </a>
             <a
