@@ -137,16 +137,16 @@ export const DEFAULT_SCROLL: Scroll = {
   type: 'extended',
   order: 0,
   quests: [
-    { id: '__dq_1__',  categoryId: 'mine',    subCategoryId: 'mine',    amount: 1250,  objective: 'Nether Quartz Ore',  objectiveId: 'custom', objectiveIcon: '/mc_assets/NETHER_QUARTZ_ORE.png',   counter: 0, completed: false, order: 0 },
-    { id: '__dq_2__',  categoryId: 'craft',   subCategoryId: 'craft',   amount: 500,   objective: 'Spyglass',           objectiveId: 'custom', objectiveIcon: '/mc_assets/SPYGLASS.png',             counter: 0, completed: false, order: 1 },
-    { id: '__dq_3__',  categoryId: 'mine',    subCategoryId: 'break',   amount: 300,   objective: 'Coral Fan',          objectiveId: 'custom', objectiveIcon: '/mc_assets/BRAIN_CORAL_FAN.png',      counter: 0, completed: false, order: 2 },
-    { id: '__dq_4__',  categoryId: 'craft',   subCategoryId: 'craft',   amount: 8,     objective: 'Recovery Compass',   objectiveId: 'custom', objectiveIcon: '/mc_assets/RECOVERY_COMPASS.png',     counter: 0, completed: false, order: 3 },
-    { id: '__dq_5__',  categoryId: 'ride',    subCategoryId: 'ride',    amount: 10000, objective: 'Boat',               objectiveId: 'custom', objectiveIcon: '/mc_assets/OAK_BOAT (2).png',             counter: 0, completed: false, order: 4 },
-    { id: '__dq_6__',  categoryId: 'eat',     subCategoryId: 'eat',     amount: 800,   objective: 'Melon Slice',        objectiveId: 'custom', objectiveIcon: '/mc_assets/MELON_SLICE.png',          counter: 0, completed: false, order: 5 },
-    { id: '__dq_7__',  categoryId: 'kill',    subCategoryId: 'kill',    amount: 1500,  objective: 'Breeze',             objectiveId: 'custom', objectiveIcon: '/mc_assets/BREEZE.png',               counter: 0, completed: false, order: 6 },
-    { id: '__dq_8__',  categoryId: 'interact',subCategoryId: 'hoetill', amount: 4000,  objective: 'Blocks',             objectiveId: 'custom', objectiveIcon: '/mc_assets/NETHERITE_HOE.png',          counter: 0, completed: false, order: 7 },
-    { id: '__dq_9__',  categoryId: 'interact',subCategoryId: 'place',   amount: 2000,  objective: 'Rose Bush',          objectiveId: 'custom', objectiveIcon: '/mc_assets/ROSE_BUSH.png',            counter: 0, completed: false, order: 8 },
-    { id: '__dq_10__', categoryId: 'workbench',subCategoryId: 'enchant', amount: 400,  objective: 'Diamond Hoe',        objectiveId: 'custom', objectiveIcon: '/mc_assets/DIAMOND_HOE.png',          counter: 0, completed: false, order: 9 },
+    { id: '__dq_1__',  categoryId: 'workbench', subCategoryId: 'enchant', amount: 250,   objective: 'Fishing Rods',             objectiveId: 'custom', objectiveIcon: '/mc_assets/FISHING_ROD.png',      counter: 0, completed: false, order: 0 },
+    { id: '__dq_2__',  categoryId: 'mine',      subCategoryId: 'dig',     amount: 5000,  objective: 'Grass Blocks',             objectiveId: 'custom', objectiveIcon: '/mc_assets/GRASS_BLOCK.png',      counter: 0, completed: false, order: 1 },
+    { id: '__dq_3__',  categoryId: 'mine',      subCategoryId: 'chop',    amount: 2500,  objective: 'Dark Oak Logs',            objectiveId: 'custom', objectiveIcon: '/mc_assets/DARK_OAK_LOG.png',     counter: 0, completed: false, order: 2 },
+    { id: '__dq_4__',  categoryId: 'eat',       subCategoryId: 'eat',     amount: 1000,  objective: 'Dried Kelp',               objectiveId: 'custom', objectiveIcon: '/mc_assets/DRIED_KELP.png',       counter: 0, completed: false, order: 3 },
+    { id: '__dq_5__',  categoryId: 'craft',     subCategoryId: 'craft',   amount: 500,   objective: 'Copper Lanterns',          objectiveId: 'custom', objectiveIcon: '/mc_assets/COPPER_LANTERN.png',   counter: 0, completed: false, order: 4 },
+    { id: '__dq_6__',  categoryId: 'movement',  subCategoryId: 'swim',    amount: 10000, objective: 'Blocks',                   objectiveId: 'custom', objectiveIcon: '/mc_assets/WATER_BUCKET.png',     counter: 0, completed: false, order: 5 },
+    { id: '__dq_7__',  categoryId: 'kill',      subCategoryId: 'kill',    amount: 2500,  objective: 'Magma Cubes',              objectiveId: 'custom', objectiveIcon: '/mc_assets/MAGMA_CUBE.png',       counter: 0, completed: false, order: 6 },
+    { id: '__dq_8__',  categoryId: 'interact',  subCategoryId: 'drink',   amount: 200,   objective: 'Water Bottles',            objectiveId: 'custom', objectiveIcon: '/mc_assets/POTION.png',           counter: 0, completed: false, order: 7 },
+    { id: '__dq_9__',  categoryId: 'workbench', subCategoryId: 'brew',    amount: 125,   objective: 'Fire Resistance Potions',  objectiveId: 'custom', objectiveIcon: '/mc_assets/MAGMA_CREAM.png',      counter: 0, completed: false, order: 8 },
+    { id: '__dq_10__', categoryId: 'interact',  subCategoryId: 'place',   amount: 2500,  objective: 'Mud Bricks',               objectiveId: 'custom', objectiveIcon: '/mc_assets/MUD_BRICKS.png',        counter: 0, completed: false, order: 9 },
   ],
 }
 
@@ -210,7 +210,7 @@ export const SCROLL_STYLES: Record<ScrollType, { fill: string; stroke: string; l
   easy:     { fill: '#64FC65', stroke: '#193B11', label: 'Easy Quest Scroll',     textFill: '#A9A1A8', textStroke: '#2F2734' },
   normal:   { fill: '#F755ED', stroke: '#570A54', label: 'Normal Quest Scroll',   textFill: '#A9A1A8', textStroke: '#2F2734' },
   hard:     { fill: '#FCA900', stroke: '#835034', label: 'Hard Quest Scroll',     textFill: '#A9A1A8', textStroke: '#2F2734' },
-  extended: { fill: '#33FFFF', stroke: '#007A7A', label: 'Extended Quest Scroll', textFill: '#A9A1A8', textStroke: '#2F2734' },
+  extended: { fill: '#00A8A8', stroke: '#007A7A', label: 'Extended Quest Scroll', textFill: '#A9A1A8', textStroke: '#2F2734' },
   weekly:   { fill: '#5454FC', stroke: '#0A1A4A', label: 'Weekly Quest Scroll',   textFill: '#A9A1A8', textStroke: '#2F2734' },
 }
 

@@ -1,4 +1,4 @@
-import { type Group, type Category, DEFAULT_CATEGORIES, DEFAULT_GROUPS } from './types'
+import { type Group, type Category, DEFAULT_CATEGORIES, DEFAULT_GROUPS, DEFAULT_SCROLL, type Scroll } from './types'
 
 const KEYS = {
   groups: 'questhub_groups',
@@ -21,10 +21,55 @@ function save<T>(key: string, value: T): void {
   localStorage.setItem(key, JSON.stringify(value))
 }
 
+function normalizeDefaultExtendedScroll(scroll: Scroll): Scroll {
+  if (scroll.id !== DEFAULT_SCROLL.id) return scroll
+
+  return {
+    ...DEFAULT_SCROLL,
+    id: scroll.id,
+    order: typeof scroll.order === 'number' ? scroll.order : DEFAULT_SCROLL.order,
+    hidden: scroll.hidden,
+    titleColors: scroll.titleColors,
+  }
+}
+
+function normalizeGroups(groups: Group[]): Group[] {
+  return groups.map(group => {
+    const normalizedScrolls = group.scrolls.map(scroll => {
+      if (scroll.id === DEFAULT_SCROLL.id) {
+        return normalizeDefaultExtendedScroll(scroll)
+      }
+      return scroll
+    })
+
+    if (group.id === '__default_weekly__') {
+      const hasDefaultExtended = normalizedScrolls.some(scroll => scroll.id === DEFAULT_SCROLL.id)
+      if (!hasDefaultExtended) {
+        return {
+          ...group,
+          scrolls: [{ ...DEFAULT_SCROLL, order: 0 }, ...normalizedScrolls],
+        }
+      }
+    }
+
+    return {
+      ...group,
+      scrolls: normalizedScrolls,
+    }
+  })
+}
+
 // ─── Groups ───────────────────────────────────────────────────────────────────
 
 export function loadGroups(): Group[] {
-  return load<Group[]>(KEYS.groups, DEFAULT_GROUPS)
+  const groups = load<Group[]>(KEYS.groups, DEFAULT_GROUPS)
+  const normalizedGroups = normalizeGroups(groups)
+
+  if (JSON.stringify(normalizedGroups) !== JSON.stringify(groups)) {
+    save(KEYS.groups, normalizedGroups)
+  }
+
+  return normalizedGroups
 }
 
 export function saveGroups(groups: Group[]): void {
