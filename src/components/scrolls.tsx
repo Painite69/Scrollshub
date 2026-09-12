@@ -685,8 +685,8 @@ function Scrolls({ group, onGroupUpdate }: {
   const sensors = useSensors(useSensor(PointerSensor))
 
   function persistGroup(updated: Group) {
-    onGroupUpdate(updated)
-    saveGroups(loadGroups().map(g => g.id === updated.id ? updated : g))
+    const saved = saveGroups(loadGroups().map(g => g.id === updated.id ? updated : g))
+    onGroupUpdate(saved.find(g => g.id === updated.id) ?? updated)
   }
 
   function handleAddScroll(scroll: Scroll) {

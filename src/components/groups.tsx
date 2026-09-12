@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   DndContext,
   closestCenter,
@@ -14,11 +14,16 @@ import {
   arrayMove,
 } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
-import type { Group } from '../types/types'
-import { loadGroups, saveGroups, deleteGroup } from '../types/storage'
+import { DEFAULT_SCROLL, type Group } from '../types/types'
+import { loadGroups, saveGroups, deleteGroup, EXTENDED_SYNC_VERSION } from '../types/storage'
 import GroupPopup from './group_popup'
 import Scrolls from './scrolls'
 import { DragHandle, EditIconGroup, DeleteIconGroup } from './icons'
+
+// Changes whenever DEFAULT_SCROLL quest definitions change (triggers re-sync)
+const DEFAULT_SCROLL_SIGNATURE = JSON.stringify(
+  DEFAULT_SCROLL.quests.map(q => [q.id, q.categoryId, q.subCategoryId, q.amount, q.objective, q.objectiveIcon])
+)
 
 // ── Sortable group card ────────────────────────────────────────────────────────
 
@@ -96,6 +101,11 @@ function Groups() {
   const [popupOpen, setPopupOpen] = useState(false)
   const [editingGroup, setEditingGroup] = useState<Group | undefined>(undefined)
 
+  // Re-sync when DEFAULT_SCROLL quest definitions or sync logic change
+  useEffect(() => {
+    setGroups(loadGroups().sort((a, b) => a.order - b.order))
+  }, [DEFAULT_SCROLL_SIGNATURE, EXTENDED_SYNC_VERSION])
+
   const sensors = useSensors(useSensor(PointerSensor))
 
   function handleDragEnd(event: DragEndEvent) {
@@ -108,16 +118,14 @@ function Groups() {
       ...g,
       order: i,
     }))
-    setGroups(reordered)
-    saveGroups(reordered)
+    setGroups(saveGroups(reordered).sort((a, b) => a.order - b.order))
   }
 
   function handleSave(group: Group) {
     const updated = groups.some(g => g.id === group.id)
       ? groups.map(g => (g.id === group.id ? group : g))
       : [...groups, { ...group, order: groups.length }]
-    setGroups(updated)
-    saveGroups(updated)
+    setGroups(saveGroups(updated).sort((a, b) => a.order - b.order))
   }
 
   function handleDelete(groupId: string) {

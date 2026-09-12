@@ -1,5 +1,8 @@
 import { type Group, type Category, DEFAULT_CATEGORIES, DEFAULT_GROUPS, DEFAULT_SCROLL, type Scroll } from './types'
 
+/** Bump when default-extended sync logic changes so the UI reloads from storage. */
+export const EXTENDED_SYNC_VERSION = 2
+
 const KEYS = {
   groups: 'questhub_groups',
   categories: 'questhub_categories',
@@ -21,8 +24,39 @@ function save<T>(key: string, value: T): void {
   localStorage.setItem(key, JSON.stringify(value))
 }
 
+function questDefinitionMatches(
+  a: Scroll['quests'][number],
+  b: Scroll['quests'][number],
+): boolean {
+  return (
+    a.categoryId === b.categoryId &&
+    a.subCategoryId === b.subCategoryId &&
+    a.amount === b.amount &&
+    a.objective === b.objective &&
+    a.objectiveId === b.objectiveId &&
+    a.objectiveIcon === b.objectiveIcon
+  )
+}
+
 function normalizeDefaultExtendedScroll(scroll: Scroll): Scroll {
   if (scroll.id !== DEFAULT_SCROLL.id) return scroll
+
+  const previousById = new Map(scroll.quests.map(q => [q.id, q]))
+
+  // Always take quest definitions from DEFAULT_SCROLL; keep progress only when
+  // the quest itself is unchanged (same id + same definition).
+  const quests = DEFAULT_SCROLL.quests.map(template => {
+    const previous = previousById.get(template.id)
+    if (previous && questDefinitionMatches(previous, template)) {
+      return {
+        ...template,
+        counter: previous.counter,
+        completed: previous.completed,
+        description: previous.description ?? template.description,
+      }
+    }
+    return { ...template }
+  })
 
   return {
     ...DEFAULT_SCROLL,
@@ -30,31 +64,54 @@ function normalizeDefaultExtendedScroll(scroll: Scroll): Scroll {
     order: typeof scroll.order === 'number' ? scroll.order : DEFAULT_SCROLL.order,
     hidden: scroll.hidden,
     titleColors: scroll.titleColors,
+    quests,
   }
+}
+
+function cloneDefaultScroll(order = DEFAULT_SCROLL.order): Scroll {
+  return {
+    ...DEFAULT_SCROLL,
+    order,
+    quests: DEFAULT_SCROLL.quests.map(q => ({ ...q })),
+  }
+}
+
+function isManagedExtendedGroup(group: Group): boolean {
+  return group.id === '__default_weekly__' || group.name === 'Extended'
 }
 
 function normalizeGroups(groups: Group[]): Group[] {
   return groups.map(group => {
-    const normalizedScrolls = group.scrolls.map(scroll => {
+    let scrolls = group.scrolls.map(scroll => {
       if (scroll.id === DEFAULT_SCROLL.id) {
         return normalizeDefaultExtendedScroll(scroll)
       }
       return scroll
     })
 
-    if (group.id === '__default_weekly__') {
-      const hasDefaultExtended = normalizedScrolls.some(scroll => scroll.id === DEFAULT_SCROLL.id)
-      if (!hasDefaultExtended) {
-        return {
-          ...group,
-          scrolls: [{ ...DEFAULT_SCROLL, order: 0 }, ...normalizedScrolls],
+    if (isManagedExtendedGroup(group)) {
+      const defaultIdx = scrolls.findIndex(s => s.id === DEFAULT_SCROLL.id)
+      if (defaultIdx >= 0) {
+        // already normalized above
+      } else {
+        // Stored extended scroll lost the reserved id — adopt it and overwrite quests
+        const adoptIdx = scrolls.findIndex(s => s.type === 'extended' && !s.hidden)
+        if (adoptIdx >= 0) {
+          const adopted = scrolls[adoptIdx]
+          scrolls = scrolls.map((s, i) =>
+            i === adoptIdx
+              ? normalizeDefaultExtendedScroll({ ...adopted, id: DEFAULT_SCROLL.id })
+              : s
+          )
+        } else {
+          scrolls = [cloneDefaultScroll(0), ...scrolls]
         }
       }
     }
 
     return {
       ...group,
-      scrolls: normalizedScrolls,
+      scrolls,
     }
   })
 }
@@ -72,8 +129,11 @@ export function loadGroups(): Group[] {
   return normalizedGroups
 }
 
-export function saveGroups(groups: Group[]): void {
-  save(KEYS.groups, groups)
+/** Always re-syncs the default extended scroll from DEFAULT_SCROLL before writing. */
+export function saveGroups(groups: Group[]): Group[] {
+  const normalizedGroups = normalizeGroups(groups)
+  save(KEYS.groups, normalizedGroups)
+  return normalizedGroups
 }
 
 export function deleteGroup(groupId: string): void {
