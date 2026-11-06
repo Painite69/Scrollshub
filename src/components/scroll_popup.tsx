@@ -229,10 +229,11 @@ function StepType({
 
 // ── Icon selector modal ───────────────────────────────────────────────────────
 
-function IconSelectorModal({ current, onSelect, onClose }: {
+function IconSelectorModal({ current, onSelect, onClose, contained = false }: {
   current: string
   onSelect: (icon: string) => void
   onClose: () => void
+  contained?: boolean
 }) {
   const [search, setSearch] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
@@ -257,8 +258,16 @@ function IconSelectorModal({ current, onSelect, onClose }: {
     : ALL_ICONS.filter(a => a.label.toLowerCase().includes(search.toLowerCase()))
 
   return (
-    <div className="fixed inset-0 z-70 flex items-center justify-center bg-black/70">
-      <div className="flex flex-col gap-3 rounded border-2 border-[#190A21] bg-[#120413] p-4 w-[480px] max-h-[80vh]">
+    <div
+      className={`${contained ? 'absolute' : 'fixed'} inset-0 z-70 flex items-center justify-center bg-black/70`}
+      data-questhub-overlay-hit={contained ? '' : undefined}
+    >
+      <div
+        className={`flex flex-col gap-3 rounded border-2 border-[#190A21] bg-[#120413] p-4 max-h-[80vh] ${
+          contained ? 'w-[min(100%,480px)] m-2' : 'w-[480px]'
+        }`}
+        data-questhub-overlay-hit={contained ? '' : undefined}
+      >
         {/* Header */}
         <div className="flex items-center justify-between">
           <span className="font-exe-pixel text-sm text-[#FCFC40]">Choose Icon</span>
@@ -597,11 +606,12 @@ interface QuestDraft {
   description: string
 }
 
-function QuestForm({ categories, accentColor, onAdd, initialDraft }: {
+function QuestForm({ categories, accentColor, onAdd, initialDraft, contained = false }: {
   categories: Category[]
   accentColor: string
   onAdd: (q: QuestDraft) => void
   initialDraft?: QuestDraft
+  contained?: boolean
 }) {
   const [sub, setSub] = useState(() => initialDraft
     ? { catId: initialDraft.categoryId, subId: initialDraft.subCategoryId, label: categories.flatMap(c => c.subCategories).find(s => s.id === initialDraft.subCategoryId)?.label ?? initialDraft.subCategoryId }
@@ -702,6 +712,7 @@ function QuestForm({ categories, accentColor, onAdd, initialDraft }: {
       {/* Icon selector */}
       {iconSelectorOpen && (
         <IconSelectorModal
+          contained={contained}
           current={objective?.icon ?? ''}
           onSelect={icon => setObjective(prev => prev ? { ...prev, icon } : { label: '', icon })}
           onClose={() => setIconSelectorOpen(false)}
@@ -713,12 +724,13 @@ function QuestForm({ categories, accentColor, onAdd, initialDraft }: {
 
 // ── Inline draft edit modal ───────────────────────────────────────────────────
 
-function DraftEditModal({ draft, categories, accentColor, onSave, onClose }: {
+function DraftEditModal({ draft, categories, accentColor, onSave, onClose, contained = false }: {
   draft: QuestDraft
   categories: Category[]
   accentColor: string
   onSave: (d: QuestDraft) => void
   onClose: () => void
+  contained?: boolean
 }) {
   const allSubs = categories.flatMap(c => c.subCategories.map(s => ({ catId: c.id, subId: s.id, label: s.label })))
   const subLabel = allSubs.find(s => s.subId === draft.subCategoryId)?.label ?? draft.subCategoryId
@@ -737,8 +749,16 @@ function DraftEditModal({ draft, categories, accentColor, onSave, onClose }: {
   }
 
   return (
-    <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/60">
-      <div className="flex flex-col gap-3 rounded border-2 border-[#190A21] bg-[#120413] p-5 w-[400px]">
+    <div
+      className={`${contained ? 'absolute' : 'fixed'} inset-0 z-60 flex items-center justify-center bg-black/60`}
+      data-questhub-overlay-hit={contained ? '' : undefined}
+    >
+      <div
+        className={`flex flex-col gap-3 rounded border-2 border-[#190A21] bg-[#120413] p-5 ${
+          contained ? 'w-[min(100%,400px)] m-2' : 'w-[400px]'
+        }`}
+        data-questhub-overlay-hit={contained ? '' : undefined}
+      >
         <span className="font-exe-pixel text-sm" style={{ color: accentColor }}>Edit Quest</span>
         <div className="flex items-center gap-1.5 min-w-0">
           <span className="font-pixeloid-sans text-xs text-white/40 shrink-0">×</span>
@@ -768,6 +788,7 @@ function DraftEditModal({ draft, categories, accentColor, onSave, onClose }: {
         </div>
         {iconSelectorOpen && (
           <IconSelectorModal
+            contained={contained}
             current={objective.icon}
             onSelect={icon => setObjective(prev => ({ ...prev, icon }))}
             onClose={() => setIconSelectorOpen(false)}
@@ -797,6 +818,7 @@ function StepQuests({
   ocrStatus = 'idle',
   ocrError = '',
   ocrHint = '',
+  contained = false,
 }: {
   scrollType: ScrollType
   categories: Category[]
@@ -817,6 +839,7 @@ function StepQuests({
   ocrStatus?: 'idle' | 'reading' | 'error'
   ocrError?: string
   ocrHint?: string
+  contained?: boolean
 }) {
   const [drafts, setDrafts] = useState<QuestDraft[]>(() =>
     existingQuests.map(q => ({
@@ -928,7 +951,7 @@ function StepQuests({
         </div>
       )}
       
-      <QuestForm categories={categories} accentColor={s.fill} onAdd={d => setDrafts(p => [...p, d])} />
+      <QuestForm contained={contained} categories={categories} accentColor={s.fill} onAdd={d => setDrafts(p => [...p, d])} />
 
       {/* Done */}
       <button onClick={handleDone}
@@ -941,6 +964,7 @@ function StepQuests({
       {/* Inline draft edit */}
       {editingDraft && (
         <DraftEditModal
+          contained={contained}
           draft={editingDraft}
           categories={categories}
           accentColor={s.fill}
@@ -954,12 +978,13 @@ function StepQuests({
 
 // ── Single quest edit popup ───────────────────────────────────────────────────
 
-export function QuestEditPopup({ quest, categories, accentColor = '#FCFC40', onSave, onClose }: {
+export function QuestEditPopup({ quest, categories, accentColor = '#FCFC40', onSave, onClose, contained = false }: {
   quest: Quest
   categories: Category[]
   accentColor?: string
   onSave: (q: Quest) => void
   onClose: () => void
+  contained?: boolean
 }) {
   const allSubs = categories.flatMap(c => c.subCategories.map(s => ({ catId: c.id, subId: s.id, label: s.label })))
   const subLabel = allSubs.find(s => s.subId === quest.subCategoryId)?.label ?? quest.subCategoryId
@@ -980,8 +1005,16 @@ export function QuestEditPopup({ quest, categories, accentColor = '#FCFC40', onS
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
-      <div className="flex flex-col gap-4 rounded border-2 border-[#190A21] bg-[#120413] p-6 w-[420px]">
+    <div
+      className={`${contained ? 'absolute' : 'fixed'} inset-0 z-50 flex items-center justify-center bg-black/60`}
+      data-questhub-overlay-hit={contained ? '' : undefined}
+    >
+      <div
+        className={`flex flex-col gap-4 rounded border-2 border-[#190A21] bg-[#120413] p-6 ${
+          contained ? 'w-[min(100%,420px)] m-2' : 'w-[420px]'
+        }`}
+        data-questhub-overlay-hit={contained ? '' : undefined}
+      >
         <span className="font-exe-pixel text-base" style={{ color: accentColor }}>Edit Quest</span>
 
         <div className="flex items-center gap-1.5 min-w-0">
@@ -1024,6 +1057,7 @@ export function QuestEditPopup({ quest, categories, accentColor = '#FCFC40', onS
 
         {iconSelectorOpen && (
           <IconSelectorModal
+            contained={contained}
             current={objective.icon}
             onSelect={icon => setObjective(prev => ({ ...prev, icon }))}
             onClose={() => setIconSelectorOpen(false)}
@@ -1261,6 +1295,7 @@ function ScrollPopup({
           : (
             <StepQuests
               key={questListKey}
+              contained={contained}
               scrollType={scrollType}
               categories={categories}
               onBack={existing && !updateExtended ? onClose : () => {

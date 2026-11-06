@@ -4,7 +4,8 @@ import { SCROLL_STYLES } from '../../types/types'
 import { loadCategories, loadGroups, saveGroups } from '../../types/storage'
 import type { OverlaySettings } from '../../types/overlay_settings'
 import ScrollPopup from '../scroll_popup'
-import { PlusIcon } from '../icons'
+import GroupPopup from '../group_popup'
+import { EditIcon, PlusIcon } from '../icons'
 
 type Props = {
   settings: OverlaySettings
@@ -36,6 +37,7 @@ export default function OverlayPanelBody({
   const [groups, setGroups] = useState<Group[]>(() => loadGroups())
   const [addOpen, setAddOpen] = useState(false)
   const [pickGroupId, setPickGroupId] = useState<string | null>(null)
+  const [editingGroup, setEditingGroup] = useState<Group | null>(null)
   const categories = loadCategories()
 
   const refresh = useCallback(() => {
@@ -80,6 +82,15 @@ export default function OverlayPanelBody({
   function closeAdd() {
     setAddOpen(false)
     setPickGroupId(null)
+  }
+
+  function handleSaveGroup(group: Group) {
+    const next = loadGroups()
+    const updated = next.some(g => g.id === group.id)
+      ? next.map(g => (g.id === group.id ? group : g))
+      : [...next, group]
+    setGroups(saveGroups(updated))
+    setEditingGroup(null)
   }
 
   function handleAddScroll(scroll: Scroll) {
@@ -197,16 +208,26 @@ export default function OverlayPanelBody({
             settings.openGroupIds.length === 0 || settings.openGroupIds.includes(group.id)
           return (
             <div key={group.id} className="mb-1.5">
-              <button
-                type="button"
-                onClick={() => toggleGroup(group.id)}
-                className="cursor-pointer flex w-full items-center gap-2 rounded px-1.5 py-2 text-left hover:bg-white/5"
-              >
-                <span className="w-4 font-pixeloid-sans text-sm text-white/40">
-                  {open ? '▾' : '▸'}
-                </span>
-                <span className="truncate font-exe-pixel text-xl text-white">{group.name}</span>
-              </button>
+              <div className="flex items-center gap-1 rounded px-1.5 py-2 hover:bg-white/5">
+                <button
+                  type="button"
+                  onClick={() => toggleGroup(group.id)}
+                  className="cursor-pointer flex min-w-0 flex-1 items-center gap-2 text-left"
+                >
+                  <span className="w-4 shrink-0 font-pixeloid-sans text-sm text-white/40">
+                    {open ? '▾' : '▸'}
+                  </span>
+                  <span className="truncate font-exe-pixel text-xl text-white">{group.name}</span>
+                </button>
+                <button
+                  type="button"
+                  title="Edit group"
+                  onClick={() => setEditingGroup(group)}
+                  className="cursor-pointer ml-auto shrink-0 rounded p-1 text-white/35 hover:bg-white/10 hover:text-[#FCFC40]"
+                >
+                  <EditIcon />
+                </button>
+              </div>
 
               {open && (
                 <div className="ml-2.5 border-l border-white/10 pl-2">
@@ -274,6 +295,15 @@ export default function OverlayPanelBody({
           onSave={handleAddScroll}
           onTemplateSaved={refresh}
           onClose={closeAdd}
+        />
+      )}
+
+      {editingGroup && (
+        <GroupPopup
+          contained
+          existing={editingGroup}
+          onSave={handleSaveGroup}
+          onClose={() => setEditingGroup(null)}
         />
       )}
     </div>

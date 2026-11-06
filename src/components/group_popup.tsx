@@ -5,6 +5,8 @@ interface Props {
   existing?: Group
   onSave: (group: Group) => void
   onClose: () => void
+  /** Keep popup inside a parent panel (Electron overlay). */
+  contained?: boolean
 }
 
 const DISPLAY_OPTIONS: { value: DisplayMode; label: string; desc: string }[] = [
@@ -13,7 +15,7 @@ const DISPLAY_OPTIONS: { value: DisplayMode; label: string; desc: string }[] = [
   { value: 'categorized-detail', label: 'Categorized Detail', desc: 'Clues grouped in more categories' },
 ]
 
-function GroupPopup({ existing, onSave, onClose }: Props) {
+function GroupPopup({ existing, onSave, onClose, contained = false }: Props) {
   const [name, setName] = useState(existing?.name ?? '')
   const [display, setDisplay] = useState<DisplayMode>(existing?.display ?? 'separate')
 
@@ -36,9 +38,19 @@ function GroupPopup({ existing, onSave, onClose }: Props) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 text-white/80 font-exe-pixel">
-      <div className="flex flex-col gap-4 rounded border-2 border-[#190A21] bg-[#120413] p-6">
-        <h2 className="font-exe-pixel text-4xl">{isEdit ? 'Edit Group' : 'New Group'}</h2>
+    <div
+      className={`${contained ? 'absolute' : 'fixed'} inset-0 z-50 flex items-center justify-center bg-black/60 text-white/80 font-exe-pixel`}
+      data-questhub-overlay-hit={contained ? '' : undefined}
+    >
+      <div
+        className={`flex flex-col gap-4 rounded border-2 border-[#190A21] bg-[#120413] p-6 ${
+          contained ? 'w-[min(100%,360px)] m-2 max-h-[min(100%,90vh)] overflow-y-auto' : ''
+        }`}
+        data-questhub-overlay-hit={contained ? '' : undefined}
+      >
+        <h2 className={`font-exe-pixel ${contained ? 'text-2xl' : 'text-4xl'}`}>
+          {isEdit ? 'Edit Group' : 'New Group'}
+        </h2>
 
         {/* Name */}
         <div className="flex flex-col gap-1">
