@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom'
 
+/** Windows installer hosted on GitHub Releases (too large for the site CDN). */
+const DESKTOP_DOWNLOAD_URL =
+  'https://github.com/Painite69/Scrollshub/releases/download/v0.1.0/ScrollsHub-Setup-0.1.0.exe'
+
 function Header() {
   const isDesktop = Boolean(window.questHubDesktop?.isDesktop)
 
@@ -13,6 +17,15 @@ function Header() {
       <div className="flex flex-wrap items-center gap-2 sm:gap-4 font-exe-pixel text-xl sm:text-4xl">
         <Link to="/" className="cursor-pointer text-white hover:text-black/30 hover:scale-110">Scrolls</Link>
         <Link to="/battle-pass" className="cursor-pointer text-white hover:text-black/30 hover:scale-110">BattlePass</Link>
+        {!isDesktop && (
+          <a
+            href={DESKTOP_DOWNLOAD_URL}
+            className="cursor-pointer text-[#FCFC40] hover:text-black/30 hover:scale-110"
+            download
+          >
+            Download
+          </a>
+        )}
         {isDesktop && (
           <button
             type="button"
