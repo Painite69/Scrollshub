@@ -224,6 +224,22 @@ export interface Scroll {
   titleColors?: string[]
 }
 
+/** User-updated monthly extended quest list (definitions only). Falls back to DEFAULT_SCROLL when absent. */
+export interface ExtendedTemplate {
+  updatedAt: number
+  quests: Array<Pick<Quest,
+    | 'id'
+    | 'categoryId'
+    | 'subCategoryId'
+    | 'amount'
+    | 'objective'
+    | 'objectiveId'
+    | 'objectiveIcon'
+    | 'description'
+    | 'order'
+  >>
+}
+
 // Reserved ID for the per-group hidden scroll that holds individually-added quests
 export const HIDDEN_SCROLL_ID_PREFIX = '__hidden__'
 export function hiddenScrollId(groupId: string) {

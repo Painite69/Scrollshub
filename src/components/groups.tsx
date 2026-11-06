@@ -14,16 +14,17 @@ import {
   arrayMove,
 } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
-import { DEFAULT_SCROLL, type Group } from '../types/types'
-import { loadGroups, saveGroups, deleteGroup, EXTENDED_SYNC_VERSION } from '../types/storage'
+import { type Group } from '../types/types'
+import {
+  loadGroups,
+  saveGroups,
+  deleteGroup,
+  EXTENDED_SYNC_VERSION,
+  getActiveExtendedSignature,
+} from '../types/storage'
 import GroupPopup from './group_popup'
 import Scrolls from './scrolls'
 import { DragHandle, EditIconGroup, DeleteIconGroup } from './icons'
-
-// Changes whenever DEFAULT_SCROLL quest definitions change (triggers re-sync)
-const DEFAULT_SCROLL_SIGNATURE = JSON.stringify(
-  DEFAULT_SCROLL.quests.map(q => [q.id, q.categoryId, q.subCategoryId, q.amount, q.objective, q.objectiveIcon])
-)
 
 // ── Sortable group card ────────────────────────────────────────────────────────
 
@@ -101,10 +102,11 @@ function Groups() {
   const [popupOpen, setPopupOpen] = useState(false)
   const [editingGroup, setEditingGroup] = useState<Group | undefined>(undefined)
 
-  // Re-sync when DEFAULT_SCROLL quest definitions or sync logic change
+  // Re-sync when active extended template / sync logic changes
+  const extendedSignature = getActiveExtendedSignature()
   useEffect(() => {
     setGroups(loadGroups().sort((a, b) => a.order - b.order))
-  }, [DEFAULT_SCROLL_SIGNATURE, EXTENDED_SYNC_VERSION])
+  }, [extendedSignature, EXTENDED_SYNC_VERSION])
 
   const sensors = useSensors(useSensor(PointerSensor))
 

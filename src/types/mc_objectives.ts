@@ -183,6 +183,8 @@ export const MC_OBJECTIVES: MCObjective[] = [
 
   // ── Ride ──────────────────────────────────────────────────────────────────
   { id: 'strider',     label: 'Strider',     categoryHints: ['ride'],             icon: E('STRIDER') },
+  { id: 'minecart',    label: 'Minecart',    categoryHints: ['ride'],             icon: '/mc_assets/MINECART (2).png' },
+  { id: 'boat',        label: 'Boat',        categoryHints: ['ride'],             icon: I('OAK_BOAT') },
   { id: 'blocks',      label: 'Blocks',      categoryHints: ['ride', 'movement'], icon: I('GRASS_BLOCK') },
 
   // ── Movement ──────────────────────────────────────────────────────────────

@@ -1,9 +1,13 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import type { ScrollType, Scroll, Quest, Category } from '../types/types'
-import { SCROLL_STYLES, DEFAULT_SCROLL } from '../types/types'
+import { SCROLL_STYLES } from '../types/types'
+import { getActiveExtendedScroll, saveExtendedTemplate } from '../types/storage'
 import { MC_OBJECTIVES } from '../types/mc_objectives'
 import { DeleteIcon } from './icons'
 import mcAssetIndex from '../mc-asset-index.json'
+import { ocrScrollImage } from '../lib/scroll_ocr'
+import { detectScrollType, parseScrollText, draftsToQuests } from '../lib/scroll_parse'
+import { imageFromClipboard, imageFromDataTransfer } from '../lib/image_from_transfer'
 
 // ── MC asset index types ──────────────────────────────────────────────────────
 interface McAsset { label: string; icon: string; icon3d?: string }
@@ -22,30 +26,198 @@ interface Props {
   onClose: () => void
   allowExtended?: boolean
   existing?: Scroll // edit mode
+  /** Update the monthly extended template (OCR + edit), not add a scroll to a group. */
+  mode?: 'add' | 'update-extended'
+  /** Called after template is saved (so parent can refresh groups). */
+  onTemplateSaved?: () => void
 }
 
 const TYPES: ScrollType[] = ['easy', 'normal', 'hard','weekly', 'extended' ]
 
+// ── Shared screenshot import zone ─────────────────────────────────────────────
+
+function ScrollImageImport({
+  onImage,
+  onImportError,
+  ocrStatus,
+  ocrError,
+  ocrHint,
+  accent = '#FCFC40',
+  dragAccentClass = 'border-[#FCFC40] bg-[#FCFC40]/10',
+}: {
+  onImage: (file: Blob) => void
+  onImportError: (msg: string) => void
+  ocrStatus: 'idle' | 'reading' | 'error'
+  ocrError: string
+  ocrHint?: string
+  accent?: string
+  dragAccentClass?: string
+}) {
+  const fileRef = useRef<HTMLInputElement>(null)
+  const [dragOver, setDragOver] = useState(false)
+  const [dropBusy, setDropBusy] = useState(false)
+  const reading = ocrStatus === 'reading' || dropBusy
+
+  function takeFile(file: File | Blob | null | undefined) {
+    if (!file) return
+    if (file instanceof File && file.type && !file.type.startsWith('image/') && file.type !== '') return
+    onImage(file)
+  }
+
+  async function handleDrop(e: React.DragEvent) {
+    e.preventDefault()
+    e.stopPropagation()
+    setDragOver(false)
+    setDropBusy(true)
+    try {
+      const blob = await imageFromDataTransfer(e.dataTransfer)
+      if (blob) takeFile(blob)
+      else {
+        onImportError(
+          'Could not read that drop. Try Copy Image in Discord, then Ctrl+V — or save the file and drop it.',
+        )
+      }
+    } finally {
+      setDropBusy(false)
+    }
+  }
+
+  return (
+    <div
+      onDragEnter={e => { e.preventDefault(); setDragOver(true) }}
+      onDragOver={e => { e.preventDefault(); e.dataTransfer.dropEffect = 'copy'; setDragOver(true) }}
+      onDragLeave={e => {
+        if (e.currentTarget.contains(e.relatedTarget as Node)) return
+        setDragOver(false)
+      }}
+      onDrop={e => { void handleDrop(e) }}
+      className={`flex flex-col gap-2 rounded border-2 border-dashed px-3 py-3 transition-colors ${
+        dragOver ? dragAccentClass : 'border-white/20 bg-white/5'
+      }`}
+    >
+      <p className="font-pixeloid-sans text-xs text-white/60">
+        {reading
+          ? 'Reading scroll…'
+          : 'Ctrl+V / Cmd+V, drag from Discord or desktop, or choose a file.'}
+      </p>
+      <div className="flex items-center gap-2">
+        <button
+          type="button"
+          disabled={reading}
+          onClick={() => fileRef.current?.click()}
+          className="cursor-pointer rounded border border-white/25 px-3 py-1 font-pixeloid-sans text-xs text-white/70 hover:text-white hover:border-white/50 disabled:opacity-40"
+        >
+          Choose image
+        </button>
+        <input
+          ref={fileRef}
+          type="file"
+          accept="image/*"
+          className="hidden"
+          onChange={e => {
+            takeFile(e.target.files?.[0])
+            e.target.value = ''
+          }}
+        />
+        {reading && (
+          <span className="font-pixeloid-sans text-xs animate-pulse" style={{ color: accent }}>OCR…</span>
+        )}
+      </div>
+      {ocrStatus === 'error' && ocrError && (
+        <p className="font-pixeloid-sans text-xs text-red-400">{ocrError}</p>
+      )}
+      {ocrHint && (
+        <p className="font-pixeloid-sans text-xs" style={{ color: accent }}>{ocrHint}</p>
+      )}
+    </div>
+  )
+}
+
 // ── Step 1 ────────────────────────────────────────────────────────────────────
 
-function StepType({ onSelect }: { onSelect: (t: ScrollType) => void }) {
+function StepType({
+  onSelect,
+  onImage,
+  onImportError,
+  ocrStatus,
+  ocrError,
+  ocrHint,
+  allowedTypes = TYPES,
+  updateExtended = false,
+  onEditCurrentTemplate,
+}: {
+  onSelect: (t: ScrollType) => void
+  onImage: (file: Blob) => void
+  onImportError: (msg: string) => void
+  ocrStatus: 'idle' | 'reading' | 'error'
+  ocrError: string
+  ocrHint?: string
+  allowedTypes?: ScrollType[]
+  updateExtended?: boolean
+  onEditCurrentTemplate?: () => void
+}) {
+  const reading = ocrStatus === 'reading'
+  const accent = updateExtended ? SCROLL_STYLES.extended.fill : '#FCFC40'
+
   return (
     <div className="flex flex-col gap-3">
-      <h2 className="font-exe-pixel text-xl text-[#FCFC40]">Add a Scroll</h2>
-      <p className="font-pixeloid-sans text-xs text-white/50">Pick a scroll type to get started.</p>
-      <div className="flex flex-col gap-2">
-        {TYPES.map(type => {
-          const s = SCROLL_STYLES[type]
-          return (
-            <button key={type} onClick={() => onSelect(type)}
-              className="cursor-pointer rounded border-2 px-4 py-2 font-exe-pixel text-sm text-left hover:opacity-90 transition-opacity"
-              style={{ color: s.fill, borderColor: s.stroke, background: s.stroke + '44' }}
-            >
-              {s.label}
-            </button>
-          )
-        })}
-      </div>
+      <h2 className="font-exe-pixel text-xl" style={{ color: accent }}>
+        {updateExtended ? 'Update Extended Scroll' : 'Add a Scroll'}
+      </h2>
+      <p className="font-pixeloid-sans text-xs text-white/50">
+        {updateExtended
+          ? 'Paste this month’s extended screenshot. New extended scrolls will use these tasks.'
+          : 'Paste a scroll screenshot, or pick a type manually.'}
+      </p>
+
+      <ScrollImageImport
+        onImage={onImage}
+        onImportError={onImportError}
+        ocrStatus={ocrStatus}
+        ocrError={ocrError}
+        ocrHint={ocrHint}
+        accent={accent}
+        dragAccentClass={updateExtended
+          ? 'border-[#00A8A8] bg-[#00A8A8]/10'
+          : 'border-[#FCFC40] bg-[#FCFC40]/10'}
+      />
+
+      {updateExtended ? (
+        <button
+          type="button"
+          disabled={reading}
+          onClick={onEditCurrentTemplate}
+          className="cursor-pointer rounded border-2 px-4 py-2 font-exe-pixel text-sm text-left hover:opacity-90 transition-opacity disabled:opacity-40"
+          style={{
+            color: SCROLL_STYLES.extended.fill,
+            borderColor: SCROLL_STYLES.extended.stroke,
+            background: SCROLL_STYLES.extended.stroke + '44',
+          }}
+        >
+          Edit current template (no screenshot)
+        </button>
+      ) : (
+        <>
+          <p className="font-pixeloid-sans text-[10px] uppercase tracking-wide text-white/30">or pick type</p>
+          <div className="flex flex-col gap-2">
+            {allowedTypes.map(type => {
+              const s = SCROLL_STYLES[type]
+              return (
+                <button
+                  key={type}
+                  type="button"
+                  disabled={reading}
+                  onClick={() => onSelect(type)}
+                  className="cursor-pointer rounded border-2 px-4 py-2 font-exe-pixel text-sm text-left hover:opacity-90 transition-opacity disabled:opacity-40"
+                  style={{ color: s.fill, borderColor: s.stroke, background: s.stroke + '44' }}
+                >
+                  {s.label}
+                </button>
+              )
+            })}
+          </div>
+        </>
+      )}
     </div>
   )
 }
@@ -603,7 +775,24 @@ function DraftEditModal({ draft, categories, accentColor, onSave, onClose }: {
 
 // ── Step 2 ────────────────────────────────────────────────────────────────────
 
-function StepQuests({ scrollType, categories, onBack, onDone, existingQuests = [], isEdit = false, title, doneLabel }: {
+function StepQuests({
+  scrollType,
+  categories,
+  onBack,
+  onDone,
+  existingQuests = [],
+  isEdit = false,
+  title,
+  doneLabel,
+  showUpdateExtended,
+  onUpdateExtended,
+  showImageImport = false,
+  onImage,
+  onImportError,
+  ocrStatus = 'idle',
+  ocrError = '',
+  ocrHint = '',
+}: {
   scrollType: ScrollType
   categories: Category[]
   onBack: () => void
@@ -612,6 +801,17 @@ function StepQuests({ scrollType, categories, onBack, onDone, existingQuests = [
   isEdit?: boolean
   title?: string
   doneLabel?: (count: number, isEdit: boolean) => string
+  /** Far-right button when editing an extended scroll */
+  showUpdateExtended?: boolean
+  /** Receives current editor quests so parent can switch into template-update mode. */
+  onUpdateExtended?: (quests: Quest[]) => void
+  /** Screenshot import zone (used in Update Extended). */
+  showImageImport?: boolean
+  onImage?: (file: Blob) => void
+  onImportError?: (msg: string) => void
+  ocrStatus?: 'idle' | 'reading' | 'error'
+  ocrError?: string
+  ocrHint?: string
 }) {
   const [drafts, setDrafts] = useState<QuestDraft[]>(() =>
     existingQuests.map(q => ({
@@ -632,8 +832,8 @@ function StepQuests({ scrollType, categories, onBack, onDone, existingQuests = [
     categories.flatMap(c => c.subCategories.map(sub => [sub.id, sub.label]))
   )
 
-  function handleDone() {
-    onDone(drafts.map((d, i) => ({
+  function draftsToQuestList(): Quest[] {
+    return drafts.map((d, i) => ({
       id: d.id,
       categoryId: d.categoryId,
       subCategoryId: d.subCategoryId,
@@ -645,7 +845,11 @@ function StepQuests({ scrollType, categories, onBack, onDone, existingQuests = [
       counter: 0,
       completed: false,
       order: i,
-    })))
+    }))
+  }
+
+  function handleDone() {
+    onDone(draftsToQuestList())
   }
 
   return (
@@ -653,8 +857,34 @@ function StepQuests({ scrollType, categories, onBack, onDone, existingQuests = [
       {/* Header */}
       <div className="flex items-center gap-3">
         <button onClick={onBack} className="cursor-pointer font-pixeloid-sans text-xs text-white/40 hover:text-white">← back</button>
-        <span className="font-exe-pixel text-base" style={{ color: s.fill }}>{title ?? s.label}</span>
+        <span className="flex-1 font-exe-pixel text-base min-w-0 truncate" style={{ color: s.fill }}>{title ?? s.label}</span>
+        {showUpdateExtended && onUpdateExtended && (
+          <button
+            type="button"
+            onClick={() => onUpdateExtended(draftsToQuestList())}
+            className="cursor-pointer shrink-0 rounded border px-2 py-1 font-exe-pixel text-xs hover:opacity-90"
+            style={{
+              color: SCROLL_STYLES.extended.fill,
+              borderColor: SCROLL_STYLES.extended.stroke,
+              background: SCROLL_STYLES.extended.stroke + '44',
+            }}
+          >
+            Update Extended
+          </button>
+        )}
       </div>
+
+      {showImageImport && onImage && onImportError && (
+        <ScrollImageImport
+          onImage={onImage}
+          onImportError={onImportError}
+          ocrStatus={ocrStatus}
+          ocrError={ocrError}
+          ocrHint={ocrHint}
+          accent={SCROLL_STYLES.extended.fill}
+          dragAccentClass="border-[#00A8A8] bg-[#00A8A8]/10"
+        />
+      )}
 
       {/* Draft list */}
       {drafts.length > 0 && (
@@ -667,7 +897,14 @@ function StepQuests({ scrollType, categories, onBack, onDone, existingQuests = [
               )}
               <span className="flex-1 font-pixeloid-sans text-xs" style={{ color: s.textFill }}>
                 <span style={{ color: s.fill }}>{subMap[d.subCategoryId] ?? d.subCategoryId}</span>
-                {' '}{d.amount} {d.objective}
+                {d.subCategoryId === 'ride'
+                  ? <> a {d.objective} {d.amount} blocks</>
+                  : (
+                    <>
+                      {' '}{d.amount}
+                      {d.objective && d.objective !== 'plain' ? ` ${d.objective}` : ''}
+                    </>
+                  )}
                 {d.description && <span className="text-white/40"> — {d.description}</span>}
               </span>
               <button onClick={() => setEditingDraft(d)}
@@ -794,20 +1031,187 @@ export function QuestEditPopup({ quest, categories, accentColor = '#FCFC40', onS
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 
-function ScrollPopup({ categories, onSave, onClose, allowExtended = true, existing }: Props) {
+function ScrollPopup({
+  categories,
+  onSave,
+  onClose,
+  allowExtended = true,
+  existing,
+  mode = 'add',
+  onTemplateSaved,
+}: Props) {
+  const [activeMode, setActiveMode] = useState<'add' | 'update-extended'>(mode)
+  const updateExtended = activeMode === 'update-extended'
   const [step, setStep] = useState<'type' | 'quests'>(() => existing ? 'quests' : 'type')
-  const [scrollType, setScrollType] = useState<ScrollType>(existing?.type ?? 'easy')
+  const [scrollType, setScrollType] = useState<ScrollType>(
+    existing?.type ?? (updateExtended ? 'extended' : 'easy'),
+  )
   const [prefillQuests, setPrefillQuests] = useState<Quest[]>(existing?.quests ?? [])
+  const [questListKey, setQuestListKey] = useState(0)
+  const [pendingOcrQuests, setPendingOcrQuests] = useState<Quest[] | null>(null)
+  const [ocrStatus, setOcrStatus] = useState<'idle' | 'reading' | 'error'>('idle')
+  const [ocrError, setOcrError] = useState('')
+  const [ocrHint, setOcrHint] = useState('')
 
-  function handleSelectType(t: ScrollType) {
-    if (!allowExtended && t === 'extended') return
-    setScrollType(t)
-    // Pre-fill with DEFAULT_SCROLL quests when picking extended (new scroll only)
-    setPrefillQuests(t === 'extended' ? DEFAULT_SCROLL.quests : [])
+  const allowedTypes = allowExtended ? TYPES : TYPES.filter(t => t !== 'extended')
+
+  const enterUpdateExtended = useCallback((quests: Quest[]) => {
+    setActiveMode('update-extended')
+    setScrollType('extended')
+    setPrefillQuests(quests.map(q => ({ ...q })))
+    setPendingOcrQuests(null)
+    setQuestListKey(k => k + 1)
     setStep('quests')
-  }
+    setOcrHint('Editing monthly extended template — paste a new screenshot anytime to replace.')
+    setOcrStatus('idle')
+    setOcrError('')
+  }, [])
+
+  const handleSelectType = useCallback((t: ScrollType) => {
+    if (!allowExtended && t === 'extended') return
+    // Picking Extended from Add Scroll → treat as monthly template update
+    if (t === 'extended') {
+      const quests = pendingOcrQuests ?? getActiveExtendedScroll().quests.map(q => ({ ...q }))
+      setPendingOcrQuests(null)
+      enterUpdateExtended(quests)
+      return
+    }
+    setActiveMode('add')
+    setScrollType(t)
+    setOcrHint('')
+    if (pendingOcrQuests) {
+      setPrefillQuests(pendingOcrQuests)
+      setPendingOcrQuests(null)
+    } else {
+      setPrefillQuests([])
+    }
+    setQuestListKey(k => k + 1)
+    setStep('quests')
+  }, [allowExtended, pendingOcrQuests, enterUpdateExtended])
+
+  const openCurrentTemplate = useCallback(() => {
+    enterUpdateExtended(getActiveExtendedScroll().quests.map(q => ({ ...q })))
+  }, [enterUpdateExtended])
+
+  const handleImage = useCallback(async (file: Blob) => {
+    // Allow paste while updating template even if we opened from scroll edit
+    if (existing && !updateExtended) return
+    setOcrStatus('reading')
+    setOcrError('')
+    setOcrHint('')
+    try {
+      const text = await ocrScrollImage(file)
+      const quests = draftsToQuests(parseScrollText(text))
+      const detected = detectScrollType(text)
+
+      // Extended screenshot (or already in update mode) → monthly template flow
+      if (updateExtended || detected === 'extended') {
+        if (quests.length === 0) {
+          setOcrStatus('error')
+          setOcrError('No tasks found. Try a tighter crop of the extended scroll text.')
+          return
+        }
+        enterUpdateExtended(quests)
+        setOcrStatus('idle')
+        setOcrHint('')
+        return
+      }
+
+      if (quests.length === 0 && !detected) {
+        setOcrStatus('error')
+        setOcrError('No scroll tasks found. Try a tighter crop of the scroll text.')
+        return
+      }
+
+      if (detected) {
+        setActiveMode('add')
+        setScrollType(detected)
+        setPrefillQuests(quests)
+        setPendingOcrQuests(null)
+        setQuestListKey(k => k + 1)
+        setStep('quests')
+        setOcrStatus('idle')
+        setOcrHint('')
+      } else {
+        setPendingOcrQuests(quests)
+        setStep('type')
+        setOcrStatus('idle')
+        setOcrHint(
+          quests.length > 0
+            ? `Found ${quests.length} task${quests.length !== 1 ? 's' : ''} — pick a scroll type to continue.`
+            : 'Could not detect scroll type — pick one manually.',
+        )
+      }
+    } catch {
+      setOcrStatus('error')
+      setOcrError('Could not read that image. Try again with a clearer crop.')
+    }
+  }, [existing, allowExtended, updateExtended, enterUpdateExtended])
+
+  // Clipboard paste: add-scroll, or update-extended (including from edit → update)
+  useEffect(() => {
+    if (existing && !updateExtended) return
+    function onPaste(e: ClipboardEvent) {
+      const dt = e.clipboardData
+      if (!dt) return
+      const items = Array.from(dt.items ?? [])
+      const hasFileImage = items.some(i => i.kind === 'file' && i.type.startsWith('image/'))
+      const html = dt.getData('text/html') || ''
+      const plain = dt.getData('text/plain') || ''
+      const looksLikeImage =
+        hasFileImage ||
+        /<img/i.test(html) ||
+        /discordapp\.|cdn\.discord/i.test(html + plain) ||
+        /^https?:\/\/\S+\.(png|jpe?g|gif|webp)/i.test(plain.trim())
+      if (!looksLikeImage) return
+
+      e.preventDefault()
+      void imageFromClipboard(e).then(blob => {
+        if (blob) void handleImage(blob)
+        else {
+          setOcrStatus('error')
+          setOcrError('Clipboard had no usable image. Try Copy Image, then paste again.')
+        }
+      })
+    }
+    window.addEventListener('paste', onPaste)
+    return () => window.removeEventListener('paste', onPaste)
+  }, [existing, updateExtended, handleImage])
 
   function handleDone(quests: Quest[]) {
+    if (updateExtended) {
+      saveExtendedTemplate({
+        updatedAt: Date.now(),
+        quests: quests.map((q, i) => ({
+          id: `__ext_${i + 1}__`,
+          categoryId: q.categoryId,
+          subCategoryId: q.subCategoryId,
+          amount: q.amount,
+          objective: q.objective,
+          objectiveId: q.objectiveId,
+          objectiveIcon: q.objectiveIcon,
+          description: q.description,
+          order: i,
+        })),
+      })
+      // If we opened from editing a live extended scroll, also write quests onto it
+      if (existing?.type === 'extended') {
+        onSave({
+          ...existing,
+          type: 'extended',
+          quests: quests.map((q, i) => ({
+            ...q,
+            id: `__ext_${i + 1}__`,
+            counter: 0,
+            completed: false,
+            order: i,
+          })),
+        })
+      }
+      onTemplateSaved?.()
+      onClose()
+      return
+    }
     onSave({
       id: existing?.id ?? crypto.randomUUID(),
       type: scrollType,
@@ -817,19 +1221,77 @@ function ScrollPopup({ categories, onSave, onClose, allowExtended = true, existi
     onClose()
   }
 
+  const borderColor = updateExtended ? SCROLL_STYLES.extended.stroke : '#190A21'
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
-      <div className="flex flex-col gap-4 rounded border-2 border-[#190A21] bg-[#120413] p-6 w-[420px] max-h-[90vh] overflow-y-auto">
+      <div
+        className="flex flex-col gap-4 rounded border-2 bg-[#120413] p-6 w-[420px] max-h-[90vh] overflow-y-auto"
+        style={{ borderColor }}
+      >
         {step === 'type'
-          ? <StepType onSelect={handleSelectType} />
-          : <StepQuests
+          ? (
+            <StepType
+              onSelect={handleSelectType}
+              onImage={file => { void handleImage(file) }}
+              onImportError={msg => {
+                setOcrStatus('error')
+                setOcrError(msg)
+              }}
+              ocrStatus={ocrStatus}
+              ocrError={ocrError}
+              ocrHint={ocrHint}
+              allowedTypes={allowedTypes}
+              updateExtended={updateExtended}
+              onEditCurrentTemplate={openCurrentTemplate}
+            />
+          )
+          : (
+            <StepQuests
+              key={questListKey}
               scrollType={scrollType}
               categories={categories}
-              onBack={existing ? onClose : () => setStep('type')}
+              onBack={existing && !updateExtended ? onClose : () => {
+                if (updateExtended && existing?.type === 'extended') {
+                  // Return to normal edit of this scroll
+                  setActiveMode('add')
+                  setPrefillQuests(existing.quests.map(q => ({ ...q })))
+                  setQuestListKey(k => k + 1)
+                  setOcrHint('')
+                  return
+                }
+                if (prefillQuests.length > 0) setPendingOcrQuests(prefillQuests)
+                setActiveMode('add')
+                setStep('type')
+                setOcrHint(prefillQuests.length > 0
+                  ? `Found ${prefillQuests.length} task${prefillQuests.length !== 1 ? 's' : ''} — pick a scroll type to continue.`
+                  : '')
+              }}
               onDone={handleDone}
               existingQuests={prefillQuests}
-              isEdit={!!existing}
+              isEdit={!!existing || updateExtended}
+              title={updateExtended ? 'Extended Quest Scroll — template' : undefined}
+              doneLabel={(count, edit) => updateExtended
+                ? (count === 0 ? 'Save empty template' : `Save Extended Template (${count})`)
+                : edit
+                  ? 'Edit Scroll'
+                  : count === 0
+                    ? 'Add Empty Scroll'
+                    : `Add Scroll (${count} quest${count !== 1 ? 's' : ''})`
+              }
+              showUpdateExtended={existing?.type === 'extended' && !updateExtended}
+              onUpdateExtended={enterUpdateExtended}
+              showImageImport={updateExtended}
+              onImage={file => { void handleImage(file) }}
+              onImportError={msg => {
+                setOcrStatus('error')
+                setOcrError(msg)
+              }}
+              ocrStatus={ocrStatus}
+              ocrError={ocrError}
+              ocrHint={ocrHint}
             />
+          )
         }
         <button onClick={onClose} className="cursor-pointer self-end font-pixeloid-sans text-xs text-white/30 hover:text-white/60">
           Cancel

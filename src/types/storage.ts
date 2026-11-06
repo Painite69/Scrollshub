@@ -1,12 +1,22 @@
-import { type Group, type Category, DEFAULT_CATEGORIES, DEFAULT_GROUPS, DEFAULT_SCROLL, type Scroll } from './types'
+import {
+  type Group,
+  type Category,
+  type ExtendedTemplate,
+  DEFAULT_CATEGORIES,
+  DEFAULT_GROUPS,
+  DEFAULT_SCROLL,
+  type Scroll,
+  type Quest,
+} from './types'
 
 /** Bump when default-extended sync logic changes so the UI reloads from storage. */
-export const EXTENDED_SYNC_VERSION = 2
+export const EXTENDED_SYNC_VERSION = 3
 
 const KEYS = {
   groups: 'questhub_groups',
   categories: 'questhub_categories',
   battlePass: 'questhub_battlepass',
+  extendedTemplate: 'questhub_extended_template',
 } as const
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -38,14 +48,76 @@ function questDefinitionMatches(
   )
 }
 
+function templateQuestsToLive(quests: ExtendedTemplate['quests']): Quest[] {
+  return quests.map(q => ({
+    id: q.id,
+    categoryId: q.categoryId,
+    subCategoryId: q.subCategoryId,
+    amount: q.amount,
+    objective: q.objective,
+    objectiveId: q.objectiveId,
+    objectiveIcon: q.objectiveIcon,
+    description: q.description,
+    order: q.order,
+    counter: 0,
+    completed: false,
+  }))
+}
+
+// ─── Extended template (user-updated monthly default) ─────────────────────────
+
+export function loadExtendedTemplate(): ExtendedTemplate | null {
+  try {
+    const raw = localStorage.getItem(KEYS.extendedTemplate)
+    if (!raw) return null
+    const parsed = JSON.parse(raw) as ExtendedTemplate
+    if (!parsed || !Array.isArray(parsed.quests) || parsed.quests.length === 0) return null
+    return parsed
+  } catch {
+    return null
+  }
+}
+
+export function saveExtendedTemplate(template: ExtendedTemplate): void {
+  save(KEYS.extendedTemplate, template)
+}
+
+export function clearExtendedTemplate(): void {
+  localStorage.removeItem(KEYS.extendedTemplate)
+}
+
+/** Active extended scroll definitions: user template if set, else built-in DEFAULT_SCROLL. */
+export function getActiveExtendedScroll(): Scroll {
+  const template = loadExtendedTemplate()
+  if (!template) {
+    return {
+      ...DEFAULT_SCROLL,
+      quests: DEFAULT_SCROLL.quests.map(q => ({ ...q })),
+    }
+  }
+  return {
+    ...DEFAULT_SCROLL,
+    quests: templateQuestsToLive(template.quests),
+  }
+}
+
+/** Signature of active extended quest definitions — use to re-sync UI when template/code changes. */
+export function getActiveExtendedSignature(): string {
+  const scroll = getActiveExtendedScroll()
+  return JSON.stringify(
+    scroll.quests.map(q => [q.id, q.categoryId, q.subCategoryId, q.amount, q.objective, q.objectiveIcon]),
+  )
+}
+
 function normalizeDefaultExtendedScroll(scroll: Scroll): Scroll {
   if (scroll.id !== DEFAULT_SCROLL.id) return scroll
 
+  const active = getActiveExtendedScroll()
   const previousById = new Map(scroll.quests.map(q => [q.id, q]))
 
-  // Always take quest definitions from DEFAULT_SCROLL; keep progress only when
+  // Take quest definitions from the active template; keep progress only when
   // the quest itself is unchanged (same id + same definition).
-  const quests = DEFAULT_SCROLL.quests.map(template => {
+  const quests = active.quests.map(template => {
     const previous = previousById.get(template.id)
     if (previous && questDefinitionMatches(previous, template)) {
       return {
@@ -59,9 +131,9 @@ function normalizeDefaultExtendedScroll(scroll: Scroll): Scroll {
   })
 
   return {
-    ...DEFAULT_SCROLL,
+    ...active,
     id: scroll.id,
-    order: typeof scroll.order === 'number' ? scroll.order : DEFAULT_SCROLL.order,
+    order: typeof scroll.order === 'number' ? scroll.order : active.order,
     hidden: scroll.hidden,
     titleColors: scroll.titleColors,
     quests,
@@ -69,10 +141,11 @@ function normalizeDefaultExtendedScroll(scroll: Scroll): Scroll {
 }
 
 function cloneDefaultScroll(order = DEFAULT_SCROLL.order): Scroll {
+  const active = getActiveExtendedScroll()
   return {
-    ...DEFAULT_SCROLL,
+    ...active,
     order,
-    quests: DEFAULT_SCROLL.quests.map(q => ({ ...q })),
+    quests: active.quests.map(q => ({ ...q })),
   }
 }
 
@@ -129,7 +202,7 @@ export function loadGroups(): Group[] {
   return normalizedGroups
 }
 
-/** Always re-syncs the default extended scroll from DEFAULT_SCROLL before writing. */
+/** Always re-syncs the default extended scroll from the active template before writing. */
 export function saveGroups(groups: Group[]): Group[] {
   const normalizedGroups = normalizeGroups(groups)
   save(KEYS.groups, normalizedGroups)

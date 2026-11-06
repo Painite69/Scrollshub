@@ -72,18 +72,26 @@ function QuestRow({
   const SURFACE_LABELS = new Set(['ice', 'packed ice', 'blue ice', 'snow', 'underwater'])
   const SURFACE_IDS = new Set(['on_ice', 'on_packed_ice', 'on_blue_ice', 'on_snow', 'underwater'])
   const isRide = quest.subCategoryId === 'ride'
-  const isMovement = quest.subCategoryId === 'walk' || quest.subCategoryId === 'sprint'
-  const isSurface = SURFACE_IDS.has(quest.objectiveId) || SURFACE_LABELS.has(quest.objective.toLowerCase())
+  const isMovement =
+    quest.subCategoryId === 'walk' ||
+    quest.subCategoryId === 'sprint' ||
+    quest.subCategoryId === 'swim' ||
+    quest.subCategoryId === 'glide'
+  const objLower = quest.objective.toLowerCase()
+  const isSurface =
+    SURFACE_IDS.has(quest.objectiveId) ||
+    SURFACE_LABELS.has(objLower)
+  const isPlainBlocks = !quest.objective || objLower === 'plain' || objLower === 'blocks' || objLower === 'block'
 
   let displayText: string
   if (isRide) {
     // "ride a Pig 3000 blocks"
     displayText = `${subLabel} a ${quest.objective} ${quest.amount} blocks`
-  } else if (isMovement && isSurface) {
+  } else if (isMovement && isSurface && !isPlainBlocks) {
     // "walk 3000 on Ice blocks" / "sprint 3000 on Packed Ice blocks"
     displayText = `${subLabel} ${quest.amount} on ${quest.objective} blocks`
   } else if (isMovement) {
-    // "walk 3000 blocks"
+    // "walk 3000 blocks" / "swim 500 blocks" / "glide 200 blocks"
     displayText = `${subLabel} ${quest.amount} blocks`
   } else {
     displayText = `${subLabel} ${quest.amount} ${quest.objective}`
@@ -169,12 +177,14 @@ function ScrollCard({
   onScrollUpdate,
   onScrollDelete,
   onScrollDuplicate,
+  onTemplateSaved,
 }: {
   scroll: Scroll
   categories: Category[]
   onScrollUpdate: (s: Scroll) => void
   onScrollDelete: (id: string) => void
   onScrollDuplicate: (s: Scroll) => void
+  onTemplateSaved?: () => void
 }) {
   const [editScrollOpen, setEditScrollOpen] = useState(false)
   const [editingQuest, setEditingQuest] = useState<Quest | null>(null)
@@ -294,6 +304,7 @@ function ScrollCard({
           existing={scroll}
           categories={categories}
           onSave={s => { onScrollUpdate(s); setEditScrollOpen(false) }}
+          onTemplateSaved={onTemplateSaved}
           onClose={() => setEditScrollOpen(false)}
         />
       )}
@@ -689,6 +700,12 @@ function Scrolls({ group, onGroupUpdate }: {
     onGroupUpdate(saved.find(g => g.id === updated.id) ?? updated)
   }
 
+  function refreshAfterTemplateSave() {
+    // Re-normalize default extended from the new template, then push into UI
+    const saved = saveGroups(loadGroups())
+    onGroupUpdate(saved.find(g => g.id === group.id) ?? group)
+  }
+
   function handleAddScroll(scroll: Scroll) {
     persistGroup({ ...group, scrolls: [...group.scrolls, { ...scroll, order: group.scrolls.length }] })
   }
@@ -777,10 +794,21 @@ function Scrolls({ group, onGroupUpdate }: {
           : <CategorizedDetailView group={group} categories={categories} onGroupUpdate={persistGroup} />
         }
         {scrollPopup && (
-          <ScrollPopup categories={categories} onSave={s => { handleAddScroll(s); setScrollPopup(false) }} onClose={() => setScrollPopup(false)} />
+          <ScrollPopup
+            categories={categories}
+            onSave={s => { handleAddScroll(s); setScrollPopup(false) }}
+            onTemplateSaved={refreshAfterTemplateSave}
+            onClose={() => setScrollPopup(false)}
+          />
         )}
         {editingScroll && (
-          <ScrollPopup existing={editingScroll} categories={categories} onSave={s => { handleEditScroll(s); setEditingScroll(null) }} onClose={() => setEditingScroll(null)} />
+          <ScrollPopup
+            existing={editingScroll}
+            categories={categories}
+            onSave={s => { handleEditScroll(s); setEditingScroll(null) }}
+            onTemplateSaved={refreshAfterTemplateSave}
+            onClose={() => setEditingScroll(null)}
+          />
         )}
       </div>
     )
@@ -800,6 +828,7 @@ function Scrolls({ group, onGroupUpdate }: {
                 onScrollUpdate={s => persistGroup({ ...group, scrolls: group.scrolls.map(x => x.id === s.id ? s : x) })}
                 onScrollDelete={handleDeleteScroll}
                 onScrollDuplicate={handleDuplicateScroll}
+                onTemplateSaved={refreshAfterTemplateSave}
               />
             ))}
             <button
@@ -813,10 +842,21 @@ function Scrolls({ group, onGroupUpdate }: {
         </SortableContext>
       </DndContext>
       {scrollPopup && (
-        <ScrollPopup categories={categories} onSave={handleAddScroll} onClose={() => setScrollPopup(false)} />
+        <ScrollPopup
+          categories={categories}
+          onSave={handleAddScroll}
+          onTemplateSaved={refreshAfterTemplateSave}
+          onClose={() => setScrollPopup(false)}
+        />
       )}
       {editingScroll && (
-        <ScrollPopup existing={editingScroll} categories={categories} onSave={s => { handleEditScroll(s); setEditingScroll(null) }} onClose={() => setEditingScroll(null)} />
+        <ScrollPopup
+          existing={editingScroll}
+          categories={categories}
+          onSave={s => { handleEditScroll(s); setEditingScroll(null) }}
+          onTemplateSaved={refreshAfterTemplateSave}
+          onClose={() => setEditingScroll(null)}
+        />
       )}
     </div>
   )
