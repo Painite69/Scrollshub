@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Electron build outputs (installers exceed GitHub's 100MB limit)
+desktop/release/
+desktop/dist/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

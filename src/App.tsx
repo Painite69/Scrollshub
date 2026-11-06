@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Router from './router'
 
@@ -88,6 +89,8 @@ function BgPicker({ current, onSelect, onClose }: {
 // ── App ───────────────────────────────────────────────────────────────────────
 
 function App() {
+  const location = useLocation()
+  const isOverlay = location.pathname === '/overlay'
   const [wallpaperId, setWallpaperId] = useState<string>(() =>
     localStorage.getItem(STORAGE_KEY) ?? 'bee'
   )
@@ -98,6 +101,14 @@ function App() {
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, wallpaperId)
   }, [wallpaperId])
+
+  if (isOverlay) {
+    return (
+      <div className="min-h-screen bg-transparent">
+        <Router />
+      </div>
+    )
+  }
 
   return (
     <div

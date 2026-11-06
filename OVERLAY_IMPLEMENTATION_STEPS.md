@@ -190,34 +190,34 @@ Use a dedicated session partition (e.g. `persist:questhub`) so overlay and main 
 ## 7) Step-by-step checklist
 
 ### Phase F — Electron shell (empty glass)
-- [ ] **F1.** Add Electron main + preload package (`desktop/`) without breaking `npm run dev` / Cloudflare Pages web build.
-- [ ] **F2.** Create normal main window loading the Vite app.
-- [ ] **F3.** Create transparent overlay window (chrome flags above) covering virtual desktop.
-- [ ] **F4.** IPC: open / toggle / close overlay; `setClickThrough`; `isDesktop`.
-- [ ] **F5.** Overlay loads `#/overlay` (or `/overlay`) with transparent HTML background.
+- [x] **F1.** Add Electron main + preload package (`desktop/`) without breaking `npm run dev` / Cloudflare Pages web build.
+- [x] **F2.** Create normal main window loading the Vite app.
+- [x] **F3.** Create transparent overlay window (chrome flags above) covering virtual desktop.
+- [x] **F4.** IPC: open / toggle / close overlay; `setClickThrough`; `isDesktop`.
+- [x] **F5.** Overlay loads `#/overlay` (or `/overlay`) with transparent HTML background.
 - [ ] **F6.** Manual test: overlay shows empty glass; clicks pass through to apps underneath; toggle shortcut works.
 
 ### Phase G — Shell UX (no QuestHub data yet)
-- [ ] **G1.** Port dock settings + `dockPanelRect` math (left/right/top/bottom, size clamps).
-- [ ] **G2.** Build `overlay_shell` with a placeholder panel (solid QuestHub-styled box).
-- [ ] **G3.** Collapse / expand; edge + button reveal.
-- [ ] **G4.** Auto-hide on pointer leave (~700ms); toggle in control rail.
-- [ ] **G5.** Resize grip updating size fraction.
-- [ ] **G6.** Click-through hook + `data-questhub-overlay-hit` on panel, rail, reveal controls.
+- [x] **G1.** Port dock settings + `dockPanelRect` math (left/right/top/bottom, size clamps).
+- [x] **G2.** Build `overlay_shell` with a placeholder panel (solid QuestHub-styled box).
+- [x] **G3.** Collapse / expand; edge + button reveal.
+- [x] **G4.** Auto-hide on pointer leave (~700ms); toggle in control rail.
+- [x] **G5.** Resize grip updating size fraction.
+- [x] **G6.** Click-through hook + `data-questhub-overlay-hit` on panel, rail, reveal controls.
 - [ ] **G7.** Manual test: dock all four sides; auto-hide; resize; Minecraft (or Notepad) usable through empty areas.
 
 ### Phase H — Multi-monitor + polish shell
-- [ ] **H1.** `getDisplayLayout` + react to display changes.
+- [x] **H1.** `getDisplayLayout` + react to display changes.
 - [ ] **H2.** Home display selection (which monitor the panel lives on).
 - [ ] **H3.** Optional: home-bar drag to re-dock (Inref pattern) — can defer.
-- [ ] **H4.** Windows phantom title-bar scrub if you hit Electron’s white bar bug (Inref already solved this).
+- [x] **H4.** Windows phantom title-bar scrub if you hit Electron’s white bar bug (Inref already solved this).
 
 ### Phase I — QuestHub panel body
-- [ ] **I1.** `overlay_panel_body`: load groups via existing `loadGroups` / subscribe to storage updates.
-- [ ] **I2.** Render groups as collapsible folders → scrolls → quest rows.
-- [ ] **I3.** Wire counter + checkbox to the same save path as homepage (progress syncs with main window).
-- [ ] **I4.** Compact QuestHub styling (borders, scroll type colors, pixel fonts).
-- [ ] **I5.** “Open in app” for full homepage / BP / OCR import.
+- [x] **I1.** `overlay_panel_body`: load groups via existing `loadGroups` / subscribe to storage updates.
+- [x] **I2.** Render groups as collapsible folders → scrolls → quest rows.
+- [x] **I3.** Wire counter + checkbox to the same save path as homepage (progress syncs with main window).
+- [x] **I4.** Compact QuestHub styling (borders, scroll type colors, pixel fonts).
+- [x] **I5.** “Open in app” for full homepage / BP / OCR import.
 - [ ] **I6.** Manual test: tick a quest in overlay → refresh main window (or focus it) → same progress; reverse also works.
 
 ### Phase J — Desktop product finish

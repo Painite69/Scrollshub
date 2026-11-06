@@ -30,6 +30,11 @@ interface Props {
   mode?: 'add' | 'update-extended'
   /** Called after template is saved (so parent can refresh groups). */
   onTemplateSaved?: () => void
+  /**
+   * When true, fill the parent (absolute) instead of the whole viewport.
+   * Required for the Electron overlay glass — fixed inset-0 would lock every monitor.
+   */
+  contained?: boolean
 }
 
 const TYPES: ScrollType[] = ['easy', 'normal', 'hard','weekly', 'extended' ]
@@ -1039,6 +1044,7 @@ function ScrollPopup({
   existing,
   mode = 'add',
   onTemplateSaved,
+  contained = false,
 }: Props) {
   const [activeMode, setActiveMode] = useState<'add' | 'update-extended'>(mode)
   const updateExtended = activeMode === 'update-extended'
@@ -1224,10 +1230,16 @@ function ScrollPopup({
   const borderColor = updateExtended ? SCROLL_STYLES.extended.stroke : '#190A21'
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+    <div
+      className={`${contained ? 'absolute' : 'fixed'} inset-0 z-50 flex items-center justify-center bg-black/60`}
+      data-questhub-overlay-hit={contained ? '' : undefined}
+    >
       <div
-        className="flex flex-col gap-4 rounded border-2 bg-[#120413] p-6 w-[420px] max-h-[90vh] overflow-y-auto"
+        className={`flex flex-col gap-4 rounded border-2 bg-[#120413] p-6 overflow-y-auto ${
+          contained ? 'w-[min(100%,420px)] max-h-[min(100%,90vh)] m-2' : 'w-[420px] max-h-[90vh]'
+        }`}
         style={{ borderColor }}
+        data-questhub-overlay-hit={contained ? '' : undefined}
       >
         {step === 'type'
           ? (

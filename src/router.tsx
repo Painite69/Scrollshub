@@ -4,6 +4,7 @@ import Homepage from './pages/homepage'
 import BattlePass from './pages/battle_pass'
 import About from './pages/about'
 import PrivacyPolicy from './pages/privacy_policy'
+import OverlayPage from './pages/overlay'
 
 
 function Router() {
@@ -13,6 +14,7 @@ function Router() {
         <Route path="/battle-pass" element={<BattlePass />} />
         <Route path="/about" element={<About />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/overlay" element={<OverlayPage />} />
     </Routes>
   )
 }

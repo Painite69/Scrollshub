@@ -1,0 +1,78 @@
+{
+  "name": "questhub-desktop",
+  "private": true,
+  "version": "0.1.0",
+  "description": "ScrollsHub desktop app + overlay",
+  "author": "Painite",
+  "main": "dist/main/index.js",
+  "scripts": {
+    "build:main": "tsc -p tsconfig.main.json",
+    "start": "electron .",
+    "start:built": "cross-env QUESTHUB_USE_BUILT=1 electron .",
+    "dev": "npm run build:main && concurrently -k -n web,electron -c cyan,magenta \"npm run dev --prefix .. -- --port 5173 --strictPort\" \"wait-on http-get://localhost:5173 && electron .\"",
+    "dist:win": "npm run build:main && electron-builder --win"
+  },
+  "build": {
+    "appId": "com.painite.scrollshub",
+    "productName": "ScrollsHub",
+    "copyright": "Copyright © Painite",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "dist/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "../dist",
+        "to": "app",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "build/icon.ico",
+        "to": "build/icon.ico"
+      }
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "ScrollsHub",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.3",
+    "concurrently": "^9.2.1",
+    "cross-env": "^7.0.3",
+    "electron": "^37.10.3",
+    "electron-builder": "^26.0.12",
+    "typescript": "~6.0.2",
+    "wait-on": "^8.0.5"
+  }
+}

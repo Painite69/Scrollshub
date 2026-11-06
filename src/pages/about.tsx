@@ -38,6 +38,7 @@ function About() {
             'Separate Scrolls — You can add all your scrolls and track them separately.',
             'Categorized Scrolls — You can have your scrolls organized by categories based on their type.',
             'Battlepass Tracker — Keep track of your battlepass progress, including weekly quests, achievements goals, and daily quests.',
+            'Desktop Overlay — Run npm run dev:desktop for an always-on-top panel (Ctrl+Shift+O). Groups as folders, click-through glass while you play.',
           ].map((f, i) => (
             <li key={i} className="flex items-start gap-2 font-pixeloid-sans text-sm text-white">
               <span className="text-[#64FC65] shrink-0">▸</span>

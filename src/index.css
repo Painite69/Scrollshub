@@ -75,3 +75,11 @@
 *::-webkit-scrollbar-corner {
   background: transparent;
 }
+
+/* Electron overlay glass — only the panel paints; rest is click-through. */
+html.desktop-overlay,
+html.desktop-overlay body,
+html.desktop-overlay #root {
+  background: transparent !important;
+  background-color: transparent !important;
+}
