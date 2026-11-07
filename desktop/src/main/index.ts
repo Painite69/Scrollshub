@@ -12,6 +12,7 @@ import {
 import path from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { APP_DEV_URL } from '../shared/constants'
+import { setupAutoUpdater } from './updater'
 
 /** Unique scheme (avoid generic `app` — Windows tries to find a Store app for it). */
 const APP_SCHEME = 'scrollshub'
@@ -370,6 +371,7 @@ if (!gotLock) {
     Menu.setApplicationMenu(null)
     createMainWindow()
     registerGlobalShortcuts()
+    setupAutoUpdater(() => mainWindow)
 
     ipcMain.on('questhub:open-overlay', () => createOverlayWindow())
     ipcMain.on('questhub:toggle-overlay', () => toggleOverlayWindow())

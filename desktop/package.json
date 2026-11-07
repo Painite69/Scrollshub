@@ -1,7 +1,7 @@
 {
   "name": "questhub-desktop",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ScrollsHub desktop app + overlay",
   "author": "Painite",
   "main": "dist/main/index.js",
@@ -11,6 +11,9 @@
     "start:built": "cross-env QUESTHUB_USE_BUILT=1 electron .",
     "dev": "npm run build:main && concurrently -k -n web,electron -c cyan,magenta \"npm run dev --prefix .. -- --port 5173 --strictPort\" \"wait-on http-get://localhost:5173 && electron .\"",
     "dist:win": "npm run build:main && electron-builder --win"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.11"
   },
   "build": {
     "appId": "com.painite.scrollshub",
@@ -22,7 +25,8 @@
     },
     "files": [
       "dist/**/*",
-      "package.json"
+      "package.json",
+      "node_modules/**/*"
     ],
     "extraResources": [
       {
@@ -35,6 +39,13 @@
       {
         "from": "build/icon.ico",
         "to": "build/icon.ico"
+      }
+    ],
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Painite69",
+        "repo": "Scrollshub"
       }
     ],
     "win": {
