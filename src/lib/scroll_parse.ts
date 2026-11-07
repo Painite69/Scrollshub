@@ -884,18 +884,94 @@ function parseLine(rawLine: string): ScrollQuestDraft {
 
 // ─── Public API ───────────────────────────────────────────────────────────────
 
+/** OCR-tolerant aliases for scroll title words (pink MC font misreads). */
+const TYPE_TITLE_FORMS: Array<{ type: ScrollType; forms: string[] }> = [
+  { type: 'extended', forms: ['extended', 'extenaed', 'extender', 'extendad', 'extented'] },
+  { type: 'weekly', forms: ['weekly', 'weekiy', 'weeklv', 'weeekly', 'weekiy'] },
+  { type: 'normal', forms: ['normal', 'nomal', 'nomral', 'norrnal', 'norma1', 'noma1', 'hormai', 'norma', 'normai'] },
+  { type: 'hard', forms: ['hard', 'hara', 'haro', 'harb', 'harcl'] },
+  { type: 'easy', forms: ['easy', 'easv', 'easу', 'casv', 'easy'] },
+]
+
+function editDistance(a: string, b: string): number {
+  if (a === b) return 0
+  if (!a.length) return b.length
+  if (!b.length) return a.length
+  const row = Array.from({ length: b.length + 1 }, (_, i) => i)
+  for (let i = 0; i < a.length; i++) {
+    let prev = i
+    row[0] = i + 1
+    for (let j = 0; j < b.length; j++) {
+      const cur = row[j + 1]
+      const cost = a[i] === b[j] ? 0 : 1
+      row[j + 1] = Math.min(row[j + 1] + 1, row[j] + 1, prev + cost)
+      prev = cur
+    }
+  }
+  return row[b.length]
+}
+
+function matchTypeToken(raw: string): ScrollType | null {
+  const token = raw.toLowerCase().replace(/[^a-z0-9]/g, '')
+  if (token.length < 3) return null
+  for (const { type, forms } of TYPE_TITLE_FORMS) {
+    for (const form of forms) {
+      if (token === form) return type
+      // Allow 1–2 char OCR drift on title words
+      const maxDist = form.length <= 4 ? 1 : 2
+      if (Math.abs(token.length - form.length) <= maxDist && editDistance(token, form) <= maxDist) {
+        return type
+      }
+    }
+  }
+  return null
+}
+
+/**
+ * Read scroll difficulty from the tooltip title (e.g. "Normal Quest Scroll").
+ * Prefers the header above CLUES — OCR often garbles the pink title, so matching is fuzzy.
+ */
 export function detectScrollType(text: string): ScrollType | null {
-  const lower = normalizeOcrText(text).toLowerCase()
-  const patterns: Array<[ScrollType, RegExp]> = [
+  const normalized = normalizeOcrText(text)
+  const lines = normalized
+    .split('\n')
+    .map(l => cleanLine(l))
+    .filter(Boolean)
+
+  const cluesIdx = lines.findIndex(l => /\bclues?\b/i.test(l))
+  const headerLines = cluesIdx > 0 ? lines.slice(0, cluesIdx) : lines.slice(0, 4)
+
+  // 1) Exact / near-exact title phrases on the header first
+  const header = headerLines.join(' ').toLowerCase()
+  const exact: Array<[ScrollType, RegExp]> = [
     ['extended', /\bextended(?:\s+quest)?(?:\s+scroll)?\b/],
     ['weekly', /\bweekly(?:\s+quest)?(?:\s+scroll)?\b/],
     ['normal', /\bnormal(?:\s+quest)?(?:\s+scroll)?\b/],
     ['hard', /\bhard(?:\s+quest)?(?:\s+scroll)?\b/],
     ['easy', /\beasy(?:\s+quest)?(?:\s+scroll)?\b/],
   ]
-  for (const [type, re] of patterns) {
+  for (const [type, re] of exact) {
+    if (re.test(header)) return type
+  }
+
+  // 2) Fuzzy token match on header words (handles Norma1 / Hormai / etc.)
+  for (const line of headerLines) {
+    for (const token of line.split(/\s+/)) {
+      const hit = matchTypeToken(token)
+      if (hit) return hit
+    }
+  }
+
+  // 3) Fall back to full OCR text
+  const lower = normalized.toLowerCase()
+  for (const [type, re] of exact) {
     if (re.test(lower)) return type
   }
+  for (const token of lower.split(/[^a-z0-9]+/)) {
+    const hit = matchTypeToken(token)
+    if (hit) return hit
+  }
+
   return null
 }
 

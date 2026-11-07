@@ -15,8 +15,15 @@ export type OverlaySettings = {
   homeDisplayId: number | null
   /** Group folder ids currently expanded in the panel. */
   openGroupIds: string[]
-  /** Scroll ids currently expanded inside groups. */
+  /** Scroll ids currently expanded inside groups (separate display). */
   openScrollIds: string[]
+  /**
+   * Category / sub-category section keys expanded in categorized overlay views.
+   * Format: `${groupId}::${sectionId}` (categoryId or subCategoryId).
+   */
+  openSectionIds: string[]
+  /** Section keys that have been seen (used to seed open state once). */
+  knownSectionIds: string[]
 }
 
 export const OVERLAY_DEFAULTS: OverlaySettings = {
@@ -30,6 +37,8 @@ export const OVERLAY_DEFAULTS: OverlaySettings = {
   homeDisplayId: null,
   openGroupIds: [],
   openScrollIds: [],
+  openSectionIds: [],
+  knownSectionIds: [],
 }
 
 const STORAGE_KEY = 'questhub_overlay_settings'
@@ -88,6 +97,8 @@ export function loadOverlaySettings(): OverlaySettings {
           : null,
       openGroupIds: normalizeIdList(parsed.openGroupIds),
       openScrollIds: normalizeIdList(parsed.openScrollIds),
+      openSectionIds: normalizeIdList(parsed.openSectionIds),
+      knownSectionIds: normalizeIdList(parsed.knownSectionIds),
     }
   } catch {
     return { ...OVERLAY_DEFAULTS }
@@ -122,7 +133,17 @@ export function patchOverlaySettings(
       patch.openGroupIds != null ? normalizeIdList(patch.openGroupIds) : prev.openGroupIds,
     openScrollIds:
       patch.openScrollIds != null ? normalizeIdList(patch.openScrollIds) : prev.openScrollIds,
+    openSectionIds:
+      patch.openSectionIds != null ? normalizeIdList(patch.openSectionIds) : prev.openSectionIds,
+    knownSectionIds:
+      patch.knownSectionIds != null
+        ? normalizeIdList(patch.knownSectionIds)
+        : prev.knownSectionIds,
   }
   saveOverlaySettings(next)
   return next
+}
+
+export function sectionStorageKey(groupId: string, sectionId: string): string {
+  return `${groupId}::${sectionId}`
 }

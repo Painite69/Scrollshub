@@ -1,14 +1,25 @@
-﻿# Publishes the Windows installer to GitHub Releases (linked from the site Download nav).
-# One-time: gh auth login
-# Then:  npm run dist:desktop
-#        .\scripts\publish-desktop-release.ps1
+﻿# Publishes the Windows installer to GitHub Releases (site Download nav).
+#
+# One-time setup:
+#   gh auth login
+#
+# Each app update:
+#   npm run dist:desktop
+#   .\scripts\publish-desktop-release.ps1
+#
+# Optional version bump (also update Header.tsx DESKTOP_DOWNLOAD_URL + desktop/package.json version):
+#   .\scripts\publish-desktop-release.ps1 -Version 0.1.1
+
+param(
+  [string]$Version = '0.1.0',
+  [string]$Repo = 'Painite69/Scrollshub'
+)
 
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
-$version = '0.1.0'
-$tag = "v$version"
-$setup = Join-Path $root "desktop\release\ScrollsHub-Setup-$version.exe"
-$legacySetup = Join-Path $root "desktop\release\ScrollsHub Setup $version.exe"
+$tag = "v$Version"
+$setup = Join-Path $root "desktop\release\ScrollsHub-Setup-$Version.exe"
+$legacySetup = Join-Path $root "desktop\release\ScrollsHub Setup $Version.exe"
 
 if (-not (Test-Path -LiteralPath $setup)) {
   if (Test-Path -LiteralPath $legacySetup) {
@@ -18,17 +29,21 @@ if (-not (Test-Path -LiteralPath $setup)) {
   }
 }
 
-gh release view $tag -R Painite69/Scrollshub 1>$null 2>$null
-if ($LASTEXITCODE -eq 0) {
-  Write-Host "Release $tag already exists — uploading/replacing asset..."
-  gh release upload $tag $setup -R Painite69/Scrollshub --clobber
+$exists = $false
+gh release view $tag -R $Repo 1>$null 2>$null
+if ($LASTEXITCODE -eq 0) { $exists = $true }
+
+if ($exists) {
+  Write-Host "Release $tag already exists — replacing ScrollsHub-Setup-$Version.exe ..."
+  gh release upload $tag $setup -R $Repo --clobber
 } else {
-  Write-Host "Creating release $tag..."
+  Write-Host "Creating release $tag ..."
   gh release create $tag $setup `
-    -R Painite69/Scrollshub `
-    --title "ScrollsHub $version" `
+    -R $Repo `
+    --title "ScrollsHub $Version" `
     --notes "Windows installer for ScrollsHub (overlay + desktop app)."
 }
 
-Write-Host "Done. Download URL:"
-Write-Host "https://github.com/Painite69/Scrollshub/releases/download/$tag/ScrollsHub-Setup-$version.exe"
+Write-Host ""
+Write-Host "Done. Site Download URL:"
+Write-Host "https://github.com/$Repo/releases/download/$tag/ScrollsHub-Setup-$Version.exe"

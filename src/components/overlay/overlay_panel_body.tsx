@@ -1,11 +1,37 @@
-import { useCallback, useEffect, useState } from 'react'
-import type { Group, Quest, Scroll } from '../../types/types'
-import { SCROLL_STYLES } from '../../types/types'
-import { loadCategories, loadGroups, saveGroups } from '../../types/storage'
-import type { OverlaySettings } from '../../types/overlay_settings'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import {
+  DndContext,
+  PointerSensor,
+  closestCenter,
+  useSensor,
+  useSensors,
+  type DragEndEvent,
+} from '@dnd-kit/core'
+import {
+  SortableContext,
+  arrayMove,
+  useSortable,
+  verticalListSortingStrategy,
+} from '@dnd-kit/sortable'
+import { CSS } from '@dnd-kit/utilities'
+import type { Category, Group, Quest, Scroll } from '../../types/types'
+import { CATEGORY_COLORS, SCROLL_STYLES } from '../../types/types'
+import {
+  loadCategories,
+  loadCatOrder,
+  loadGroups,
+  loadSubOrder,
+  saveCatOrder,
+  saveGroups,
+  saveSubOrder,
+} from '../../types/storage'
+import {
+  sectionStorageKey,
+  type OverlaySettings,
+} from '../../types/overlay_settings'
 import ScrollPopup from '../scroll_popup'
 import GroupPopup from '../group_popup'
-import { EditIcon, PlusIcon } from '../icons'
+import { DragHandle, EditIcon, PlusIcon } from '../icons'
 
 type Props = {
   settings: OverlaySettings
@@ -14,6 +40,8 @@ type Props = {
   addScrollRequest?: number
   onAddFlowChange?: (active: boolean) => void
 }
+
+type QuestPatch = Partial<Pick<Quest, 'counter' | 'completed'>>
 
 function questLabel(q: Quest): string {
   const action = q.subCategoryId
@@ -28,6 +56,16 @@ function questLabel(q: Quest): string {
   return `${action} ${amt}${obj ? ` ${obj}` : ''}`
 }
 
+function mergeOrderedIds(saved: string[], defaults: string[]): string[] {
+  const missing = defaults.filter(id => !saved.includes(id))
+  return [...saved.filter(id => defaults.includes(id)), ...missing]
+}
+
+function sectionIdsForScroll(scroll: Scroll, detail: boolean): string[] {
+  const ids = scroll.quests.map(q => (detail ? q.subCategoryId : q.categoryId))
+  return [...new Set(ids.filter(Boolean))]
+}
+
 export default function OverlayPanelBody({
   settings,
   onSettingsChange,
@@ -39,6 +77,9 @@ export default function OverlayPanelBody({
   const [pickGroupId, setPickGroupId] = useState<string | null>(null)
   const [editingGroup, setEditingGroup] = useState<Group | null>(null)
   const categories = loadCategories()
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 6 } }),
+  )
 
   const refresh = useCallback(() => {
     setGroups(loadGroups())
@@ -67,6 +108,37 @@ export default function OverlayPanelBody({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [addScrollRequest])
 
+  // Seed open sections once per section key: non-empty open, empty stay closed.
+  useEffect(() => {
+    const known = [...settings.knownSectionIds]
+    const open = [...settings.openSectionIds]
+    let changed = false
+
+    for (const group of groups) {
+      if (group.display !== 'categorized' && group.display !== 'categorized-detail') continue
+      const detail = group.display === 'categorized-detail'
+      const allQuests = group.scrolls.flatMap(s => s.quests)
+      const sectionIds = detail
+        ? categories.flatMap(c => c.subCategories.map(s => s.id))
+        : categories.map(c => c.id)
+
+      for (const sectionId of sectionIds) {
+        const key = sectionStorageKey(group.id, sectionId)
+        if (known.includes(key)) continue
+        known.push(key)
+        changed = true
+        const count = allQuests.filter(q =>
+          detail ? q.subCategoryId === sectionId : q.categoryId === sectionId,
+        ).length
+        if (count > 0) open.push(key)
+      }
+    }
+
+    if (changed) onSettingsChange({ knownSectionIds: known, openSectionIds: open })
+    // Only re-seed when group data / display mode changes — not when open toggles.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [groups, categories])
+
   function beginAddScroll() {
     const list = loadGroups().slice().sort((a, b) => a.order - b.order)
     if (list.length === 0) return
@@ -84,83 +156,94 @@ export default function OverlayPanelBody({
     setPickGroupId(null)
   }
 
+  function persistGroups(next: Group[]) {
+    setGroups(saveGroups(next))
+  }
+
   function handleSaveGroup(group: Group) {
     const next = loadGroups()
     const updated = next.some(g => g.id === group.id)
       ? next.map(g => (g.id === group.id ? group : g))
       : [...next, group]
-    setGroups(saveGroups(updated))
+    persistGroups(updated)
     setEditingGroup(null)
   }
 
   function handleAddScroll(scroll: Scroll) {
     const targetId = pickGroupId ?? loadGroups().sort((a, b) => a.order - b.order)[0]?.id
     if (!targetId) return
-    const next = loadGroups().map(g => {
+    const current = loadGroups()
+    const target = current.find(g => g.id === targetId)
+    const next = current.map(g => {
       if (g.id !== targetId) return g
       return {
         ...g,
-        scrolls: [...g.scrolls, { ...scroll, order: g.scrolls.length }],
+        scrolls: [...g.scrolls, { ...scroll, order: g.scrolls.filter(s => !s.hidden).length }],
       }
     })
-    setGroups(saveGroups(next))
+    persistGroups(next)
     closeAdd()
+
     const groupIds =
       settings.openGroupIds.length === 0
         ? next.map(g => g.id)
         : settings.openGroupIds.includes(targetId)
           ? settings.openGroupIds
           : [...settings.openGroupIds, targetId]
+
+    const detail = target?.display === 'categorized-detail'
+    const sectionKeys =
+      target?.display === 'categorized' || target?.display === 'categorized-detail'
+        ? sectionIdsForScroll(scroll, detail).map(id => sectionStorageKey(targetId, id))
+        : []
+
     onSettingsChange({
       openGroupIds: groupIds,
       openScrollIds: settings.openScrollIds.includes(scroll.id)
         ? settings.openScrollIds
         : [...settings.openScrollIds, scroll.id],
+      openSectionIds: [...new Set([...settings.openSectionIds, ...sectionKeys])],
+      knownSectionIds: [...new Set([...settings.knownSectionIds, ...sectionKeys])],
     })
   }
 
-  function updateQuest(
-    groupId: string,
-    scrollId: string,
-    questId: string,
-    patch: Partial<Pick<Quest, 'counter' | 'completed'>>,
-  ) {
-    const next = groups.map(g => {
+  function updateQuest(groupId: string, questId: string, patch: QuestPatch) {
+    const next = loadGroups().map(g => {
       if (g.id !== groupId) return g
       return {
         ...g,
-        scrolls: g.scrolls.map(s => {
-          if (s.id !== scrollId) return s
-          return {
-            ...s,
-            quests: s.quests.map(q => {
-              if (q.id !== questId) return q
-              const merged = { ...q, ...patch }
-              if (patch.counter != null) {
-                merged.completed = merged.counter >= merged.amount
-              }
-              return merged
-            }),
-          }
-        }),
+        scrolls: g.scrolls.map(s => ({
+          ...s,
+          quests: s.quests.map(q => {
+            if (q.id !== questId) return q
+            const merged = { ...q, ...patch }
+            if (patch.counter != null) {
+              merged.completed = merged.counter >= merged.amount
+            }
+            return merged
+          }),
+        })),
       }
     })
-    setGroups(saveGroups(next))
+    persistGroups(next)
   }
 
-  const visible = groups
-    .slice()
-    .sort((a, b) => a.order - b.order)
-    .map(g => ({
-      ...g,
-      scrolls: g.scrolls
-        .filter(s => !s.hidden)
-        .slice()
-        .sort((a, b) => a.order - b.order),
-    }))
+  function reorderScrolls(groupId: string, activeId: string, overId: string) {
+    const next = loadGroups().map(g => {
+      if (g.id !== groupId) return g
+      const visible = g.scrolls.filter(s => !s.hidden).slice().sort((a, b) => a.order - b.order)
+      const oldIdx = visible.findIndex(s => s.id === activeId)
+      const newIdx = visible.findIndex(s => s.id === overId)
+      if (oldIdx < 0 || newIdx < 0 || oldIdx === newIdx) return g
+      const reordered = arrayMove(visible, oldIdx, newIdx).map((s, i) => ({ ...s, order: i }))
+      const hidden = g.scrolls.filter(s => s.hidden)
+      return { ...g, scrolls: [...reordered, ...hidden] }
+    })
+    persistGroups(next)
+  }
 
   function toggleGroup(id: string) {
-    const allIds = visible.map(g => g.id)
+    const allIds = groups.map(g => g.id)
     const currentlyOpen = settings.openGroupIds.length === 0 ? allIds : settings.openGroupIds
     const open = currentlyOpen.includes(id)
     onSettingsChange({
@@ -178,6 +261,30 @@ export default function OverlayPanelBody({
         : [...settings.openScrollIds, id],
     })
   }
+
+  function toggleSection(groupId: string, sectionId: string) {
+    const key = sectionStorageKey(groupId, sectionId)
+    const open = settings.openSectionIds.includes(key)
+    onSettingsChange({
+      openSectionIds: open
+        ? settings.openSectionIds.filter(k => k !== key)
+        : [...settings.openSectionIds, key],
+      knownSectionIds: settings.knownSectionIds.includes(key)
+        ? settings.knownSectionIds
+        : [...settings.knownSectionIds, key],
+    })
+  }
+
+  const visible = groups
+    .slice()
+    .sort((a, b) => a.order - b.order)
+    .map(g => ({
+      ...g,
+      scrolls: g.scrolls
+        .filter(s => !s.hidden)
+        .slice()
+        .sort((a, b) => a.order - b.order),
+    }))
 
   const needsGroupPick = addOpen && pickGroupId == null && visible.length > 1
 
@@ -231,21 +338,32 @@ export default function OverlayPanelBody({
 
               {open && (
                 <div className="ml-2.5 border-l border-white/10 pl-2">
-                  {group.scrolls.map(scroll => (
-                    <ScrollFolder
-                      key={scroll.id}
-                      scroll={scroll}
-                      open={settings.openScrollIds.includes(scroll.id)}
-                      onToggle={() => toggleScroll(scroll.id)}
-                      onQuest={(questId, patch) =>
-                        updateQuest(group.id, scroll.id, questId, patch)
+                  {group.display === 'categorized' || group.display === 'categorized-detail' ? (
+                    <CategorizedOverlay
+                      group={group}
+                      categories={categories}
+                      detail={group.display === 'categorized-detail'}
+                      openSectionIds={settings.openSectionIds}
+                      sensors={sensors}
+                      onToggleSection={sectionId => toggleSection(group.id, sectionId)}
+                      onQuest={(questId, patch) => updateQuest(group.id, questId, patch)}
+                      onReorderSections={order => {
+                        if (group.display === 'categorized-detail') saveSubOrder(group.id, order)
+                        else saveCatOrder(group.id, order)
+                        refresh()
+                      }}
+                    />
+                  ) : (
+                    <SeparateOverlay
+                      group={group}
+                      openScrollIds={settings.openScrollIds}
+                      sensors={sensors}
+                      onToggleScroll={toggleScroll}
+                      onQuest={(questId, patch) => updateQuest(group.id, questId, patch)}
+                      onReorder={(activeId, overId) =>
+                        reorderScrolls(group.id, activeId, overId)
                       }
                     />
-                  ))}
-                  {group.scrolls.length === 0 && (
-                    <p className="px-1 py-1 font-pixeloid-sans text-xs text-white/30">
-                      Empty group
-                    </p>
                   )}
                 </div>
               )}
@@ -254,7 +372,6 @@ export default function OverlayPanelBody({
         })}
       </div>
 
-      {/* Contained to the panel only — never fixed across the Electron glass */}
       {needsGroupPick && (
         <div
           className="absolute inset-0 z-[90] flex items-center justify-center bg-black/70 p-3"
@@ -310,7 +427,56 @@ export default function OverlayPanelBody({
   )
 }
 
-function ScrollFolder({
+function SeparateOverlay({
+  group,
+  openScrollIds,
+  sensors,
+  onToggleScroll,
+  onQuest,
+  onReorder,
+}: {
+  group: Group
+  openScrollIds: string[]
+  sensors: ReturnType<typeof useSensors>
+  onToggleScroll: (id: string) => void
+  onQuest: (questId: string, patch: QuestPatch) => void
+  onReorder: (activeId: string, overId: string) => void
+}) {
+  const scrolls = group.scrolls
+    .filter(s => !s.hidden)
+    .slice()
+    .sort((a, b) => a.order - b.order)
+
+  function handleDragEnd(event: DragEndEvent) {
+    const { active, over } = event
+    if (!over || active.id === over.id) return
+    onReorder(String(active.id), String(over.id))
+  }
+
+  if (scrolls.length === 0) {
+    return (
+      <p className="px-1 py-1 font-pixeloid-sans text-xs text-white/30">Empty group</p>
+    )
+  }
+
+  return (
+    <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+      <SortableContext items={scrolls.map(s => s.id)} strategy={verticalListSortingStrategy}>
+        {scrolls.map(scroll => (
+          <SortableScrollFolder
+            key={scroll.id}
+            scroll={scroll}
+            open={openScrollIds.includes(scroll.id)}
+            onToggle={() => onToggleScroll(scroll.id)}
+            onQuest={onQuest}
+          />
+        ))}
+      </SortableContext>
+    </DndContext>
+  )
+}
+
+function SortableScrollFolder({
   scroll,
   open,
   onToggle,
@@ -319,29 +485,51 @@ function ScrollFolder({
   scroll: Scroll
   open: boolean
   onToggle: () => void
-  onQuest: (questId: string, patch: Partial<Pick<Quest, 'counter' | 'completed'>>) => void
+  onQuest: (questId: string, patch: QuestPatch) => void
 }) {
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
+    id: scroll.id,
+  })
   const style = SCROLL_STYLES[scroll.type] ?? SCROLL_STYLES.easy
   const done = scroll.quests.filter(q => q.completed).length
   const total = scroll.quests.length
 
   return (
-    <div className="mb-1">
-      <button
-        type="button"
-        onClick={onToggle}
-        className="cursor-pointer flex w-full items-center gap-2 rounded px-1.5 py-1.5 text-left hover:bg-white/5"
-      >
-        <span className="w-4 font-pixeloid-sans text-sm text-white/40">
-          {open ? '▾' : '▸'}
-        </span>
-        <span className="truncate font-exe-pixel text-lg" style={{ color: style.fill }}>
-          {style.label.replace(' Quest Scroll', '')}
-        </span>
-        <span className="ml-auto font-pixeloid-sans text-sm text-white/40">
-          {done}/{total}
-        </span>
-      </button>
+    <div
+      ref={setNodeRef}
+      className="mb-1"
+      style={{
+        transform: CSS.Transform.toString(transform),
+        transition,
+        opacity: isDragging ? 0.7 : 1,
+      }}
+    >
+      <div className="flex items-center gap-1 rounded px-1.5 py-1.5 hover:bg-white/5">
+        <button
+          type="button"
+          className="cursor-grab touch-none text-white/30 hover:text-white/60"
+          title="Drag to reorder"
+          {...attributes}
+          {...listeners}
+        >
+          <DragHandle className="size-3.5" />
+        </button>
+        <button
+          type="button"
+          onClick={onToggle}
+          className="cursor-pointer flex min-w-0 flex-1 items-center gap-2 text-left"
+        >
+          <span className="w-4 font-pixeloid-sans text-sm text-white/40">
+            {open ? '▾' : '▸'}
+          </span>
+          <span className="truncate font-exe-pixel text-lg" style={{ color: style.fill }}>
+            {style.label.replace(' Quest Scroll', '')}
+          </span>
+          <span className="ml-auto font-pixeloid-sans text-sm text-white/40">
+            {done}/{total}
+          </span>
+        </button>
+      </div>
 
       {open && (
         <div className="ml-3.5 flex flex-col gap-1 py-1">
@@ -349,8 +537,198 @@ function ScrollFolder({
             .slice()
             .sort((a, b) => a.order - b.order)
             .map(q => (
-              <QuestRow key={q.id} quest={q} accent={style.fill} onChange={patch => onQuest(q.id, patch)} />
+              <QuestRow
+                key={q.id}
+                quest={q}
+                accent={style.fill}
+                onChange={patch => onQuest(q.id, patch)}
+              />
             ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function CategorizedOverlay({
+  group,
+  categories,
+  detail,
+  openSectionIds,
+  sensors,
+  onToggleSection,
+  onQuest,
+  onReorderSections,
+}: {
+  group: Group
+  categories: Category[]
+  detail: boolean
+  openSectionIds: string[]
+  sensors: ReturnType<typeof useSensors>
+  onToggleSection: (sectionId: string) => void
+  onQuest: (questId: string, patch: QuestPatch) => void
+  onReorderSections: (order: string[]) => void
+}) {
+  const allQuests = useMemo(() => group.scrolls.flatMap(s => s.quests), [group.scrolls])
+
+  const sections = useMemo(() => {
+    if (detail) {
+      return categories.flatMap((cat, ci) =>
+        cat.subCategories.map((sub, si) => ({
+          id: sub.id,
+          label: sub.label,
+          colorIndex: ci * 10 + si,
+          quests: allQuests.filter(q => q.subCategoryId === sub.id),
+        })),
+      )
+    }
+    return categories.map((cat, i) => ({
+      id: cat.id,
+      label: cat.label,
+      colorIndex: i,
+      quests: allQuests.filter(q => q.categoryId === cat.id),
+    }))
+  }, [allQuests, categories, detail])
+
+  const defaultOrder = sections.map(s => s.id)
+  const [order, setOrder] = useState(() =>
+    mergeOrderedIds(
+      detail ? loadSubOrder(group.id, defaultOrder) : loadCatOrder(group.id, defaultOrder),
+      defaultOrder,
+    ),
+  )
+
+  useEffect(() => {
+    const defaults = (
+      detail
+        ? categories.flatMap(c => c.subCategories.map(s => s.id))
+        : categories.map(c => c.id)
+    )
+    setOrder(
+      mergeOrderedIds(
+        detail ? loadSubOrder(group.id, defaults) : loadCatOrder(group.id, defaults),
+        defaults,
+      ),
+    )
+  }, [group.id, detail, categories])
+
+  const ordered = order
+    .map(id => sections.find(s => s.id === id))
+    .filter(Boolean) as typeof sections
+
+  function handleDragEnd(event: DragEndEvent) {
+    const { active, over } = event
+    if (!over || active.id === over.id) return
+    const oldIdx = order.indexOf(String(active.id))
+    const newIdx = order.indexOf(String(over.id))
+    if (oldIdx < 0 || newIdx < 0) return
+    const next = arrayMove(order, oldIdx, newIdx)
+    setOrder(next)
+    onReorderSections(next)
+  }
+
+  return (
+    <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+      <SortableContext items={order} strategy={verticalListSortingStrategy}>
+        {ordered.map(section => {
+          const key = sectionStorageKey(group.id, section.id)
+          const open = openSectionIds.includes(key)
+          const accent =
+            CATEGORY_COLORS[section.colorIndex % CATEGORY_COLORS.length]?.fill ?? '#FCFC40'
+          return (
+            <SortableSection
+              key={section.id}
+              id={section.id}
+              label={section.label}
+              accent={accent}
+              open={open}
+              quests={section.quests}
+              onToggle={() => onToggleSection(section.id)}
+              onQuest={onQuest}
+            />
+          )
+        })}
+      </SortableContext>
+    </DndContext>
+  )
+}
+
+function SortableSection({
+  id,
+  label,
+  accent,
+  open,
+  quests,
+  onToggle,
+  onQuest,
+}: {
+  id: string
+  label: string
+  accent: string
+  open: boolean
+  quests: Quest[]
+  onToggle: () => void
+  onQuest: (questId: string, patch: QuestPatch) => void
+}) {
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
+    id,
+  })
+  const done = quests.filter(q => q.completed).length
+
+  return (
+    <div
+      ref={setNodeRef}
+      className="mb-1"
+      style={{
+        transform: CSS.Transform.toString(transform),
+        transition,
+        opacity: isDragging ? 0.7 : 1,
+      }}
+    >
+      <div className="flex items-center gap-1 rounded px-1.5 py-1.5 hover:bg-white/5">
+        <button
+          type="button"
+          className="cursor-grab touch-none text-white/30 hover:text-white/60"
+          title="Drag to reorder"
+          {...attributes}
+          {...listeners}
+        >
+          <DragHandle className="size-3.5" />
+        </button>
+        <button
+          type="button"
+          onClick={onToggle}
+          className="cursor-pointer flex min-w-0 flex-1 items-center gap-2 text-left"
+        >
+          <span className="w-4 font-pixeloid-sans text-sm text-white/40">
+            {open ? '▾' : '▸'}
+          </span>
+          <span className="truncate font-exe-pixel text-base" style={{ color: accent }}>
+            {label}
+          </span>
+          <span className="ml-auto font-pixeloid-sans text-sm text-white/40">
+            {done}/{quests.length}
+          </span>
+        </button>
+      </div>
+
+      {open && (
+        <div className="ml-3.5 flex flex-col gap-1 py-1">
+          {quests.length === 0 ? (
+            <p className="px-1 font-pixeloid-sans text-xs text-white/25">No tasks</p>
+          ) : (
+            quests
+              .slice()
+              .sort((a, b) => a.order - b.order)
+              .map(q => (
+                <QuestRow
+                  key={q.id}
+                  quest={q}
+                  accent={accent}
+                  onChange={patch => onQuest(q.id, patch)}
+                />
+              ))
+          )}
         </div>
       )}
     </div>
@@ -364,7 +742,7 @@ function QuestRow({
 }: {
   quest: Quest
   accent: string
-  onChange: (patch: Partial<Pick<Quest, 'counter' | 'completed'>>) => void
+  onChange: (patch: QuestPatch) => void
 }) {
   return (
     <div
@@ -397,7 +775,9 @@ function QuestRow({
           src={quest.objectiveIcon}
           alt=""
           className="size-4 shrink-0 object-contain pixelated"
-          onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
+          onError={e => {
+            ;(e.target as HTMLImageElement).style.display = 'none'
+          }}
         />
       )}
 
@@ -418,7 +798,10 @@ function QuestRow({
         >
           −
         </button>
-        <span className="min-w-[2.6rem] text-center font-pixeloid-sans text-xs" style={{ color: accent }}>
+        <span
+          className="min-w-[2.6rem] text-center font-pixeloid-sans text-xs"
+          style={{ color: accent }}
+        >
           {quest.counter}/{quest.amount}
         </span>
         <button

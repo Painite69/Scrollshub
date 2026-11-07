@@ -4,6 +4,7 @@ import {
   scrubObjectiveText,
   isGarbageDraft,
   correctMcAmount,
+  detectScrollType,
   type ScrollQuestDraft,
 } from './scroll_parse'
 
@@ -150,6 +151,8 @@ function scoreText(text: string): number {
   for (const w of ['kill', 'eat', 'ride', 'walk', 'blocks', 'chicken', 'golden', 'minecart']) {
     if (lower.includes(w)) s += 2
   }
+  // Prefer passes that kept the pink title (Easy/Normal/Hard/…)
+  if (detectScrollType(text)) s += 8
   s -= (text.match(/[©¢]/g) ?? []).length * 4
   return s
 }
@@ -329,11 +332,15 @@ export async function ocrScrollImage(image: Blob | File | string): Promise<strin
       return `${sub} ${d.amount} ${d.objective}`
     })
 
-    // Keep type header from best full OCR if present
-    const typeLine =
-      bestText.match(/\b(easy|normal|hard|weekly|extended)\s+quest\s+scroll\b/i)?.[0] ??
-      bestText.match(/\b(easy|normal|hard|weekly|extended)\b/i)?.[0] ??
-      ''
+    // Title is pink MC font — often garbled. Try every OCR pass, not only the "best" quest pass.
+    let detected = detectScrollType(bestText)
+    if (!detected) {
+      for (const t of texts) {
+        detected = detectScrollType(t)
+        if (detected) break
+      }
+    }
+    const typeLine = detected ? `${detected[0].toUpperCase()}${detected.slice(1)} Quest Scroll` : ''
 
     return [typeLine, 'CLUES:', ...lines].filter(Boolean).join('\n')
   } finally {
