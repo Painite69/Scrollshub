@@ -387,7 +387,35 @@ if (!gotLock) {
     Menu.setApplicationMenu(null)
     createMainWindow()
     registerGlobalShortcuts()
-    setupAutoUpdater(() => mainWindow)
+    setupAutoUpdater({
+      getMainWindow: () => mainWindow,
+      prepareForInstall: () => {
+        try {
+          globalShortcut.unregisterAll()
+        } catch {
+          /* ignore */
+        }
+        if (overlayWindow && !overlayWindow.isDestroyed()) {
+          try {
+            overlayWindow.setIgnoreMouseEvents(false)
+            overlayWindow.removeAllListeners('close')
+            overlayWindow.destroy()
+          } catch {
+            /* ignore */
+          }
+          overlayWindow = null
+        }
+        if (mainWindow && !mainWindow.isDestroyed()) {
+          try {
+            mainWindow.removeAllListeners('close')
+            mainWindow.destroy()
+          } catch {
+            /* ignore */
+          }
+          mainWindow = null
+        }
+      },
+    })
 
     ipcMain.on('questhub:open-overlay', () => createOverlayWindow())
     ipcMain.on('questhub:toggle-overlay', () => toggleOverlayWindow())

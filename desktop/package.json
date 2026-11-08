@@ -1,7 +1,7 @@
 {
   "name": "questhub-desktop",
   "private": true,
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "ScrollsHub desktop app + overlay",
   "author": "Painite",
   "main": "dist/main/index.js",
@@ -68,6 +68,7 @@
     "nsis": {
       "oneClick": false,
       "perMachine": false,
+      "allowElevation": true,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,

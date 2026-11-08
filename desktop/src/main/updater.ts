@@ -6,14 +6,19 @@ const CHECK_INTERVAL_MS = 30 * 60 * 1000 // 30 minutes
 /** Don't spam checks when the user alt-tabs a lot. */
 const FOCUS_CHECK_COOLDOWN_MS = 10 * 60 * 1000 // 10 minutes
 
+export type AutoUpdaterHooks = {
+  getMainWindow: () => BrowserWindow | null
+  /** Close overlay/main, unregister shortcuts — must run before quitAndInstall. */
+  prepareForInstall: () => void
+}
+
 /**
- * GitHub Releases auto-update (NSIS). Requires a published latest.yml + Setup exe.
- * Dev / unpackaged builds skip checks.
+ * GitHub Releases auto-update (NSIS).
  *
- * Checks: shortly after startup, on an interval, and when the main window is focused
- * again after being away (same pattern many desktop apps use).
+ * Restart flow must fully tear down BrowserWindows (especially the overlay) or
+ * the NSIS updater sticks on "ScrollsHub can't be closed".
  */
-export function setupAutoUpdater(getMainWindow: () => BrowserWindow | null) {
+export function setupAutoUpdater(hooks: AutoUpdaterHooks) {
   if (!app.isPackaged) return
 
   autoUpdater.autoDownload = true
@@ -22,10 +27,23 @@ export function setupAutoUpdater(getMainWindow: () => BrowserWindow | null) {
 
   let lastCheckAt = 0
   let checking = false
+  let installing = false
 
   autoUpdater.on('error', err => {
     checking = false
     console.error('[ScrollsHub] auto-update error', err)
+    if (!installing) return
+    installing = false
+    void dialog.showMessageBox({
+      type: 'error',
+      title: 'Update failed',
+      message: 'Could not install the update.',
+      detail:
+        `${err?.message ?? String(err)}\n\n` +
+        'If ScrollsHub is installed on a drive/folder that needs admin rights, ' +
+        'approve the UAC prompt, or reinstall to a user folder ' +
+        '(e.g. %LocalAppData%\\Programs\\ScrollsHub).',
+    })
   })
 
   autoUpdater.on('update-available', info => {
@@ -38,12 +56,14 @@ export function setupAutoUpdater(getMainWindow: () => BrowserWindow | null) {
 
   autoUpdater.on('update-downloaded', info => {
     checking = false
-    const win = getMainWindow()
+    const win = hooks.getMainWindow()
     const options: Electron.MessageBoxOptions = {
       type: 'info',
       title: 'Update ready',
       message: `ScrollsHub ${info.version} is ready to install.`,
-      detail: 'Restart now to apply the update, or choose Later and it will install when you quit.',
+      detail:
+        'Restart now to apply the update, or choose Later and it will install when you quit.\n\n' +
+        'If Windows asks for admin permission, allow it — needed when the app is installed in a protected folder.',
       buttons: ['Restart now', 'Later'],
       defaultId: 0,
       cancelId: 1,
@@ -52,13 +72,50 @@ export function setupAutoUpdater(getMainWindow: () => BrowserWindow | null) {
       ? dialog.showMessageBox(win, options)
       : dialog.showMessageBox(options)
     void prompt.then(({ response }) => {
-      if (response === 0) {
-        autoUpdater.quitAndInstall(false, true)
-      }
+      if (response === 0) installNow()
     })
   })
 
+  function installNow() {
+    if (installing) return
+    installing = true
+
+    try {
+      hooks.prepareForInstall()
+    } catch (err) {
+      console.error('[ScrollsHub] prepareForInstall failed', err)
+    }
+
+    for (const win of BrowserWindow.getAllWindows()) {
+      try {
+        win.removeAllListeners('close')
+        if (!win.isDestroyed()) win.destroy()
+      } catch {
+        /* ignore */
+      }
+    }
+
+    // Avoid quit races with window-all-closed while the installer starts
+    app.removeAllListeners('window-all-closed')
+
+    setImmediate(() => {
+      try {
+        // Show UI if elevation is needed; relaunch after install
+        autoUpdater.quitAndInstall(false, true)
+      } catch (err) {
+        console.error('[ScrollsHub] quitAndInstall failed', err)
+        installing = false
+        return
+      }
+      // Hard exit if Electron stays alive (leftover transparent/overlay chrome)
+      setTimeout(() => {
+        app.exit(0)
+      }, 1500)
+    })
+  }
+
   const check = (reason: string, { force = false } = {}) => {
+    if (installing) return
     const now = Date.now()
     if (checking) return
     if (!force && now - lastCheckAt < FOCUS_CHECK_COOLDOWN_MS && reason === 'focus') return
@@ -75,13 +132,10 @@ export function setupAutoUpdater(getMainWindow: () => BrowserWindow | null) {
       })
   }
 
-  // Startup (slight delay so the window can show first)
   setTimeout(() => check('startup', { force: true }), 8_000)
-  // Regular polling while the app stays open
   setInterval(() => check('interval', { force: true }), CHECK_INTERVAL_MS)
 
-  // When user comes back to the app
   app.on('browser-window-focus', (_e, win) => {
-    if (win === getMainWindow()) check('focus')
+    if (win === hooks.getMainWindow()) check('focus')
   })
 }
