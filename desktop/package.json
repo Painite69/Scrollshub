@@ -1,7 +1,7 @@
 {
   "name": "questhub-desktop",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "ScrollsHub desktop app + overlay",
   "author": "Painite",
   "main": "dist/main/index.js",

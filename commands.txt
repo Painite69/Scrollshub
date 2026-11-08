@@ -4,10 +4,11 @@
 gh auth login
 
 # Every app update
-# 1) Bump "version" in desktop/package.json (e.g. 0.1.1 -> 0.1.2)
+# 1) Bump "version" in desktop/package.json (e.g. 0.1.2 -> 0.1.3)
 # 2) Update DESKTOP_DOWNLOAD_URL in src/components/Header.tsx to match
 # 3) Build + upload:
 npm run dist:desktop
 .\scripts\publish-desktop-release.ps1
 
-# Installed apps auto-check GitHub Releases and prompt to restart when an update is ready.
+# Auto-update checks: ~8s after launch, every 30 min, and when you refocus the app.
+# Ctrl+R / F5 reloads the focused window.

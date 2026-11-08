@@ -34,6 +34,49 @@ function save<T>(key: string, value: T): void {
   localStorage.setItem(key, JSON.stringify(value))
 }
 
+const GROUPS_CHANNEL = 'questhub-groups-sync'
+const GROUPS_EVENT = 'questhub:groups-changed'
+
+/** Notify other windows/tabs (and same window) that groups storage changed. */
+export function notifyGroupsChanged(): void {
+  try {
+    window.dispatchEvent(new Event(GROUPS_EVENT))
+  } catch {
+    /* ignore */
+  }
+  try {
+    const bc = new BroadcastChannel(GROUPS_CHANNEL)
+    bc.postMessage({ type: 'groups-changed', at: Date.now() })
+    bc.close()
+  } catch {
+    /* ignore — older browsers / SSR */
+  }
+}
+
+/** Live-sync groups across main app + overlay windows. */
+export function subscribeGroupsChanged(cb: () => void): () => void {
+  const onLocal = () => cb()
+  const onStorage = (e: StorageEvent) => {
+    if (e.key === KEYS.groups || e.key === KEYS.extendedTemplate) cb()
+  }
+  window.addEventListener(GROUPS_EVENT, onLocal)
+  window.addEventListener('storage', onStorage)
+
+  let bc: BroadcastChannel | null = null
+  try {
+    bc = new BroadcastChannel(GROUPS_CHANNEL)
+    bc.onmessage = () => cb()
+  } catch {
+    bc = null
+  }
+
+  return () => {
+    window.removeEventListener(GROUPS_EVENT, onLocal)
+    window.removeEventListener('storage', onStorage)
+    bc?.close()
+  }
+}
+
 function questDefinitionMatches(
   a: Scroll['quests'][number],
   b: Scroll['quests'][number],
@@ -80,6 +123,7 @@ export function loadExtendedTemplate(): ExtendedTemplate | null {
 
 export function saveExtendedTemplate(template: ExtendedTemplate): void {
   save(KEYS.extendedTemplate, template)
+  notifyGroupsChanged()
 }
 
 export function clearExtendedTemplate(): void {
@@ -206,6 +250,7 @@ export function loadGroups(): Group[] {
 export function saveGroups(groups: Group[]): Group[] {
   const normalizedGroups = normalizeGroups(groups)
   save(KEYS.groups, normalizedGroups)
+  notifyGroupsChanged()
   return normalizedGroups
 }
 

@@ -24,6 +24,7 @@ import {
   saveCatOrder,
   saveGroups,
   saveSubOrder,
+  subscribeGroupsChanged,
 } from '../../types/storage'
 import {
   sectionStorageKey,
@@ -87,13 +88,10 @@ export default function OverlayPanelBody({
 
   useEffect(() => {
     refresh()
-    function onStorage(e: StorageEvent) {
-      if (e.key?.startsWith('questhub_')) refresh()
-    }
-    window.addEventListener('storage', onStorage)
+    const unsub = subscribeGroupsChanged(refresh)
     const id = window.setInterval(refresh, 2000)
     return () => {
-      window.removeEventListener('storage', onStorage)
+      unsub()
       window.clearInterval(id)
     }
   }, [refresh])

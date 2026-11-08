@@ -216,6 +216,19 @@ function closeOverlayWindow() {
   overlayWindow.close()
 }
 
+/** Ctrl+R / F5 reload the focused window (no menu bar). */
+function attachReloadShortcut(win: BrowserWindow) {
+  win.webContents.on('before-input-event', (event, input) => {
+    if (input.type !== 'keyDown') return
+    const key = input.key.toLowerCase()
+    const reload =
+      key === 'f5' || ((input.control || input.meta) && key === 'r' && !input.alt && !input.shift)
+    if (!reload) return
+    event.preventDefault()
+    win.webContents.reload()
+  })
+}
+
 function createMainWindow() {
   if (mainWindow && !mainWindow.isDestroyed()) {
     mainWindow.focus()
@@ -233,6 +246,8 @@ function createMainWindow() {
     backgroundColor: '#120413',
     webPreferences: sharedWebPreferences,
   })
+
+  attachReloadShortcut(mainWindow)
 
   mainWindow.once('ready-to-show', () => {
     if (!mainWindow || mainWindow.isDestroyed()) return
@@ -286,6 +301,7 @@ function createOverlayWindow() {
 
   overlayWindow.setMenu(null)
   overlayWindow.setMenuBarVisibility(false)
+  attachReloadShortcut(overlayWindow)
 
   overlayWindow.once('ready-to-show', () => {
     if (!overlayWindow || overlayWindow.isDestroyed()) return

@@ -18,6 +18,7 @@ import { type Group } from '../types/types'
 import {
   loadGroups,
   saveGroups,
+  subscribeGroupsChanged,
   deleteGroup,
   EXTENDED_SYNC_VERSION,
   getActiveExtendedSignature,
@@ -107,6 +108,13 @@ function Groups() {
   useEffect(() => {
     setGroups(loadGroups().sort((a, b) => a.order - b.order))
   }, [extendedSignature, EXTENDED_SYNC_VERSION])
+
+  // Overlay (and other windows) write the same localStorage — keep main UI live
+  useEffect(() => {
+    return subscribeGroupsChanged(() => {
+      setGroups(loadGroups().sort((a, b) => a.order - b.order))
+    })
+  }, [])
 
   const sensors = useSensors(useSensor(PointerSensor))
 

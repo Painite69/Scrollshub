@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 /** Windows installer hosted on GitHub Releases (too large for the site CDN). */
 const DESKTOP_DOWNLOAD_URL =
-  'https://github.com/Painite69/Scrollshub/releases/download/v0.1.1/ScrollsHub-Setup-0.1.1.exe'
+  'https://github.com/Painite69/Scrollshub/releases/download/v0.1.2/ScrollsHub-Setup-0.1.2.exe'
 
 function Header() {
   const isDesktop = Boolean(window.questHubDesktop?.isDesktop)
