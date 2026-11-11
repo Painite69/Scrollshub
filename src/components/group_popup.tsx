@@ -1,5 +1,12 @@
 import { useState } from 'react'
 import type { Group, DisplayMode } from '../types/types'
+import {
+  overlayBackdropClass,
+  overlayBackdropStyle,
+  overlayHitProps,
+  portalOverlayModal,
+  type OverlayScreenBounds,
+} from '../lib/overlay_modal'
 
 interface Props {
   existing?: Group
@@ -7,6 +14,8 @@ interface Props {
   onClose: () => void
   /** Keep popup inside a parent panel (Electron overlay). */
   contained?: boolean
+  /** Center on this display (window-local). Prefer over panel-contained for overlay. */
+  screenBounds?: OverlayScreenBounds | null
 }
 
 const DISPLAY_OPTIONS: { value: DisplayMode; label: string; desc: string }[] = [
@@ -15,11 +24,13 @@ const DISPLAY_OPTIONS: { value: DisplayMode; label: string; desc: string }[] = [
   { value: 'categorized-detail', label: 'Categorized Detail', desc: 'Clues grouped in more categories' },
 ]
 
-function GroupPopup({ existing, onSave, onClose, contained = false }: Props) {
+function GroupPopup({ existing, onSave, onClose, contained = false, screenBounds = null }: Props) {
   const [name, setName] = useState(existing?.name ?? '')
   const [display, setDisplay] = useState<DisplayMode>(existing?.display ?? 'separate')
 
   const isEdit = !!existing
+  const cramped = contained && !screenBounds
+  const hit = overlayHitProps({ contained, screenBounds })
 
   function handleSave() {
     if (!name.trim()) return
@@ -37,18 +48,23 @@ function GroupPopup({ existing, onSave, onClose, contained = false }: Props) {
     onClose()
   }
 
-  return (
+  return portalOverlayModal(
     <div
-      className={`${contained ? 'absolute' : 'fixed'} inset-0 z-50 flex items-center justify-center bg-black/60 text-white/80 font-exe-pixel`}
-      data-questhub-overlay-hit={contained ? '' : undefined}
+      className={`${overlayBackdropClass({
+        contained,
+        screenBounds,
+        z: screenBounds ? 'z-[100]' : 'z-50',
+      })} text-white/80 font-exe-pixel`}
+      style={overlayBackdropStyle(screenBounds)}
+      {...hit}
     >
       <div
         className={`flex flex-col gap-4 rounded border-2 border-[#190A21] bg-[#120413] p-6 ${
-          contained ? 'w-[min(100%,360px)] m-2 max-h-[min(100%,90vh)] overflow-y-auto' : ''
+          cramped ? 'w-[min(100%,360px)] m-2 max-h-[min(100%,90vh)] overflow-y-auto' : 'w-[360px] max-h-[90vh] overflow-y-auto'
         }`}
-        data-questhub-overlay-hit={contained ? '' : undefined}
+        {...hit}
       >
-        <h2 className={`font-exe-pixel ${contained ? 'text-2xl' : 'text-4xl'}`}>
+        <h2 className={`font-exe-pixel ${cramped ? 'text-2xl' : 'text-4xl'}`}>
           {isEdit ? 'Edit Group' : 'New Group'}
         </h2>
 
@@ -101,7 +117,8 @@ function GroupPopup({ existing, onSave, onClose, contained = false }: Props) {
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    screenBounds,
   )
 }
 

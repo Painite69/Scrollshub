@@ -87,6 +87,7 @@ export default function OverlayPage() {
           onSettingsChange={onSettingsChange}
           addScrollRequest={addScrollRequest}
           onAddFlowChange={setAddFlowActive}
+          homeBounds={home.bounds}
         />
       </OverlayShell>
     </div>

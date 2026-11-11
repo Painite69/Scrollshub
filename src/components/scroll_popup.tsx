@@ -8,6 +8,14 @@ import mcAssetIndex from '../mc-asset-index.json'
 import { ocrScrollImage } from '../lib/scroll_ocr'
 import { detectScrollType, parseScrollText, draftsToQuests } from '../lib/scroll_parse'
 import { imageFromClipboard, imageFromDataTransfer } from '../lib/image_from_transfer'
+import {
+  isOverlayModal,
+  overlayBackdropClass,
+  overlayBackdropStyle,
+  overlayHitProps,
+  portalOverlayModal,
+  type OverlayScreenBounds,
+} from '../lib/overlay_modal'
 
 // ── MC asset index types ──────────────────────────────────────────────────────
 interface McAsset { label: string; icon: string; icon3d?: string }
@@ -35,6 +43,8 @@ interface Props {
    * Required for the Electron overlay glass — fixed inset-0 would lock every monitor.
    */
   contained?: boolean
+  /** Center on this display (window-local). Prefer over panel-contained for overlay. */
+  screenBounds?: OverlayScreenBounds | null
 }
 
 const TYPES: ScrollType[] = ['easy', 'normal', 'hard','weekly', 'extended' ]
@@ -229,11 +239,12 @@ function StepType({
 
 // ── Icon selector modal ───────────────────────────────────────────────────────
 
-function IconSelectorModal({ current, onSelect, onClose, contained = false }: {
+function IconSelectorModal({ current, onSelect, onClose, contained = false, screenBounds = null }: {
   current: string
   onSelect: (icon: string) => void
   onClose: () => void
   contained?: boolean
+  screenBounds?: OverlayScreenBounds | null
 }) {
   const [search, setSearch] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
@@ -257,16 +268,19 @@ function IconSelectorModal({ current, onSelect, onClose, contained = false }: {
     ? DEFAULT_ICONS
     : ALL_ICONS.filter(a => a.label.toLowerCase().includes(search.toLowerCase()))
 
+  const cramped = contained && !screenBounds
+  const hit = overlayHitProps({ contained, screenBounds })
   return (
     <div
-      className={`${contained ? 'absolute' : 'fixed'} inset-0 z-70 flex items-center justify-center bg-black/70`}
-      data-questhub-overlay-hit={contained ? '' : undefined}
+      className={overlayBackdropClass({ contained, screenBounds, z: 'z-70', bg: 'bg-black/70' })}
+      style={overlayBackdropStyle(screenBounds)}
+      {...hit}
     >
       <div
         className={`flex flex-col gap-3 rounded border-2 border-[#190A21] bg-[#120413] p-4 max-h-[80vh] ${
-          contained ? 'w-[min(100%,480px)] m-2' : 'w-[480px]'
+          cramped ? 'w-[min(100%,480px)] m-2' : 'w-[480px]'
         }`}
-        data-questhub-overlay-hit={contained ? '' : undefined}
+        {...hit}
       >
         {/* Header */}
         <div className="flex items-center justify-between">
@@ -748,16 +762,17 @@ function DraftEditModal({ draft, categories, accentColor, onSave, onClose, conta
     onClose()
   }
 
+  const hit = overlayHitProps({ contained })
   return (
     <div
-      className={`${contained ? 'absolute' : 'fixed'} inset-0 z-60 flex items-center justify-center bg-black/60`}
-      data-questhub-overlay-hit={contained ? '' : undefined}
+      className={overlayBackdropClass({ contained, z: 'z-60' })}
+      {...hit}
     >
       <div
         className={`flex flex-col gap-3 rounded border-2 border-[#190A21] bg-[#120413] p-5 ${
           contained ? 'w-[min(100%,400px)] m-2' : 'w-[400px]'
         }`}
-        data-questhub-overlay-hit={contained ? '' : undefined}
+        {...hit}
       >
         <span className="font-exe-pixel text-sm" style={{ color: accentColor }}>Edit Quest</span>
         <div className="flex items-center gap-1.5 min-w-0">
@@ -1004,16 +1019,17 @@ export function QuestEditPopup({ quest, categories, accentColor = '#FCFC40', onS
     onClose()
   }
 
+  const hit = overlayHitProps({ contained })
   return (
     <div
-      className={`${contained ? 'absolute' : 'fixed'} inset-0 z-50 flex items-center justify-center bg-black/60`}
-      data-questhub-overlay-hit={contained ? '' : undefined}
+      className={overlayBackdropClass({ contained })}
+      {...hit}
     >
       <div
         className={`flex flex-col gap-4 rounded border-2 border-[#190A21] bg-[#120413] p-6 ${
           contained ? 'w-[min(100%,420px)] m-2' : 'w-[420px]'
         }`}
-        data-questhub-overlay-hit={contained ? '' : undefined}
+        {...hit}
       >
         <span className="font-exe-pixel text-base" style={{ color: accentColor }}>Edit Quest</span>
 
@@ -1079,7 +1095,11 @@ function ScrollPopup({
   mode = 'add',
   onTemplateSaved,
   contained = false,
+  screenBounds = null,
 }: Props) {
+  const overlay = isOverlayModal({ contained, screenBounds })
+  const cramped = contained && !screenBounds
+  const hit = overlayHitProps({ contained, screenBounds })
   const [activeMode, setActiveMode] = useState<'add' | 'update-extended'>(mode)
   const updateExtended = activeMode === 'update-extended'
   const [step, setStep] = useState<'type' | 'quests'>(() => existing ? 'quests' : 'type')
@@ -1263,17 +1283,22 @@ function ScrollPopup({
 
   const borderColor = updateExtended ? SCROLL_STYLES.extended.stroke : '#190A21'
 
-  return (
+  return portalOverlayModal(
     <div
-      className={`${contained ? 'absolute' : 'fixed'} inset-0 z-50 flex items-center justify-center bg-black/60`}
-      data-questhub-overlay-hit={contained ? '' : undefined}
+      className={overlayBackdropClass({
+        contained,
+        screenBounds,
+        z: screenBounds ? 'z-[100]' : 'z-50',
+      })}
+      style={overlayBackdropStyle(screenBounds)}
+      {...hit}
     >
       <div
         className={`flex flex-col gap-4 rounded border-2 bg-[#120413] p-6 overflow-y-auto ${
-          contained ? 'w-[min(100%,420px)] max-h-[min(100%,90vh)] m-2' : 'w-[420px] max-h-[90vh]'
+          cramped ? 'w-[min(100%,420px)] max-h-[min(100%,90vh)] m-2' : 'w-[420px] max-h-[90vh]'
         }`}
         style={{ borderColor }}
-        data-questhub-overlay-hit={contained ? '' : undefined}
+        {...hit}
       >
         {step === 'type'
           ? (
@@ -1295,7 +1320,7 @@ function ScrollPopup({
           : (
             <StepQuests
               key={questListKey}
-              contained={contained}
+              contained={overlay}
               scrollType={scrollType}
               categories={categories}
               onBack={existing && !updateExtended ? onClose : () => {
@@ -1344,7 +1369,8 @@ function ScrollPopup({
           Cancel
         </button>
       </div>
-    </div>
+    </div>,
+    screenBounds,
   )
 }
 

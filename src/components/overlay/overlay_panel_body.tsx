@@ -32,7 +32,13 @@ import {
 } from '../../types/overlay_settings'
 import ScrollPopup from '../scroll_popup'
 import GroupPopup from '../group_popup'
-import { DragHandle, EditIcon, PlusIcon } from '../icons'
+import { DeleteIcon, DragHandle, EditIcon, ListIcon, PlusIcon } from '../icons'
+import type { OverlayDisplayBounds } from '../../lib/overlay_displays'
+import {
+  overlayBackdropClass,
+  overlayBackdropStyle,
+  portalOverlayModal,
+} from '../../lib/overlay_modal'
 
 type Props = {
   settings: OverlaySettings
@@ -40,6 +46,8 @@ type Props = {
   /** External trigger (control rail + button). */
   addScrollRequest?: number
   onAddFlowChange?: (active: boolean) => void
+  /** Home display bounds (window-local) — center popups on this screen. */
+  homeBounds: OverlayDisplayBounds
 }
 
 type QuestPatch = Partial<Pick<Quest, 'counter' | 'completed'>>
@@ -72,11 +80,14 @@ export default function OverlayPanelBody({
   onSettingsChange,
   addScrollRequest = 0,
   onAddFlowChange,
+  homeBounds,
 }: Props) {
   const [groups, setGroups] = useState<Group[]>(() => loadGroups())
   const [addOpen, setAddOpen] = useState(false)
   const [pickGroupId, setPickGroupId] = useState<string | null>(null)
   const [editingGroup, setEditingGroup] = useState<Group | null>(null)
+  const [scrollsListGroup, setScrollsListGroup] = useState<Group | null>(null)
+  const [editingScroll, setEditingScroll] = useState<{ groupId: string; scroll: Scroll } | null>(null)
   const categories = loadCategories()
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 6 } }),
@@ -96,9 +107,12 @@ export default function OverlayPanelBody({
     }
   }, [refresh])
 
+  const modalOpen =
+    addOpen || editingGroup != null || scrollsListGroup != null || editingScroll != null
+
   useEffect(() => {
-    onAddFlowChange?.(addOpen)
-  }, [addOpen, onAddFlowChange])
+    onAddFlowChange?.(modalOpen)
+  }, [modalOpen, onAddFlowChange])
 
   useEffect(() => {
     if (addScrollRequest <= 0) return
@@ -203,6 +217,38 @@ export default function OverlayPanelBody({
       openSectionIds: [...new Set([...settings.openSectionIds, ...sectionKeys])],
       knownSectionIds: [...new Set([...settings.knownSectionIds, ...sectionKeys])],
     })
+  }
+
+  function handleEditScroll(scroll: Scroll) {
+    if (!editingScroll) return
+    const { groupId } = editingScroll
+    const next = loadGroups().map(g => {
+      if (g.id !== groupId) return g
+      return {
+        ...g,
+        scrolls: g.scrolls.map(s => (s.id === scroll.id ? { ...scroll, order: s.order } : s)),
+      }
+    })
+    persistGroups(next)
+    setEditingScroll(null)
+    // Keep scrolls list in sync if still open
+    setScrollsListGroup(prev => {
+      if (!prev || prev.id !== groupId) return prev
+      return next.find(g => g.id === groupId) ?? prev
+    })
+  }
+
+  function handleDeleteScroll(groupId: string, scrollId: string) {
+    const next = loadGroups().map(g => {
+      if (g.id !== groupId) return g
+      return { ...g, scrolls: g.scrolls.filter(s => s.id !== scrollId) }
+    })
+    persistGroups(next)
+    setScrollsListGroup(prev => {
+      if (!prev || prev.id !== groupId) return prev
+      return next.find(g => g.id === groupId) ?? null
+    })
+    if (editingScroll?.scroll.id === scrollId) setEditingScroll(null)
   }
 
   function updateQuest(groupId: string, questId: string, patch: QuestPatch) {
@@ -324,14 +370,24 @@ export default function OverlayPanelBody({
                   </span>
                   <span className="truncate font-exe-pixel text-xl text-white">{group.name}</span>
                 </button>
-                <button
-                  type="button"
-                  title="Edit group"
-                  onClick={() => setEditingGroup(group)}
-                  className="cursor-pointer ml-auto shrink-0 rounded p-1 text-white/35 hover:bg-white/10 hover:text-[#FCFC40]"
-                >
-                  <EditIcon />
-                </button>
+                <div className="ml-auto flex shrink-0 items-center gap-0.5">
+                  <button
+                    type="button"
+                    title="Scrolls list"
+                    onClick={() => setScrollsListGroup(group)}
+                    className="cursor-pointer rounded p-1 text-white/35 hover:bg-white/10 hover:text-[#FCFC40]"
+                  >
+                    <ListIcon className="size-4" strokeWidth={2} />
+                  </button>
+                  <button
+                    type="button"
+                    title="Edit group"
+                    onClick={() => setEditingGroup(group)}
+                    className="cursor-pointer rounded p-1 text-white/35 hover:bg-white/10 hover:text-[#FCFC40]"
+                  >
+                    <EditIcon />
+                  </button>
+                </div>
               </div>
 
               {open && (
@@ -370,42 +426,124 @@ export default function OverlayPanelBody({
         })}
       </div>
 
-      {needsGroupPick && (
-        <div
-          className="absolute inset-0 z-[90] flex items-center justify-center bg-black/70 p-3"
-          data-questhub-overlay-hit=""
-        >
+      {needsGroupPick &&
+        portalOverlayModal(
           <div
-            className="flex w-full max-w-[320px] flex-col gap-3 rounded border-2 border-[#190A21] bg-[#120413] p-4"
+            className={`${overlayBackdropClass({ screenBounds: homeBounds, z: 'z-[90]', bg: 'bg-black/70' })} p-3`}
+            style={overlayBackdropStyle(homeBounds)}
             data-questhub-overlay-hit=""
           >
-            <span className="font-exe-pixel text-base text-[#FCFC40]">Add scroll to…</span>
-            <div className="flex flex-col gap-1.5">
-              {visible.map(g => (
-                <button
-                  key={g.id}
-                  type="button"
-                  onClick={() => setPickGroupId(g.id)}
-                  className="cursor-pointer rounded border-2 border-[#3E3E11] px-3 py-2 text-left font-exe-pixel text-sm text-white hover:border-[#FCFC40]"
-                >
-                  {g.name}
-                </button>
-              ))}
-            </div>
-            <button
-              type="button"
-              onClick={closeAdd}
-              className="cursor-pointer self-end font-pixeloid-sans text-xs text-white/40 hover:text-white/70"
+            <div
+              className="flex w-full max-w-[360px] flex-col gap-3 rounded border-2 border-[#190A21] bg-[#120413] p-4"
+              data-questhub-overlay-hit=""
             >
-              Cancel
-            </button>
-          </div>
-        </div>
-      )}
+              <span className="font-exe-pixel text-base text-[#FCFC40]">Add scroll to…</span>
+              <div className="flex flex-col gap-1.5">
+                {visible.map(g => (
+                  <button
+                    key={g.id}
+                    type="button"
+                    onClick={() => setPickGroupId(g.id)}
+                    className="cursor-pointer rounded border-2 border-[#3E3E11] px-3 py-2 text-left font-exe-pixel text-sm text-white hover:border-[#FCFC40]"
+                  >
+                    {g.name}
+                  </button>
+                ))}
+              </div>
+              <button
+                type="button"
+                onClick={closeAdd}
+                className="cursor-pointer self-end font-pixeloid-sans text-xs text-white/40 hover:text-white/70"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>,
+          homeBounds,
+        )}
+
+      {scrollsListGroup &&
+        portalOverlayModal(
+          <div
+            className={overlayBackdropClass({ screenBounds: homeBounds, z: 'z-[90]', bg: 'bg-black/70' })}
+            style={overlayBackdropStyle(homeBounds)}
+            data-questhub-overlay-hit=""
+          >
+            <div
+              className="flex w-[min(420px,92vw)] max-h-[min(70vh,560px)] flex-col gap-3 overflow-hidden rounded border-2 border-[#190A21] bg-[#120413] p-4"
+              data-questhub-overlay-hit=""
+            >
+              <div className="flex items-center justify-between gap-2">
+                <span className="truncate font-exe-pixel text-lg text-[#FCFC40]">
+                  {scrollsListGroup.name} — Scrolls
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setScrollsListGroup(null)}
+                  className="cursor-pointer shrink-0 font-pixeloid-sans text-xs text-white/40 hover:text-white/70"
+                >
+                  Close
+                </button>
+              </div>
+              <div className="min-h-0 flex-1 space-y-2 overflow-y-auto [scrollbar-width:thin]">
+                {scrollsListGroup.scrolls.filter(s => !s.hidden).length === 0 ? (
+                  <p className="py-4 text-center font-pixeloid-sans text-sm text-white/40">
+                    No scrolls in this group yet.
+                  </p>
+                ) : (
+                  scrollsListGroup.scrolls
+                    .filter(s => !s.hidden)
+                    .slice()
+                    .sort((a, b) => a.order - b.order)
+                    .map(scroll => {
+                      const style = SCROLL_STYLES[scroll.type]
+                      const isExtended = scroll.type === 'extended'
+                      return (
+                        <div
+                          key={scroll.id}
+                          className="flex items-center gap-2 rounded border-2 bg-[#120413] px-3 py-2"
+                          style={{ borderColor: style.stroke }}
+                        >
+                          <span
+                            className="min-w-0 flex-1 truncate font-exe-pixel text-xl"
+                            style={{ color: style.fill }}
+                          >
+                            {isExtended && '★ '}
+                            {style.label}
+                            {isExtended && ' ★'}
+                          </span>
+                          <button
+                            type="button"
+                            title="Edit scroll"
+                            onClick={() =>
+                              setEditingScroll({ groupId: scrollsListGroup.id, scroll })
+                            }
+                            className="cursor-pointer shrink-0 rounded p-1 hover:opacity-80"
+                            style={{ color: `${style.fill}99` }}
+                          >
+                            <EditIcon />
+                          </button>
+                          <button
+                            type="button"
+                            title="Delete scroll"
+                            onClick={() => handleDeleteScroll(scrollsListGroup.id, scroll.id)}
+                            className="cursor-pointer shrink-0 rounded p-1 text-red-400/70 hover:text-red-400"
+                          >
+                            <DeleteIcon />
+                          </button>
+                        </div>
+                      )
+                    })
+                )}
+              </div>
+            </div>
+          </div>,
+          homeBounds,
+        )}
 
       {addOpen && pickGroupId && (
         <ScrollPopup
-          contained
+          screenBounds={homeBounds}
           categories={categories}
           onSave={handleAddScroll}
           onTemplateSaved={refresh}
@@ -413,9 +551,20 @@ export default function OverlayPanelBody({
         />
       )}
 
+      {editingScroll && (
+        <ScrollPopup
+          screenBounds={homeBounds}
+          existing={editingScroll.scroll}
+          categories={categories}
+          onSave={handleEditScroll}
+          onTemplateSaved={refresh}
+          onClose={() => setEditingScroll(null)}
+        />
+      )}
+
       {editingGroup && (
         <GroupPopup
-          contained
+          screenBounds={homeBounds}
           existing={editingGroup}
           onSave={handleSaveGroup}
           onClose={() => setEditingGroup(null)}

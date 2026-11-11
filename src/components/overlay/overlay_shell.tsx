@@ -26,6 +26,7 @@ import {
   ChevronRightIcon,
   ChevronUpIcon,
 } from '../icons'
+import { OVERLAY_MODAL_HOST_ID } from '../../lib/overlay_modal'
 
 const RAIL_GAP_PX = 18
 const RESIZE_BAR_THICK = 2
@@ -262,7 +263,7 @@ export default function OverlayShell({
           setChromeHovered(true)
         }}
         onPointerLeave={() => {
-          if (isResizing || homeBarHovered) return
+          if (isResizing || homeBarHovered || suppressAutoHide) return
           setChromeHovered(false)
           scheduleAutoHide()
         }}
@@ -325,6 +326,9 @@ export default function OverlayShell({
           />
         </button>
       </div>
+
+      {/* Screen-centered popups (siblings of the docked panel — not clipped by it). */}
+      <div id={OVERLAY_MODAL_HOST_ID} className="pointer-events-none absolute inset-0 z-[95]" />
     </div>
   )
 }

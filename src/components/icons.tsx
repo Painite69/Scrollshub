@@ -94,6 +94,18 @@ export function ChevronDownIcon(p: IconProps) {
 export function PlusIcon(p: IconProps) {
   return <Svg {...p}><path d="M5 12h14" /><path d="M12 5v14" /></Svg>
 }
+export function ListIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M8 6h13" />
+      <path d="M8 12h13" />
+      <path d="M8 18h13" />
+      <path d="M3 6h.01" />
+      <path d="M3 12h.01" />
+      <path d="M3 18h.01" />
+    </Svg>
+  )
+}
 export function XIcon(p: IconProps) {
   return <Svg {...p}><path d="M18 6 6 18" /><path d="m6 6 12 12" /></Svg>
 }
